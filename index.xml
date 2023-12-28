@@ -14,7 +14,7 @@
       <link>https://ponyofshadows.com/website/hugo/</link>
       <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
       <guid>https://ponyofshadows.com/website/hugo/</guid>
-      <description>main paths mywebsite/context This path is where all original articles and resources are organized. mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io. main commands hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents. </description>
+      <description>main paths mywebsite/content This path is where all original articles and resources are organized. mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io. main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents </description>
     </item>
   </channel>
 </rss>
