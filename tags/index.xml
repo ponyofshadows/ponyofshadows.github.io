@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on ponyofshadows&#39; blog</title>
+    <title>Tags on ponyofshadows</title>
     <link>https://ponyofshadows.com/tags/</link>
-    <description>Recent content in Tags on ponyofshadows&#39; blog</description>
+    <description>Recent content in Tags on ponyofshadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© ponyofshadows. All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 18 Oct 2023 19:22:33 +0800</lastBuildDate><atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 28 Dec 2023 19:41:04 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>diary</title>
-      <link>https://ponyofshadows.com/tags/diary/</link>
-      <pubDate>Wed, 18 Oct 2023 19:22:33 +0800</pubDate>
-      
-      <guid>https://ponyofshadows.com/tags/diary/</guid>
+      <title>linux</title>
+      <link>https://ponyofshadows.com/tags/linux/</link>
+      <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/linux/</guid>
       <description></description>
     </item>
-    
+    <item>
+      <title>website</title>
+      <link>https://ponyofshadows.com/tags/website/</link>
+      <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/website/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

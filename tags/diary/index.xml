@@ -1,23 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>diary on ponyofshadows&#39; blog</title>
+    <title>diary on ponyofshadows</title>
     <link>https://ponyofshadows.com/tags/diary/</link>
-    <description>Recent content in diary on ponyofshadows&#39; blog</description>
+    <description>Recent content in diary on ponyofshadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© ponyofshadows. All Rights Reserved.</copyright>
-    <lastBuildDate>Wed, 18 Oct 2023 19:22:33 +0800</lastBuildDate><atom:link href="https://ponyofshadows.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Oct 2023 19:22:33 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/diary/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>第一次使用github pages</title>
       <link>https://ponyofshadows.com/diary/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8github_pages/</link>
       <pubDate>Wed, 18 Oct 2023 19:22:33 +0800</pubDate>
-      
       <guid>https://ponyofshadows.com/diary/%E7%AC%AC%E4%B8%80%E6%AC%A1%E4%BD%BF%E7%94%A8github_pages/</guid>
-      <description>新的开始 今天是我第一次使用github pages部署我的博客！学习任务重，我必须一天三次小总结、一次大总结，以保证学习质量。
-hugo的日常使用 在archetypes路径下创建文章的模板 使用hugo new &amp;lt;type name&amp;gt;/&amp;lt;article name&amp;gt;命令新建文章 在content目录下编辑文章。如果完稿，把&amp;quot;draft&amp;quot;属性设置为false。 发布文章前，可以运行hugo server预览文章效果，该命令运行成功后即可在http://localhost:1313/ 中预览网站. 执行hugo生成HTML网页，保存网页文件的路径是public\。 通过git把public\下的文件push到&amp;lt;username&amp;gt;.github.io仓库 启用额外功能 参考github-style的配置模板，增加了一些功能。 也参考了front-matter的官方文档。 一些笔记：
-在front-matter区域写katex = &amp;quot;math&amp;quot;或mathjax = true以启用KaTex或MathJax的数学渲染，前者速度更快，后者对latex语法支持更广泛。需要注意，行内公式的语法类似\\C \\)。 </description>
+      <description>新的开始 今天是我第一次使用github pages部署我的博客！学习任务重，我必须一天三次小总结、一次大总结，以保证学习质量。&#xA;hugo的日常使用 在archetypes路径下创建文章的模板 使用hugo new &amp;lt;type name&amp;gt;/&amp;lt;article name&amp;gt;命令新建文章 在content目录下编辑文章。如果完稿，把&amp;quot;draft&amp;quot;属性设置为false。 发布文章前，可以运行hugo server预览文章效果，该命令运行成功后即可在http://localhost:1313/ 中预览网站. 执行hugo生成HTML网页，保存网页文件的路径是public\。 通过git把public\下的文件push到&amp;lt;username&amp;gt;.github.io仓库 启用额外功能 参考github-style的配置模板，增加了一些功能。 也参考了front-matter的官方文档。 一些笔记：&#xA;在front-matter区域写katex = &amp;quot;math&amp;quot;或mathjax = true以启用KaTex或MathJax的数学渲染，前者速度更快，后者对latex语法支持更广泛。需要注意，行内公式的语法类似\\C \\)。 </description>
     </item>
-    
   </channel>
 </rss>
