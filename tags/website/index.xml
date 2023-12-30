@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>website on Blogs related to linux</title>
+    <title>website on Notes Related to Linux</title>
     <link>https://ponyofshadows.com/tags/website/</link>
-    <description>Recent content in website on Blogs related to linux</description>
+    <description>Recent content in website on Notes Related to Linux</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>ponyofshadows</copyright>
+    <language>en-us</language>
     <lastBuildDate>Thu, 28 Dec 2023 19:41:04 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo</title>
-      <link>https://ponyofshadows.com/website/hugo/</link>
+      <link>https://ponyofshadows.com/posts/hugo/</link>
       <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
-      <guid>https://ponyofshadows.com/website/hugo/</guid>
-      <description>main paths ywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents hugo --cleanDestinationDir to clear Cache files themes visit this website to select a theme.</description>
+      <guid>https://ponyofshadows.com/posts/hugo/</guid>
+      <description>main paths mywebsite/archetype documents under this path act as templates to write articles and columns of the website. By default, hugo only displays articles under &amp;ldquo;mywebsite/content/posts&amp;rdquo; To costum the display of columns, config like this: [params] mainSections = [&amp;#34;posts&amp;#34;, &amp;#34;blog&amp;#34;, &amp;#34;news&amp;#34;] mywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.</description>
     </item>
   </channel>
 </rss>

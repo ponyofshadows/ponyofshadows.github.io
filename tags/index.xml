@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on Blogs related to linux</title>
+    <title>Tags on Notes Related to Linux</title>
     <link>https://ponyofshadows.com/tags/</link>
-    <description>Recent content in Tags on Blogs related to linux</description>
+    <description>Recent content in Tags on Notes Related to Linux</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>ponyofshadows</copyright>
+    <language>en-us</language>
     <lastBuildDate>Sat, 30 Dec 2023 15:31:38 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>

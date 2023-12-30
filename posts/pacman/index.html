@@ -9,7 +9,7 @@
   />
   
     
-      <title>website | Notes Related to Linux</title>
+      <title>pacman | Notes Related to Linux</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -65,24 +65,50 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: website</h1>
+  <main>
+    <article>
+      <h1 class="title">pacman</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>30303-1230-3031</time>
     
-  <h3>2023</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/hugo/">hugo</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 104 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
 
-
+      <div class="content"><h4 id="1-the-most-recommended-update-packages-command">1. The most recommended update packages command</h4>
+<pre tabindex="0"><code>pacman -Syu
+</code></pre><h4 id="2-uninstall-a-package-as-completely-as-possible">2. Uninstall a package as completely as possible</h4>
+<pre tabindex="0"><code>pacman -Rns [package name]
+</code></pre><ul>
+<li><code>-s</code> to uninstall all dependencies that are no longer required.</li>
+<li><code>-n</code> to delete all configuation files related to the uninstalled  package.</li>
+</ul>
+<h4 id="3-query-a-installed-package">3. Query a installed package</h4>
+<pre tabindex="0"><code>pacman -Qi [package name]
+</code></pre><h4 id="4-retrieve-packages-in-source-databases">4. Retrieve packages in source databases.</h4>
+<pre tabindex="0"><code>pacman -Ss [key words]
+</code></pre><h4 id="5-get-details-of-a-specific-package-in-the-database">5. Get details of a specific package in the database</h4>
+<pre tabindex="0"><code>pacman -Si [package name]
+</code></pre><h4 id="6-install-python-packages-for-the-whole-system">6. Install python packages for the whole system</h4>
+<pre tabindex="0"><code>pacman -S python-[package name]
+</code></pre><h4 id="7-unistall-all-python-packages-that-are-not-dependent-on">7. Unistall all python packages that are not dependent on</h4>
+<pre tabindex="0"><code>pacman -Rns $(pacman -Qdtq | grep &#39;^python-&#39;)
+</code></pre></div>
+    </article>
   </main>
 
       </div>

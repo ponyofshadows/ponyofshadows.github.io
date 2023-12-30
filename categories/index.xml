@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Blogs related to linux</title>
+    <title>Categories on Notes Related to Linux</title>
     <link>https://ponyofshadows.com/categories/</link>
-    <description>Recent content in Categories on Blogs related to linux</description>
+    <description>Recent content in Categories on Notes Related to Linux</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-US</language>
-    <copyright>ponyofshadows</copyright>
+    <language>en-us</language>
     <atom:link href="https://ponyofshadows.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

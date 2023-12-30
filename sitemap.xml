@@ -1,16 +1,37 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <sitemap>
-    <loc>https://ponyofshadows.com/en/sitemap.xml</loc>
-    
-      <lastmod>2023-12-30T15:31:38+08:00</lastmod>
-    
-  </sitemap>
-  
-  <sitemap>
-    <loc>https://ponyofshadows.com/zh-cn/sitemap.xml</loc>
-    
-  </sitemap>
-  
-</sitemapindex>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://ponyofshadows.com/tags/linux/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/pacman/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/tools/</loc>
+    <lastmod>2023-12-30T15:31:38+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/desktop/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/wayland/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/hugo/</loc>
+    <lastmod>2023-12-28T19:41:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/website/</loc>
+    <lastmod>2023-12-28T19:41:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/categories/</loc>
+  </url>
+</urlset>
