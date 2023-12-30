@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tools on ponyofshadows</title>
+    <link>https://ponyofshadows.com/tags/tools/</link>
+    <description>Recent content in tools on ponyofshadows</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© ponyofshadows. All Rights Reserved.</copyright>
+    <lastBuildDate>Sat, 30 Dec 2023 15:31:38 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pacman</title>
+      <link>https://ponyofshadows.com/tools/pacman/</link>
+      <pubDate>Sat, 30 Dec 2023 15:31:38 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tools/pacman/</guid>
+      <description>1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6.</description>
+    </item>
+  </channel>
+</rss>

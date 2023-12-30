@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>pacman - ponyofshadows</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta itemprop="name" content="pacman">
+<meta itemprop="description" content="1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6."><meta itemprop="datePublished" content="2023-12-30T15:31:38+08:00" />
+<meta itemprop="dateModified" content="2023-12-30T15:31:38+08:00" />
+<meta itemprop="wordCount" content="104">
+<meta itemprop="keywords" content="linux,tools," /><meta property="og:title" content="pacman" />
+<meta property="og:description" content="1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ponyofshadows.com/tools/pacman/" /><meta property="article:section" content="tools" />
+<meta property="article:published_time" content="2023-12-30T15:31:38+08:00" />
+<meta property="article:modified_time" content="2023-12-30T15:31:38+08:00" />
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="pacman"/>
+<meta name="twitter:description" content="1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6."/>
+<link rel="stylesheet" type="text/css" media="screen" href="https://ponyofshadows.com/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="https://ponyofshadows.com/css/main.css" />
+
+        <link id="dark-scheme" rel="stylesheet" type="text/css" href="https://ponyofshadows.com/css/dark.css" />
+
+	<script src="https://ponyofshadows.com/js/feather.min.js"></script>
+	
+		<script src="https://ponyofshadows.com/js/main.js"></script>
+</head>
+
+
+<body>
+
+
+	
+	<div class="container wrapper">
+		<div class="header">
+	
+	<h1 class="site-title"><a href="https://ponyofshadows.com/">ponyofshadows</a></h1>
+	<div class="site-description"><p>Howdey!</p><nav class="nav social">
+			<ul class="flat"><li><a href="https://github.com/ponyofshadows/" title="Github"><i data-feather="github"></i></a></li><span class="scheme-toggle"><a href="#" id="scheme-toggle"></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Home</a>
+			</li>
+			
+			<li>
+				<a href="/tags">Tags &amp; Stats</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post">
+    <div class="post-header">
+    
+    <div class="meta">
+        <div class="date">
+            <span class="day">30</span>
+            <span class="rest">Dec 2023</span>
+        </div>
+    </div>
+    
+    <div class="matter">
+        <h1 class="title">pacman</h1>
+    </div>
+</div>
+
+
+    
+    
+    <h4 id="1-the-most-recommended-update-packages-command">1. The most recommended update packages command</h4>
+<pre tabindex="0"><code>pacman -Syu
+</code></pre><h4 id="2-uninstall-a-package-as-completely-as-possible">2. Uninstall a package as completely as possible</h4>
+<pre tabindex="0"><code>pacman -Rns [package name]
+</code></pre><ul>
+<li><code>-s</code> to uninstall all dependencies that are no longer required.</li>
+<li><code>-n</code> to delete all configuation files related to the uninstalled  package.</li>
+</ul>
+<h4 id="3-query-a-installed-package">3. Query a installed package</h4>
+<pre tabindex="0"><code>pacman -Qi [package name]
+</code></pre><h4 id="4-retrieve-packages-in-source-databases">4. Retrieve packages in source databases.</h4>
+<pre tabindex="0"><code>pacman -Ss [key words]
+</code></pre><h4 id="5-get-details-of-a-specific-package-in-the-database">5. Get details of a specific package in the database</h4>
+<pre tabindex="0"><code>pacman -Si [package name]
+</code></pre><h4 id="6-install-python-packages-for-the-whole-system">6. Install python packages for the whole system</h4>
+<pre tabindex="0"><code>pacman -S python-[package name]
+</code></pre><h4 id="7-unistall-all-python-packages-that-are-not-dependent-on">7. Unistall all python packages that are not dependent on</h4>
+<pre tabindex="0"><code>pacman -Rns $(pacman -Qdtq | grep &#39;^python-&#39;)
+</code></pre>
+    <hr class="footer-separator" />
+<div class="tags">
+    
+    
+    <ul class="flat">
+        
+        
+        <li class="tag-li"><a href="/tags/linux">linux</a>
+        </li>
+        
+        
+        <li class="tag-li"><a href="/tags/tools">tools</a>
+        </li>
+        
+    </ul>
+    
+    
+</div>
+
+
+<div class="back">
+    <a href="https://github.com/ponyofshadows/blob/master/content/tools/pacman.md" title="github"><i
+            data-feather="github"></i> Edit this on GitHub</a>
+</div>
+
+
+<div class="back">
+    <a href="https://ponyofshadows.com/"><span aria-hidden="true">← Back</span></a>
+</div>
+
+
+<div class="back">
+    
+</div>
+
+</div>
+
+	</div>
+	
+
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div>2023  © ponyofshadows. All Rights Reserved. </div>
+		
+	</nav>
+</div><script>feather.replace()</script>
+	
+</body>
+
+</html>
