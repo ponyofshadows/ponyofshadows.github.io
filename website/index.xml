@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Websites on ponyofshadows</title>
+    <title>Websites on Blogs related to linux</title>
     <link>https://ponyofshadows.com/website/</link>
-    <description>Recent content in Websites on ponyofshadows</description>
+    <description>Recent content in Websites on Blogs related to linux</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>© ponyofshadows. All Rights Reserved.</copyright>
+    <language>en-US</language>
+    <copyright>ponyofshadows</copyright>
     <lastBuildDate>Thu, 28 Dec 2023 19:41:04 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
@@ -14,7 +14,7 @@
       <link>https://ponyofshadows.com/website/hugo/</link>
       <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
       <guid>https://ponyofshadows.com/website/hugo/</guid>
-      <description>main paths ywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents </description>
+      <description>main paths ywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents hugo --cleanDestinationDir to clear Cache files themes visit this website to select a theme.</description>
     </item>
   </channel>
 </rss>
