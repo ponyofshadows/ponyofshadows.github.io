@@ -29,5 +29,12 @@
       <guid>https://ponyofshadows.com/posts/hugo/</guid>
       <description>main paths mywebsite/archetype documents under this path act as templates to write articles and columns of the website. By default, hugo only displays articles under &amp;ldquo;mywebsite/content/posts&amp;rdquo; To costum the display of columns, config like this: [params] mainSections = [&amp;#34;posts&amp;#34;, &amp;#34;blog&amp;#34;, &amp;#34;news&amp;#34;] mywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.</description>
     </item>
+    <item>
+      <title>About</title>
+      <link>https://ponyofshadows.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/about/</guid>
+      <description>⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⢆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢡⣤⣤⣤⣀⣀⣀⣀⠀⠀⠀⠀⢀⡤⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢄⣀⣤⠴⠒⠛⠒⠯⠥⣄⣀⠀⠀⠀⠉⠉⠙⠛⢿⢶⣴⡋⠀⠀⠈⢳⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡴⠞⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠢⣄⠀⠀⠀⠀⠈⢇⠹⡆⠀⢀⣀⠀⠹⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⡇⠀⠀⠀⠀⠀⠀⢀⣴⠟⠉⣀⣀⠤⠤⠤⠤⠤⠤⠤⣀⡀⠀⠀⠀⠀⠈⠳⡀⠀⠀⠀⢸⡀⡇⠀⠘⠛⠁⣀⠘⡆⠀⠀⠀⠀⠀⠀⠀⠀ ⠃⠀⠀⠀⠀⢀⣴⣋⠥⠒⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠒⢤⡀⠀⠀⠀⠱⡀⠀⠀⣸⢃⡇⠀⠀⠀⢾⣿⡇⢹⡀⠀⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⣰⡟⠋⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠢⡀⠀⠀⣧⡴⠚⠋⠙⠃⠀⠀⠀⠀⠁⢀⣠⠷⢢⠀⠀⠀⠀⠀⠀ ⠀⠀⠀⣴⠏⠀⣠⡞⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⠀⠀⠀⠙⣦⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⣀⡈⠀⠀⠀⠀⠀⠀ ⠀⠀⣼⠇⢠⣾⠏⠀⠀⠀⠀⠀⠀⠀⣠⠶⠚⠉⣩⠴⠛⠋⠛⠲⢦⣤⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣯⠀⠀⠀⠀⠀⠀⠀ ⠀⠘⠏⣠⣿⡟⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⢠⠞⠁⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠈⢻⡄⠀⠀⠀⠀⠀⠀ ⠀⠀⣰⢏⡟⠀⠀⠀⠀⠀⠀⠜⠁⠀⠀⢠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠖⢠⡏⠀⢹⣷⠀⠀⠀⠀⠀⠀ ⠀⠀⠏⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⢀⡄⠀⠀⠀⢰⣀⣀⣠⣤⠶⣿⣿⣿⣿⡆⠀⠇⠀⠘⣿⠄⠀⠀⠀⠀⠀ ⠀⠀⠀⡎⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣃⣀⣀⣠⣤⣤⣴⣶⠚⠁⠀⠀⠀⠈⠉⢹⣿⣷⠾⠛⠋⠙⡿⢿⣄⡴⠀⠀⣿⡆⠀⠀⠀⠀⠀ ⠀⠀⠀⠃⠀⠀⠀⠀⠀⠀⠀⡆⠀⠀⡟⣿⣿⡿⠿⠷⠶⣿⣿⡆⠀⠀⠀⠀⠀⠀⠘⡏⠀⠀⠀⠀⠀⣇⣼⡿⣶⣶⠂⢸⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠃⠀⠀⣧⣿⠃⠀⠀⠀⢸⠁⣸⡇⠀⠀⠀⠀⠀⠀⠀⢣⠀⠀⠀⠀⠀⢻⣿⣷⡾⠿⢩⠻⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠃⠀⠀⠀⠀⠸⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠈⣇⠀⠀⠀⠀⢀⣽⣟⡛⠂⠸⢠⡷⠀⠀⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣷⣄⠀⠀⠀⠀⠻⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠈⠂⠀⠤⠖⢋⣁⡆⠀⠀⡇⢸⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⢢⠀⠀⠀⠀⠀⠀⠰⠀⠀⠀⠸⣿⣿⠿⢦⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⡮⢸⠀⠀⢰⠀⢸⡇⠀⠀⠀⠀⠀ ⠀⠀⠀⢸⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣷⣄⡀⠀⠀⠀⠀⠀⠀⣠⠴⠗⠒⠶⠄⠀⢀⣠⣾⠏⠀⡜⠀⠀⡼⠀⣼⣇⣀⠀⠀⠀⠀ ⠀⠀⠀⠈⣷⠀⠀⠀⠀⠀⠀⡄⠀⠀⠀⠘⣿⣿⣿⣿⣶⣄⣀⣤⢤⣘⣁⣀⠀⠀⠀⢤⡶⠟⠊⠁⠀⢀⡇⠀⠀⡇⠀⣿⡏⠉⠙⠛⠓⠲ ⠀⠀⠀⠀⢹⣇⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⠃⠶⣄⠀⢀⣀⣀⣰⡏⠀⠀⠀⠀⠀⢸⠀⠀⢸⠀⢸⣿⢷⣄⠀⠀⠀⠀ ⣅⣀⡀⠀⠈⣿⡆⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⣏⣷⣿⣿⣿⠟⣧⠀⠈⠉⡉⠀⠀⢹⠃⠀⠀⠀⠀⠀⡇⠀⠀⡎⠀⡿⢿⠀⠙⣦⠀⠀⣚ ⠀⠀⠉⠙⠓⠿⣿⡀⠀⠀⠀⢸⠀⠀⠀⠀⠀⢣⠙⣏⡸⠃⣰⣿⡷⢦⣄⣑⡄⣠⣿⠀⠀⠀⠀⠀⢰⠃⠀⢰⠃⢰⠇⠈⠳⣄⡇⢐⠋⠉ ⠀⠀⠀⠀⠀⠀⠹⣷⠀⠀⠀⢸⠀⠀⠀⠀⠀⠸⡀⣿⡇⢰⡿⠹⣧⠀⠈⠉⠣⡀⢹⠀⠀⠀⠀⠀⡸⠀⠀⣸⠀⢸⡇⠀⠀⢸⡇⠀⠀⠀ ⠀⠀⠀⠀⠀⠀⠀⢻⡧⠀⠀⠈⡆⠀⠀⠀⠀⠀⡇⠻⡇⢸⡇⠀⣿⣆⠀⠀⢠⠟⣿⠀⠀⠀⠀⠀⡇⠀⠠⡇⠀⢿⡇⠀⠀⡼⠷⠀⠀⠀</description>
+    </item>
   </channel>
 </rss>
