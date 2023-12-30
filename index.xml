@@ -7,14 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© ponyofshadows. All Rights Reserved.</copyright>
-    <lastBuildDate>Thu, 28 Dec 2023 19:41:04 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Dec 2023 21:48:48 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wayland</title>
+      <link>https://ponyofshadows.com/desktop/wayland/</link>
+      <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
+      <guid>https://ponyofshadows.com/desktop/wayland/</guid>
+      <description>graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install 1 2 3 4 5 6 7 sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl run in tty 1 sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
+    </item>
     <item>
       <title>hugo</title>
       <link>https://ponyofshadows.com/website/hugo/</link>
       <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
       <guid>https://ponyofshadows.com/website/hugo/</guid>
-      <description>main paths mywebsite/content This path is where all original articles and resources are organized. mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io. main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents </description>
+      <description>main paths ywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.md to create new article hugo to build hugo server to preview git add -all, git commit -a -m &amp;quot;...&amp;quot;&amp;amp; git push to backup and publish contents </description>
     </item>
   </channel>
 </rss>

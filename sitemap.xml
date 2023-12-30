@@ -2,16 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ponyofshadows.com/website/hugo/</loc>
-    <lastmod>2023-12-28T19:41:04+08:00</lastmod>
+    <loc>https://ponyofshadows.com/tags/desktop/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/desktop/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/linux/</loc>
-    <lastmod>2023-12-28T19:41:04+08:00</lastmod>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2023-12-28T19:41:04+08:00</lastmod>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/desktop/wayland/</loc>
+    <lastmod>2023-12-28T21:48:48+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/website/hugo/</loc>
     <lastmod>2023-12-28T19:41:04+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/website/</loc>
