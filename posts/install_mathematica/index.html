@@ -9,7 +9,7 @@
   />
   
     
-      <title>linux | Notes Related to Linux</title>
+      <title>Install Mathematica | Notes Related to Linux</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -65,65 +65,56 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: linux</h1>
+  <main>
+    <article>
+      <h1 class="title">Install Mathematica</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-09</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Jan 9
-        </div>
-        <div class="title">
-          <a href="/posts/install_mathematica/">Install Mathematica</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 55 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
 
-  <h3>2023</h3>
-  <ul id="postsByDate">
-    
-      <li>
-        <div class="date">
-          Dec 30
-        </div>
-        <div class="title">
-          <a href="/posts/frist_step_of_python_project_in_archlinux/">Frist Step of Python Project in ArchLinux</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 30
-        </div>
-        <div class="title">
-          <a href="/posts/pacman/">pacman</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/wayland/">Wayland</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/hugo/">hugo</a>
-        </div>
-      </li>
-    
-  </ul>
-
-
+      <div class="content"><h3 id="install">Install</h3>
+<ol>
+<li><code>avahi-daemon</code> service is needed.
+sudo systemctl enable &ndash;now avahi-daemon</li>
+<li>two commnads <code>hostname</code> and <code>egrep</code> can&rsquo;t work in Arch Linux.</li>
+</ol>
+<ul>
+<li>/usr/local/bin/hostname</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>hostnamectl hostname <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><ul>
+<li>make two scripts executable</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo chmod +x /usr/local/bin/hostname
+</span></span></code></pre></div><ul>
+<li>install</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo sh Mathematica_12.3.1_LINUX_CN.sh
+</span></span></code></pre></div><h3 id="path">Path</h3>
+<ul>
+<li>The default installation directory is <code>/usr/local/Wolfram/Mathematica/12.3</code>.</li>
+<li>The default scripts directory is <code>/usr/local/bin</code>. I change it to <code>usr/local/bin/Wolfram</code>.</li>
+</ul>
+</div>
+    </article>
   </main>
 
       </div>
