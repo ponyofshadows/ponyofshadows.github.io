@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tools on Notes Related to Linux</title>
+    <title>tools on Pony of Shadows</title>
     <link>https://ponyofshadows.com/tags/tools/</link>
-    <description>Recent content in tools on Notes Related to Linux</description>
+    <description>Recent content in tools on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 09 Jan 2024 10:47:14 +0800</lastBuildDate>
@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/install_mathematica/</link>
       <pubDate>Tue, 09 Jan 2024 10:47:14 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/install_mathematica/</guid>
-      <description>Install avahi-daemon service is needed. sudo systemctl enable &amp;ndash;now avahi-daemon two commnads hostname and egrep can&amp;rsquo;t work in Arch Linux. /usr/local/bin/hostname #!/bin/bash hostnamectl hostname &amp;#34;$@&amp;#34; make two scripts executable sudo chmod +x /usr/local/bin/hostname install sudo sh Mathematica_12.3.1_LINUX_CN.sh Path The default installation directory is /usr/local/Wolfram/Mathematica/12.3. The default scripts directory is /usr/local/bin. I change it to usr/local/bin/Wolfram. </description>
+      <description>Install avahi-daemon service is needed. sudo systemctl enable --now avahi-daemon two commnads hostname and egrep can&amp;rsquo;t work in Arch Linux. /usr/local/bin/hostname #!/bin/bash hostnamectl hostname &amp;#34;$@&amp;#34; make two scripts executable sudo chmod +x /usr/local/bin/hostname install sudo sh Mathematica_12.3.1_LINUX_CN.sh Path The default installation directory is /usr/local/Wolfram/Mathematica/12.3. The default scripts directory is /usr/local/bin. I change it to usr/local/bin/Wolfram. </description>
     </item>
     <item>
       <title>pacman</title>
