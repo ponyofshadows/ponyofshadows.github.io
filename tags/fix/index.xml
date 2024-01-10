@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/avoid_firefox_crashing_on_sway/</link>
       <pubDate>Wed, 10 Jan 2024 14:05:24 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/avoid_firefox_crashing_on_sway/</guid>
-      <description>Enter &amp;ldquo;about:config&amp;rdquo; in the address bar To avoid crash when view a webpage with many resources, set &amp;ldquo;dom.ipc.processCount&amp;rdquo; smaller. (for example, from 8 to 6) To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when open PDF file, set &amp;ldquo;webgl.disabled&amp;rdquo; to True to disable WebGL, a JavaScript API for rendering interactive 2D and 3D graphics on web pages without the need for plug-ins. Set &amp;ldquo;gfx.webrender.all&amp;rdquo; to True.</description>
+      <description>Enter about:config in the address bar To avoid crash when view a webpage with many resources, set dom.ipc.processCount smaller. (for example, from 8 to 6) To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when open PDF file, set webgl.disabled to True to disable WebGL, a JavaScript API for rendering interactive 2D and 3D graphics on web pages without the need for plug-ins. Set gfx.webrender.all to True.</description>
     </item>
   </channel>
 </rss>
