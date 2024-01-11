@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/papis/</link>
       <pubDate>Thu, 11 Jan 2024 23:24:55 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/papis/</guid>
-      <description>Example: add a paper to default papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 --folder-name quantumn_mechanics/Ruling_Out_Real-Valued_Standard_Formalism_of_Quantum_Theory Ref papis docs </description>
+      <description>Example: add a paper to default papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 --folder-name quantumn_mechanics/Ruling_Out_Real-Valued_Standard_Formalism_of_Quantum_Theory If you download PDF papers from journel website such as PRL, you don&amp;rsquo;t need to specify doi when adding the paper, because it is already included in the paper file.&#xA;Ref papis docs </description>
     </item>
     <item>
       <title>Install Mathematica</title>
