@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/avoid_firefox_crashing_on_sway/</link>
       <pubDate>Wed, 10 Jan 2024 14:05:24 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/avoid_firefox_crashing_on_sway/</guid>
-      <description>Enter about:config in the address bar To avoid crash when view a webpage with many resources, set dom.ipc.processCount smaller. (for example, from 8 to 6) To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when open PDF file, set webgl.disabled to True to disable WebGL, a JavaScript API for rendering interactive 2D and 3D graphics on web pages without the need for plug-ins. Set gfx.webrender.all to True.</description>
+      <description>Enter about:config in the address bar To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when opening PDF file or webpages with a quiet amount of resources, set webgl.disabled to True to disable WebGL, a JavaScript API for rendering interactive 2D and 3D graphics on web pages without the need for plug-ins. Set gfx.webrender.all to True. WebRender is a high-performance rendering engine developed by Mozilla to improve the speed and efficiency of web page rendering.</description>
     </item>
   </channel>
 </rss>
