@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jan 2024 10:34:19 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2024 22:52:12 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Using git for version control</title>
+      <link>https://ponyofshadows.com/posts/using_git_for_version_control/</link>
+      <pubDate>Fri, 12 Jan 2024 22:52:12 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/using_git_for_version_control/</guid>
+      <description>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you can follow these steps:&#xA;Check Commit History First, you need to find the commit hash of the specific commit you want to switch to. This can be done by viewing the commit history on the specific branch using the git log command.</description>
+    </item>
     <item>
       <title>git-lfs</title>
       <link>https://ponyofshadows.com/posts/git-lfs/</link>
@@ -55,7 +62,7 @@
       <link>https://ponyofshadows.com/posts/wayland/</link>
       <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/wayland/</guid>
-      <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # some necessery packages for desktop softwares to run normally sudo pacman -S xdg-desktop-portal # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
+      <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # some necessery packages for desktop softwares to run normally sudo pacman -S xdg-desktop-portal xdg-desktop-portal-wlr # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
     </item>
     <item>
       <title>hugo</title>
