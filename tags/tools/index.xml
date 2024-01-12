@@ -6,8 +6,15 @@
     <description>Recent content in tools on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 11 Jan 2024 23:24:55 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jan 2024 10:34:19 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git-lfs</title>
+      <link>https://ponyofshadows.com/posts/git-lfs/</link>
+      <pubDate>Fri, 12 Jan 2024 10:34:19 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/git-lfs/</guid>
+      <description>Install and Initialize sudo pacman -S git-lfs git lfs install Basic Usage see git-lfs.com&#xA;How to track large files that have been added to the repository. git add --renormalize git commit -m &amp;#34;Migrate existing large files to Git LFS&amp;#34; </description>
+    </item>
     <item>
       <title>papis</title>
       <link>https://ponyofshadows.com/posts/papis/</link>
