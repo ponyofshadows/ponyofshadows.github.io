@@ -6,8 +6,15 @@
     <description>Recent content on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Jan 2024 22:52:12 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jan 2024 09:30:05 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rime custom</title>
+      <link>https://ponyofshadows.com/posts/rime_custom/</link>
+      <pubDate>Sat, 13 Jan 2024 09:30:05 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/rime_custom/</guid>
+      <description>I use fcitx5 + rime + flypy.schema.yaml as my Chinese character input system.&#xA;How to install flypy.schema yay -S rime-flypy relevant config files ~/.local/share/fcitx5/rime/default.custom.yaml ~/.local/share/fcitx5/rime/build/flypy.schema.yaml I make my own configuration in default.custom.yaml,because it can cover corresponding config in schemas. My own custom see this page</description>
+    </item>
     <item>
       <title>Using git for version control</title>
       <link>https://ponyofshadows.com/posts/using_git_for_version_control/</link>
