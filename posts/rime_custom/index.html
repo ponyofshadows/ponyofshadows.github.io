@@ -76,7 +76,7 @@
     
     
   </strong>
-  <span> • 45 words</span>
+  <span> • 167 words</span>
   <span> • 1 minute read</span>
   
   
@@ -92,11 +92,18 @@
 <h3 id="how-to-install-flypyschema">How to install flypy.schema</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S rime-flypy
 </span></span></code></pre></div><h3 id="relevant-config-files">relevant config files</h3>
-<ul>
-<li><code>~/.local/share/fcitx5/rime/default.custom.yaml</code></li>
-<li><code>~/.local/share/fcitx5/rime/build/flypy.schema.yaml</code>
-I make my own configuration in <code>default.custom.yaml</code>,because it can cover  corresponding config in schemas.</li>
-</ul>
+<p>In Rime input method, configuration files are typically loaded in a certain order, where later configurations can override earlier ones. Specifically:</p>
+<ol>
+<li>
+<p>Global Configuration (e.g., <code>/usr/share/rime-data/default.yaml</code>): This is the default global configuration of the Rime input method. It defines the basic behavior and default settings of the input method.</p>
+</li>
+<li>
+<p>Input Scheme Configuration (e.g., <code>/usr/share/rime-data/flypy.schema.yaml</code>): These configuration files are tailored for specific input schemes. For example, flypy.schema.yaml is a configuration file for the Xiaoehe input scheme (Flypy). These configurations usually override the corresponding settings in the global configuration.</p>
+</li>
+<li>
+<p>User Custom Configuration (e.g., <code>~/.local/share/fcitx5/rime/default.custom.yaml</code>): Users can place their own custom configurations here. This file is typically used to override settings defined in the global configuration or input scheme configuration. The user&rsquo;s custom configuration has the highest priority, and it will override corresponding settings in the other two types of configuration files.</p>
+</li>
+</ol>
 <h3 id="my-own-custom">My own custom</h3>
 <p>see <a href="https://github.com/ponyofshadows/backup.custom/blob/master/home_root/.local/share/fcitx5/rime/default.custom.yaml">this page</a></p>
 </div>
