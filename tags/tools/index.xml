@@ -6,8 +6,15 @@
     <description>Recent content in tools on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Jan 2024 09:30:05 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2024 11:45:26 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>wechat</title>
+      <link>https://ponyofshadows.com/posts/wechat/</link>
+      <pubDate>Sun, 14 Jan 2024 11:45:26 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/wechat/</guid>
+      <description>try wine-wechat-setup (CNRepo) ==&amp;gt; WeChat data will be put into ~/.local/lib/wine-wechat when needed. ==&amp;gt; You need to download WeChat setup program yourself. ==&amp;gt; run &amp;#39;wechat -i path/to/WeChatSetup.exe&amp;#39; to install / update. ==&amp;gt; run &amp;#39;wechat --config&amp;#39; if you want to adjust DPI settings. </description>
+    </item>
     <item>
       <title>rime custom</title>
       <link>https://ponyofshadows.com/posts/rime_custom/</link>
