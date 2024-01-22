@@ -44,16 +44,37 @@ a:active {
 h1,h2,h3 {
   line-height: 1.2;
 }
-p > code {
-  color: var(--precolor);
-  background: var(--prebgcolor);
-  padding: 2px;
+/* 调整行内代码样式 */
+/* 基本样式，适用于所有模式 */
+p > code, pre {
+  padding: 0.2em 0.4em; /* 增加内边距 */
+  border-radius: 4px; /* 轻微的圆角 */
+  font-size: 1.1em; /* 稍微增大字体大小 */
+  overflow-x: auto; /* 为代码块添加水平滚动 */
 }
-pre {
-  color: var(--precolor);
-  background: var(--prebgcolor);
-  padding: 24px;
-  overflow-x: auto;
+
+/* 亮模式 */
+@media (prefers-color-scheme: light) {
+  p > code {
+    background: rgba(0, 0, 0, 0.1);
+    color: black; /* 文字颜色 */
+  }
+  pre {
+    background: rgba(0, 0, 0, 0.1);
+    color: black; /* 文字颜色 */
+  }
+}
+
+/* 暗模式 */
+@media (prefers-color-scheme: dark) {
+  p > code {
+    background: rgba(210, 180, 140, 0.1);
+    color: white; /* 文字颜色 */
+  }
+  pre {
+    background: rgba(210, 180, 140, 0.1);
+    color: white; /* 文字颜色 */
+  }
 }
 article {
   padding: 5px 0;
@@ -66,7 +87,7 @@ article {
 }
 img {
   display: block;
-  max-width: 100%;
+  max-width: 64%;
   height: auto;
 }
 figcaption {
@@ -77,3 +98,63 @@ figcaption {
 figure {
   margin: auto;
 }
+
+/* 块引用 */
+/* 通用样式 */
+blockquote {
+  border-left: 4px solid #ccc; /* 边框样式 */
+  margin: 1em 0; /* 外边距 */
+  padding: 0.5em 1em; /* 内边距 */
+  background: #f9f9f9; /* 背景色 */
+  color: #333; /* 文字颜色 */
+}
+/* 明亮模式 */
+@media (prefers-color-scheme: light) {
+  blockquote {
+    border-left-color: #blue; /* 明亮模式下的边框颜色 */
+    background: #e9ecef; /* 明亮模式下的背景色 */
+    color: #212529; /* 明亮模式下的文字颜色 */
+  }
+}
+/* 黑暗模式 */
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    border-left-color: #yellow; /* 黑暗模式下的边框颜色 */
+    background: #343a40; /* 黑暗模式下的背景色 */
+    color: #f8f9fa; /* 黑暗模式下的文字颜色 */
+  }
+}
+
+/* 表格 */
+/* 通用表格样式 */
+table {
+  border-collapse: collapse; /* 紧凑边框 */
+  width: 100%; /* 表格宽度占满容器 */
+  margin-bottom: 1em; /* 底部外边距 */
+}
+table th,
+table td {
+  border: 1px solid #666; /* 较深的边框颜色 */
+  padding: 8px; /* 单元格内边距 */
+  text-align: left; /* 文字左对齐 */
+}
+/* 明亮模式 */
+@media (prefers-color-scheme: light) {
+  table th {
+    background-color: #f8f9fa; /* 浅色背景 */
+  }
+  table td {
+    background-color: #fff; /* 白色背景 */
+  }
+}
+/* 黑暗模式 */
+@media (prefers-color-scheme: dark) {
+  table th {
+    background-color: #333; /* 深色背景 */
+  }
+  table td {
+    background-color: #222; /* 更深的背景色 */
+  }
+}
+
+

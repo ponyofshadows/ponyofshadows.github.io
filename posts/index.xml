@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 Jan 2024 21:24:27 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jan 2024 09:29:21 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>markdown style test</title>
+      <link>https://ponyofshadows.com/posts/test/markdown_style_test/</link>
+      <pubDate>Mon, 22 Jan 2024 09:29:21 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/test/markdown_style_test/</guid>
+      <description>H1 H2 H3 H4 H5 H6 inline code&#xA;# code test print(&amp;#34;Hello, World!&amp;#34;) block quotes&#xA;test&#xA;list0 list0 list1 list1 font: Bold Italic Bold and Italic&#xA;URL&#xA;Image: Scale with short code: Table&#xA;factors a b f1 Y N f2 Y N </description>
+    </item>
     <item>
       <title>oh-my-tmux</title>
       <link>https://ponyofshadows.com/posts/oh-my-tmux/</link>
