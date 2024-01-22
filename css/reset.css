@@ -44,6 +44,7 @@ a:active {
 h1,h2,h3 {
   line-height: 1.2;
 }
+
 /* 调整行内代码样式 */
 /* 基本样式，适用于所有模式 */
 p > code, pre {
@@ -87,7 +88,7 @@ article {
 }
 img {
   display: block;
-  max-width: 64%;
+  max-width: 100%;
   height: auto;
 }
 figcaption {
@@ -158,3 +159,10 @@ table td {
 }
 
 
+/* summary */
+.content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
