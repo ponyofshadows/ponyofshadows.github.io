@@ -9,7 +9,7 @@
   />
   
     
-      <title>tools | Pony of Shadows</title>
+      <title>rime custom | Pony of Shadows</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -65,92 +65,49 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: tools</h1>
+  <main>
+    <article>
+      <h1 class="title">rime custom</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-13</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Jan 26
-        </div>
-        <div class="title">
-          <a href="/posts/tools/luasnip_on_latex/">LuaSnip on LaTex</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 19
-        </div>
-        <div class="title">
-          <a href="/posts/tools/oh-my-tmux/">oh-my-tmux</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 13
-        </div>
-        <div class="title">
-          <a href="/posts/tools/rime_custom/">rime custom</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 12
-        </div>
-        <div class="title">
-          <a href="/posts/tools/using_git_for_version_control/">Using git for version control</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 12
-        </div>
-        <div class="title">
-          <a href="/posts/tools/git-lfs/">git-lfs</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 11
-        </div>
-        <div class="title">
-          <a href="/posts/tools/papis/">papis</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 9
-        </div>
-        <div class="title">
-          <a href="/posts/tools/install_mathematica/">Install Mathematica</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 167 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
 
-  <h3>2023</h3>
-  <ul id="postsByDate">
-    
-      <li>
-        <div class="date">
-          Dec 30
-        </div>
-        <div class="title">
-          <a href="/posts/system/pacman/">pacman</a>
-        </div>
-      </li>
-    
-  </ul>
-
-
+      <div class="content"><p>I use <code>fcitx5</code> + <code>rime</code> + <code>flypy.schema.yaml</code> as my Chinese character input system.</p>
+<h3 id="how-to-install-flypyschema">How to install flypy.schema</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S rime-flypy
+</span></span></code></pre></div><h3 id="relevant-config-files">relevant config files</h3>
+<p>In Rime input method, configuration files are typically loaded in a certain order, where later configurations can override earlier ones. Specifically:</p>
+<ol>
+<li>
+<p>Global Configuration (e.g., <code>/usr/share/rime-data/default.yaml</code>): This is the default global configuration of the Rime input method. It defines the basic behavior and default settings of the input method.</p>
+</li>
+<li>
+<p>Input Scheme Configuration (e.g., <code>/usr/share/rime-data/flypy.schema.yaml</code>): These configuration files are tailored for specific input schemes. For example, flypy.schema.yaml is a configuration file for the Xiaoehe input scheme (Flypy). These configurations usually override the corresponding settings in the global configuration.</p>
+</li>
+<li>
+<p>User Custom Configuration (e.g., <code>~/.local/share/fcitx5/rime/default.custom.yaml</code>): Users can place their own custom configurations here. This file is typically used to override settings defined in the global configuration or input scheme configuration. The user&rsquo;s custom configuration has the highest priority, and it will override corresponding settings in the other two types of configuration files.</p>
+</li>
+</ol>
+<h3 id="my-own-custom">My own custom</h3>
+<p>see <a href="https://github.com/ponyofshadows/backup.custom/blob/master/home_root/.local/share/fcitx5/rime/default.custom.yaml">this page</a></p>
+</div>
+    </article>
   </main>
 
       </div>

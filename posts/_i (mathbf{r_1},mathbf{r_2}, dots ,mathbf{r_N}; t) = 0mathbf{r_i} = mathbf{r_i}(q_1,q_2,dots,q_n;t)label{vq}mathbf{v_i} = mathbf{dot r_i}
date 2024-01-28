@@ -1,0 +1,149 @@
+\documentclass{article}
+\title{From d'Alenbert to Lagrangian}
+\date{}
+
+% packages
+\usepackage{amsmath}
+%
+
+\begin{document}
+\maketitle
+
+\section{Invariance of d'Alenbert's princple}
+We suppose that d'Alenbert's princple is right and its form remains unchanged in coordinates transfrom. 
+
+d'Alenbert's princple:
+\begin{equation}\label{d'Alenbert}
+\sum_{i=1}^{N} (F_i - \dot p_i) \delta q_i = 0
+\end{equation}
+
+coordinates transfrom in configuration space $q_i \rightarrow q'_k$
+\begin{align}
+  q_i = s_i(q'_1, q'_2, \dots, q'_n)\\ 
+  \delta q_i = \sum_{k=1}^{n} \frac{\partial q_i}{\partial q'_k} \delta q'_k  
+\end{align}
+In the above formula, $s$ represents the coordinate transfromation relationship that is independent of time. In the case of non-holonomic system, velocity also needs to be considered.
+
+The point is to change all $\sum\delta q_i$ to $\sum\delta q'_i$ in eq.\ref{d'Alenbert}.
+
+\begin{equation}
+  \sum_{i=1}^N G_i \delta q_i 
+  =
+  \sum_{i=1}^N G_i \sum_{k=1}^n \frac{\partial q_i}{\partial q'_k} \delta q'_k
+  =
+  \sum_{k=1}^n\sum_{i=1}^N G_i \frac{\partial q_i}{\partial q'_k} \delta q'_k  
+\end{equation}  
+
+let $G'_k$ be 
+\begin{equation}\label{Invariance1}
+  G'_k = \sum_{i=1}^N G_i \frac{\partial q_i}{\partial q'_k} 
+\end{equation}
+
+so
+\begin{equation}\label{Invariance2}
+  \sum_{i=1}^N G_i \delta q_i
+  =\sum_{k=1}^n G_k \delta q_k
+\end{equation}
+
+so
+\begin{equation}
+\sum_{i=1}^{N} (F_i - \dot p_i) \delta q_i = 0
+\iff
+\sum_{k=1}^{N} (F'_k - \dot p'_k) \delta q'_k = 0
+\end{equation}
+
+\section{from d'Alenbert to Lagrangian}
+Now let us turn attention to real track.
+
+Consider a 3D mechanical system composed of $N$ particles subject to $M$ holonomic constraints. Degrees of freedom $n=3N-M$. We can use $n$ independent generalized coordinates and time to describe a track in configuration space.
+\begin{align}
+  f_i (\mathbf{r_1},\mathbf{r_2}, \dots ,\mathbf{r_N}; t) = 0
+  \\
+  \mathbf{r_i} = \mathbf{r_i}(q_1,q_2,\dots,q_n;t)
+  \\
+  \label{vq}
+  \mathbf{v_i} = \mathbf{\dot r_i}
+  =\sum_{k=1}^n \frac{\partial \mathbf{r_i}}{\partial q_k} \dot q_k + \frac{\partial \mathbf{r_i}}{\partial t} 
+  \\
+  i = 1,2,\dots,N \nonumber
+\end{align}
+
+$\mathbf{\r}$ must subject to d'Alenbert's equation,
+\begin{equation}\label{dlbe}
+  \sum_{i=i}^N (\mathbf{F_i}-\mathbf{\dot p_i})\cdot\delta\mathbf{r_i} = 0
+\end{equation}
+
+As the same of eq.\ref{Invariance1} and eq.\ref{Invariance2},
+\begin{align}
+  \sum_{i=1}^N \mathbf{F_i} \cdot\delta\mathbf{r_i}
+  = \sum_{k=1}^n F'_k \delta q_k
+  \\
+  F'_k = \sum_{i=1}^N \mathbf{F_i}
+  \cdot\frac{\partial\mathbf{r_i}}{\partial q_k}
+  \\
+  \sum_{i=1}^N \mathbf{\dot p_i} \cdot\delta\mathbf{r_i}
+  = \sum_{k=1}^n \dot p'_k \delta q_k
+  \\
+  \label{p}
+  \dot p'_k = \sum_{i=1}^n \mathbf{\dot p_i}
+  \cdot\frac{\partial\mathbf{r_i}}{\partial q_k}
+\end{align}
+
+Take more disscussion on eq.\ref{p}.
+\begin{equation}\label{dotp'k}
+  \dot p'_k 
+  =\sum_{i=1}^N m_i\mathbf{\dot v_i}
+  \cdot\frac{\partial\mathbf{r_i}}{\partial q_k} 
+  =\sum_{i=1}^N [
+    \frac{\mathrm{d}}{\mathrm{d}t}(m_i\mathbf{v_i}\cdot\frac{\partial \mathbf{r_i}}{\partial q_k})
+  - m_i\mathbf{v_i}\cdot\frac{\mathrm{d}}{\mathrm{d}t}(\frac{\partial\mathbf{r_i}}{\partial q_k})
+  ]
+\end{equation}
+
+Reasonably exchange the order of derivative. It should be noted that the terms of $\dot q_l$ can't be deleted although they equal zero. 
+\begin{equation}
+  \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\partial\mathbf{r_i}}{\partial q_k})
+  = \sum_{l=1}^n \frac{\partial}{\partial q_l} (\frac{\partial \mathbf{r_i}}{\partial q_k})\dot q_l
+  + \frac{\partial}{\partial t}(\frac{\partial \mathbf{r_l}}{\partial q_k})
+  = \frac{\partial}{\partial q_k}(\sum_{l=1}^n \frac{\partial\mathbf{r_i}}{\partial q_l}\dot q_l + \frac{\partial \mathbf{r_i}}{\partial t})
+  = \frac{\partial\mathbf{v_i}}{\partial q_k}
+\end{equation}
+
+From eq.\ref{vq} we can derive a puzzling conclusion. Maybe we should think of $\dot q$ as the highest order infinitestimal.
+\begin{equation}
+  \frac{\partial\mathbf{v_i}}{\partial \dot q_k}
+  =
+  \frac{\partial\mathbf{r_i}}{q_k}
+\end{equation}
+So eq.\ref{dotp'k} becomes
+\begin{multline}
+  \dot p'_k
+  =\sum_{i=1}^N [
+    \frac{\mathrm{d}}{\mathrm{d}t}(m_i\mathbf{v_i}\cdot\frac{\partial \mathbf{v_i}}{\partial\dot q_k})
+  - m_i\mathbf{v_i}\cdot\frac{\partial\mathbf{v_i}}{\partial q_k}
+  ]
+  = \sum_{i=1}^N \{ 
+  \frac{\mathrm{d}}{\mathrm{d} t}[\frac{\partial}{\partial\dot q_k}(\frac 1 2 m_iv_i^2)]
+  - \frac{\partial}{\partial q_k}(\frac 1 2 m_iv_i^2)
+  \}
+  \\
+  = \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\partial T}{\partial\dot q_k}) - \frac{\partial T}{\partial q_k}
+\end{multline}
+where
+\begin{equation}
+  T = \frac 1 2\sum_{i=1}^N m_iv_i^2
+\end{equation}
+so eq.\ref{dlbe} becomes
+\begin{equation}
+  \sum_{k=n}^n [
+  F'_k - \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\partial T}{\partial\dot q_k}) + \frac{\partial T}{\partial q_k}
+]\delta q_k = 0
+\end{equation}
+$\delta q$s are arbitrary, so
+\begin{equation}
+   \frac{\mathrm{d}}{\mathrm{d}t}(\frac{\partial T}{\partial\dot q_k}) - \frac{\partial T}{\partial q_k} 
+   = F'_k
+   \qquad k=1,2,\dots,n
+\end{equation}
+\end{document}
+
