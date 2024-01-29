@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jan 2024 10:59:14 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jan 2024 09:18:28 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>grub</title>
+      <link>https://ponyofshadows.com/posts/linux/grub/</link>
+      <pubDate>Mon, 29 Jan 2024 09:18:28 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/grub/</guid>
+      <description>Installation pacman -S grub efibootmgr grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB user configuration file path: /etc/default/grub default kernel # When you manually choose a different entry, that becomes the new default. GRUB_SAVEDEFAULT=true GRUB_DEFAULT=saved Generate the main configuration file grub-mkconfig -o /boot/grub/grub.cfg </description>
+    </item>
     <item>
       <title>LuaSnip on LaTex</title>
       <link>https://ponyofshadows.com/posts/tools/luasnip_on_latex/</link>
@@ -80,16 +87,16 @@
     </item>
     <item>
       <title>pacman</title>
-      <link>https://ponyofshadows.com/posts/system/pacman/</link>
+      <link>https://ponyofshadows.com/posts/linux/pacman/</link>
       <pubDate>Sat, 30 Dec 2023 15:31:38 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/system/pacman/</guid>
+      <guid>https://ponyofshadows.com/posts/linux/pacman/</guid>
       <description>1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6.</description>
     </item>
     <item>
       <title>Wayland</title>
-      <link>https://ponyofshadows.com/posts/system/wayland/</link>
+      <link>https://ponyofshadows.com/posts/linux/wayland/</link>
       <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/system/wayland/</guid>
+      <guid>https://ponyofshadows.com/posts/linux/wayland/</guid>
       <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # some necessery packages for desktop softwares to run normally sudo pacman -S xdg-desktop-portal xdg-desktop-portal-wlr # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
     </item>
     <item>

@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ponyofshadows.com/posts/linux/grub/</loc>
+    <lastmod>2024-01-29T09:18:28+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/linux/</loc>
+    <lastmod>2024-01-29T09:18:28+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/</loc>
+    <lastmod>2024-01-29T09:18:28+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/</loc>
+    <lastmod>2024-01-29T09:18:28+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2024-01-29T09:18:28+08:00</lastmod>
+  </url><url>
     <loc>https://ponyofshadows.com/tags/latex/</loc>
     <lastmod>2024-01-26T10:59:14+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/tools/luasnip_on_latex/</loc>
-    <lastmod>2024-01-26T10:59:14+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2024-01-26T10:59:14+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/posts/</loc>
-    <lastmod>2024-01-26T10:59:14+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/tags/</loc>
     <lastmod>2024-01-26T10:59:14+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/tools/</loc>
@@ -25,9 +31,6 @@
   </url><url>
     <loc>https://ponyofshadows.com/tags/test/</loc>
     <lastmod>2024-01-22T09:29:21+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/tags/linux/</loc>
-    <lastmod>2024-01-19T21:24:27+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/tools/oh-my-tmux/</loc>
     <lastmod>2024-01-19T21:24:27+08:00</lastmod>
@@ -59,13 +62,13 @@
     <loc>https://ponyofshadows.com/tags/python/</loc>
     <lastmod>2023-12-30T21:32:25+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/posts/system/pacman/</loc>
+    <loc>https://ponyofshadows.com/posts/linux/pacman/</loc>
     <lastmod>2023-12-30T15:31:38+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/desktop/</loc>
     <lastmod>2023-12-28T21:48:48+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/posts/system/wayland/</loc>
+    <loc>https://ponyofshadows.com/posts/linux/wayland/</loc>
     <lastmod>2023-12-28T21:48:48+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/tools/hugo/</loc>

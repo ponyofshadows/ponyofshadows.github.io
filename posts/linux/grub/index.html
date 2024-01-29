@@ -9,7 +9,7 @@
   />
   
     
-      <title>desktop | Pony of Shadows</title>
+      <title>grub | Pony of Shadows</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -65,24 +65,44 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: desktop</h1>
+  <main>
+    <article>
+      <h1 class="title">grub</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-29</time>
     
-  <h3>2023</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/linux/wayland/">Wayland</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 39 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
 
-
+      <div class="content"><h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S grub efibootmgr
+</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/efi --bootloader-id<span style="color:#f92672">=</span>GRUB
+</span></span></code></pre></div><h2 id="user-configuration-file">user configuration file</h2>
+<ul>
+<li>path: <code>/etc/default/grub</code></li>
+<li>default kernel</li>
+</ul>
+<pre tabindex="0"><code>#  When you manually choose a different entry, that becomes the new default.
+GRUB_SAVEDEFAULT=true
+GRUB_DEFAULT=saved
+</code></pre><h2 id="generate-the-main-configuration-file">Generate the main configuration file</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div></div>
+    </article>
   </main>
 
       </div>
