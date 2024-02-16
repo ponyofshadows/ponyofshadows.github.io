@@ -160,7 +160,7 @@ table td {
 
 
 /* summary */
-.content p {
+.home-page .content p {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 8;
