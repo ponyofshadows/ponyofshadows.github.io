@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/test/markdown_style_test/</link>
       <pubDate>Mon, 22 Jan 2024 09:29:21 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/test/markdown_style_test/</guid>
-      <description>H1 H2 H3 H4 H5 H6 inline code&#xA;# code test print(&amp;#34;Hello, World!&amp;#34;) block quotes&#xA;test&#xA;list0 list0 list1 list1 font: Bold Italic Bold and Italic&#xA;URL&#xA;Image: Scale with short code: Table&#xA;factors a b f1 Y N f2 Y N </description>
+      <description>H1 H2 H3 H4 H5 H6 inline code&#xA;# code test print(&amp;#34;Hello, World!&amp;#34;) block quotes&#xA;test&#xA;list0 list0 list1 list1 font: Bold Italic Bold and Italic&#xA;URL&#xA;Image:&#xA;![Pinkie Pie with a crown](/pinkie.png) Scale with short code: {{ &amp;lt; figure src=&amp;quot;/pinkie.png&amp;quot; width=&amp;quot;300&amp;quot; &amp;gt; }}&#xA;Table&#xA;factors a b f1 Y N f2 Y N </description>
     </item>
   </channel>
 </rss>
