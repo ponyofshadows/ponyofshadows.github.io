@@ -67,6 +67,52 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">
+    <h1 class="title">oh-my-tmux</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-19</time>
+    
+    
+  </strong>
+ <span> • 472 words</span>
+ <span> • 3 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>Offical Pages tmux oh-my-tmux Shorcuts ponyofshadows@equestria ~&gt; grep &#34;^bind&#34; .config/tmux/tmux.conf bind C-a send-prefix -2 bind e new-window -n &#34;#{TMUX_CONF_LOCAL}&#34; -e &#34;EDITOR=$EDITOR&#34; sh -c &#39;case &#34;${EDITOR:-vim}&#34; in *vim) ${EDITOR:-vim} -c &#34;:set syntax=tmux&#34; &#34;$TMUX_CONF_LOCAL&#34;;; *) &#34;$EDITOR&#34; &#34;$TMUX_CONF_LOCAL&#34;;; esac &amp;&amp; &#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34; \; display &#34;$TMUX_CONF_LOCAL sourced&#34;&#39; bind r run &#39;&#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34;&#39; \; display &#34;#{TMUX_CONF} sourced&#34; bind -n C-l send-keys C-l \; run &#39;sleep 0.2&#39; \; clear-history bind C-c new-session bind C-f command-prompt -p find-session &#39;switch-client -t %%&#39; bind BTab switch-client -l # move to last session bind - split-window -v bind _ split-window -h bind -r h select-pane -L # move left bind -r j select-pane -D # move down bind -r k select-pane -U # move up bind -r l select-pane -R # move right bind &gt; swap-pane -D # swap current pane with the next one bind &lt; swap-pane -U # swap current pane with the previous one bind + run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _maximize_pane &#39;#{session_name}&#39; &#39;#D&#39;&#34; bind -r H resize-pane -L 2 bind -r J resize-pane -D 2 bind -r K resize-pane -U 2 bind -r L resize-pane -R 2 bind -r C-h previous-window # select previous window bind -r C-l next-window # select next window bind Tab last-window # move to last active window bind m run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _toggle_mouse&#34; bind U run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _urlview &#39;#{pane_id}&#39;&#34; bind F run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _fpp &#39;#{pane_id}&#39; &#39;#{pane_current_path}&#39;&#34; bind Enter copy-mode # enter copy mode bind -T copy-mode-vi v send -X begin-selection bind -T copy-mode-vi C-v send -X rectangle-toggle bind -T copy-mode-vi y send -X copy-selection-and-cancel bind -T copy-mode-vi Escape send -X cancel bind -T copy-mode-vi H send -X start-of-line bind -T copy-mode-vi L send -X end-of-line bind b list-buffers # list paste buffers bind p paste-buffer -p # paste from the top paste buffer bind P choose-buffer # choose which buffer to paste from C-a e open tmux.</p>
+    
+      <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">Read more...</a>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/tools/rime_custom/">
     <h1 class="title">rime custom</h1>
     
@@ -475,59 +521,13 @@ Ref papis docs </p>
 </article>
 
 		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/hugo/">
-    <h1 class="title">hugo</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2023-12-28</time>
-    
-    
-  </strong>
- <span> • 161 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>, 
-        <a href="/tags/website">website</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>main paths mywebsite/archetype documents under this path act as templates to write articles and columns of the website. By default, hugo only displays articles under &ldquo;mywebsite/content/posts&rdquo; To costum the display of columns, config like this: [params] mainSections = [&#34;posts&#34;, &#34;blog&#34;, &#34;news&#34;] mywebsite/content This path is where all original articles and resources are organized.
-mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.
-main commands hugo new archetype/new_content.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/hugo/">Read more...</a>
-    
-  </div>
-</article>
-
-		
 		<div>
   
     <a href="/">Previous Page</a>
   
-  2 of 2
+  2 of 3
+  
+    <a href="/page/3/">Next Page</a>
   
 </div>
 
