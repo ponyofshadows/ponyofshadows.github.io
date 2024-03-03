@@ -9,7 +9,7 @@
   />
   
     
-      <title>Linux | Pony of Shadows</title>
+      <title>Avoid Running out of System Space | Pony of Shadows</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -62,101 +62,42 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: Linux</h1>
+  <main>
+    <article>
+      <h1 class="title">Avoid Running out of System Space</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-03-03</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Mar 3
-        </div>
-        <div class="title">
-          <a href="/posts/linux/avoid_running_out_of_system_space/">Avoid Running out of System Space</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 29
-        </div>
-        <div class="title">
-          <a href="/posts/linux/grub/">grub</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 19
-        </div>
-        <div class="title">
-          <a href="/posts/tools/oh-my-tmux/">oh-my-tmux</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 10
-        </div>
-        <div class="title">
-          <a href="/posts/bugs/avoid_firefox_crashing_on_sway/">Avoid firefox crashing on sway</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 9
-        </div>
-        <div class="title">
-          <a href="/posts/tools/install_mathematica/">Install Mathematica</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 25 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
 
-  <h3>2023</h3>
-  <ul id="postsByDate">
-    
-      <li>
-        <div class="date">
-          Dec 30
-        </div>
-        <div class="title">
-          <a href="/posts/code/frist_step_of_python_project_in_archlinux/">Frist Step of Python Project in ArchLinux</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 30
-        </div>
-        <div class="title">
-          <a href="/posts/linux/pacman/">pacman</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/linux/wayland/">Wayland</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Dec 28
-        </div>
-        <div class="title">
-          <a href="/posts/tools/hugo/">hugo</a>
-        </div>
-      </li>
-    
-  </ul>
-
-
+      <div class="content"><h2 id="check">Check</h2>
+<ul>
+<li>space usage of top pathes</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo du -sh /* | sort -h
+</span></span></code></pre></div><ul>
+<li>how much remain</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h /
+</span></span></code></pre></div><h2 id="clear-cache-regularly">Clear cache regularly</h2>
+<pre tabindex="0"><code>sudo pacman -Sc
+</code></pre></div>
+    </article>
   </main>
 
       </div>

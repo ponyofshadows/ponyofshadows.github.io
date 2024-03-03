@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 24 Feb 2024 11:53:52 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 21:45:58 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Avoid Running out of System Space</title>
+      <link>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</link>
+      <pubDate>Sun, 03 Mar 2024 21:45:58 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</guid>
+      <description>Check space usage of top pathes sudo du -sh /* | sort -h how much remain df -h / Clear cache regularly sudo pacman -Sc </description>
+    </item>
     <item>
       <title>草台班子理论与系统工程</title>
       <link>https://ponyofshadows.com/posts/diary/%E8%8D%89%E5%8F%B0%E7%8F%AD%E5%AD%90%E7%90%86%E8%AE%BA%E4%B8%8E%E7%B3%BB%E7%BB%9F%E5%B7%A5%E7%A8%8B/</link>

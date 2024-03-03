@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 29 Jan 2024 09:18:28 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 21:45:58 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Avoid Running out of System Space</title>
+      <link>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</link>
+      <pubDate>Sun, 03 Mar 2024 21:45:58 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</guid>
+      <description>Check space usage of top pathes sudo du -sh /* | sort -h how much remain df -h / Clear cache regularly sudo pacman -Sc </description>
+    </item>
     <item>
       <title>grub</title>
       <link>https://ponyofshadows.com/posts/linux/grub/</link>
