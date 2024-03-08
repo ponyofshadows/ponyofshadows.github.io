@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</link>
       <pubDate>Sun, 03 Mar 2024 21:45:58 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</guid>
-      <description>Check space usage of top pathes sudo du -sh /* | sort -h how much remain df -h / Clear cache regularly sudo pacman -Sc </description>
+      <description>Check space usage of top pathes sudo du -sh /* | sort -h how much remain df -h / Clear cache regularly sudo pacman -Sc Remove packages that are no longer dependent on them # list pacman -Qdt # recursive uninstall sudo pacman -Rns $(pacman -Qdtq) </description>
     </item>
     <item>
       <title>草台班子理论与系统工程</title>
