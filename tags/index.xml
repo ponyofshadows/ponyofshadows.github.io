@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Pony of Shadows</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Mar 2024 21:45:58 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 16 Mar 2024 11:45:56 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Diary</title>
+      <link>https://ponyofshadows.com/tags/diary/</link>
+      <pubDate>Sat, 16 Mar 2024 11:45:56 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/diary/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bugs</title>
+      <link>https://ponyofshadows.com/tags/bugs/</link>
+      <pubDate>Sat, 16 Mar 2024 11:29:24 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/bugs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://ponyofshadows.com/tags/tools/</link>
+      <pubDate>Sat, 16 Mar 2024 11:29:24 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/tools/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Linux</title>
       <link>https://ponyofshadows.com/tags/linux/</link>
@@ -16,24 +37,10 @@
       <description></description>
     </item>
     <item>
-      <title>Diary</title>
-      <link>https://ponyofshadows.com/tags/diary/</link>
-      <pubDate>Sat, 24 Feb 2024 11:53:52 +0800</pubDate>
-      <guid>https://ponyofshadows.com/tags/diary/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Latex</title>
       <link>https://ponyofshadows.com/tags/latex/</link>
       <pubDate>Fri, 26 Jan 2024 10:59:14 +0800</pubDate>
       <guid>https://ponyofshadows.com/tags/latex/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tools</title>
-      <link>https://ponyofshadows.com/tags/tools/</link>
-      <pubDate>Fri, 26 Jan 2024 10:59:14 +0800</pubDate>
-      <guid>https://ponyofshadows.com/tags/tools/</guid>
       <description></description>
     </item>
     <item>
