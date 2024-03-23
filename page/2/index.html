@@ -67,189 +67,6 @@
 		
 		
 			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">
-    <h1 class="title">oh-my-tmux</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-19</time>
-    
-    
-  </strong>
- <span> • 472 words</span>
- <span> • 3 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>, 
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>Offical Pages tmux oh-my-tmux Shorcuts ponyofshadows@equestria ~&gt; grep &#34;^bind&#34; .config/tmux/tmux.conf bind C-a send-prefix -2 bind e new-window -n &#34;#{TMUX_CONF_LOCAL}&#34; -e &#34;EDITOR=$EDITOR&#34; sh -c &#39;case &#34;${EDITOR:-vim}&#34; in *vim) ${EDITOR:-vim} -c &#34;:set syntax=tmux&#34; &#34;$TMUX_CONF_LOCAL&#34;;; *) &#34;$EDITOR&#34; &#34;$TMUX_CONF_LOCAL&#34;;; esac &amp;&amp; &#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34; \; display &#34;$TMUX_CONF_LOCAL sourced&#34;&#39; bind r run &#39;&#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34;&#39; \; display &#34;#{TMUX_CONF} sourced&#34; bind -n C-l send-keys C-l \; run &#39;sleep 0.2&#39; \; clear-history bind C-c new-session bind C-f command-prompt -p find-session &#39;switch-client -t %%&#39; bind BTab switch-client -l # move to last session bind - split-window -v bind _ split-window -h bind -r h select-pane -L # move left bind -r j select-pane -D # move down bind -r k select-pane -U # move up bind -r l select-pane -R # move right bind &gt; swap-pane -D # swap current pane with the next one bind &lt; swap-pane -U # swap current pane with the previous one bind + run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _maximize_pane &#39;#{session_name}&#39; &#39;#D&#39;&#34; bind -r H resize-pane -L 2 bind -r J resize-pane -D 2 bind -r K resize-pane -U 2 bind -r L resize-pane -R 2 bind -r C-h previous-window # select previous window bind -r C-l next-window # select next window bind Tab last-window # move to last active window bind m run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _toggle_mouse&#34; bind U run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _urlview &#39;#{pane_id}&#39;&#34; bind F run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _fpp &#39;#{pane_id}&#39; &#39;#{pane_current_path}&#39;&#34; bind Enter copy-mode # enter copy mode bind -T copy-mode-vi v send -X begin-selection bind -T copy-mode-vi C-v send -X rectangle-toggle bind -T copy-mode-vi y send -X copy-selection-and-cancel bind -T copy-mode-vi Escape send -X cancel bind -T copy-mode-vi H send -X start-of-line bind -T copy-mode-vi L send -X end-of-line bind b list-buffers # list paste buffers bind p paste-buffer -p # paste from the top paste buffer bind P choose-buffer # choose which buffer to paste from C-a e open tmux.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">Read more...</a>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/rime_custom/">
-    <h1 class="title">rime custom</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-13</time>
-    
-    
-  </strong>
- <span> • 167 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>I use fcitx5 + rime + flypy.schema.yaml as my Chinese character input system.
-How to install flypy.schema yay -S rime-flypy relevant config files In Rime input method, configuration files are typically loaded in a certain order, where later configurations can override earlier ones. Specifically:
-Global Configuration (e.g., /usr/share/rime-data/default.yaml): This is the default global configuration of the Rime input method. It defines the basic behavior and default settings of the input method.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/rime_custom/">Read more...</a>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">
-    <h1 class="title">Using git for version control</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-12</time>
-    
-    
-  </strong>
- <span> • 251 words</span>
- <span> • 2 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you can follow these steps:
-Check Commit History First, you need to find the commit hash of the specific commit you want to switch to. This can be done by viewing the commit history on the specific branch using the git log command.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">Read more...</a>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/git-lfs/">
-    <h1 class="title">git-lfs</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-12</time>
-    
-    
-  </strong>
- <span> • 39 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>Install and Initialize sudo pacman -S git-lfs git lfs install Basic Usage see git-lfs.com
-How to track large files that have been added to the repository. git add --renormalize git commit -m &#34;Migrate existing large files to Git LFS&#34; </p>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
   <a href="https://ponyofshadows.com/posts/tools/papis/">
     <h1 class="title">papis</h1>
     
@@ -521,13 +338,59 @@ Ref papis docs </p>
 </article>
 
 		
+			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/tools/hugo/">
+    <h1 class="title">hugo</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2023-12-28</time>
+    
+    
+  </strong>
+ <span> • 161 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/website">website</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>main paths mywebsite/archetype documents under this path act as templates to write articles and columns of the website. By default, hugo only displays articles under &ldquo;mywebsite/content/posts&rdquo; To costum the display of columns, config like this: [params] mainSections = [&#34;posts&#34;, &#34;blog&#34;, &#34;news&#34;] mywebsite/content This path is where all original articles and resources are organized.
+mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.
+main commands hugo new archetype/new_content.</p>
+    
+      <a href="https://ponyofshadows.com/posts/tools/hugo/">Read more...</a>
+    
+  </div>
+</article>
+
+		
 		<div>
   
     <a href="/">Previous Page</a>
   
-  2 of 3
-  
-    <a href="/page/3/">Next Page</a>
+  2 of 2
   
 </div>
 
