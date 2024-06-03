@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/posts/</link>
+    <description>Recent content in Posts on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jun 2024 20:17:07 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>小学赚币规则第二版</title>
+      <link>https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E8%B5%9A%E5%B8%81%E8%A7%84%E5%88%99%E7%AC%AC%E4%BA%8C%E7%89%88/</link>
+      <pubDate>Sun, 02 Jun 2024 20:17:07 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E8%B5%9A%E5%B8%81%E8%A7%84%E5%88%99%E7%AC%AC%E4%BA%8C%E7%89%88/</guid>
+      <description>币制 每1个 铜币 可换取1分钟玩电子游戏的时间 1个 银币 等价于5个 铜币 1个 金币 等价于2个 银币 一切赚取游戏币的活动只能在每天21:45前进行 一般只能在放假时支付游戏币来游玩电子游戏。特别地，如果游戏币余额不低于20个金币，可以在学期内的星期五晚上玩电子游戏。 周的计算总是从星期一7:00开始，从星期天21:45结束 游戏币基本获取途径 英语 听写 ：每周每完成1篇中考英语阅读和1篇高考英语阅读(不包括完型填空)后，可以通过list背单词记忆英语单词，然后找妈妈听写。每次至少听写8个新学的单词，而且每听写多少个新学单词，就要再从最近听写过的单词中额外抽取多少个单词进行听写（复习的单词可以在听写时询问中文释义）。游戏币结算规则如下： 一次听写赚取的铜币数量 = 新学单词正确数量 - 新学单词错误数量 - 复习单词错误数量 额外挑战 ：每周完成3次听写后，解锁以下的英语相关挑战 在妈妈那里背出一篇新的英语课文。如果是初中课文奖励4个金币，如果是高中课文奖励5个金币（每周限1次机会） 完成一章语法练习，如果正确率在80%以上，奖励3个金币（每周限1次机会） 语文 小升初试卷 ： 每周有2次领取小升初语文试卷的机会，当天领取一张试卷并上交试卷和答案后，可以在第二天，由妈妈抽取30分的题目进行考察。游戏币结算规则为：每获得2分可赚取3个铜币。（游戏币在改正所有错题后发放） 素材积累 ：平时摘抄课外阅读的好词好句、或写读书笔记、游记和随笔等，都可以找妈妈评估领取游戏币, 如果字迹清晰、内容充实，约每300个字可赚2个铜币`。特别地，期末考试前一个月，老师布置的课内摘抄也可以用来申领游戏币。 数学 预习 : 新学一章中学数学，可用对应的试卷进行开卷考试，批改后结算游戏币（游戏币在改正所有错题后发放）： 只要成绩不低于100分（满分120分）或125分（满分150分），可获得3个金币，算作完成本章学习。 如果成绩低于100分但不低于90分（满分120分）或低于125分但不低于110分（满分150分），可获得1个金币，不算完成本章学习。 在完成一章的学习后，还可以在以下额外奖励中抽取一项： 直接获得1个金币 本周内下次写数学试卷，在判定分数时所有标准降低5分 本周内下次写小升初语文试卷时，抽取的分数由30分变为40分 本周通过小升初语文试卷赚币的机会增加1次 力量 如果能在1分钟内做不少于40个标准仰卧起坐，每周可额外领取1个金币 如果能在1分钟内做不少于20个标准俯卧撑，每周可额外领取1个金币 考试 在期中考试或期末考试中：&#xA;如果数学满分，奖励6个金币 如果语文不低于93分，奖励6个金币 如果英语满分，奖励1个金币 如果科学96分以上，奖励2个金币 如果道德与法治96分以上，奖励2个金币 其它 如果本周满足以下所有要求，额外奖励2个金币 至少完成了2次英语听写 写了至少1张语文小升初试卷 完成了至少1章的数学预习 在以下特殊日期赠送游戏币 生日，赠送2个金币 儿童节，赠送1个铜币 大年初一，赠送1个金币 国庆节，赠送1个金币 惩罚 如果因为赚币相关的事情生气，当天和下一天禁止赚游戏币 如果没有及时完成作业，当天和下一天禁止赚取游戏币 成就 每个成就只能取得1次。达成成就可获得括号内数量的金币奖励：</description>
+    </item>
+    <item>
+      <title>bash脚本中如何展开字符串包含的通配符</title>
+      <link>https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/</link>
+      <pubDate>Fri, 31 May 2024 09:02:33 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/</guid>
+      <description>一般的语句中，通配符在使用它的那一行展开，但被双引号包括时不会展开。 示例脚本1： #!/bin/bash ls ~/tmp/*a ls &amp;#34;~/tmp/*a&amp;#34; tmp_path=&amp;#34;~/tmp&amp;#34; string=&amp;#34;${tmp_path}/*a&amp;#34; echo &amp;#34;string=$string&amp;#34; ls $string 运行结果1： ponyofshadows@equestria ~/p/p/doc (master)&amp;gt; bash test_wildcard.sh /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a ls: cannot access &amp;#39;~/tmp/*a&amp;#39;: No such file or directory string=~/tmp/*a ls: cannot access &amp;#39;~/tmp/*a&amp;#39;: No such file or directory 示例脚本2: ls ~/tmp/*a echo &amp;#34;*** ()1 ***&amp;#34; tmp_path1=~/tmp string_list1=( ${tmp_path1}/*a ) ls &amp;#34;${string_list1[@]}&amp;#34; echo &amp;#34;*** ()2 ***&amp;#34; tmp_path2=&amp;#34;~/tmp&amp;#34; string_list2=( ${tmp_path2}/*a ) ls &amp;#34;${string_list2[@]}&amp;#34; 运行结果2: ponyofshadows@equestria ~/p/p/doc (master)&amp;gt; bash test_wildcard1.sh /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a *** ()1 *** /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a *** ()2 *** ls: cannot access &amp;#39;~/tmp/*a&amp;#39;: No such file or directory 使用eval展开字符串中的通配符 # eval 把字符串参数当作命令进行解释和执行 eval $cmd 代码示例 #!</description>
+    </item>
+    <item>
+      <title>数据存档01手动存档规范</title>
+      <link>https://ponyofshadows.com/posts/linux/%E6%95%B0%E6%8D%AE%E5%AD%98%E6%A1%A301%E6%89%8B%E5%8A%A8%E5%AD%98%E6%A1%A3%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Wed, 08 May 2024 10:10:18 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/%E6%95%B0%E6%8D%AE%E5%AD%98%E6%A1%A301%E6%89%8B%E5%8A%A8%E5%AD%98%E6%A1%A3%E8%A7%84%E8%8C%83/</guid>
+      <description>文件名讲清所有信息 list下路径命名规范 对于list下任意event, 仿照以下格式记录：&#xA;24050809开始记录事件@doc@new|0856 即：（如果是将要发生的事件前面加.）+2位年份+4位日期+2位模糊时间代号+事件标题（根据事件的语言环境选用中英文）+(如果包含一些事件属性，比如有关联的proj, 用@开头；有参考精确时间，用|开头)&#xA;proj下路径命名规范 对于project, 仿照下面的格式记录：&#xA;project_name1 .project_name2 ..project_name3 project_name只能用英语，且不能包含这些符号:@;|。 如果一个项目不再会使用，已经进入冷备份阶段，在前面加一个&amp;quot;.&amp;quot;， 如果一个冷备份项目要被彻底删除内容，在前面加个&amp;quot;..&amp;quot;&#xA;.bak下路径命名规范 给每个备份盘起名(必须用英文），并在.bak/下建立同名路径作为挂载点。 ls -l即可看出路径的最后改动时间，不需要额外记录。 在路径前加&amp;quot;.&amp;quot;, 则表示该盘已弃用。 各盘上次备份时间距今超过一周，则可以再备份一次。备份可以基于rsync这个强大的增量备份工具。 从project挑选文件到event的工作流程 event路径下的文件必须按照如下子路径规范存放： ab # 图片和视频 au # 音频 eb # 电子书及相应笔记 pp # 论文及相应笔记 nt # 独立笔记和各种随笔 dt # 实验或调查数据 cd # 代码、配置文件 ot # 其它 event附加的文件遵循的规范 来自project的文件使用硬链接，作为同一个文件，不额外占用空间、不受路径改名的影响。 不在任何event路径下运行任何代码 文件的命名充分表达有用信息。 project的版本控制 使用git进行版本控制。&#xA;对于非文本代码项目，可能需要只保存最新的几次提交 可以用变基的方法：&#xA;git log git rebase -i &amp;lt;第五个提交的哈希值&amp;gt;^ # 启用交互式变基，注意这里的 ^ 是指该提交的父提交。 # 在交互式界面中操作：Git 会展示一个列表，其中包括从指定的提交开始的所有后续提交。在这个界面里，可以选择删除（通过删除行或者使用 drop 命令）早于这五次提交的所有提交记录。 # 解决冲突后完成变基 git rebase --continue # 如果要推送到远程仓库，务必使用--force git push --force origin master 也可以更直接地用重置的方法，同样会改写提交历史：</description>
+    </item>
+    <item>
+      <title>fix pdf-export-error in wps</title>
+      <link>https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/</link>
+      <pubDate>Sat, 16 Mar 2024 11:29:24 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/</guid>
+      <description>WPS依赖libtiff.s.5, 而系统里的是libtiff.so.6。这样就行了。&#xA;cd /usr/lib ln -s libtiff.so libtiff.so.5 Reference WPS官方社区-Linux环境下不能输出PDF ArchWiki WPS-Office</description>
+    </item>
+    <item>
+      <title>Avoid Running out of System Space</title>
+      <link>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</link>
+      <pubDate>Sun, 03 Mar 2024 21:45:58 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/</guid>
+      <description>Check space usage of top pathes sudo du -sh /* | sort -h how much remain df -h / Clear cache regularly sudo pacman -Sc Remove packages that are no longer dependent on them # list pacman -Qdt # recursive uninstall sudo pacman -Rns $(pacman -Qdtq) </description>
+    </item>
+    <item>
+      <title>小学五年级的弟弟的电脑游戏规则</title>
+      <link>https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E4%BA%94%E5%B9%B4%E7%BA%A7%E7%9A%84%E5%BC%9F%E5%BC%9F%E7%9A%84%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/</link>
+      <pubDate>Tue, 20 Feb 2024 12:06:36 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E4%BA%94%E5%B9%B4%E7%BA%A7%E7%9A%84%E5%BC%9F%E5%BC%9F%E7%9A%84%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/</guid>
+      <description>基础规则和考试增益 消耗20个游戏币可以在假期玩1分钟电脑游戏。游戏币是实体硬币，其中： 1个绿宝石, 面值：2 1个海盗铜币, 面值：20 1个海盗银币, 面值：100 1个海盗金币, 面值：200 每个星期写完2篇英语阅读后，可以于每天21:40之前在妈妈那里听写单词(10个新学的和随机10个之前背过的)。只要是听写，每写对1个新学单词加20个游戏币，每写错1个任何单词扣除20个游戏币 每学懂1章初中数学，且做对应试卷的成绩有100分及以上（满分120分），可基础获得400个游戏币。如果没有100分以上，但有90分以上，可获得200个游戏币。在某一章没有获得过100分以上时可以申请重做一张新试卷，这时候如果获得100分以上奖励200个游戏币。某一章获得过一次100分以上，或者获得过2次90分以上后，就可以开始做下一章的试卷。 任何有完整题目的语文考试中，如果成绩93分及以上（满分100分），可固定获得500个游戏币奖励。 期中考试和期末考试中，若语文93分以上，科学97分以上，道法97分以上，分别获得持续一个月的“思想起源”(学初中数学、背初中单词、抽背语文小升初试卷变动游戏币数量加算20%)、“牛顿的祝福”(学初中数学赚取游戏币数量加算10%)、“莎士比亚的祝福”(背初中单词变动游戏币数量加算10%) 期中考试、期末考试数学或英语若获得满分，都可以获得一个抽卡券，通过抽卡能直接获得大量游戏币或获得大幅增益 获得500游戏币 （5%概率） 获得1000游戏币 （20%概率） 获得1500游戏币 （5%概率） 获得2000游戏币 （5%概率） 接下来一周学习初中数学和听写英语词汇游戏币变动数量加算 50% （25%概率） 接下来一周学习初中数学游戏币赚取数量加算 120% （20%概率） 接下来一周听写英语词汇游戏币变动数量加算 120% （20%概率） 生日当天系统赠送一个金币（200游戏币） 每周可以领取2次小升初语文试卷并记诵答案，然后上交试卷，24小时后，可以在妈妈那里抽查上交的语文试卷。从去除了作文的70分题目中抽取30分的题目进行提问。每答对1分获得15个游戏币。如果妈妈发现一周都没抽查语文试卷，可要求扣除一个银币（100游戏币） 语文摘抄本每增加一页，在妈妈签字后可以领取两个铜币 每次因为和游戏币相关的缘由动怒，就要扣除一个银币。 诅咒系统 开局自带永久诅咒“上帝之骰”，每周都无法自己选择玩的游戏，只能在我的世界、原神、求生之路2、艾尔登法环中随机抽取 开局自带永久诅咒“沉重枷锁”，每周最多只能玩40分钟电子游戏。 如果有超过1周没有听写单词，会获得诅咒“一忘皆空”，必须先听写30个记过的单词，才能开始在听写新单词中获得游戏币收益。 等级系统 初中数学有6个学期，初中英语词汇也分为6个部分。&#xA;初始等级是0。当初中数学学完某个学期，且初中英语单词也从开头背到相应的部分，就能升到对应的等级。比如数学学完七年级下册，词汇背完前两部分，就可以升到第2级。 升级时可以花费游戏币在技能树中点一个技能点。以下是不同级别的技能点花费的游戏币数量: 1级 1000个游戏币 2级 1000个游戏币 3级 2000个游戏币 4级 2000个游戏币 5级 4000个游戏币 6级 4000个游戏币 技能树 点完一个线路前面的技能才能点后面的技能：&#xA;自由市场→银行贷款→实业投资 纵情声色→卧薪尝胆→劳逸结合 [线路一]&#xA;自由市场: 移除“上帝之骰”诅咒，可以自由选择想玩的游戏。 银行贷款: 贷款2600游戏币，接下来两周(从周一开始)每天还款200游戏币。每个月最多只能发动一次。 实业投资: 花费800游戏币，接下来一周(从周一开始) 学初中数学、背单词、抽背语文试卷变动游戏币数量增加60%。每个月最多只能发动一次。 [线路二]&#xA;纵情声色: 移除“沉重枷锁”诅咒，假期最长游戏时间不再限制。 卧薪尝胆: 发动后下周(从周一开始)学习初中数学、背单词、抽背语文试卷游戏币变动数量增加40%，但是下周任何时候都不能玩电脑游戏，也无法使用手机娱乐。每个月最多只能发动一次 劳逸结合: 即使不是假期，也能消耗游戏币玩电脑游戏，但非假期每天游玩时间上限是40分钟。 </description>
+    </item>
+    <item>
+      <title>grub</title>
+      <link>https://ponyofshadows.com/posts/linux/grub/</link>
+      <pubDate>Mon, 29 Jan 2024 09:18:28 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/grub/</guid>
+      <description>Installation pacman -S grub efibootmgr grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB user configuration file path: /etc/default/grub default kernel # When you manually choose a different entry, that becomes the new default. GRUB_SAVEDEFAULT=true GRUB_DEFAULT=saved Generate the main configuration file grub-mkconfig -o /boot/grub/grub.cfg </description>
+    </item>
+    <item>
+      <title>LuaSnip on LaTex</title>
+      <link>https://ponyofshadows.com/posts/tools/luasnip_on_latex/</link>
+      <pubDate>Fri, 26 Jan 2024 10:59:14 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/luasnip_on_latex/</guid>
+      <description>Settings of Luasnip local ls = require(&amp;#34;luasnip&amp;#34;) ls.setup({ snip_env = { }, }) -- load snippets require(&amp;#34;luasnip.loaders.from_lua&amp;#34;).load({paths = &amp;#34;~/.config/nvim/snippets&amp;#34;}) Functions Find the section luasnip-snippets in luasnip.txt&#xA;Examples: snips on LaTex </description>
+    </item>
+    <item>
+      <title>markdown style test</title>
+      <link>https://ponyofshadows.com/posts/test/markdown_style_test/</link>
+      <pubDate>Mon, 22 Jan 2024 09:29:21 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/test/markdown_style_test/</guid>
+      <description>H1 H2 H3 H4 H5 H6 inline code&#xA;# code test print(&amp;#34;Hello, World!&amp;#34;) block quotes&#xA;test&#xA;list0 list0 list1 list1 font: Bold Italic Bold and Italic&#xA;URL&#xA;Image:&#xA;![Pinkie Pie with a crown](/pinkie.png) Scale with short code: {{ &amp;lt; figure src=&amp;quot;/pinkie.png&amp;quot; width=&amp;quot;300&amp;quot; &amp;gt; }}&#xA;Table&#xA;factors a b f1 Y N f2 Y N </description>
+    </item>
+    <item>
+      <title>oh-my-tmux</title>
+      <link>https://ponyofshadows.com/posts/tools/oh-my-tmux/</link>
+      <pubDate>Fri, 19 Jan 2024 21:24:27 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/oh-my-tmux/</guid>
+      <description>Offical Pages tmux oh-my-tmux Shorcuts ponyofshadows@equestria ~&amp;gt; grep &amp;#34;^bind&amp;#34; .config/tmux/tmux.conf bind C-a send-prefix -2 bind e new-window -n &amp;#34;#{TMUX_CONF_LOCAL}&amp;#34; -e &amp;#34;EDITOR=$EDITOR&amp;#34; sh -c &amp;#39;case &amp;#34;${EDITOR:-vim}&amp;#34; in *vim) ${EDITOR:-vim} -c &amp;#34;:set syntax=tmux&amp;#34; &amp;#34;$TMUX_CONF_LOCAL&amp;#34;;; *) &amp;#34;$EDITOR&amp;#34; &amp;#34;$TMUX_CONF_LOCAL&amp;#34;;; esac &amp;amp;&amp;amp; &amp;#34;$TMUX_PROGRAM&amp;#34; ${TMUX_SOCKET:+-S &amp;#34;$TMUX_SOCKET&amp;#34;} source &amp;#34;$TMUX_CONF&amp;#34; \; display &amp;#34;$TMUX_CONF_LOCAL sourced&amp;#34;&amp;#39; bind r run &amp;#39;&amp;#34;$TMUX_PROGRAM&amp;#34; ${TMUX_SOCKET:+-S &amp;#34;$TMUX_SOCKET&amp;#34;} source &amp;#34;$TMUX_CONF&amp;#34;&amp;#39; \; display &amp;#34;#{TMUX_CONF} sourced&amp;#34; bind -n C-l send-keys C-l \; run &amp;#39;sleep 0.2&amp;#39; \; clear-history bind C-c new-session bind C-f command-prompt -p find-session &amp;#39;switch-client -t %%&amp;#39; bind BTab switch-client -l # move to last session bind - split-window -v bind _ split-window -h bind -r h select-pane -L # move left bind -r j select-pane -D # move down bind -r k select-pane -U # move up bind -r l select-pane -R # move right bind &amp;gt; swap-pane -D # swap current pane with the next one bind &amp;lt; swap-pane -U # swap current pane with the previous one bind + run &amp;#34;cut -c3- &amp;#39;#{TMUX_CONF}&amp;#39; | sh -s _maximize_pane &amp;#39;#{session_name}&amp;#39; &amp;#39;#D&amp;#39;&amp;#34; bind -r H resize-pane -L 2 bind -r J resize-pane -D 2 bind -r K resize-pane -U 2 bind -r L resize-pane -R 2 bind -r C-h previous-window # select previous window bind -r C-l next-window # select next window bind Tab last-window # move to last active window bind m run &amp;#34;cut -c3- &amp;#39;#{TMUX_CONF}&amp;#39; | sh -s _toggle_mouse&amp;#34; bind U run &amp;#34;cut -c3- &amp;#39;#{TMUX_CONF}&amp;#39; | sh -s _urlview &amp;#39;#{pane_id}&amp;#39;&amp;#34; bind F run &amp;#34;cut -c3- &amp;#39;#{TMUX_CONF}&amp;#39; | sh -s _fpp &amp;#39;#{pane_id}&amp;#39; &amp;#39;#{pane_current_path}&amp;#39;&amp;#34; bind Enter copy-mode # enter copy mode bind -T copy-mode-vi v send -X begin-selection bind -T copy-mode-vi C-v send -X rectangle-toggle bind -T copy-mode-vi y send -X copy-selection-and-cancel bind -T copy-mode-vi Escape send -X cancel bind -T copy-mode-vi H send -X start-of-line bind -T copy-mode-vi L send -X end-of-line bind b list-buffers # list paste buffers bind p paste-buffer -p # paste from the top paste buffer bind P choose-buffer # choose which buffer to paste from C-a e open tmux.</description>
+    </item>
+    <item>
+      <title>rime custom</title>
+      <link>https://ponyofshadows.com/posts/tools/rime_custom/</link>
+      <pubDate>Sat, 13 Jan 2024 09:30:05 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/rime_custom/</guid>
+      <description>I use fcitx5 + rime + flypy.schema.yaml as my Chinese character input system.&#xA;How to install flypy.schema yay -S rime-flypy relevant config files In Rime input method, configuration files are typically loaded in a certain order, where later configurations can override earlier ones. Specifically:&#xA;Global Configuration (e.g., /usr/share/rime-data/default.yaml): This is the default global configuration of the Rime input method. It defines the basic behavior and default settings of the input method.</description>
+    </item>
+    <item>
+      <title>Using git for version control</title>
+      <link>https://ponyofshadows.com/posts/tools/using_git_for_version_control/</link>
+      <pubDate>Fri, 12 Jan 2024 22:52:12 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/using_git_for_version_control/</guid>
+      <description>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you can follow these steps:&#xA;Check Commit History First, you need to find the commit hash of the specific commit you want to switch to. This can be done by viewing the commit history on the specific branch using the git log command.</description>
+    </item>
+    <item>
+      <title>git-lfs</title>
+      <link>https://ponyofshadows.com/posts/tools/git-lfs/</link>
+      <pubDate>Fri, 12 Jan 2024 10:34:19 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/git-lfs/</guid>
+      <description>Install and Initialize sudo pacman -S git-lfs git lfs install Basic Usage see git-lfs.com&#xA;How to track large files that have been added to the repository. git add --renormalize git commit -m &amp;#34;Migrate existing large files to Git LFS&amp;#34; </description>
+    </item>
+    <item>
+      <title>papis</title>
+      <link>https://ponyofshadows.com/posts/tools/papis/</link>
+      <pubDate>Thu, 11 Jan 2024 23:24:55 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/papis/</guid>
+      <description>Example: add a paper to the default library papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 --folder-name quantumn_mechanics/Ruling_Out_Real-Valued_Standard_Formalism_of_Quantum_Theory If you download PDF papers from journel website such as PRL, you don&amp;rsquo;t need to specify doi when adding the paper, because it is already included in the paper file.&#xA;Ref papis docs </description>
+    </item>
+    <item>
+      <title>Avoid firefox crashing on sway</title>
+      <link>https://ponyofshadows.com/posts/bugs/avoid_firefox_crashing_on_sway/</link>
+      <pubDate>Wed, 10 Jan 2024 14:05:24 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/bugs/avoid_firefox_crashing_on_sway/</guid>
+      <description>Enter about:config in the address bar To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when opening PDF file or webpages with a quiet amount of resources, set webgl.disabled to True to disable WebGL, a JavaScript API for rendering interactive 2D and 3D graphics on web pages without the need for plug-ins. Set gfx.webrender.all to True. WebRender is a high-performance rendering engine developed by Mozilla to improve the speed and efficiency of web page rendering.</description>
+    </item>
+    <item>
+      <title>Install Mathematica</title>
+      <link>https://ponyofshadows.com/posts/tools/install_mathematica/</link>
+      <pubDate>Tue, 09 Jan 2024 10:47:14 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/install_mathematica/</guid>
+      <description>Install avahi-daemon service is needed. sudo systemctl enable --now avahi-daemon two commnads hostname and egrep can&amp;rsquo;t work in Arch Linux. /usr/local/bin/hostname #!/bin/bash hostnamectl hostname &amp;#34;$@&amp;#34; make two scripts executable sudo chmod +x /usr/local/bin/hostname install sudo sh Mathematica_12.3.1_LINUX_CN.sh Path The default installation directory is /usr/local/Wolfram/Mathematica/12.3. The default scripts directory is /usr/local/bin. I change it to usr/local/bin/Wolfram. </description>
+    </item>
+    <item>
+      <title>Frist Step of Python Project in ArchLinux</title>
+      <link>https://ponyofshadows.com/posts/code/frist_step_of_python_project_in_archlinux/</link>
+      <pubDate>Sat, 30 Dec 2023 21:32:25 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/code/frist_step_of_python_project_in_archlinux/</guid>
+      <description>You can install a python package for the whole system, although it&amp;rsquo;s not recommended. sudo pacman -S python-[package name] Installing packages for every single project in virual environment is a safer manner. # create virual environment cd /path/to/yor/project python -m venv ./.venv # active virual environment source .venv/bin/activate(.fish) # install python packages in virual environment pipx install # deactivate virual environment deactivate If you are in China, use Chinese minor Add below configuration in ~/.</description>
+    </item>
+    <item>
+      <title>pacman</title>
+      <link>https://ponyofshadows.com/posts/linux/pacman/</link>
+      <pubDate>Sat, 30 Dec 2023 15:31:38 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/pacman/</guid>
+      <description>1. The most recommended update packages command pacman -Syu 2. Uninstall a package as completely as possible pacman -Rns [package name] -s to uninstall all dependencies that are no longer required. -n to delete all configuation files related to the uninstalled package. 3. Query a installed package pacman -Qi [package name] 4. Retrieve packages in source databases. pacman -Ss [key words] 5. Get details of a specific package in the database pacman -Si [package name] 6.</description>
+    </item>
+    <item>
+      <title>Wayland</title>
+      <link>https://ponyofshadows.com/posts/linux/wayland/</link>
+      <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/wayland/</guid>
+      <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # some necessery packages for desktop softwares to run normally sudo pacman -S xdg-desktop-portal xdg-desktop-portal-wlr # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl # better bar sudo pacman -S waybar otf-font-awesome run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
+    </item>
+    <item>
+      <title>hugo</title>
+      <link>https://ponyofshadows.com/posts/tools/hugo/</link>
+      <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/tools/hugo/</guid>
+      <description>main paths mywebsite/archetype documents under this path act as templates to write articles and columns of the website. By default, hugo only displays articles under &amp;ldquo;mywebsite/content/posts&amp;rdquo; To costum the display of columns, config like this: [params] mainSections = [&amp;#34;posts&amp;#34;, &amp;#34;blog&amp;#34;, &amp;#34;news&amp;#34;] mywebsite/content This path is where all original articles and resources are organized.&#xA;mywebsite/public Hugo builds website in this path. Push it to my github repository mywebsite.github/io.&#xA;main commands hugo new archetype/new_content.</description>
+    </item>
+  </channel>
+</rss>

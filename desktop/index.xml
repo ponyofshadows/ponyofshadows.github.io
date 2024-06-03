@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desktops on Blogs related to linux</title>
+    <link>https://ponyofshadows.com/desktop/</link>
+    <description>Recent content in Desktops on Blogs related to linux</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <copyright>ponyofshadows</copyright>
+    <lastBuildDate>Thu, 28 Dec 2023 21:48:48 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/desktop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wayland</title>
+      <link>https://ponyofshadows.com/desktop/wayland/</link>
+      <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
+      <guid>https://ponyofshadows.com/desktop/wayland/</guid>
+      <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD , install mesa and lib32-mesa. for NVIDIA , install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
+    </item>
+  </channel>
+</rss>

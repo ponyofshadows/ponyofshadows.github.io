@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/</link>
+    <description>Recent content in Tags on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Jun 2024 20:17:07 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux</title>
+      <link>https://ponyofshadows.com/tags/linux/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bugs</title>
+      <link>https://ponyofshadows.com/tags/bugs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/bugs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tools</title>
+      <link>https://ponyofshadows.com/tags/tools/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/tools/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Diary</title>
+      <link>https://ponyofshadows.com/tags/diary/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/diary/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Latex</title>
+      <link>https://ponyofshadows.com/tags/latex/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/latex/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Test</title>
+      <link>https://ponyofshadows.com/tags/test/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/test/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Fix</title>
+      <link>https://ponyofshadows.com/tags/fix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/fix/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://ponyofshadows.com/tags/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Desktop</title>
+      <link>https://ponyofshadows.com/tags/desktop/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/desktop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Website</title>
+      <link>https://ponyofshadows.com/tags/website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://ponyofshadows.com/tags/website/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

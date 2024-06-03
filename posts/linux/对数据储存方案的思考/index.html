@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>对数据储存方案的思考 | Pony of Shadows</title>
+    
+  
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="https://ponyofshadows.com/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="https://ponyofshadows.com/"><h1>Pony of Shadows</h1></a>
+      <h3>Queen of Truth &amp; King of Practice</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">对数据储存方案的思考</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-05-05</time>
+    
+    
+  </strong>
+  <span> • 82 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h2 id="个人数据存储的理念">个人数据存储的理念</h2>
+<ul>
+<li>所有数据在储存后都必须归档，要可以用有意义的关键词搜索到。</li>
+<li>用日志关联重要数据</li>
+<li>项目中用到的图片等素材以链接的形式从库中调用。</li>
+<li>数据无价，首先考虑数据安全性，再考虑性能和价格。</li>
+</ul>
+<h2 id="估计未来七年我最多会存下多少数据">估计未来七年，我最多会存下多少数据</h2>
+<h3 id="以库图书馆的形式归档的数据">以库（图书馆）的形式归档的数据</h3>
+<ul>
+<li>图片，一年2000张，每张都按5Mb算，大约占用2000*5Mb*7=70Gb</li>
+<li>音频，一年50首，每首都按20Mb算，大约占用50*20Mb*7=7Gb</li>
+<li>视频，不太可能会存，总预留50Gb</li>
+<li>电子书，一年100本，每本按80Mb算，大约占用100*80Mb*7=56Gb</li>
+<li>论文，一年500篇，每篇按10Mb算，大约占用500*10Mb*7=35Gb</li>
+<li>可能有用、但找到下载资源比较麻烦的软件，预留200Gb</li>
+</ul>
+<h3 id="以项目归档的数据项目以创建时间顺序组织每个项目打上标签">以项目归档的数据(项目以创建时间顺序组织，每个项目打上标签）</h3>
+<ul>
+<li>程序项目，假设平均一年有8个用git进行版本控制的中型代码项目，每个占用1G，大约占用8*1G*7=56G</li>
+<li>笔记项目，常常要为课程、书刊写笔记，或者写课后习题，只会在记非文本文件笔记时有明显的空间占用。假设每天增加5Mb，大约占用360*5Mb*7=13Gb</li>
+<li>视频制作项目，未来肯定很少做，而且并不是所有的都要归档，而且会用到的素材一般在库归档数据中已经储存。假设每年归档4个这样的视频项目，每个空间占用5Gb，总需要预留4*5Gb*7=140Gb</li>
+<li>日记项目：预留1Gb，不可能用得完</li>
+<li>实验数据：预留100Gb</li>
+<li>其它创作项目：画画、思维导图，等等，每年预留10Gb，总需要预留70Gb.</li>
+</ul>
+<p>从使用需求来看，接下来七年需要的备份盘单盘空间超过800Gb就行，考虑到我要用一些文件系统的高级功能来增加安全性，这个数字可以翻几个倍。</p>
+<h2 id="硬盘的选择">硬盘的选择</h2>
+<p>参阅了网上的一些资料：</p>
+<ul>
+<li><a href="https://sspai.com/post/68712">机械硬盘的原理与参数详解</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/428823578?utm_id=0">垂直式和叠瓦式机械硬盘的区别</a></li>
+<li><a href="https://www.zhihu.com/question/348571901?utm_id=0">机械硬盘有哪些坑</a>
+总的来说：</li>
+<li>用几个储存介质来备份，而不是只用一个，不要幻想等坏了找人恢复数据，不一定能成功，能成功也可能要花更多的钱。</li>
+<li>选择机械硬盘的话，最好买全新的、4T及以上的垂直式（CMR）机械硬盘，避雷一些网上诟病的人比较多的系列。</li>
+<li>1T及以下应该是固态硬盘更有性价比。但考虑到我主要是冷备份数据，用机械硬盘更好。</li>
+<li>为了少折腾，不搞NAS、RAID那些东西。
+所以，我最终决定买1个西部数据的4T垂直式机械硬盘（现在标价600，希望618的时候能便宜些些）；等有自己的工位，再买第二个用来备份（可选择不同型号甚至不同品牌的）。</li>
+</ul>
+<h2 id="文件系统的选择">文件系统的选择</h2>
+<p>windows和macOS用户没得选，作为linux用户，我想在EXT4, XFS, BtrFS, ZFS之间做出选择。可以参考：</p>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/571235218?utm_id=0">Linux下几种常用文件系统Ext4、XFS、ZFS以及Btrfs的简介及优缺点对比</a></li>
+<li><a href="https://wiki.archlinux.org/title/ZFS">ZFS-archwiki</a>
+最终我决定用btrfs, 有zfs的许多吸引个人用户的功能，在安装与更新方面又比较省事。</li>
+</ul>
+<h2 id="文件的组织">文件的组织</h2>
+<pre tabindex="0"><code>- all
+    - doc/
+    - lib/
+        + au/
+        + eb/
+        + img/
+        + ot/
+        + pp/
+        + ve/
+    - proj/
+        + example_proj/
+            -&gt; doc/
+            -&gt; lib/ # files under here link to all/lib/...
+            -&gt; proj/ # sub proj
+    - log.sqlite
+</code></pre></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2024
+    <a href="https://ponyofshadows.com/"><strong>Ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

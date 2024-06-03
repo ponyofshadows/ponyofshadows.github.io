@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desktop on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/desktop/</link>
+    <description>Recent content in Desktop on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Dec 2023 21:48:48 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Wayland</title>
+      <link>https://ponyofshadows.com/posts/linux/wayland/</link>
+      <pubDate>Thu, 28 Dec 2023 21:48:48 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/linux/wayland/</guid>
+      <description>Tips Ctrl+Alt+F1~F6 to swift among tty1 to tty6. graphic driver for AMD, install mesa and lib32-mesa. for NVIDIA, install nvidia. install sudo pacman -S wayland sway swaylock swayidle swaybg # to run softwares depend on X server sudo pacman -S xwayland # some necessery packages for desktop softwares to run normally sudo pacman -S xdg-desktop-portal xdg-desktop-portal-wlr # dependencies of /usr/share/sway/scripts/grimshot sudo pacman -S grim wl-clipboard # A brightness adjustment tool with good compatibility sudo pacman -S brightnessctl # better bar sudo pacman -S waybar otf-font-awesome run in tty sway --unsupported-gpu automatically on TTY login This blog is useful when writting shell startup scripts.</description>
+    </item>
+  </channel>
+</rss>
