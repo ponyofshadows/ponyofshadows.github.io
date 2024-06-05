@@ -73,8 +73,8 @@
     
     
   </strong>
-  <span> • 195 words</span>
-  <span> • 1 minute read</span>
+  <span> • 349 words</span>
+  <span> • 2 minute read</span>
   
   
     <div>
@@ -124,8 +124,12 @@ archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09            
 <h3 id="分区方案">分区方案</h3>
 <p>如果已经使用了较长一段时间linux, 可以使用 <code>du</code> 命令查看各个路径的储存空间占用情况，作为规划分区的依据。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## -s = --summarize; -h = --human-readable</span>
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /boot
+</span></span><span style="display:flex;"><span>398M    /boot
 </span></span><span style="display:flex;"><span>~&gt; sudo du -sh /home
 </span></span><span style="display:flex;"><span>45G     /home
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /usr
+</span></span><span style="display:flex;"><span>88G     /usr
 </span></span><span style="display:flex;"><span>~&gt; sudo du -sh --exclude<span style="color:#f92672">=</span>/proc --exclude<span style="color:#f92672">=</span>/run /
 </span></span><span style="display:flex;"><span>146G    /
 </span></span></code></pre></div><p>使用 <code>lsblk</code> 可以查看电脑现在的分区情况</p>
@@ -143,7 +147,94 @@ nvme1n1     259:6    0 476.9G  0 disk
 ├─nvme1n1p3 259:9    0   100G  0 part 
 ├─nvme1n1p4 259:10   0 375.9G  0 part 
 └─nvme1n1p5 259:11   0   900M  0 part 
-</code></pre><p>看来我的硬盘怎么分都是绰绰有余呢, 那就一个盘作为根分区，其它的作为家分区</p>
+</code></pre><p>看来我的硬盘怎么分都是绰绰有余呢, 那就一个盘分配BOOT分区、SWAP分区、根分区，另一个盘整个作为家分区</p>
+<p>注意，下面的操作都在live系统中进行</p>
+<p>下面示范如何把 <em>/dev/nvme1n1</em> 分配为BOOT分区, SWAP分区和根分区。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk /dev/nvme1n1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 接下来按照帮助的指示操作</span>
+</span></span></code></pre></div><ol>
+<li>操作方式：</li>
+</ol>
+<ul>
+<li>首先用g创建一个新的GPT分区表，GPT（GUID Partition Table） 是一种相对较新的分区表类型，相比传统的MBR分区表，它支持更多的分区和更大的磁盘容量。适用于现代操作系统，特别是那些需要处理大容量磁盘的场景，如UEFI系统。</li>
+<li>用n创建一个新分区</li>
+<li>用t修改一个分区的类型。不选择正确的分区类型可能会影响系统识别分区。</li>
+<li>用p打印当前分区情况，w保存并退出</li>
+</ul>
+<p>看我的分区结果（还有home分区在另一个盘）：</p>
+<pre tabindex="0"><code>Device            Start        End   Sectors   Size Type
+/dev/nvme1n1p1     2048    2099199   2097152     1G EFI System
+/dev/nvme1n1p2  2099200   44042239  41943040    20G Linux swap
+/dev/nvme1n1p3 44042240 1000214527 956172288 455.9G Linux root (x86-64)
+</code></pre><ol start="2">
+<li>分区作用</li>
+</ol>
+<ul>
+<li>根分区和家分区的作用显然易见。</li>
+<li>BOOT分区用于存放CPU的微码、内核的引导文件和GRUB等，都是Linux启动过程必须的。安装的内核越多，就需要这个分区越大(每个大概多占用100M)。直接给1G，免得以后折腾。</li>
+<li>SWAP分区，或者说交换分区，是一种<a href="(https://www.linux.com/news/all-about-linux-swap-space/)">交换空间</a>（另一种是交换文件，但我不想用，这里不提），链接中提到了交换空间的作用，这里翻译一下：</li>
+</ul>
+<blockquote>
+<p>由于两个重要原因，交换是必要的。
+首先，当系统需要的内存多于物理可用内存时，内核会交换出较少使用的页面，并立即将内存提供给当前需要内存的应用程序（进程）。
+其次，应用程序在启动阶段使用的大量页面可能仅用于初始化，然后再也不会使用。系统可以换出这些页面并释放内存以供其他应用程序甚至磁盘缓存使用。
+当然，即使没有交换空间，linux也能正常工作。</p>
+</blockquote>
+<ol start="3">
+<li><a href="https://segmentfault.com/a/1190000008125116">交换空间的配置</a></li>
+</ol>
+<ul>
+<li>我以后可能会用系统休眠功能，所以分配比物理内存稍大一点的交换空间（20G），管够了</li>
+<li>至于内核参数swappiness, 保持默认就好，我试了一下感觉没有很大影响</li>
+</ul>
+<blockquote>
+<p>Linux 2.6 内核添加了一个名为 swappiness 的新内核参数，让管理员可以调整 Linux 交换的方式。它是一个从 0 到 100 的数字。本质上，较高的值会导致更多的页面被交换，较低的值会导致更多的应用程序保留在内存中，即使它们处于空闲状态。内核维护者 Andrew Morton 表示，他以 100 的 swappiness 运行他的台式机，并表示“我的观点是，降低内核交换内容的倾向是错误的。你真的不希望数百兆字节的 BloatyApp 未触及的内存在机器中漂浮。将其取出到磁盘上，将内存用于有用的事情。”
+Morton 的想法的一个缺点是，如果内存换出得太快，那么应用程序响应时间就会下降，因为当单击应用程序的窗口时，系统必须将应用程序换回内存，这会让人感觉很慢。</p>
+</blockquote>
+<p>对一个系统来说，需要输入类似以下命令来准备交换分区</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 创建交换空间</span>
+</span></span><span style="display:flex;"><span>mkswap /dev/hdb1
+</span></span></code></pre></div><p>如果后面引导配置正确，下面这个激活命令会在 <a href="https://linux.die.net/man/8/swapon">待安装的系统引导脚本中被调用</a> 。现在没有必要做。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>swapon /dev/hdb1
+</span></span></code></pre></div><h3 id="网络连接">网络连接</h3>
+<p>在分区后我们不得不连接网络，因为紧接着要在分区上创建文件系统，而我想使用live系统上并不自带的文件系统类型，它门的支持需要通过pacman安装。</p>
+<ol start="0">
+<li>要禁用<a href="https://wiki.archlinux.org/title/Reflector">reflector</a>吗？
+在一个<a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/basic_install">ArchLinux安装使用教程</a>中，认为是要的:</li>
+</ol>
+<blockquote>
+<p>reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。</p>
+</blockquote>
+<p>在几年前<a href="https://wiki.archlinux.org/title/Talk:Reflector">讨论页面</a>也有对用这个工具自动覆盖mirrorlist的安全性的隐忧。所以我们选择将其服务在联网前禁用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop reflector.service
+</span></span></code></pre></div><p>在等会联网后，仍然可以用这个<a href="https://xyne.dev/projects/reflector/">工具</a>在终端打印它检测的最快的镜像源列表，至于是否采用，这取决于你自己</p>
+<ol>
+<li>的</li>
+</ol>
+<h3 id="文件系统">文件系统</h3>
+<p>想要在分区上储存和操作文件，就要创建文件系统。有许多文件系统可供选择：EXT4, XFS, Btrfs, ZFS, &hellip;</p>
+<p>我的选择如下：</p>
+<ul>
+<li>不使用zfs, 因为License不兼容的问题，它不会随着新的linux内核一起发布，可能会影响滚动更新。zfs还是和freeBSD一起用吧。</li>
+<li>根分区使用Btrfs, 因为它直接支持快照功能，万一系统在更新后出问题，也能马上恢复原状，不影响工作生活。</li>
+<li>家分区使用XFS, 因为它的性能据说比btrfs略胜一畴。</li>
+<li>BOOT分区使用FAT32。因为：UEFI规范明确要求EFI系统分区（ESP）使用FAT文件系统。具体来说，推荐使用FAT32文件系统。UEFI 固件需要能够读取和执行存储在ESP中的EFI应用程序（如引导加载程序、驱动程序等），FAT32提供了广泛的兼容性。</li>
+<li>备份盘使用XFS, 和家分区保持一致。</li>
+</ul>
+<ol>
+<li>对根分区使用Btrfs, 首先安装btrfs-progs包（开始需要网络）, 然后运行mkfs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.btrfs -L mylabel /dev/partition
+</span></span></code></pre></div><ol start="2">
+<li>对于BOOT分区</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/efi_system_partition
+</span></span></code></pre></div><ol start="3">
+<li>对家分区使用xfs, 首先安装xfsprogs包（开始需要网络），然后运行mkfs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.xfs device
+</span></span></code></pre></div><h3 id="安装基本组件">安装基本组件</h3>
+<p>文件系统创建好了，现在可以说是&quot;the stage is set&quot;了，</p>
 </div>
     </article>
   </main>
