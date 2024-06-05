@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 76 words</span>
+  <span> • 195 words</span>
   <span> • 1 minute read</span>
   
   
@@ -121,6 +121,29 @@ archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09            
 <h2 id="live环境">live环境</h2>
 <p>现在可以在计算机启动时进入前面写入到闪存中的live系统（在该系统分区下的大部分修改，在关机后都会丢失）</p>
 <p>我们首先要做的是针对电脑的硬盘，设计一个合理的分区方案进行分区。</p>
+<h3 id="分区方案">分区方案</h3>
+<p>如果已经使用了较长一段时间linux, 可以使用 <code>du</code> 命令查看各个路径的储存空间占用情况，作为规划分区的依据。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## -s = --summarize; -h = --human-readable</span>
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /home
+</span></span><span style="display:flex;"><span>45G     /home
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh --exclude<span style="color:#f92672">=</span>/proc --exclude<span style="color:#f92672">=</span>/run /
+</span></span><span style="display:flex;"><span>146G    /
+</span></span></code></pre></div><p>使用 <code>lsblk</code> 可以查看电脑现在的分区情况</p>
+<pre tabindex="0"><code>~&gt; lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+nvme0n1     259:0    0 953.9G  0 disk 
+├─nvme0n1p1 259:1    0     1G  0 part /boot
+├─nvme0n1p2 259:2    0    16G  0 part [SWAP]
+├─nvme0n1p3 259:3    0   128G  0 part /
+├─nvme0n1p4 259:4    0 776.9G  0 part /home
+└─nvme0n1p5 259:5    0    32G  0 part /root/transfer
+nvme1n1     259:6    0 476.9G  0 disk 
+├─nvme1n1p1 259:7    0   100M  0 part 
+├─nvme1n1p2 259:8    0    16M  0 part 
+├─nvme1n1p3 259:9    0   100G  0 part 
+├─nvme1n1p4 259:10   0 375.9G  0 part 
+└─nvme1n1p5 259:11   0   900M  0 part 
+</code></pre><p>看来我的硬盘怎么分都是绰绰有余呢, 那就一个盘作为根分区，其它的作为家分区</p>
 </div>
     </article>
   </main>
