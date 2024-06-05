@@ -67,6 +67,59 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/arch-setup/basic/">
+    <h1 class="title">Setup: 0.Basic</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-05</time>
+    
+    
+  </strong>
+ <span> • 77 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>本教程系列旨在梳理Arch Linux从基础安装到功能齐全的配置过程，实现对自己的桌面Linux系统点面俱全的掌握。
+现在处于教程系列的第0层，唯一的目标是：让新安装的系统可以正常引导启动
+关键点 : 分区方案, GRUB
+前期准备 我们需要：
+一台电脑 稳定的无线或有线网络 USB闪存安装介质 下面展开讲讲上面3.的安装介质如何准备：
+在Download页面找到自己所在国家的镜像站下载最新的ISO(光盘镜像文件)，对于中国，可以是中科大镜像源。比如下面这两个文件，都要下载下来, 放在同一个目录待验证 archlinux-2024.06.01-x86_64.iso 01-Jun-2024 17:09 1168146432 archlinux-2024.06.01-x86_64.iso.sig 01-Jun-2024 17:09 141 前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：
+# On Arch linux (-v = --verify) pacman-key -v archlinux-version-x86_64.iso.sig # On any system with GnuPG installed gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig 看到&quot;Good signature&quot;之类的字眼，说明验证成功。
+插入自己的闪存，然后以root身份使用 dd 命令写入ISO，注意of参数需要的是磁盘设备名而不是分区名 (甚至可以使用cat或cp) dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress 下面解释一下这行命令
+bs=4M 这个参数指定了块大小（block size）为4MB, 使用较大的块理论上能提高复制的效率，但复制效率的上限被诸多因素定死，设置为4M即可。 conv=fsync 这个选项确保在复制过程中数据写入到磁盘时，所有的内存缓冲区都被刷新（fsync），以保证数据的完整性 oflag=direct 这个选项告诉 dd 直接写入到输出文件，绕过系统缓存。这样可以提高大文件写入时的性能，并减少系统缓存对其他进程的影响。 status=progress 这个选项告诉 dd 输出进度信息，使用户可以看到复制过程中的进度。 live环境 现在可以在计算机启动时进入前面写入到闪存中的live系统（在该系统分区下的大部分修改，在关机后都会丢失）</p>
+    
+      <a href="https://ponyofshadows.com/posts/arch-setup/basic/">Read more...</a>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E8%B5%9A%E5%B8%81%E8%A7%84%E5%88%99%E7%AC%AC%E4%BA%8C%E7%89%88/">
     <h1 class="title">小学赚币规则第二版</h1>
     
@@ -93,12 +146,6 @@
   </strong>
  <span> • 95 words</span>
  <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>
-    </div>
   
 </div>
 
@@ -482,55 +529,9 @@ factors a b f1 Y N f2 Y N </p>
 </article>
 
 		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">
-    <h1 class="title">oh-my-tmux</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-19</time>
-    
-    
-  </strong>
- <span> • 472 words</span>
- <span> • 3 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>, 
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>Offical Pages tmux oh-my-tmux Shorcuts ponyofshadows@equestria ~&gt; grep &#34;^bind&#34; .config/tmux/tmux.conf bind C-a send-prefix -2 bind e new-window -n &#34;#{TMUX_CONF_LOCAL}&#34; -e &#34;EDITOR=$EDITOR&#34; sh -c &#39;case &#34;${EDITOR:-vim}&#34; in *vim) ${EDITOR:-vim} -c &#34;:set syntax=tmux&#34; &#34;$TMUX_CONF_LOCAL&#34;;; *) &#34;$EDITOR&#34; &#34;$TMUX_CONF_LOCAL&#34;;; esac &amp;&amp; &#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34; \; display &#34;$TMUX_CONF_LOCAL sourced&#34;&#39; bind r run &#39;&#34;$TMUX_PROGRAM&#34; ${TMUX_SOCKET:+-S &#34;$TMUX_SOCKET&#34;} source &#34;$TMUX_CONF&#34;&#39; \; display &#34;#{TMUX_CONF} sourced&#34; bind -n C-l send-keys C-l \; run &#39;sleep 0.2&#39; \; clear-history bind C-c new-session bind C-f command-prompt -p find-session &#39;switch-client -t %%&#39; bind BTab switch-client -l # move to last session bind - split-window -v bind _ split-window -h bind -r h select-pane -L # move left bind -r j select-pane -D # move down bind -r k select-pane -U # move up bind -r l select-pane -R # move right bind &gt; swap-pane -D # swap current pane with the next one bind &lt; swap-pane -U # swap current pane with the previous one bind + run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _maximize_pane &#39;#{session_name}&#39; &#39;#D&#39;&#34; bind -r H resize-pane -L 2 bind -r J resize-pane -D 2 bind -r K resize-pane -U 2 bind -r L resize-pane -R 2 bind -r C-h previous-window # select previous window bind -r C-l next-window # select next window bind Tab last-window # move to last active window bind m run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _toggle_mouse&#34; bind U run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _urlview &#39;#{pane_id}&#39;&#34; bind F run &#34;cut -c3- &#39;#{TMUX_CONF}&#39; | sh -s _fpp &#39;#{pane_id}&#39; &#39;#{pane_current_path}&#39;&#34; bind Enter copy-mode # enter copy mode bind -T copy-mode-vi v send -X begin-selection bind -T copy-mode-vi C-v send -X rectangle-toggle bind -T copy-mode-vi y send -X copy-selection-and-cancel bind -T copy-mode-vi Escape send -X cancel bind -T copy-mode-vi H send -X start-of-line bind -T copy-mode-vi L send -X end-of-line bind b list-buffers # list paste buffers bind p paste-buffer -p # paste from the top paste buffer bind P choose-buffer # choose which buffer to paste from C-a e open tmux.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/oh-my-tmux/">Read more...</a>
-    
-  </div>
-</article>
-
-		
 		<div>
   
-  1 of 2
+  1 of 3
   
     <a href="/page/2/">Next Page</a>
   
