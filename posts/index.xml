@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 05 Jun 2024 11:02:57 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2024 22:40:07 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setuo: 1.Basic Config</title>
+      <link>https://ponyofshadows.com/posts/arch-setup/basic_config/</link>
+      <pubDate>Thu, 06 Jun 2024 22:40:07 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch-setup/basic_config/</guid>
+      <description>现在处于本笔记系列的第1层，目标是丰富系统在纯命令行下的编辑和浏览体验。&#xA;这次的笔记汇总了arch linux在系统层面的基础配置。&#xA;设置主机名 vim /etc/hostnamevim 在这个文件中输入你想好的主机名即可，然后&#xA;vim /etc/hosts 在这个文件下加入类似以下内容：&#xA;127.0.0.1 localhost ::1 localhost 127.0.1.1 my_hostname 用户 给root用户添加密码 passwd root 添加一个普通用户 # -m同时创建家目录，wheel是可sudo的用户组 useradd -m -G wheel -s /bin/bash user0 # 设置密码 passwd user0 sudo用户的配置 sudo在archlinux中属于基本组件，用来暂时暂时以其它用户的身份运行代码或执行文件。&#xA;sudo用户的配置文件是/etc/sudoers, 这个文件原则上只能通过visudo命令编辑&#xA;# 用环境变量指明编辑器是vim, 以后安装了neovim也可指定为nvim. EDITOR=vim visudo 这个文件中我们只需要关注以下部分&#xA;## ## User privilege specification ## root ALL=(ALL:ALL) ALL ## Uncomment to allow members of group wheel to execute any command # %wheel ALL=(ALL:ALL) ALL ## Same thing without a password %wheel ALL=(ALL:ALL) NOPASSWD: ALL ## Uncomment to allow members of group sudo to execute any command # %sudo ALL=(ALL:ALL) ALL ## Uncomment to allow any user to run sudo if they know the password ## of the user they are running the command as (root by default).</description>
+    </item>
     <item>
       <title>Setup: 0.Basic</title>
       <link>https://ponyofshadows.com/posts/arch-setup/basic/</link>

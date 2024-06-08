@@ -67,6 +67,58 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/arch-setup/basic_config/">
+    <h1 class="title">Setuo: 1.Basic Config</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-06</time>
+    
+    
+  </strong>
+ <span> • 227 words</span>
+ <span> • 2 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>现在处于本笔记系列的第1层，目标是丰富系统在纯命令行下的编辑和浏览体验。
+这次的笔记汇总了arch linux在系统层面的基础配置。
+设置主机名 vim /etc/hostnamevim 在这个文件中输入你想好的主机名即可，然后
+vim /etc/hosts 在这个文件下加入类似以下内容：
+127.0.0.1 localhost ::1 localhost 127.0.1.1 my_hostname 用户 给root用户添加密码 passwd root 添加一个普通用户 # -m同时创建家目录，wheel是可sudo的用户组 useradd -m -G wheel -s /bin/bash user0 # 设置密码 passwd user0 sudo用户的配置 sudo在archlinux中属于基本组件，用来暂时暂时以其它用户的身份运行代码或执行文件。
+sudo用户的配置文件是/etc/sudoers, 这个文件原则上只能通过visudo命令编辑
+# 用环境变量指明编辑器是vim, 以后安装了neovim也可指定为nvim. EDITOR=vim visudo 这个文件中我们只需要关注以下部分
+## ## User privilege specification ## root ALL=(ALL:ALL) ALL ## Uncomment to allow members of group wheel to execute any command # %wheel ALL=(ALL:ALL) ALL ## Same thing without a password %wheel ALL=(ALL:ALL) NOPASSWD: ALL ## Uncomment to allow members of group sudo to execute any command # %sudo ALL=(ALL:ALL) ALL ## Uncomment to allow any user to run sudo if they know the password ## of the user they are running the command as (root by default).</p>
+    
+      <a href="https://ponyofshadows.com/posts/arch-setup/basic_config/">Read more...</a>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/arch-setup/basic/">
     <h1 class="title">Setup: 0.Basic</h1>
     
@@ -91,7 +143,7 @@
     
     
   </strong>
- <span> • 553 words</span>
+ <span> • 556 words</span>
  <span> • 3 minute read</span>
   
     <div>
@@ -477,57 +529,6 @@ cd /usr/lib ln -s libtiff.so libtiff.so.5 Reference WPS官方社区-Linux环境�
   <div class="content">
     <p>Settings of Luasnip local ls = require(&#34;luasnip&#34;) ls.setup({ snip_env = { }, }) -- load snippets require(&#34;luasnip.loaders.from_lua&#34;).load({paths = &#34;~/.config/nvim/snippets&#34;}) Functions Find the section luasnip-snippets in luasnip.txt
 Examples: snips on LaTex </p>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/test/markdown_style_test/">
-    <h1 class="title">markdown style test</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-22</time>
-    
-    
-  </strong>
- <span> • 54 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/test">test</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>H1 H2 H3 H4 H5 H6 inline code
-# code test print(&#34;Hello, World!&#34;) block quotes
-test
-list0 list0 list1 list1 font: Bold Italic Bold and Italic
-URL
-Image:
-![Pinkie Pie with a crown](/pinkie.png) Scale with short code: {{ &lt; figure src=&quot;/pinkie.png&quot; width=&quot;300&quot; &gt; }}
-Table
-factors a b f1 Y N f2 Y N </p>
     
   </div>
 </article>

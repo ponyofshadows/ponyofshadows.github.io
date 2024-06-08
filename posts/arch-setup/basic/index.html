@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 553 words</span>
+  <span> • 556 words</span>
   <span> • 3 minute read</span>
   
   
@@ -337,10 +337,12 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 </code></pre><p>接下来<a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/basic_install">编辑</a><code>/etc/default/grub</code>文件，去掉<code>GRUB_CMDLINE_LINUX_DEFAULT</code>一行中最后的<code>quiet</code>参数，同时把 log level 的数值从3改成5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入<code>nowatchdog</code>参数，这可以显著提高开关机速度。</p>
 <p>最后生成GRUB所需的配置文件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
-</span></span></code></pre></div><h3 id="网络服务">网络服务</h3>
+</span></span></code></pre></div><h3 id="网络服务和时间">网络服务和时间</h3>
 <p>顺便，在退出前激活网络服务的自动运行</p>
-<pre tabindex="0"><code>systemctl enable wpa_suppliant
-</code></pre><h3 id="卸载和重启">卸载和重启</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable wpa_suppliant
+</span></span></code></pre></div><p>将当前的正确UTC时间写入硬件时间</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hwclock --systohc
+</span></span></code></pre></div><h3 id="卸载和重启">卸载和重启</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exit                <span style="color:#75715e"># 退回安装环境#</span>
 </span></span><span style="display:flex;"><span>umount -R  /mnt     <span style="color:#75715e"># 卸载新分区</span>
 </span></span><span style="display:flex;"><span>reboot              <span style="color:#75715e"># 重启</span>
