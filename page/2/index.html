@@ -67,6 +67,49 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/linux/grub/">
+    <h1 class="title">grub</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-29</time>
+    
+    
+  </strong>
+ <span> • 39 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>Installation pacman -S grub efibootmgr grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB user configuration file path: /etc/default/grub default kernel # When you manually choose a different entry, that becomes the new default. GRUB_SAVEDEFAULT=true GRUB_DEFAULT=saved Generate the main configuration file grub-mkconfig -o /boot/grub/grub.cfg </p>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/tools/luasnip_on_latex/">
     <h1 class="title">LuaSnip on LaTex</h1>
     
@@ -474,52 +517,6 @@ Ref papis docs </p>
 
   <div class="content">
     <p>Install avahi-daemon service is needed. sudo systemctl enable --now avahi-daemon two commnads hostname and egrep can&rsquo;t work in Arch Linux. /usr/local/bin/hostname #!/bin/bash hostnamectl hostname &#34;$@&#34; make two scripts executable sudo chmod +x /usr/local/bin/hostname install sudo sh Mathematica_12.3.1_LINUX_CN.sh Path The default installation directory is /usr/local/Wolfram/Mathematica/12.3. The default scripts directory is /usr/local/bin. I change it to usr/local/bin/Wolfram. </p>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/code/frist_step_of_python_project_in_archlinux/">
-    <h1 class="title">Frist Step of Python Project in ArchLinux</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2023-12-30</time>
-    
-    
-  </strong>
- <span> • 79 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>, 
-        <a href="/tags/python">python</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>You can install a python package for the whole system, although it&rsquo;s not recommended. sudo pacman -S python-[package name] Installing packages for every single project in virual environment is a safer manner. # create virual environment cd /path/to/yor/project python -m venv ./.venv # active virual environment source .venv/bin/activate(.fish) # install python packages in virual environment pipx install # deactivate virual environment deactivate If you are in China, use Chinese minor Add below configuration in ~/.</p>
-    
-      <a href="https://ponyofshadows.com/posts/code/frist_step_of_python_project_in_archlinux/">Read more...</a>
     
   </div>
 </article>
