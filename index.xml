@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/arch-setup/shell/</link>
       <pubDate>Sun, 09 Jun 2024 11:43:54 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/arch-setup/shell/</guid>
-      <description>现在在笔记系列的第1层，目的是渐渐完善命令行下使用linux的体验。&#xA;本文我们聚焦以下两点：&#xA;日常的Shell使用体验 在登录和打开交互式Shell时应该通过Shell脚本做哪些事情 日常使用Shell 我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归使用bash，因为：&#xA;bash是大部分发行版的默认shell 大部分linux的脚本是sh或bash脚本，而bash又是sh的增强版本，能正常运行大部分sh脚本。 通过一些工具能让bash在日常使用时达到接近fish的用户友好程度。 ChatGPT列举了以下工具(我们接下来会参考GPT的提示增强bash的功能)&#xA;Bash Completion 是一个常用的插件，为 Bash 提供更智能的命令补全。 bash-git-prompt 可以在 Bash 提示符中显示 Git 仓库的信息，使提示符更具信息性和美观。 fzf 是一个命令行模糊查找器，能极大地增强 Bash 的文件和命令补全功能。 powerline-shell 能美化 Bash 提示符，提供类似 Fish 的视觉效果。 z 是一个目录跳转工具，可以根据使用频率快速跳转到常用目录。 </description>
+      <description>现在在笔记系列的第1层，目的是渐渐完善命令行下使用linux的体验。&#xA;本文我们聚焦以下两点：&#xA;日常的Shell使用体验 在登录和打开交互式Shell时应该通过Shell脚本做哪些事情 日常使用Shell 我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归使用bash，因为：&#xA;bash是大部分发行版的默认shell 大部分linux的脚本是sh或bash脚本，而bash又是sh的增强版本，能正常运行大部分sh脚本。 通过一些工具能让bash在日常使用时达到接近fish的用户友好程度。 ChatGPT列举了以下工具(我们接下来会参考GPT的提示增强bash的功能)&#xA;Bash Completion 是一个常用的插件，为 Bash 提供更智能的命令补全。 bash-git-prompt 可以在 Bash 提示符中显示 Git 仓库的信息，使提示符更具信息性和美观。 fzf 是一个命令行模糊查找器，能极大地增强 Bash 的文件和命令补全功能。 powerline-shell 能美化 Bash 提示符，提供类似 Fish 的视觉效果。 z 是一个目录跳转工具，可以根据使用频率快速跳转到常用目录。 Shell启动脚本 标题链接的博客文章充分说明了bash在不同情况下运行启动脚本的复杂性。我们尊循作者的建议进行配置。</description>
     </item>
     <item>
       <title>Setup: 1.Basic Config</title>
