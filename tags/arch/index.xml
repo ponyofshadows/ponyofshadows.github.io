@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/arch/re-install/</link>
       <pubDate>Tue, 11 Jun 2024 10:49:18 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/arch/re-install/</guid>
-      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用chezmoi等工具管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 新系统的基础安装 新系统上恢复到旧系统工作环境 </description>
+      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用chezmoi等工具管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 备份工作文件 我所有的工作文件（包括非）储存在~/all/目录下，并通过我写的一个名叫poshd的bash脚本管理。&#xA;像这样备份all/到/mnt/:&#xA;po -b /mnt 备份配置文件 要用到的工具 chezmoi: 管理配置文件 git: 版本控制、推送远程仓库 gpg: 加密隐私信息 开始 在github创建一个仓库用于储存配置文件。关于这个仓库的可见性： 你可以一直设为私有。但在重装系统前，要把本地的ssh私钥做额外的手动备份 你也可以平时设为私有，但在重装系统前把远程仓库设为公开，方便自己下载到本地。这需要使用gpg来加密隐私文件 你也可以一直设为公开。毕竟，暴力破解gpg私钥比直接穷举它加密的那几段密码文本的难度还大。 初始化 下面的命令将创建在~/.local/share/chezmoi/的配置目录，同时在该目录创建一个初始的git仓库。如有需要可以通过环境变量自己指定目录。 chezmoi init 通过git remote add添加自己的远程仓库&#xA;备份~/.config/目录下的配置文件 chezmoi add ~/.config 这个命令会把~/.config路径下的配置对应复制到~/.local/share/chezmoi/dot_config/下，并且：&#xA;所有的&amp;quot;.&amp;ldquo;开头的文件都变成了&amp;quot;dot_&amp;ldquo;开头的文件 对用户权限敏感的配置文件，存放它们的路径会打上&amp;quot;private_&amp;ldquo;前缀 chezmoi会检测配置文件中是否存在潜在的隐私信息，如果发现会提示。但是它仍然会把这些文件复制到备份目录下。 整理用包管理器显式安装的包 新系统的基础安装 新系统上恢复到旧系统工作环境 </description>
     </item>
   </channel>
 </rss>
