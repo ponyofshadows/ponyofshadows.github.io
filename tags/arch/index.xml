@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Arch on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/arch/</link>
+    <description>Recent content in Arch on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 11 Jun 2024 10:49:18 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/arch/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何优雅地重新安装你的Arch Linux</title>
+      <link>https://ponyofshadows.com/posts/arch/re-install/</link>
+      <pubDate>Tue, 11 Jun 2024 10:49:18 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/re-install/</guid>
+      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用chezmoi等工具管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 新系统的基础安装 新系统上恢复到旧系统工作环境 </description>
+    </item>
+  </channel>
+</rss>
