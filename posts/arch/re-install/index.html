@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 42 words</span>
+  <span> • 19 words</span>
   <span> • 1 minute read</span>
   
   
@@ -89,7 +89,7 @@
       <div class="content"><h2 id="日常使用">日常使用</h2>
 <ol>
 <li>有序存放工作生活中使用的文件，并使用<code>rsync</code>等工具备份防止丢失</li>
-<li>妥善配置系统，并使用<code>chezmoi</code>等工具管理所有配置文件</li>
+<li>妥善配置系统，并使用脚本管理所有配置文件</li>
 <li>对自己安装过的软件心中有数</li>
 </ol>
 <h2 id="在旧系统上备份">在旧系统上备份</h2>
@@ -98,40 +98,13 @@
 <p>像这样备份<code>all/</code>到<code>/mnt/</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>po -b /mnt
 </span></span></code></pre></div><h3 id="备份配置文件">备份配置文件</h3>
-<h3 id="要用到的工具">要用到的工具</h3>
-<ul>
-<li><code>chezmoi</code>: 管理配置文件</li>
-<li><code>git</code>: 版本控制、推送远程仓库</li>
-<li><code>gpg</code>: 加密隐私信息</li>
-</ul>
-<h3 id="开始">开始</h3>
-<ol>
-<li>在github创建一个仓库用于储存配置文件。关于这个仓库的可见性：</li>
-</ol>
-<ul>
-<li>你可以一直设为私有。但在重装系统前，要把本地的ssh私钥做额外的手动备份</li>
-<li>你也可以平时设为私有，但在重装系统前把远程仓库设为公开，方便自己下载到本地。这需要使用gpg来加密隐私文件</li>
-<li>你也可以一直设为公开。毕竟，暴力破解gpg私钥比直接穷举它加密的那几段密码文本的难度还大。</li>
-</ul>
-<ol start="2">
-<li>初始化
-下面的命令将创建在<code>~/.local/share/chezmoi/</code>的配置目录，同时在该目录创建一个初始的git仓库。如有需要可以通过环境变量自己指定目录。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chezmoi init
-</span></span></code></pre></div><p>通过<code>git remote add</code>添加自己的远程仓库</p>
-<ol start="3">
-<li>备份<code>~/.config/</code>目录下的配置文件</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chezmoi add ~/.config
-</span></span></code></pre></div><p>这个命令会把<code>~/.config</code>路径下的配置对应复制到<code>~/.local/share/chezmoi/dot_config/</code>下，并且：</p>
-<ul>
-<li>所有的&quot;.&ldquo;开头的文件都变成了&quot;dot_&ldquo;开头的文件</li>
-<li>对用户权限敏感的配置文件，存放它们的路径会打上&quot;private_&ldquo;前缀</li>
-<li>chezmoi会检测配置文件中是否存在潜在的隐私信息，如果发现会提示。但是它仍然会把这些文件复制到备份目录下。</li>
-</ul>
 <h3 id="整理用包管理器显式安装的包">整理用包管理器显式安装的包</h3>
 <h2 id="新系统的基础安装">新系统的基础安装</h2>
 <h2 id="新系统上恢复到旧系统工作环境">新系统上恢复到旧系统工作环境</h2>
+<h3 id="恢复工作文件">恢复工作文件</h3>
+<h3 id="恢复配置文件">恢复配置文件</h3>
+<h3 id="恢复软件包">恢复软件包</h3>
+<h3 id="额外事项">额外事项</h3>
 </div>
     </article>
   </main>
