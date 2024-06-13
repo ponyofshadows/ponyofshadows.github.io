@@ -73,8 +73,8 @@
     
     
   </strong>
-  <span> • 1149 words</span>
-  <span> • 6 minute read</span>
+  <span> • 728 words</span>
+  <span> • 4 minute read</span>
   
   
     <div>
@@ -176,137 +176,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># main</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> id -nG <span style="color:#e6db74">&#34;</span>$USER<span style="color:#e6db74">&#34;</span> | grep -qw <span style="color:#e6db74">&#34;wheel&#34;</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># grub</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/default/grub
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> grub-mkconfig -o /boot/grub/grub.cfg
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Internet Connection</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## DNS</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/resolv.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo chattr +i /etc/resolv.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## wpa</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/wpa_supplicant 
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo systemctl enable --now wpa_supplicant
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Internet Connection&#34;</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## time zone</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## RTC time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo timedatectl set-ntp on
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo timedatectl set-local-rtc <span style="color:#ae81ff">0</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## write to device time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo hwclock --systohc
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Time&#34;</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Pacman, AUR, git, pip</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/pacman.conf
-</span></span><span style="display:flex;"><span>  update_config /etc/pacman.d/mirrorlist
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo pacman -Syu --noconfirm
-</span></span><span style="display:flex;"><span>  update_pkg yay git git-lfs
-</span></span><span style="display:flex;"><span>  update_config ~/.gitconfig
-</span></span><span style="display:flex;"><span>  update_config ~/.pip/pip.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> git lfs install
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Pacman, AUR, Git, Pip&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># language &amp; Font</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## lang</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/locale.gen
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> locale-gen
-</span></span><span style="display:flex;"><span>  update_config /etc/locale.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## font</span>
-</span></span><span style="display:flex;"><span>  update_pkg wqy-microhei noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-</span></span><span style="display:flex;"><span>  update_config /etc/fonts/conf.d/64-language-selector-prefer.conf
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Font&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># dir</span>
-</span></span><span style="display:flex;"><span>  update_config ~/.config/user-dirs.conf
-</span></span><span style="display:flex;"><span>  update_config ~/.config/user-dirs.dirs
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Dir&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Shell</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## bash</span>
-</span></span><span style="display:flex;"><span>  update_pkg bash-completion fzf powerline
-</span></span><span style="display:flex;"><span>  update_aur_pkg bash-git-prompt
-</span></span><span style="display:flex;"><span>  update_config ~/.bash
-</span></span><span style="display:flex;"><span>  update_config ~/.bash_profile
-</span></span><span style="display:flex;"><span>  update_config ~/.bashrc
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## tmux</span>
-</span></span><span style="display:flex;"><span>  update_pkg tmux
-</span></span><span style="display:flex;"><span>  update_config ~/.config/tmux
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## nvim</span>
-</span></span><span style="display:flex;"><span>  update_pkg neovim
-</span></span><span style="display:flex;"><span>  update_pkg ccls cmake-language-server jedi-language-server rls texlab fortls <span style="color:#75715e"># language servers</span>
-</span></span><span style="display:flex;"><span>  update_config ~/.config/nvim
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## translate-shell</span>
-</span></span><span style="display:flex;"><span>  update_aur_pkg translate-shell
-</span></span><span style="display:flex;"><span>  update_config ~/.config/translate-shell
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## papis</span>
-</span></span><span style="display:flex;"><span>  update_pkg papis
-</span></span><span style="display:flex;"><span>  update_config ~/.config/papis
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## hugo</span>
-</span></span><span style="display:flex;"><span>  update_pkg hugo
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Shell&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Nvidia</span>
-</span></span><span style="display:flex;"><span>  update_pkg nvidia
-</span></span><span style="display:flex;"><span>  update_config /etc/modprobe.d/nvidia.conf
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Nvidia&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># sound</span>
-</span></span><span style="display:flex;"><span>  update_pkg alsa-utils
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Sound&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># desktop</span>
-</span></span><span style="display:flex;"><span>  update_pkg wayland sway xwayland xdg-desktop-portal-wlr
-</span></span><span style="display:flex;"><span>  update_pkg swaylock swayidle swaybg dmenu <span style="color:#75715e"># sway tools</span>
-</span></span><span style="display:flex;"><span>  update_pkg waybar otf-font-awesome <span style="color:#75715e"># better bar</span>
-</span></span><span style="display:flex;"><span>  update_pkg grim wl-clipboard <span style="color:#75715e"># dependencies of /usr/share/sway/scripts/grimshot</span>
-</span></span><span style="display:flex;"><span>  update_pkg brightnessctl <span style="color:#75715e"># a brightness adjustment tool with good compatibility</span>
-</span></span><span style="display:flex;"><span>  update_config ~/.config/sway
-</span></span><span style="display:flex;"><span>  update_config ~/.config/waybar
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Desktop&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># input method</span>
-</span></span><span style="display:flex;"><span>  update_pkg fcitx5 fcitx5-rime
-</span></span><span style="display:flex;"><span>  update_aur_pkg rime-flypy
-</span></span><span style="display:flex;"><span>  update_config ~/.config/fcitx5
-</span></span><span style="display:flex;"><span>  update_config ~/.local/share/fcitx5/rime/default.custom.yaml
-</span></span><span style="display:flex;"><span>  update_config ~/.local/share/fcitx5/rime/default.yaml
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Input method&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># most used softwares</span>
-</span></span><span style="display:flex;"><span>  update_pkg kitty firefox feh thunar xournalpp libreoffice zathura zathura-pdf-mupdf
-</span></span><span style="display:flex;"><span>  update_config ~/.config/kitty
-</span></span><span style="display:flex;"><span>  update_config ~/.config/xournalpp
-</span></span><span style="display:flex;"><span>  update_config ~/.config/Thunar
-</span></span><span style="display:flex;"><span>  update_config ~/.config/libreoffice/4/user
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Most used softwares&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># small tools</span>
-</span></span><span style="display:flex;"><span>  update_pkg zip unzip tree tldr wget encfs
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Small tools&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># other desktop softwares</span>
-</span></span><span style="display:flex;"><span>  update_pkg nomacs mpv vlc gimp obs
-</span></span><span style="display:flex;"><span>  update_config ~/.config/nomacs
-</span></span><span style="display:flex;"><span>  update_config ~/.config/mpv
-</span></span><span style="display:flex;"><span>  update_config ~/.config/vlc
-</span></span><span style="display:flex;"><span>  update_config ~/.config/GIMP
-</span></span><span style="display:flex;"><span>  update_aur_pkg wechat-universal-bwrap linuxqq-nt-bwrap
-</span></span><span style="display:flex;"><span>  update_pkg steam
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Other desktop softwares&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># develop</span>
-</span></span><span style="display:flex;"><span>  update_pkg jdk17-openjdk jdk21-openjdk <span style="color:#75715e"># java for minecraft</span>
-</span></span><span style="display:flex;"><span>  update_pkg rust
-</span></span><span style="display:flex;"><span>  update_pkg gdb
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] develop&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># reboot</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Alright. Prepare to reboot...&#34;</span> <span style="color:#f92672">&amp;&amp;</span> sleep <span style="color:#ae81ff">3</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo reboot
-</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...................
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Please run this script as user in wheel group&#34;</span>
 </span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
@@ -363,8 +233,6 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true    <span style="color:#75715e">#将系统时间与网络时间进行同步</span>
 </span></span><span style="display:flex;"><span>timedatectl status          <span style="color:#75715e">#检查服务状态</span>
-</span></span></code></pre></div><h3 id="在live系统安装文件系统工具">在live系统安装文件系统工具</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -Syu btrfs-progs xfsprogs
 </span></span></code></pre></div><h3 id="分区文件系统和挂载-生成fstab">分区，文件系统和挂载; 生成fstab</h3>
 <ol>
 <li>分区方案:</li>
@@ -379,7 +247,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 </li>
 <li>Disk2
 <ul>
-<li><code>/home</code></li>
+<li><code>/home</code> (不需要用fdisk进行分区)</li>
 </ul>
 </li>
 </ul>
@@ -448,21 +316,20 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pascstrap /mnt btrfs-progs xfsprogs
 </span></span></code></pre></div><ol start="3">
-<li>安装联网工具和备份恢复工具</li>
+<li>安装联网工具, 备份恢复工具, 编辑器</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pascstrap /mnt wpa_suppliant rsync
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pascstrap /mnt wpa_suppliant dhcpcd rsync neovim
 </span></span></code></pre></div><h3 id="chroot">Chroot</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>arch-chroot /mnt
 </span></span></code></pre></div><h3 id="新系统的引导">新系统的引导</h3>
 <p>安装GRUB引导加载程序到/boot</p>
 <pre tabindex="0"><code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-</code></pre><p>接下来<a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/basic_install">编辑</a><code>/etc/default/grub</code>文件，去掉<code>GRUB_CMDLINE_LINUX_DEFAULT</code>一行中最后的<code>quiet</code>参数，同时把 log level 的数值从3改成5。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入<code>nowatchdog</code>参数，这可以显著提高开关机速度。</p>
-<p>最后生成GRUB所需的配置文件</p>
+</code></pre><p>最后生成GRUB所需的配置文件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><h3 id="设置主机名">设置主机名</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/hostnamevim
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim /etc/hostname
 </span></span></code></pre></div><p>在这个文件中输入你想好的主机名即可，然后</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/hosts
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nvim /etc/hosts
 </span></span></code></pre></div><p>在这个文件下加入类似以下内容：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>127.0.0.1   localhost
 </span></span><span style="display:flex;"><span>::1         localhost
