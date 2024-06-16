@@ -6,21 +6,28 @@
     <description>Recent content on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 11 Jun 2024 10:49:18 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jun 2024 14:37:43 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>记录安装TeXLive和MATHEMATICA</title>
+      <link>https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/</link>
+      <pubDate>Sun, 16 Jun 2024 14:37:43 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/</guid>
+      <description>在ArchLinux上，TeXLive不适合用包管理器安装，因为:&#xA;TeX Live itself is a rolling release distribution, based on the model of the user having to upgrade once a year, but with individual package upgrades available on a sub-daily basis.&#xA;而MATHEMATICA 12作为付费软件，同样需要在取得授权后手动安装。&#xA;本文记录以上两个软件的安装过程，以供参考。&#xA;TeX Live 参考 quickinstall The TeXLive Guide&amp;ndash;2024 安装过程 参考quickinstall页面给出的链接, 下载和启动最新的安装脚本 cd /tmp wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz zcat &amp;lt; install-tl-unx.tar.gz | tar xf - cd install-tl-*/ sudo perl ./install-tl 在安装界面的选择 选择便携式安装(portable installation) 自定义安装路径，比如： TEXDIR: /home/poshd/all/local/bin/texlive-2024 使用tlmgr进行包管理 MATHEMATICA 参考archwiki的页面，首先用pacman安装网络相关依赖： #sudo pacman -S avahi # already installed sudo pacman -S inetutils 启用avahi服务 sudo systemctl enable --now avahi-daemon.</description>
+    </item>
+    <item>
+      <title>用Btrfs为根分区创建快照</title>
+      <link>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/</link>
+      <pubDate>Sun, 16 Jun 2024 07:59:04 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/</guid>
+      <description>得益于Btrfs的CoW特性，它创建快照的开销可以非常小，所以我觉得它非常适合作为根分区的文件系统。&#xA;子卷(subwolume) &amp;ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) instead, a Btrfs subvolume can be thought of as a POSIX file namespace.&amp;rdquo;&#xA;最顶层的子卷 ID: 5 无法被删除，无法被替换 路径: &amp;ldquo;/&amp;rdquo; 其它子卷 挂载在顶层子卷的下方 可以在文件系统中移动路径，但ID不变 使用子卷 创建一个子卷 btrfs subvolume create /path/to/subvolume 可以像mkdir一样使用--parents参数 2. 列出一个路径下的所有子卷&#xA;btrfs subvolume list -p path 删除一个子卷 btrfs subvolume delete /path/to/subvolume 分区的储存空间还够吗？ 一般的系统工具不会给出Btrfs分区的准确用量信息。需要用下面的命令：&#xA;# as superuser btrfs filesystem usage / # as normaluser btrfs filesystem df / 使用快照(snapshot)备份和恢复根分区 </description>
+    </item>
     <item>
       <title>如何优雅地重新安装你的Arch Linux</title>
       <link>https://ponyofshadows.com/posts/arch/re-install/</link>
       <pubDate>Tue, 11 Jun 2024 10:49:18 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/arch/re-install/</guid>
       <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用脚本管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 用脚本备份包和配置文件 下面的脚本作为参考&#xA;#!/bin/bash # update : a script to backup and restore my work environment on ArchLinux ## Date: 2024-06-13 ## Please run this script as wheel user after basic install of Arch Linux. # Principles ## 1. Take detailed notes in the script file ## 2. Always only do somesthing after judging that it has not been done yet. ## 3. exit if somesthing goes wrong.</description>
-    </item>
-    <item>
-      <title>Setup: 1.config-backup</title>
-      <link>https://ponyofshadows.com/posts/arch-setup/config-backup/</link>
-      <pubDate>Sun, 09 Jun 2024 21:37:45 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/arch-setup/config-backup/</guid>
-      <description>本文介绍如何备份和恢复自己系统上的包和配置文件</description>
     </item>
     <item>
       <title>Setup: 1.shell</title>

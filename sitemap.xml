@@ -2,29 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ponyofshadows.com/tags/arch/</loc>
-    <lastmod>2024-06-11T10:49:18+08:00</lastmod>
+    <loc>https://ponyofshadows.com/tags/arch-install/</loc>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/linux/</loc>
-    <lastmod>2024-06-11T10:49:18+08:00</lastmod>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2024-06-11T10:49:18+08:00</lastmod>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/</loc>
-    <lastmod>2024-06-11T10:49:18+08:00</lastmod>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/</loc>
+    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/</loc>
+    <lastmod>2024-06-16T07:59:04+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/arch/</loc>
     <lastmod>2024-06-11T10:49:18+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/arch/re-install/</loc>
     <lastmod>2024-06-11T10:49:18+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/tags/arch-setup/</loc>
-    <lastmod>2024-06-09T21:37:45+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/posts/arch-setup/config-backup/</loc>
-    <lastmod>2024-06-09T21:37:45+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/arch-setup/shell/</loc>
     <lastmod>2024-06-09T11:43:54+08:00</lastmod>
