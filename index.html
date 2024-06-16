@@ -91,7 +91,7 @@
     
     
   </strong>
- <span> • 100 words</span>
+ <span> • 123 words</span>
  <span> • 1 minute read</span>
   
     <div>
@@ -108,7 +108,7 @@
 TeX Live itself is a rolling release distribution, based on the model of the user having to upgrade once a year, but with individual package upgrades available on a sub-daily basis.
 而MATHEMATICA 12作为付费软件，同样需要在取得授权后手动安装。
 本文记录以上两个软件的安装过程，以供参考。
-TeX Live 参考 quickinstall The TeXLive Guide&ndash;2024 安装过程 参考quickinstall页面给出的链接, 下载和启动最新的安装脚本 cd /tmp wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz zcat &lt; install-tl-unx.tar.gz | tar xf - cd install-tl-*/ sudo perl ./install-tl 在安装界面的选择 选择便携式安装(portable installation) 自定义安装路径，比如： TEXDIR: /home/poshd/all/local/bin/texlive-2024 使用tlmgr进行包管理 MATHEMATICA 参考archwiki的页面，首先用pacman安装网络相关依赖： #sudo pacman -S avahi # already installed sudo pacman -S inetutils 启用avahi服务 sudo systemctl enable --now avahi-daemon.</p>
+TeX Live 参考 quickinstall The TeXLive Guide&ndash;2024 安装过程 参考quickinstall页面给出的链接, 下载和启动最新的安装脚本 cd /tmp wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz zcat &lt; install-tl-unx.tar.gz | tar xf - cd install-tl-*/ sudo perl ./install-tl 在安装界面的选择 选择便携式安装(portable installation) 自定义安装路径，比如： TEXDIR: /home/poshd/all/local/bin/texlive-2024 安装完成后提示： Add /home/poshd/all/local/bin/texlive/2024/texmf-dist/doc/man to MANPATH.</p>
     
       <a href="https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">Read more...</a>
     
