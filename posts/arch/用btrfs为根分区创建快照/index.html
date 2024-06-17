@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 81 words</span>
+  <span> • 117 words</span>
   <span> • 1 minute read</span>
   
   
@@ -125,13 +125,39 @@ btrfs subvolume delete /path/to/subvolume</li>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># as normaluser</span>
 </span></span><span style="display:flex;"><span>btrfs filesystem df /
 </span></span></code></pre></div><h2 id="使用快照备份和恢复根分区">使用快照备份和恢复根分区</h2>
-<h3 id="参考">参考</h3>
+<p>参考</p>
 <ul>
 <li><a href="https://css.celestialy.top/p/25dbc0cc9/btrfs-simple-intro/">Btrfs实践式快速入门</a></li>
-<li><a href="https://btrfs.wiki.kernel.org">BTRFS Documentation</a></li>
+<li><a href="https://btrfs.wiki.kernel.org">BTRFS Old Wiki</a></li>
 <li><a href="https://btrfs.readthedocs.io">BTRFS Documentation</a></li>
 </ul>
-<h3 id="备份过程">备份过程</h3>
+<h3 id="如果已经用了顶层子卷作为根分区怎么办">如果已经用了顶层子卷作为根分区怎么办</h3>
+<p>如果你已经把顶层子卷当成了系统根路径，要知道顶层子卷是唯一特殊的，无法通过重命名的方式替换，请通过一下步骤改用次级子卷作为根分区：</p>
+<ol>
+<li>修改配置重新生成GRUB，以及修改@current子卷下的fstab</li>
+</ol>
+<ul>
+<li>在<code>/etc/default/grub</code>中找到<code>GRUB_CMDLINE_LINUX</code>这一行，改为</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rootflags=subvol=/@current&#34;</span>
+</span></span></code></pre></div><ul>
+<li>重新生成GRUB:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><ul>
+<li>修改fstab</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 比如这是原来的根目录挂载</span>
+</span></span><span style="display:flex;"><span>UUID<span style="color:#f92672">=</span>*******	/         	btrfs     	rw,relatime,ssd,discard<span style="color:#f92672">=</span>async,space_cache<span style="color:#f92672">=</span>v2,subvolid<span style="color:#f92672">=</span>5,subvol<span style="color:#f92672">=</span>/	<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 现在改成</span>
+</span></span><span style="display:flex;"><span>UUID<span style="color:#f92672">=</span>*******	/         	btrfs     	rw,relatime,ssd,discard<span style="color:#f92672">=</span>async,space_cache<span style="color:#f92672">=</span>v2,subvolid<span style="color:#f92672">=</span>5,subvol<span style="color:#f92672">=</span>/@current	<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><ol start="2">
+<li>生成顶层子卷的快照（命名为<code>@current</code>）, 然后重新启动系统</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo btrfs subvolume snapshot / /@current
+</span></span></code></pre></div><ol start="3">
+<li>最后挂载顶层子卷并删除其中除了<code>@current</code>以外所有内容</li>
+</ol>
 </div>
     </article>
   </main>

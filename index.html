@@ -141,7 +141,7 @@ TeX Live 参考 quickinstall The TeXLive Guide&ndash;2024 安装过程 参考qui
     
     
   </strong>
- <span> • 81 words</span>
+ <span> • 117 words</span>
  <span> • 1 minute read</span>
   
     <div>
@@ -158,7 +158,9 @@ TeX Live 参考 quickinstall The TeXLive Guide&ndash;2024 安装过程 参考qui
 子卷(subwolume) &ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) instead, a Btrfs subvolume can be thought of as a POSIX file namespace.&rdquo;
 最顶层的子卷 ID: 5 无法被删除，无法被替换 路径: &ldquo;/&rdquo; 其它子卷 挂载在顶层子卷的下方 可以在文件系统中移动路径，但ID不变 使用子卷 创建一个子卷 btrfs subvolume create /path/to/subvolume 可以像mkdir一样使用--parents参数 2. 列出一个路径下的所有子卷
 btrfs subvolume list -p path 删除一个子卷 btrfs subvolume delete /path/to/subvolume 分区的储存空间还够吗？ 一般的系统工具不会给出Btrfs分区的准确用量信息。需要用下面的命令：
-# as superuser btrfs filesystem usage / # as normaluser btrfs filesystem df / 使用快照备份和恢复根分区 参考 Btrfs实践式快速入门 BTRFS Documentation BTRFS Documentation 备份过程 </p>
+# as superuser btrfs filesystem usage / # as normaluser btrfs filesystem df / 使用快照备份和恢复根分区 参考</p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">Read more...</a>
     
   </div>
 </article>
