@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 221 words</span>
+  <span> • 222 words</span>
   <span> • 2 minute read</span>
   
   
@@ -200,7 +200,8 @@ btrfs subvolume delete /path/to/subvolume</li>
 </span></span><span style="display:flex;"><span>Exec <span style="color:#f92672">=</span> /home/poshd/all/local/bin/update_snapshot
 </span></span></code></pre></div><h3 id="如果current子卷损坏无法正常使用甚至启动系统怎么办">如果@current子卷损坏，无法正常使用甚至启动系统，怎么办？</h3>
 <ul>
-<li>在grub菜单进入initramfs，挂载根分区硬盘的顶级子卷</li>
+<li>进入恢复模式</li>
+<li>挂载根分区硬盘的顶级子卷</li>
 <li>重命名@current为@abandoned</li>
 <li>重命名最新的快照为@current</li>
 <li>重启进入linux系统，确认恢复到快照，则挂载顶级子卷后用btrfs命令删除@abandoned。</li>
