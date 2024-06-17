@@ -73,8 +73,8 @@
     
     
   </strong>
-  <span> • 117 words</span>
-  <span> • 1 minute read</span>
+  <span> • 221 words</span>
+  <span> • 2 minute read</span>
   
   
     <div>
@@ -155,9 +155,56 @@ btrfs subvolume delete /path/to/subvolume</li>
 <li>生成顶层子卷的快照（命名为<code>@current</code>）, 然后重新启动系统</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo btrfs subvolume snapshot / /@current
+</span></span></code></pre></div><p>可以这样列出所有子卷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo btrfs subvolume list /
 </span></span></code></pre></div><ol start="3">
 <li>最后挂载顶层子卷并删除其中除了<code>@current</code>以外所有内容</li>
 </ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount /dev/nvme0n1p3 /mnt
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 如果挂载的不是顶层子卷，用-o选项，指定subvol的值为快照子卷的路径，或指定subvolid的值为快照子卷的ID</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo chatter -i /mnt/etc/resolv.conf
+</span></span><span style="display:flex;"><span>rm -rf /mnt/<span style="color:#f92672">[</span>a-z<span style="color:#f92672">]</span>* 
+</span></span><span style="display:flex;"><span>ls /mnt
+</span></span></code></pre></div><h3 id="创建快照的脚本">创建快照的脚本</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>system_root_device<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>findmnt -n -o SOURCE /<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>system_root_device<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>system_root_device%%[*<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>snapshot_date<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%Y-%m-%d_%H:%M:%S&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mount -m <span style="color:#e6db74">&#34;</span>$system_root_device<span style="color:#e6db74">&#34;</span> /mnt/@top_subvol
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btrfs subvolume snapshot / <span style="color:#e6db74">&#34;/mnt/@top_subvol/@snapshot</span>$snapshot_date<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>snapshots<span style="color:#f92672">=(</span> <span style="color:#66d9ef">$(</span>ls -dr /mnt/@top_subvol/@snapshot*<span style="color:#66d9ef">)</span> <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>snapshots[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${#</span>snapshots[@]<span style="color:#e6db74">}</span> &gt; <span style="color:#ae81ff">1</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> snapshot in <span style="color:#e6db74">${</span>snapshots[@]:1<span style="color:#e6db74">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        btrfs subvolume delete <span style="color:#e6db74">&#34;</span>$snapshot<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>umount /mnt/@top_subvol
+</span></span><span style="display:flex;"><span>rmdir /mnt/@top_subvol
+</span></span></code></pre></div><p>在对根分区执行有风险的操作之前记得执行这个脚本哦</p>
+<h3 id="使用钩子httpsmanarchlinuxorgmanalpm-hooks5让pacman在更新前调用创建快照的脚本">使用<a href="https://man.archlinux.org/man/alpm-hooks.5">钩子</a>让pacman在更新前调用创建快照的脚本</h3>
+<p>创建文件<code>/etc/pacman.d/hooks/update_snapshot.hook</code>
+内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Trigger<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Operation <span style="color:#f92672">=</span> Upgrade
+</span></span><span style="display:flex;"><span>Type <span style="color:#f92672">=</span> Package
+</span></span><span style="display:flex;"><span>Target <span style="color:#f92672">=</span> *
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Action<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Description <span style="color:#f92672">=</span> Creating Btrfs snapshot of / before upgrade...
+</span></span><span style="display:flex;"><span>When <span style="color:#f92672">=</span> PreTransaction
+</span></span><span style="display:flex;"><span>Exec <span style="color:#f92672">=</span> /home/poshd/all/local/bin/update_snapshot
+</span></span></code></pre></div><h3 id="如果current子卷损坏无法正常使用甚至启动系统怎么办">如果@current子卷损坏，无法正常使用甚至启动系统，怎么办？</h3>
+<ul>
+<li>在grub菜单进入initramfs，挂载根分区硬盘的顶级子卷</li>
+<li>重命名@current为@abandoned</li>
+<li>重命名最新的快照为@current</li>
+<li>重启进入linux系统，确认恢复到快照，则挂载顶级子卷后用btrfs命令删除@abandoned。</li>
+</ul>
 </div>
     </article>
   </main>
