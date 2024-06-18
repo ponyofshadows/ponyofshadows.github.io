@@ -27,7 +27,7 @@
       <link>https://ponyofshadows.com/posts/arch/re-install/</link>
       <pubDate>Tue, 11 Jun 2024 10:49:18 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/arch/re-install/</guid>
-      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用脚本管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 用脚本备份包和配置文件 下面的脚本作为参考&#xA;#!/bin/bash # update : a script to backup and restore my work environment on ArchLinux ## Date: 2024-06-13 ## Please run this script as wheel user after basic install of Arch Linux. # Principles ## 1. Take detailed notes in the script file ## 2. Always only do somesthing after judging that it has not been done yet. ## 3. exit if somesthing goes wrong.</description>
+      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用脚本管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 用脚本备份包和配置文件 下面的脚本作为参考&#xA;#/bin/bash # update : a script to backup and restore my work environment on ArchLinux ## Please run this script as wheel user after basic install of Arch Linux. # Principles ## 1. Take detailed notes in the script file ## 2. Always only do somesthing after judging that it has not been done yet. ## 3. exit if somesthing goes wrong. set -e ## Config bak_path=&amp;#34;$HOME/all/local/share/backup-config&amp;#34; # Backup or Recover?</description>
     </item>
     <item>
       <title>Setup: 1.shell</title>
