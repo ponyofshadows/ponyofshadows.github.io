@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 222 words</span>
+  <span> • 234 words</span>
   <span> • 2 minute read</span>
   
   
@@ -198,9 +198,17 @@ btrfs subvolume delete /path/to/subvolume</li>
 </span></span><span style="display:flex;"><span>Description <span style="color:#f92672">=</span> Creating Btrfs snapshot of / before upgrade...
 </span></span><span style="display:flex;"><span>When <span style="color:#f92672">=</span> PreTransaction
 </span></span><span style="display:flex;"><span>Exec <span style="color:#f92672">=</span> /home/poshd/all/local/bin/update_snapshot
-</span></span></code></pre></div><h3 id="如果current子卷损坏无法正常使用甚至启动系统怎么办">如果@current子卷损坏，无法正常使用甚至启动系统，怎么办？</h3>
+</span></span></code></pre></div><h3 id="如果current子卷损坏无法正常启动系统怎么办">如果@current子卷损坏，无法正常启动系统，怎么办？</h3>
 <ul>
-<li>进入恢复模式</li>
+<li>开机一般会自动进入救援模式
+如果不放心，可以像这样确定自己的系统确实支持btrfs文件系统</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ <span style="color:#75715e"># lsinitcpio /boot/initramfs-linux.img | grep btrfs</span>
+</span></span><span style="display:flex;"><span>usr/lib/modules/6.9.5-arch1-1/kernel/fs/btrfs/
+</span></span><span style="display:flex;"><span>usr/lib/modules/6.9.5-arch1-1/kernel/fs/btrfs/btrfs.ko.zst
+</span></span><span style="display:flex;"><span>usr/bin/fsck.btrfs
+</span></span><span style="display:flex;"><span>usr/lib/udev/rules.d/64-btrfs.rules
+</span></span></code></pre></div><ul>
 <li>挂载根分区硬盘的顶级子卷</li>
 <li>重命名@current为@abandoned</li>
 <li>重命名最新的快照为@current</li>
