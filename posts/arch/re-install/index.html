@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 1088 words</span>
+  <span> • 1089 words</span>
   <span> • 6 minute read</span>
   
   
@@ -371,8 +371,9 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 </span></span><span style="display:flex;"><span>genfstab -U /mnt/@current &gt;&gt; /mnt/@current/etc/fstab
 </span></span></code></pre></div><ul>
 <li>向fstab文件中追加一行swap分区
-首先使用lsblk查看UUID</li>
+首先以root身份使用<code>blkid</code>命令查看UUID</li>
 </ul>
+<p>(也可用lsblk)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk -o NAME,FSTYPE,UUID
 </span></span></code></pre></div><p>然后用cat等工具在fstab文件末尾追加以下文本, 其中discard选项是启用丢弃策略，即<code>swapon -d</code>。</p>
 <pre tabindex="0"><code># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;
