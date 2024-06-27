@@ -67,6 +67,51 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/">
+    <h1 class="title">fix pdf-export-error in wps</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-03-16</time>
+    
+    
+  </strong>
+ <span> • 12 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/bugs">bugs</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>WPS依赖libtiff.s.5, 而系统里的是libtiff.so.6。这样就行了。
+cd /usr/lib ln -s libtiff.so libtiff.so.5 Reference WPS官方社区-Linux环境下不能输出PDF ArchWiki WPS-Office</p>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/">
     <h1 class="title">Avoid Running out of System Space</h1>
     
@@ -473,50 +518,6 @@ Check Commit History First, you need to find the commit hash of the specific com
   <div class="content">
     <p>Install and Initialize sudo pacman -S git-lfs git lfs install Basic Usage see git-lfs.com
 How to track large files that have been added to the repository. git add --renormalize git commit -m &#34;Migrate existing large files to Git LFS&#34; </p>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/papis/">
-    <h1 class="title">papis</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-11</time>
-    
-    
-  </strong>
- <span> • 49 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>Example: add a paper to the default library papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 --folder-name quantumn_mechanics/Ruling_Out_Real-Valued_Standard_Formalism_of_Quantum_Theory If you download PDF papers from journel website such as PRL, you don&rsquo;t need to specify doi when adding the paper, because it is already included in the paper file.
-Ref papis docs </p>
     
   </div>
 </article>

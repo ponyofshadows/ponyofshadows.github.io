@@ -6,8 +6,15 @@
     <description>Recent content in Linux on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 16 Jun 2024 14:37:43 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jun 2024 18:09:46 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>waydroid使用技巧汇总</title>
+      <link>https://ponyofshadows.com/posts/arch/waydroid/</link>
+      <pubDate>Thu, 27 Jun 2024 18:09:46 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/waydroid/</guid>
+      <description>改变手机窗口大小 # 如果是空字符串就是默认大小，可以以数字为参数改变大小 waydroid prop set persist.waydroid.width &amp;#34;&amp;#34; waydroid prop set persist.waydroid.height &amp;#34;&amp;#34; </description>
+    </item>
     <item>
       <title>记录安装TeXLive和MATHEMATICA</title>
       <link>https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/</link>
@@ -31,23 +38,23 @@
     </item>
     <item>
       <title>Setup: 1.shell</title>
-      <link>https://ponyofshadows.com/posts/arch-setup/shell/</link>
+      <link>https://ponyofshadows.com/posts/old-arch/shell/</link>
       <pubDate>Sun, 09 Jun 2024 11:43:54 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/arch-setup/shell/</guid>
+      <guid>https://ponyofshadows.com/posts/old-arch/shell/</guid>
       <description>现在在笔记系列的第1层，目的是渐渐完善命令行下使用linux的体验。&#xA;本文我们聚焦以下两点：&#xA;日常的Shell使用体验 在登录和打开交互式Shell时应该通过Shell脚本做哪些事情 Shell的选择 我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归使用bash，因为：&#xA;bash是大部分发行版的默认shell 大部分linux的脚本是sh或bash脚本，而bash又是sh的增强版本，能正常运行大部分sh脚本。 通过一些工具能让bash在日常使用时达到接近fish的用户友好程度。 ChatGPT列举了以下工具(我们接下来会参考GPT的提示增强bash的功能)&#xA;Bash Completion 是一个常用的插件，为 Bash 提供更智能的命令补全。 bash-git-prompt 可以在 Bash 提示符中显示 Git 仓库的信息，使提示符更具信息性和美观。 fzf 是一个命令行模糊查找器，能极大地增强 Bash 的文件和命令补全功能。 powerline-shell 能美化 Bash 提示符，提供类似 Fish 的视觉效果。 z - jump around 是一个目录跳转工具，可以根据使用频率快速跳转到常用目录。 Shell启动脚本 标题链接的博客文章充分说明了bash在不同情况下运行启动脚本的复杂性。我们参考作者的建议进行配置：&#xA;不使用/etc/下的配置。例如/etc/profile，该文件在任何用户启动时都会运行，但我想让所有用户的共同启动行为保持默认。 ~/.bashrc除了个别情况，只会在interactive shell模式下运行。所以我们用一行命令排除non-interactive的情况，然后加载环境变量和交互环境的必须环境 # ~/.bashrc # If not running interactively, don&amp;#39;t do anything [[ $- != *i* ]] &amp;amp;&amp;amp; return # env &amp;amp; interactive if [ -f ~/.bash/env.sh ]; then . ~/.bash/env.sh fi if [ -f ~/.</description>
     </item>
     <item>
       <title>Setup: 1.Basic Config</title>
-      <link>https://ponyofshadows.com/posts/arch-setup/basic_config/</link>
+      <link>https://ponyofshadows.com/posts/old-arch/basic_config/</link>
       <pubDate>Thu, 06 Jun 2024 22:40:07 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/arch-setup/basic_config/</guid>
+      <guid>https://ponyofshadows.com/posts/old-arch/basic_config/</guid>
       <description>现在处于本笔记系列的第1层，目标是丰富系统在纯命令行下的编辑和浏览体验。&#xA;这次的笔记汇总了arch linux在系统层面的基础配置。&#xA;设置主机名 vim /etc/hostnamevim 在这个文件中输入你想好的主机名即可，然后&#xA;vim /etc/hosts 在这个文件下加入类似以下内容：&#xA;127.0.0.1 localhost ::1 localhost 127.0.1.1 my_hostname 用户 给root用户添加密码 passwd root 添加一个普通用户 # -m同时创建家目录，wheel是可sudo的用户组 useradd -m -G wheel -s /bin/bash user0 # 设置密码 passwd user0 sudo用户的配置 sudo在archlinux中属于基本组件，用来暂时暂时以其它用户的身份运行代码或执行文件。&#xA;sudo用户的配置文件是/etc/sudoers, 这个文件原则上只能通过visudo命令编辑&#xA;# 用环境变量指明编辑器是vim, 以后安装了neovim也可指定为nvim. EDITOR=vim visudo 这个文件中我们只需要关注以下部分&#xA;## ## User privilege specification ## root ALL=(ALL:ALL) ALL ## Uncomment to allow members of group wheel to execute any command # %wheel ALL=(ALL:ALL) ALL ## Same thing without a password %wheel ALL=(ALL:ALL) NOPASSWD: ALL ## Uncomment to allow members of group sudo to execute any command # %sudo ALL=(ALL:ALL) ALL ## Uncomment to allow any user to run sudo if they know the password ## of the user they are running the command as (root by default).</description>
     </item>
     <item>
       <title>Setup: 0.Basic</title>
-      <link>https://ponyofshadows.com/posts/arch-setup/basic/</link>
+      <link>https://ponyofshadows.com/posts/old-arch/basic/</link>
       <pubDate>Wed, 05 Jun 2024 11:02:57 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/arch-setup/basic/</guid>
+      <guid>https://ponyofshadows.com/posts/old-arch/basic/</guid>
       <description>本笔记系列旨在梳理Arch Linux从基础安装到功能齐全的配置过程，实现对自己的桌面Linux系统点面俱全的掌握。&#xA;现在处于笔记系列的第0层，目标仅仅是：让新安装的系统可以正常引导启动和自己联网下载新的包&#xA;关键词 : live系统，分区方案，网络连接，文件系统，系统引导&#xA;前期准备 我们需要：&#xA;一台电脑 稳定的无线或有线网络 USB闪存安装介质 下面展开讲讲上面3.的安装介质如何准备：&#xA;在Download页面找到自己所在国家的镜像站下载最新的ISO(光盘镜像文件)，对于中国，可以是中科大镜像源。比如下面这两个文件，都要下载下来, 放在同一个目录待验证 archlinux-2024.06.01-x86_64.iso 01-Jun-2024 17:09 1168146432 archlinux-2024.06.01-x86_64.iso.sig 01-Jun-2024 17:09 141 前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：&#xA;# On Arch linux (-v = --verify) pacman-key -v archlinux-version-x86_64.iso.sig # On any system with GnuPG installed gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig 看到&amp;quot;Good signature&amp;quot;之类的字眼，说明验证成功。&#xA;插入自己的闪存，然后以root身份使用 dd 命令写入ISO，注意of参数需要的是磁盘设备名而不是分区名 (甚至可以使用cat或cp) dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress 下面解释一下这行命令&#xA;bs=4M 这个参数指定了块大小（block size）为4MB, 使用较大的块理论上能提高复制的效率，但复制效率的上限被诸多因素定死，设置为4M即可。 conv=fsync 这个选项确保在复制过程中数据写入到磁盘时，所有的内存缓冲区都被刷新（fsync），以保证数据的完整性 oflag=direct 这个选项告诉 dd 直接写入到输出文件，绕过系统缓存。这样可以提高大文件写入时的性能，并减少系统缓存对其他进程的影响。 status=progress 这个选项告诉 dd 输出进度信息，使用户可以看到复制过程中的进度。 live环境 现在可以在计算机启动时进入前面写入到闪存中的live系统（在该系统分区下的大部分修改，在关机后都会丢失）</description>
     </item>
     <item>

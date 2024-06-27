@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ponyofshadows.com/tags/arch-install/</loc>
-    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
-  </url><url>
     <loc>https://ponyofshadows.com/tags/linux/</loc>
-    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/</loc>
-    <lastmod>2024-06-16T14:37:43+08:00</lastmod>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/arch/waydroid/</loc>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/wayland/</loc>
+    <lastmod>2024-06-27T18:09:46+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/arch-install/</loc>
     <lastmod>2024-06-16T14:37:43+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/</loc>
@@ -29,13 +35,13 @@
     <loc>https://ponyofshadows.com/posts/arch/re-install/</loc>
     <lastmod>2024-06-11T10:49:18+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/posts/arch-setup/shell/</loc>
+    <loc>https://ponyofshadows.com/posts/old-arch/shell/</loc>
     <lastmod>2024-06-09T11:43:54+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/posts/arch-setup/basic_config/</loc>
+    <loc>https://ponyofshadows.com/posts/old-arch/basic_config/</loc>
     <lastmod>2024-06-06T22:40:07+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/posts/arch-setup/basic/</loc>
+    <loc>https://ponyofshadows.com/posts/old-arch/basic/</loc>
     <lastmod>2024-06-05T11:02:57+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E8%B5%9A%E5%B8%81%E8%A7%84%E5%88%99%E7%AC%AC%E4%BA%8C%E7%89%88/</loc>
