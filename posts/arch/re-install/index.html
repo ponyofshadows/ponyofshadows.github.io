@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 1089 words</span>
+  <span> • 1090 words</span>
   <span> • 6 minute read</span>
   
   
@@ -324,7 +324,7 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 <ol>
 <li>连接网络。有线网络直接插上网线即可，无线网络可以用 <code>iwctl</code> 或 <code>wpa_suppliant + wpa_cli</code>。</li>
 <li>更新时钟
-在网络传输的各种较验中，时钟错误可能导致失败。使用以下<a href="https://archlinuxstudio.github.io/ArchLinuxTutorial/#/rookie/basic_install">命令</a>更新live系统的时钟</li>
+在网络传输的各种较验中，时钟错误可能导致失败。使用以下命令更新live系统的时钟</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true    <span style="color:#75715e">#将系统时间与网络时间进行同步</span>
 </span></span><span style="display:flex;"><span>timedatectl status          <span style="color:#75715e">#检查服务状态</span>
@@ -386,12 +386,12 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 <ol>
 <li>最基本的包</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt/@current base base-devel linux linux-headers linux-firmware
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt/@current base base-devel linux-zen linux-zen-headers linux-firmware
 </span></span></code></pre></div><ul>
 <li><code>base</code>: Arch Linux的基础包集合，包含了一个最小化的可用系统所需的核心软件包。它包括基本的文件系统工具、基本的 Shell（如bash）、核心库和其他基本工具。</li>
 <li><code>base-devel</code>: 包含了一组用于开发的软件包, 包括编译器、调试工具等。安装它是为了方便安装和编译其他软件包</li>
-<li><code>linux</code>: 默认内核</li>
-<li><code>linux-headers</code>: 与<code>linux</code>包对应的内核头文件包, 它包含了用于编译内核模块和驱动程序的头文件。</li>
+<li><code>linux-zen</code>: zen内核, 相比默认内核桌面使用体验更佳。</li>
+<li><code>linux-zen-headers</code>: 与<code>linux-zen</code>包对应的内核头文件包, 它包含了用于编译内核模块和驱动程序的头文件。</li>
 <li><code>linux-firmware</code>: 各种硬件设备所需的固件文件</li>
 </ul>
 <ol start="2">
