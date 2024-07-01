@@ -6,8 +6,15 @@
     <description>Recent content on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2024 18:09:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jul 2024 00:01:44 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>steam的一些小问题的解决办法</title>
+      <link>https://ponyofshadows.com/posts/arch/steam/</link>
+      <pubDate>Tue, 02 Jul 2024 00:01:44 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/steam/</guid>
+      <description> 强制关机导致proton缓存损坏 steam的输出提示类似下面的话 wine: &amp;#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&amp;#39; is a 32-bit installation, it cannot support 64-bit applications. 只要删除这个缓存就可以了&#xA;rm -rf ~/.local/share/Steam/steamapps/compatdata/1245620 </description>
+    </item>
     <item>
       <title>waydroid使用技巧汇总</title>
       <link>https://ponyofshadows.com/posts/arch/waydroid/</link>

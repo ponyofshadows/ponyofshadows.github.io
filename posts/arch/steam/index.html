@@ -9,7 +9,7 @@
   />
   
     
-      <title>Arch-Install | Pony of Shadows</title>
+      <title>steam的一些小问题的解决办法 | Pony of Shadows</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -62,42 +62,38 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: Arch-Install</h1>
+  <main>
+    <article>
+      <h1 class="title">steam的一些小问题的解决办法</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-07-02</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Jun 16
-        </div>
-        <div class="title">
-          <a href="/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">记录安装TeXLive和MATHEMATICA</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jun 16
-        </div>
-        <div class="title">
-          <a href="/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">用Btrfs为根分区创建快照</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jun 11
-        </div>
-        <div class="title">
-          <a href="/posts/arch/re-install/">如何优雅地重新安装你的Arch Linux</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 17 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
 
-
+      <div class="content"><ol>
+<li>强制关机导致proton缓存损坏
+steam的输出提示类似下面的话</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine: <span style="color:#e6db74">&#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&#39;</span> is a 32-bit installation, it cannot support 64-bit applications.
+</span></span></code></pre></div><p>只要删除这个缓存就可以了</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf ~/.local/share/Steam/steamapps/compatdata/1245620
+</span></span></code></pre></div></div>
+    </article>
   </main>
 
       </div>

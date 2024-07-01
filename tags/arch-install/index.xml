@@ -22,5 +22,12 @@
       <guid>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/</guid>
       <description>得益于Btrfs的CoW特性，它创建快照的开销可以非常小，所以我觉得它非常适合作为根分区的文件系统。&#xA;子卷(subwolume) &amp;ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) instead, a Btrfs subvolume can be thought of as a POSIX file namespace.&amp;rdquo;&#xA;最顶层的子卷 ID: 5 无法被删除，无法被替换 路径: &amp;ldquo;/&amp;rdquo; 其它子卷 挂载在顶层子卷的下方 可以在文件系统中移动路径，但ID不变 使用子卷 创建一个子卷 btrfs subvolume create /path/to/subvolume 可以像mkdir一样使用--parents参数 2. 列出一个路径下的所有子卷&#xA;btrfs subvolume list -p path 删除一个子卷 btrfs subvolume delete /path/to/subvolume 分区的储存空间还够吗？ 一般的系统工具不会给出Btrfs分区的准确用量信息。需要用下面的命令：&#xA;# as superuser btrfs filesystem usage / # as normaluser btrfs filesystem df / 使用快照备份和恢复根分区 参考</description>
     </item>
+    <item>
+      <title>如何优雅地重新安装你的Arch Linux</title>
+      <link>https://ponyofshadows.com/posts/arch/re-install/</link>
+      <pubDate>Tue, 11 Jun 2024 10:49:18 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/re-install/</guid>
+      <description>日常使用 有序存放工作生活中使用的文件，并使用rsync等工具备份防止丢失 妥善配置系统，并使用脚本管理所有配置文件 对自己安装过的软件心中有数 在旧系统上备份 用脚本备份包和配置文件 下面的脚本作为参考&#xA;#/bin/bash # update : a script to backup and restore my work environment on ArchLinux ## Please run this script as wheel user after basic install of Arch Linux. # Principles ## 1. Take detailed notes in the script file ## 2. Always only do somesthing after judging that it has not been done yet. ## 3. exit if somesthing goes wrong. set -e ## Config bak_path=&amp;#34;$HOME/all/local/share/backup-config&amp;#34; # Backup or Recover?</description>
+    </item>
   </channel>
 </rss>
