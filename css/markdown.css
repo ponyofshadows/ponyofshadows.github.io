@@ -1,0 +1,264 @@
+html {
+  overflow-y: scroll
+}
+:root {
+  --bgcolor: #f8f9fa;
+  --dimcolor: #eee;
+  --fontcolor: #000;
+  --linkcolor: #00e;
+  --visitedcolor: #551a8b;
+  --precolor: #fff;
+  --prebgcolor: #000;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+     --bgcolor: #222;
+     --dimcolor: #333;
+     --fontcolor: #ddd;
+     --linkcolor: #5bf;
+     --visitedcolor: #ae5ee0;
+     --precolor: #fff;
+     --prebgcolor: #383838;
+  }
+}
+body {
+  color: var(--fontcolor);
+  background: var(--bgcolor);
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:link {
+  color: var(--linkcolor);
+}
+a:visited {
+  color: var(--visitedcolor);
+}
+a:active {
+  color: var(--visitedcolor);
+}
+/* 调整标题杨式 */
+/* 通用标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+/* 各个级别标题的具体样式 */
+h1 {
+  font-size: 2.5em;
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3em;
+  background-color: #f9f9f9;
+}
+
+h2 {
+  font-size: 2em;
+  color: #444;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.3em;
+  background-color: #f0f0f0;
+}
+
+h3 {
+  font-size: 1.75em;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.3em;
+  background-color: #e9e9e9;
+}
+
+h4 {
+  font-size: 1.5em;
+  color: #666;
+  border-left: 4px solid #ccc;
+  padding-left: 0.5em;
+  background-color: #e0e0e0;
+}
+
+h5 {
+  font-size: 1.25em;
+  color: #777;
+  border-left: 4px solid #ddd;
+  padding-left: 0.5em;
+  background-color: #d7d7d7;
+}
+
+h6 {
+  font-size: 1em;
+  color: #888;
+  border-left: 4px solid #eee;
+  padding-left: 0.5em;
+  background-color: #cecece;
+}
+/*** 明亮模式 ***/
+@media (prefers-color-scheme: light) {
+  h1 {
+    color: #212529;
+    border-bottom-color: #999;
+  }
+  h2 {
+    color: #333;
+    border-bottom-color: #aaa;
+  }
+  h3 {
+    color: #444;
+    border-bottom-color: #bbb;
+  }
+  h4, h5, h6 {
+    color: #555;
+    border-left-color: #ccc;
+  }
+}
+/*** 黑暗模式 ***/
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: #f8f9fa;
+    border-bottom-color: #555;
+    background-color: #444;
+  }
+  h2 {
+    color: #f8f9fa;
+    border-bottom-color: #666;
+    background-color: #333;
+  }
+  h3 {
+    color: #f8f9fa;
+    border-bottom-color: #777;
+    background-color: #222;
+  }
+  h4, h5, h6 {
+    color: #f8f9fa;
+    border-left-color: #888;
+    background-color: #111;
+  }
+}
+
+/* 调整行内代码样式 */
+/*** 基本样式，适用于所有模式 ***/
+code, pre {
+  padding: 0.2em 0.4em; /* 增加内边距 */
+  border-radius: 4px; /* 轻微的圆角 */
+  font-size: 1.1em; /* 稍微增大字体大小 */
+  overflow-x: auto; /* 为代码块添加水平滚动 */
+}
+/*** 亮模式 ***/
+@media (prefers-color-scheme: light) {
+  code {
+    background: rgba(0, 0, 0, 0.1);
+    color: black; /* 文字颜色 */
+  }
+  pre {
+    background: rgba(0, 0, 0, 0.1);
+    color: black; /* 文字颜色 */
+  }
+}
+/*** 暗模式 ***/
+@media (prefers-color-scheme: dark) {
+  code {
+    background: rgba(210, 180, 140, 0.1);
+    color: white; /* 文字颜色 */
+  }
+  pre {
+    background: rgba(210, 180, 140, 0.1);
+    color: white; /* 文字颜色 */
+  }
+}
+
+
+article {
+  padding: 5px 0;
+}
+.center  {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+figcaption {
+  color: #888;
+  font: 12px/1.5 monospace;
+  text-align: center;
+}
+figure {
+  margin: auto;
+}
+
+/* 块引用 */
+/*** 通用样式 ***/
+blockquote {
+  border-left: 4px solid #ccc; /* 边框样式 */
+  margin: 1em 0; /* 外边距 */
+  padding: 0.5em 1em; /* 内边距 */
+  background: #f9f9f9; /* 背景色 */
+  color: #333; /* 文字颜色 */
+}
+/*** 明亮模式 ***/
+@media (prefers-color-scheme: light) {
+  blockquote {
+    border-left-color: #blue; /* 明亮模式下的边框颜色 */
+    background: #e9ecef; /* 明亮模式下的背景色 */
+    color: #212529; /* 明亮模式下的文字颜色 */
+  }
+}
+/*** 黑暗模式 ***/
+@media (prefers-color-scheme: dark) {
+  blockquote {
+    border-left-color: #yellow; /* 黑暗模式下的边框颜色 */
+    background: #343a40; /* 黑暗模式下的背景色 */
+    color: #f8f9fa; /* 黑暗模式下的文字颜色 */
+  }
+}
+
+/* 表格 */
+/*** 通用表格样式 ***/
+table {
+  border-collapse: collapse; /* 紧凑边框 */
+  width: 100%; /* 表格宽度占满容器 */
+  margin-bottom: 1em; /* 底部外边距 */
+}
+table th,
+table td {
+  border: 1px solid #666; /* 较深的边框颜色 */
+  padding: 8px; /* 单元格内边距 */
+  text-align: left; /* 文字左对齐 */
+}
+/*** 明亮模式 ***/
+@media (prefers-color-scheme: light) {
+  table th {
+    background-color: #f8f9fa; /* 浅色背景 */
+  }
+  table td {
+    background-color: #fff; /* 白色背景 */
+  }
+}
+/*** 黑暗模式 ***/
+@media (prefers-color-scheme: dark) {
+  table th {
+    background-color: #333; /* 深色背景 */
+  }
+  table td {
+    background-color: #222; /* 更深的背景色 */
+  }
+}
+
+
+/* summary */
+.home-page .content p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+}
