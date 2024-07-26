@@ -67,6 +67,51 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/">
+    <h1 class="title">bash脚本中如何展开字符串包含的通配符</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-05-31</time>
+    
+    
+  </strong>
+ <span> • 127 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    <p>一般的语句中，通配符在使用它的那一行展开，但被双引号包括时不会展开。 示例脚本1： #!/bin/bash ls ~/tmp/*a ls &#34;~/tmp/*a&#34; tmp_path=&#34;~/tmp&#34; string=&#34;${tmp_path}/*a&#34; echo &#34;string=$string&#34; ls $string 运行结果1： ponyofshadows@equestria ~/p/p/doc (master)&gt; bash test_wildcard.sh /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a ls: cannot access &#39;~/tmp/*a&#39;: No such file or directory string=~/tmp/*a ls: cannot access &#39;~/tmp/*a&#39;: No such file or directory 示例脚本2: ls ~/tmp/*a echo &#34;*** ()1 ***&#34; tmp_path1=~/tmp string_list1=( ${tmp_path1}/*a ) ls &#34;${string_list1[@]}&#34; echo &#34;*** ()2 ***&#34; tmp_path2=&#34;~/tmp&#34; string_list2=( ${tmp_path2}/*a ) ls &#34;${string_list2[@]}&#34; 运行结果2: ponyofshadows@equestria ~/p/p/doc (master)&gt; bash test_wildcard1.sh /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a *** ()1 *** /home/ponyofshadows/tmp/1a /home/ponyofshadows/tmp/2a *** ()2 *** ls: cannot access &#39;~/tmp/*a&#39;: No such file or directory 使用eval展开字符串中的通配符 # eval 把字符串参数当作命令进行解释和执行 eval $cmd 代码示例 #!</p>
+    
+      <a href="https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/">Read more...</a>
+    
+  </div>
+</article>
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/linux/%E6%95%B0%E6%8D%AE%E5%AD%98%E6%A1%A301%E6%89%8B%E5%8A%A8%E5%AD%98%E6%A1%A3%E8%A7%84%E8%8C%83/">
     <h1 class="title">数据存档01手动存档规范</h1>
     
@@ -479,52 +524,6 @@ How to install flypy.schema yay -S rime-flypy relevant config files In Rime inpu
 Global Configuration (e.g., /usr/share/rime-data/default.yaml): This is the default global configuration of the Rime input method. It defines the basic behavior and default settings of the input method.</p>
     
       <a href="https://ponyofshadows.com/posts/tools/rime_custom/">Read more...</a>
-    
-  </div>
-</article>
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">
-    <h1 class="title">Using git for version control</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-12</time>
-    
-    
-  </strong>
- <span> • 251 words</span>
- <span> • 2 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    <p>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you can follow these steps:
-Check Commit History First, you need to find the commit hash of the specific commit you want to switch to. This can be done by viewing the commit history on the specific branch using the git log command.</p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">Read more...</a>
     
   </div>
 </article>

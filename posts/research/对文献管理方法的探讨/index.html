@@ -9,7 +9,7 @@
   />
   
     
-      <title>Tags | Pony of Shadows</title>
+      <title>对文献管理方法的探讨 | Pony of Shadows</title>
     
   
   <link rel="stylesheet" href="/css/reset.css"/>
@@ -62,156 +62,46 @@
 
       <div id="content">
         
-  <main id="terms">
+  <main>
+    <article>
+      <h1 class="title">对文献管理方法的探讨</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-07-26</time>
+    
+    
+  </strong>
+  <span> • 26 words</span>
+  <span> • 1 minute read</span>
   
-<h1>Tags</h1>
-<ul id="terms">
   
-    
-      <li class="term">
-        <a
-          href="/tags/linux"
-        >
-          <span>linux</span>
-          <span> (19)</span>
-        </a>
-      </li>
-    
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/research">research</a>
+    </div>
   
-    
-      <li class="term">
-        <a
-          href="/tags/tools"
-        >
-          <span>tools</span>
-          <span> (9)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/arch-install"
-        >
-          <span>arch-install</span>
-          <span> (3)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/bugs"
-        >
-          <span>bugs</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/desktop"
-        >
-          <span>desktop</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/diary"
-        >
-          <span>diary</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/fix"
-        >
-          <span>fix</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/latex"
-        >
-          <span>latex</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/python"
-        >
-          <span>python</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/research"
-        >
-          <span>research</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/test"
-        >
-          <span>test</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/wayland"
-        >
-          <span>wayland</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-    
-      <li class="term">
-        <a
-          href="/tags/website"
-        >
-          <span>website</span>
-          <span> (1)</span>
-        </a>
-      </li>
-    
-  
-</ul>
+</div>
 
+      <div class="content"><p>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。</p>
+<h2 id="用到的工具">用到的工具</h2>
+<ul>
+<li><code>papis</code> 命令行文献管理器</li>
+<li><code>neovim</code> 编辑器</li>
+<li><code>okular</code> PDF阅读器</li>
+</ul>
+<h2 id="paper的数据结构">Paper的&quot;数据结构&quot;</h2>
+<pre tabindex="0"><code>Paper
+|_ 各种出版信息(Title, Authors, Year, ...)
+|_ Abstract
+|_ 关联的okular笔记文件（xml格式）
+|_ Focus (添加该文献时自己的科研关注点)
+|_ Tags
+|_ 关联的其它文献(指向、被指向)
+</code></pre></div>
+    </article>
   </main>
 
       </div>

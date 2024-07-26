@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/research/</link>
+    <description>Recent content in Research on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jul 2024 08:06:17 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对文献管理方法的探讨</title>
+      <link>https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</link>
+      <pubDate>Fri, 26 Jul 2024 08:06:17 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</guid>
+      <description>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。&#xA;用到的工具 papis 命令行文献管理器 neovim 编辑器 okular PDF阅读器 Paper的&amp;quot;数据结构&amp;quot; Paper |_ 各种出版信息(Title, Authors, Year, ...) |_ Abstract |_ 关联的okular笔记文件（xml格式） |_ Focus (添加该文献时自己的科研关注点) |_ Tags |_ 关联的其它文献(指向、被指向) </description>
+    </item>
+  </channel>
+</rss>

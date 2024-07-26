@@ -2,19 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://ponyofshadows.com/</loc>
+    <lastmod>2024-07-26T08:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/</loc>
+    <lastmod>2024-07-26T08:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/research/</loc>
+    <lastmod>2024-07-26T08:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/</loc>
+    <lastmod>2024-07-26T08:06:17+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</loc>
+    <lastmod>2024-07-26T08:06:17+08:00</lastmod>
+  </url><url>
     <loc>https://ponyofshadows.com/tags/linux/</loc>
     <lastmod>2024-07-02T00:01:44+08:00</lastmod>
   </url><url>
-    <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2024-07-02T00:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/posts/</loc>
-    <lastmod>2024-07-02T00:01:44+08:00</lastmod>
-  </url><url>
     <loc>https://ponyofshadows.com/posts/arch/steam/</loc>
-    <lastmod>2024-07-02T00:01:44+08:00</lastmod>
-  </url><url>
-    <loc>https://ponyofshadows.com/tags/</loc>
     <lastmod>2024-07-02T00:01:44+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/arch/waydroid/</loc>
