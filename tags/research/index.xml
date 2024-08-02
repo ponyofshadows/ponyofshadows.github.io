@@ -13,7 +13,7 @@
       <link>https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</link>
       <pubDate>Fri, 26 Jul 2024 08:06:17 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</guid>
-      <description>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。&#xA;用到的工具 papis 命令行文献管理器 neovim 文本编辑器 okular PDF阅读器 Paper的&amp;quot;数据结构&amp;quot; Paper |_ 各种出版信息(Title, Authors, Year, ...) |_ Abstract |_ 关联的okular笔记文件（xml格式） |_ 关联的笔记项目（如果有的话） |_ Tags （其中由focus机制生成的&amp;#39;#&amp;#39;开头的Tag, 是我当前聚焦的科研话题） |_ 关联的其它文献(指向、被指向) 体验论文阅读流程 设置focus 下载一篇论文 读完Abstract 打标签 用okular做笔记 下载这篇文献指向的另一篇文献, 自动记录两文献的指向关系 尝试关联一个笔记项目 </description>
+      <description>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。&#xA;用到的工具 papis 命令行文献管理器 neovim 文本编辑器 okular PDF阅读器 Paper的&amp;quot;数据结构&amp;quot; Paper |_ 各种出版信息(Title, Authors, Year, ...) |_ Abstract |_ 关联的okular笔记文件（xml格式） |_ 关联的项目（如果有的话） |_ Tags |_ 补充材料（其它Paper） 体验论文阅读流程 下载一篇论文 找到一个可在firefox使用的papis插件，但我目前不想试用。就直接手动下载了。然后，把本地文件添加到papis的库（路径由~/.config/papis/config设置）&#xA;papis add Downloads/xxxxx.pdf --from doi xxxxxx 这里自己提供doi, papis就会自动补充好论文的各种信息。也可以直接提供网址。&#xA;读完Abstract 打开一篇论文&#xA;papis open 打标签 新版本支持的功能，等AUR有了后再尝试&#xA;尝试关联一个笔记项目 尝试添加补充材料 </description>
     </item>
   </channel>
 </rss>
