@@ -27,7 +27,7 @@
       <link>https://ponyofshadows.com/posts/arch/waydroid/</link>
       <pubDate>Thu, 27 Jun 2024 18:09:46 +0800</pubDate>
       <guid>https://ponyofshadows.com/posts/arch/waydroid/</guid>
-      <description>改变手机窗口大小 # 如果是空字符串就是默认大小，可以以数字为参数改变大小 waydroid prop set persist.waydroid.width &amp;#34;&amp;#34; waydroid prop set persist.waydroid.height &amp;#34;&amp;#34; </description>
+      <description>改变手机窗口大小 # 如果是空字符串就是默认大小，可以以数字为参数改变大小 waydroid prop set persist.waydroid.width &amp;#34;&amp;#34; waydroid prop set persist.waydroid.height &amp;#34;&amp;#34; app 安装新app&#xA;waydroid app install /path/to/your-app.apk 列出已经安装的app&#xA;waydroid app list 启动app&#xA;waydroid app launch &amp;lt;package-name&amp;gt; </description>
     </item>
     <item>
       <title>记录安装TeXLive和MATHEMATICA</title>
