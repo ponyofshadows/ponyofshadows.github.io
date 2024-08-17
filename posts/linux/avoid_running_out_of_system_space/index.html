@@ -73,7 +73,7 @@
     
     
   </strong>
-  <span> • 46 words</span>
+  <span> • 63 words</span>
   <span> • 1 minute read</span>
   
   
@@ -94,6 +94,13 @@
 <li>how much remain</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h /
+</span></span></code></pre></div><ul>
+<li>if use btrfs</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># as superuser</span>
+</span></span><span style="display:flex;"><span>btrfs filesystem usage /
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># as normaluser</span>
+</span></span><span style="display:flex;"><span>btrfs filesystem df /
 </span></span></code></pre></div><h2 id="clear-cache-regularly">Clear cache regularly</h2>
 <pre tabindex="0"><code>sudo pacman -Sc
 </code></pre><h2 id="remove-packages-that-are-no-longer-dependent-on-them">Remove packages that are no longer dependent on them</h2>
