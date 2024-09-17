@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 26 Jul 2024 08:06:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 17 Sep 2024 13:07:30 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Test</title>
+      <link>https://ponyofshadows.com/tags/test/</link>
+      <pubDate>Tue, 17 Sep 2024 13:07:30 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/test/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Research</title>
       <link>https://ponyofshadows.com/tags/research/</link>
@@ -62,13 +69,6 @@
       <link>https://ponyofshadows.com/tags/latex/</link>
       <pubDate>Fri, 26 Jan 2024 10:59:14 +0800</pubDate>
       <guid>https://ponyofshadows.com/tags/latex/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Test</title>
-      <link>https://ponyofshadows.com/tags/test/</link>
-      <pubDate>Mon, 22 Jan 2024 09:29:21 +0800</pubDate>
-      <guid>https://ponyofshadows.com/tags/test/</guid>
       <description></description>
     </item>
     <item>

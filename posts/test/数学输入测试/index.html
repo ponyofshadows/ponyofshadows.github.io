@@ -9,7 +9,7 @@
   />
   
     
-      <title>Test | Pony of Shadows</title>
+      <title>数学输入测试 | Pony of Shadows</title>
     
   
 
@@ -66,33 +66,50 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: Test</h1>
+  <main>
+    <article>
+      <h1 class="title">数学输入测试</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-17</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Sep 17
-        </div>
-        <div class="title">
-          <a href="/posts/test/%E6%95%B0%E5%AD%A6%E8%BE%93%E5%85%A5%E6%B5%8B%E8%AF%95/">数学输入测试</a>
-        </div>
-      </li>
-    
-      <li>
-        <div class="date">
-          Jan 22
-        </div>
-        <div class="title">
-          <a href="/posts/test/markdown_style_test/">markdown style test</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 19 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/test">test</a>
+    </div>
+  
+</div>
 
-
+      <div class="content"><h2 id="如何启用hugo的mathjax数学支持">如何启用hugo的MathJax数学支持</h2>
+<ol>
+<li>在<code>layouts/partials/head.html</code>中添加</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</span></span></code></pre></div><ol start="2">
+<li>禁用goldmark渲染器
+在<code>config.toml</code>中设置</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
+</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
+</span></span></code></pre></div><h2 id="测试">测试</h2>
+<p>这是一个行内公式$I(t)=\mathrm{e}^{-nt}$呢。</p>
+<p>这是一个行间公式：
+$$
+S(t)=\lim_{n\rightarrow\infty}\int_\Omega P(t)\mathrm{d}t
+$$
+哒哒！</p>
+</div>
+    </article>
   </main>
 
       </div>
