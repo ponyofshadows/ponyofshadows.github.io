@@ -116,37 +116,22 @@
 </div>
 
   <div class="content">
-    <p><h2 id="如何启用hugo的数学支持2选1">如何启用hugo的数学支持（2选1）</h2>
+    
+    
+    <p><h2 id="如何启用hugo的数学支持">如何启用hugo的数学支持</h2>
 <ol>
 <li>在<code>layouts/partials/head.html</code>中添加</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 引入 MathJax --&gt;</span>
 </span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
-</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">tex</span><span style="color:#f92672">:</span> {
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">inlineMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$&#39;</span>, <span style="color:#e6db74">&#39;$&#39;</span>], [<span style="color:#e6db74">&#39;\\(&#39;</span>, <span style="color:#e6db74">&#39;\\)&#39;</span>]],
-</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">displayMath</span><span style="color:#f92672">:</span> [[<span style="color:#e6db74">&#39;$$&#39;</span>, <span style="color:#e6db74">&#39;$$&#39;</span>]]
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    };
-</span></span><span style="display:flex;"><span>  &lt;/<span style="color:#f92672">script</span>&gt;
-</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
-</span></span></code></pre></div><ol start="2">
-<li>禁用goldmark渲染器
-在<code>config.toml</code>中设置</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span>[<span style="color:#a6e22e">markup</span>]
-</span></span><span style="display:flex;"><span>  [<span style="color:#a6e22e">markup</span>.<span style="color:#a6e22e">goldmark</span>.<span style="color:#a6e22e">renderer</span>]
-</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">unsafe</span> = <span style="color:#66d9ef">true</span>
-</span></span></code></pre></div><h2 id="测试">测试</h2>
-<p>这是一个行内公式$I(t)=\mathrm{e}^{-nt}$呢。</p>
-<p>这是一个行间公式：
-$$
-S(t)=\lim_{n\rightarrow\infty}\int_\Omega P(t)\mathrm{d}t
-$$
-哒哒！</p></p>
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">tex</span><span style="color:#f92672">: …</span></span></span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="https://ponyofshadows.com/posts/test/%E6%95%B0%E5%AD%A6%E8%BE%93%E5%85%A5%E6%B5%8B%E8%AF%95/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -186,36 +171,20 @@ $$
 </div>
 
   <div class="content">
+    
+    
     <p><p>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。</p>
 <h2 id="用到的工具">用到的工具</h2>
 <ul>
 <li><code>papis</code> 命令行文献管理器</li>
 <li><code>neovim</code> 文本编辑器</li>
-<li><code>okular</code> PDF阅读器</li>
-</ul>
-<h2 id="paper的数据结构">Paper的&quot;数据结构&quot;</h2>
-<pre tabindex="0"><code>Paper
-|_ 各种出版信息(Title, Authors, Year, ...)
-|_ Abstract
-|_ 关联的okular笔记文件（xml格式）
-|_ 关联的项目（如果有的话）
-|_ Tags
-|_ 补充材料（其它Paper）
-</code></pre><h2 id="体验论文阅读流程">体验论文阅读流程</h2>
-<h3 id="下载一篇论文">下载一篇论文</h3>
-<p>找到一个可在firefox使用的<a href="https://github.com/papis/papis-firefox">papis插件</a>，但我目前不想试用。就直接手动下载了。然后，把本地文件添加到papis的库（路径由<code>~/.config/papis/config</code>设置）</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>papis add Downloads/xxxxx.pdf --from doi xxxxxx
-</span></span></code></pre></div><p>这里自己提供doi, papis就会自动补充好论文的各种信息。也可以直接提供网址。</p>
-<h3 id="读完abstract">读完Abstract</h3>
-<p>打开一篇论文</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>papis open
-</span></span></code></pre></div><h3 id="打标签">打标签</h3>
-<p>新版本支持的功能，等AUR有了后再尝试</p>
-<h3 id="尝试关联一个笔记项目">尝试关联一个笔记项目</h3>
-<h3 id="尝试添加补充材料">尝试添加补充材料</h3></p>
+<li><code>okular …</code></li></ul></p>
+    
+      <a href="https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -255,17 +224,19 @@ $$
 </div>
 
   <div class="content">
+    
+    
     <p><ol>
 <li>强制关机导致proton缓存损坏
 steam的输出提示类似下面的话</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine: <span style="color:#e6db74">&#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&#39;</span> is a 32-bit installation, it cannot support 64-bit applications.
-</span></span></code></pre></div><p>只要删除这个缓存就可以了</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>rm -rf ~/.local/share/Steam/steamapps/compatdata/1245620
-</span></span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine: <span style="color:#e6db74">&#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&#39;</span> is a 32-bit installation, it …</span></span></code></pre></div></p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/steam/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -306,21 +277,20 @@ steam的输出提示类似下面的话</li>
 </div>
 
   <div class="content">
+    
+    
     <p><h2 id="改变手机窗口大小">改变手机窗口大小</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 如果是空字符串就是默认大小，可以以数字为参数改变大小</span>
 </span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.width <span style="color:#e6db74">&#34;&#34;</span>
 </span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.height <span style="color:#e6db74">&#34;&#34;</span>
 </span></span></code></pre></div><h2 id="app">app</h2>
-<p>安装新app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>waydroid app install /path/to/your-app.apk
-</span></span></code></pre></div><p>列出已经安装的app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>waydroid app list
-</span></span></code></pre></div><p>启动app</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>waydroid app launch &lt;package-name&gt;
-</span></span></code></pre></div></p>
+<p>安装 …</p></p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/waydroid/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -361,65 +331,17 @@ steam的输出提示类似下面的话</li>
 </div>
 
   <div class="content">
+    
+    
     <p><p>在ArchLinux上，<a href="https://wiki.archlinux.org/title/TeX_Live">TeXLive</a>不适合用包管理器安装，因为:</p>
 <blockquote>
-<p>TeX Live itself is a rolling release distribution, based on the model of the user having to upgrade once a year, but with individual package upgrades available on a sub-daily basis.</p>
-</blockquote>
-<p>而<a href="https://wiki.archlinux.org/title/Mathematica#Mathematica_12">MATHEMATICA 12</a>作为付费软件，同样需要在取得授权后手动安装。</p>
-<p>本文记录以上两个软件的安装过程，以供参考。</p>
-<h2 id="tex-live">TeX Live</h2>
-<h3 id="参考">参考</h3>
-<ul>
-<li><a href="https://tug.org/texlive/quickinstall.html">quickinstall</a></li>
-<li><a href="https://tug.org/texlive/doc/texlive-en/texlive-en.html">The TeXLive Guide&ndash;2024</a></li>
-</ul>
-<h3 id="安装过程">安装过程</h3>
-<ol>
-<li>参考quickinstall页面给出的链接, 下载和启动最新的安装脚本</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /tmp
-</span></span><span style="display:flex;"><span>wget https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz 
-</span></span><span style="display:flex;"><span>zcat &lt; install-tl-unx.tar.gz | tar xf -
-</span></span><span style="display:flex;"><span>cd install-tl-*/
-</span></span><span style="display:flex;"><span>sudo perl ./install-tl
-</span></span></code></pre></div><ol start="2">
-<li>在安装界面的选择</li>
-</ol>
-<ul>
-<li>选择便携式安装(portable installation)</li>
-<li>自定义安装路径，比如：</li>
-</ul>
-<pre tabindex="0"><code>TEXDIR: /home/poshd/all/local/bin/texlive-2024
-</code></pre><ol start="3">
-<li>安装完成后提示：</li>
-</ol>
-<pre tabindex="0"><code>Add /home/poshd/all/local/bin/texlive/2024/texmf-dist/doc/man to MANPATH.
-Add /home/poshd/all/local/bin/texlive/2024/texmf-dist/doc/info to INFOPATH.
-Most importantly, add /home/poshd/all/local/bin/texlive/2024/bin/x86_64-linux
-to your PATH for current and future sessions.
-
-Logfile: /home/poshd/all/local/bin/texlive/2024/install-tl.log
-</code></pre><ol start="4">
-<li>使用<a href="https://www.tug.org/texlive/tlmgr.html">tlmgr</a>进行包管理</li>
-</ol>
-<h1 id="mathematica">MATHEMATICA</h1>
-<ol>
-<li>参考archwiki的页面，首先用pacman安装网络相关依赖：</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#sudo pacman -S avahi # already installed </span>
-</span></span><span style="display:flex;"><span>sudo pacman -S inetutils
-</span></span></code></pre></div><ol start="2">
-<li>启用avahi服务</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now avahi-daemon.service 
-</span></span></code></pre></div><ol start="3">
-<li>
-<p>确认自己设置了hostname (可以用<code>hostnamectl</code>验证)</p></p>
+<p>TeX Live itself is a rolling release distribution, based on the model of the user having to upgrade once a year, …</p></blockquote></p>
     
       <a href="https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -460,51 +382,18 @@ Logfile: /home/poshd/all/local/bin/texlive/2024/install-tl.log
 </div>
 
   <div class="content">
+    
+    
     <p><p>得益于Btrfs的CoW特性，它创建快照的开销可以非常小，所以我觉得它非常适合作为根分区的文件系统。</p>
 <h2 id="子卷subwolumehttpswikiarchlinuxorgtitlebtrfssubvolumes">子卷(<a href="https://wiki.archlinux.org/title/Btrfs#Subvolumes">subwolume</a>)</h2>
 <blockquote>
-<p>&ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) instead, a Btrfs subvolume can be thought of as a POSIX file namespace.&rdquo;</p>
-</blockquote>
-<ol>
-<li>最顶层的子卷</li>
-</ol>
-<ul>
-<li>ID: 5</li>
-<li>无法被删除，无法被替换</li>
-<li>路径: &ldquo;/&rdquo;</li>
-</ul>
-<ol start="2">
-<li>其它子卷</li>
-</ol>
-<ul>
-<li>挂载在顶层子卷的下方</li>
-<li>可以在文件系统中移动路径，但ID不变</li>
-</ul>
-<h2 id="使用子卷">使用子卷</h2>
-<ol>
-<li>创建一个子卷</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>btrfs subvolume create /path/to/subvolume
-</span></span></code></pre></div><p>可以像<code>mkdir</code>一样使用<code>--parents</code>参数
-2. 列出一个路径下的所有子卷</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>btrfs subvolume list -p path
-</span></span></code></pre></div><ol start="3">
-<li>删除一个子卷
-btrfs subvolume delete /path/to/subvolume</li>
-</ol>
-<h2 id="分区的储存空间还够吗">分区的储存空间还够吗？</h2>
-<p>一般的系统工具不会给出Btrfs分区的准确用量信息。需要用下面的命令：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># as superuser</span>
-</span></span><span style="display:flex;"><span>btrfs filesystem usage /
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># as normaluser</span>
-</span></span><span style="display:flex;"><span>btrfs filesystem df /
-</span></span></code></pre></div><h2 id="使用快照备份和恢复根分区">使用快照备份和恢复根分区</h2>
-<p>参考</p></p>
+<p>&ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) …</p></blockquote></p>
     
       <a href="https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -545,6 +434,8 @@ btrfs subvolume delete /path/to/subvolume</li>
 </div>
 
   <div class="content">
+    
+    
     <p><h2 id="日常使用">日常使用</h2>
 <ol>
 <li>有序存放工作生活中使用的文件，并使用<code>rsync</code>等工具备份防止丢失</li>
@@ -556,193 +447,13 @@ btrfs subvolume delete /path/to/subvolume</li>
 <p>下面的脚本作为参考</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#/bin/bash</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># update : a script to backup and restore my work environment on ArchLinux</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Please run this script as wheel user after basic install of Arch Linux.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Principles</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 1. Take detailed notes in the script file</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 2. Always only do somesthing after judging that it has not been done yet.</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## 3. exit if somesthing goes wrong.</span>
-</span></span><span style="display:flex;"><span>set -e
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Config</span>
-</span></span><span style="display:flex;"><span>bak_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span>$HOME<span style="color:#e6db74">/all/local/share/backup-config&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Backup or Recover?</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> $1 in
-</span></span><span style="display:flex;"><span>  backup<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    option<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    ;;
-</span></span><span style="display:flex;"><span>  recover<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    option<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;r&#34;</span>
-</span></span><span style="display:flex;"><span>    ;;
-</span></span><span style="display:flex;"><span>  *<span style="color:#f92672">)</span>
-</span></span><span style="display:flex;"><span>    echo <span style="color:#e6db74">&#34;Please use option &#39;backup or &#39;recover&#39;.&#34;</span>
-</span></span><span style="display:flex;"><span>    exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>    ;;
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">esac</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Func</span>
-</span></span><span style="display:flex;"><span>has_installed<span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>  pacman -Qs | grep -E <span style="color:#e6db74">&#34;^local/</span><span style="color:#e6db74">${</span>1<span style="color:#e6db74">}</span><span style="color:#e6db74"> &#34;</span> &amp;&gt; /dev/null
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>update_pkg<span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    local pkg
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> pkg in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>      has_installed <span style="color:#e6db74">&#34;</span>$pkg<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> sudo pacman -S --noconfirm <span style="color:#e6db74">&#34;</span>$pkg<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>update_aur_pkg<span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    local pkg
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> pkg in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>      has_installed <span style="color:#e6db74">&#34;</span>$pkg<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">||</span> yay -S --noconfirm <span style="color:#e6db74">&#34;</span>$pkg<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>update_config<span style="color:#f92672">(){</span>
-</span></span><span style="display:flex;"><span>  local config_file
-</span></span><span style="display:flex;"><span>  local config_basename
-</span></span><span style="display:flex;"><span>  local relative_dir
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> config_file in <span style="color:#e6db74">&#34;</span>$@<span style="color:#e6db74">&#34;</span>; <span style="color:#66d9ef">do</span>
-</span></span><span style="display:flex;"><span>    config_basename<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>basename <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span> <span style="color:#f92672">==</span> ~/* <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># wheel-home</span>
-</span></span><span style="display:flex;"><span>      relative_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>config_file/#$HOME/<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># recover</span>
-</span></span><span style="display:flex;"><span>        mkdir -p ~/$relative_dir
-</span></span><span style="display:flex;"><span>        rsync -rlpt $bak_path/wheel-home/$relative_dir/$config_basename ~/$relative_dir
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># backup</span>
-</span></span><span style="display:flex;"><span>        mkdir -p $bak_path/wheel-home/$relative_dir
-</span></span><span style="display:flex;"><span>        rsync -rlpt --delete <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span> $bak_path/wheel-home/$relative_dir/
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#75715e"># fs-root</span>
-</span></span><span style="display:flex;"><span>      relative_dir<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>dirname <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">)</span>   
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># recover</span>
-</span></span><span style="display:flex;"><span>        sudo mkdir -p $relative_dir
-</span></span><span style="display:flex;"><span>        sudo rsync -a --no-D $bak_path/fs-root/$relative_dir/$config_basename $relative_dir
-</span></span><span style="display:flex;"><span>        sudo chown -R root:root <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e"># backup</span>
-</span></span><span style="display:flex;"><span>        sudo mkdir -p $bak_path/fs-root/$relative_dir
-</span></span><span style="display:flex;"><span>        sudo rsync -a --no-D --delete <span style="color:#e6db74">&#34;</span>$config_file<span style="color:#e6db74">&#34;</span> $bak_path/fs-root/$relative_dir/
-</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">done</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># main</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> id -nG <span style="color:#e6db74">&#34;</span>$USER<span style="color:#e6db74">&#34;</span> | grep -qw <span style="color:#e6db74">&#34;wheel&#34;</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># grub</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/default/grub
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo grub-mkconfig -o /boot/grub/grub.cfg
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Internet Connection</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## DNS</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo chattr -i /etc/resolv.conf
-</span></span><span style="display:flex;"><span>  update_config /etc/resolv.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo chattr +i /etc/resolv.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## wpa</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/wpa_supplicant
-</span></span><span style="display:flex;"><span>  wifi_interface<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>ip link show | awk -F: <span style="color:#e6db74">&#39;/wl/ {print $2}&#39;</span> | tr -d <span style="color:#e6db74">&#39; &#39;</span><span style="color:#66d9ef">)</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    sudo mkdir -p <span style="color:#e6db74">&#34;/etc/systemd/system/&#34;</span>
-</span></span><span style="display:flex;"><span>    sudo rm -f /etc/systemd/system/wpa_supplicant*
-</span></span><span style="display:flex;"><span>    sudo cp <span style="color:#e6db74">${</span>bak_path<span style="color:#e6db74">}</span>/fs-root/etc/systemd/system/wpa_supplicant@*.service <span style="color:#e6db74">&#34;/etc/systemd/system/wpa_supplicant@</span><span style="color:#e6db74">${</span>wifi_interface<span style="color:#e6db74">}</span><span style="color:#e6db74">.service&#34;</span>
-</span></span><span style="display:flex;"><span>    sudo systemctl enable --now <span style="color:#e6db74">&#34;wpa_supplicant@</span><span style="color:#e6db74">${</span>wifi_interface<span style="color:#e6db74">}</span><span style="color:#e6db74">.service&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>    sudo mkdir -p <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>bak_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/fs-root/etc/systemd/system/&#34;</span>
-</span></span><span style="display:flex;"><span>    sudo rm -f <span style="color:#e6db74">${</span>bak_path<span style="color:#e6db74">}</span>/fs-root/etc/systemd/system/wpa_supplicant*
-</span></span><span style="display:flex;"><span>    sudo cp <span style="color:#e6db74">&#34;/etc/systemd/system/wpa_supplicant@</span><span style="color:#e6db74">${</span>wifi_interface<span style="color:#e6db74">}</span><span style="color:#e6db74">.service&#34;</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>bak_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/fs-root/etc/systemd/system/&#34;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## dhcpcd</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo systemctl enable --now dhcpcd
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Internet Connection&#34;</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## time zone</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## RTC time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo timedatectl set-ntp on
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo timedatectl set-local-rtc <span style="color:#ae81ff">0</span> 
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## write to device time</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo hwclock --systohc
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Time&#34;</span>
-</span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Pacman, AUR, git, pip</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/pacman.conf
-</span></span><span style="display:flex;"><span>  update_config /etc/pacman.d/mirrorlist
-</span></span><span style="display:flex;"><span>  update_config /etc/pacman.d/hooks/update_snapshot.hook
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo pacman -Syu --noconfirm
-</span></span><span style="display:flex;"><span>  update_pkg git git-lfs openssh
-</span></span><span style="display:flex;"><span>  update_config ~/.gitconfig
-</span></span><span style="display:flex;"><span>  update_config ~/.ssh <span style="color:#75715e"># ssh for github</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> git lfs install
-</span></span><span style="display:flex;"><span>  update_config ~/.pip/pip.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## yay, see: https://wiki.archlinuxcn.org/wiki/Yay</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> ! has_installed <span style="color:#e6db74">&#34;yay-bin&#34;</span> ; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    cd ~/local/lib/yay-bin/
-</span></span><span style="display:flex;"><span>    git pull origin master
-</span></span><span style="display:flex;"><span>    makepkg -si --noconfirm
-</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Pacman, AUR, Git, Pip&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># language &amp; Font</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## lang</span>
-</span></span><span style="display:flex;"><span>  update_config /etc/locale.gen
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo locale-gen
-</span></span><span style="display:flex;"><span>  update_config /etc/locale.conf
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## font</span>
-</span></span><span style="display:flex;"><span>  update_pkg wqy-microhei noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
-</span></span><span style="display:flex;"><span>  update_config /etc/fonts/conf.d/64-language-selector-prefer.conf
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Font&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># dir</span>
-</span></span><span style="display:flex;"><span>  update_config ~/.config/user-dirs.conf
-</span></span><span style="display:flex;"><span>  update_config ~/.config/user-dirs.dirs
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] Dir&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># Shell</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## bash</span>
-</span></span><span style="display:flex;"><span>  update_pkg bash-completion fzf powerline powerline-fonts
-</span></span><span style="display:flex;"><span>  update_config ~/.bash
-</span></span><span style="display:flex;"><span>  update_config ~/.bash_profile
-</span></span><span style="display:flex;"><span>  update_config ~/.bashrc
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e">## nvim</span>
-</span></span><span style="display:flex;"><span>  update_pkg neovim
-</span></span><span style="display:flex;"><span>  update_pkg ccls jedi-language-server rust-analyzer texlab <span style="color:#75715e"># language servers</span>
-</span></span><span style="display:flex;"><span>  update_aur_pkg cmake-language-server fortls
-</span></span><span style="display:flex;"><span>  update_config ~/.config/nvim <span style="color:#75715e"># Please wait at first start</span>
-</span></span><span style="display:flex;"><span>......
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># develop</span>
-</span></span><span style="display:flex;"><span>  update_pkg jdk17-openjdk jdk21-openjdk <span style="color:#75715e"># java for minecraft</span>
-</span></span><span style="display:flex;"><span>  update_pkg rust
-</span></span><span style="display:flex;"><span>  update_pkg gdb
-</span></span><span style="display:flex;"><span>  update_pkg inetutils <span style="color:#75715e"># MATHEMATICA requires</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> sudo systemctl enable --now avahi-daemon.service <span style="color:#75715e"># for MATHEMATICA</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;[Done] develop&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># reboot</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">[[</span> -n $option <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> echo <span style="color:#e6db74">&#34;Alright. Please reboot...&#34;</span> 
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
-</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Please run this script as user in wheel group&#34;</span>
-</span></span><span style="display:flex;"><span>  exit <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;OK&#34;</span>
-</span></span></code></pre></div><h3 id="备份所有必要文件到备用硬盘">备份所有必要文件到备用硬盘</h3>
-<p>我所有有用的文件储存在<code>~/all/</code>目录下，并通过自己写的一个名叫<a href="https://github.com/ponyofshadows/poshd">poshd</a>的bash脚本管理。</p></p>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update : a script to backup and …</span></span></span></span></span></span></span></code></pre></div></p>
     
       <a href="https://ponyofshadows.com/posts/arch/re-install/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -782,6 +493,8 @@ btrfs subvolume delete /path/to/subvolume</li>
 </div>
 
   <div class="content">
+    
+    
     <p><p>现在在笔记系列的第1层，目的是渐渐完善命令行下使用linux的体验。</p>
 <p>本文我们聚焦以下两点：</p>
 <ul>
@@ -789,65 +502,13 @@ btrfs subvolume delete /path/to/subvolume</li>
 <li>在登录和打开交互式Shell时应该通过Shell脚本做哪些事情</li>
 </ul>
 <h2 id="shell的选择">Shell的选择</h2>
-<p>我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归使用<a href="https://wiki.archlinux.org/title/Bash">bash</a>，因为：</p>
-<ul>
-<li>bash是大部分发行版的默认shell</li>
-<li>大部分linux的脚本是sh或bash脚本，而bash又是sh的增强版本，能正常运行大部分sh脚本。</li>
-<li>通过一些工具能让bash在日常使用时达到接近fish的用户友好程度。
-<blockquote>
-<p>ChatGPT列举了以下工具(我们接下来会参考GPT的提示增强bash的功能)</p>
-<ol>
-<li>Bash Completion 是一个常用的插件，为 Bash 提供更智能的命令补全。</li>
-<li>bash-git-prompt 可以在 Bash 提示符中显示 Git 仓库的信息，使提示符更具信息性和美观。</li>
-<li>fzf 是一个命令行模糊查找器，能极大地增强 Bash 的文件和命令补全功能。</li>
-<li>powerline-shell 能美化 Bash 提示符，提供类似 Fish 的视觉效果。</li>
-<li>z - jump around 是一个目录跳转工具，可以根据使用频率快速跳转到常用目录。</li>
-</ol>
-</blockquote>
-</li>
-</ul>
-<h2 id="shell启动脚本httpsblogflowblokidau2013-02shell-startup-scriptshtml"><a href="https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html">Shell启动脚本</a></h2>
-<p>标题链接的博客文章充分说明了bash在不同情况下运行启动脚本的复杂性。我们参考作者的建议进行配置：</p>
-<ol>
-<li>不使用<code>/etc/</code>下的配置。例如<code>/etc/profile</code>，该文件在任何用户启动时都会运行，但我想让所有用户的共同启动行为保持默认。</li>
-<li><code>~/.bashrc</code>除了个别情况，只会在interactive shell模式下运行。所以我们用一行命令排除non-interactive的情况，然后加载环境变量和交互环境的必须环境</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># If not running interactively, don&#39;t do anything</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> $- !<span style="color:#f92672">=</span> *i* <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">return</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># env &amp; interactive</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/env.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    . ~/.bash/env.sh
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/interactive.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>    . ~/.bash/interactive.sh
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div><ol start="3">
-<li><code>~/.bash_profile</code>只在该用户登录后运行。它和<code>~/.bash_profile</code>共用加载环境变量的脚本，但有单独的开机启动项脚本。注意，桌面应用的启动项会通过sway的配置启动，而不是在这里。</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bash_profile</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># env &amp; login</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/env.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  . ~/.bash/env.sh
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/login.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  . ~/.bash/login.sh
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div><ol start="4">
-<li><code>~/.bash_logout</code>以gpt的说法和我的实际经验来看，只会在login shell退出时执行</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># logout</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/logout.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
-</span></span><span style="display:flex;"><span>  . ~/.bash/logout.sh
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
-</span></span></code></pre></div><h3 id="环境变量">环境变量</h3>
-<p>类似这样即可</p></p>
+<p>我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归 …</p></p>
     
       <a href="https://ponyofshadows.com/posts/old-arch/shell/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -887,54 +548,21 @@ btrfs subvolume delete /path/to/subvolume</li>
 </div>
 
   <div class="content">
+    
+    
     <p><p>现在处于本笔记系列的第1层，目标是丰富系统在纯命令行下的编辑和浏览体验。</p>
 <p>这次的笔记汇总了arch linux在系统层面的基础配置。</p>
 <h2 id="设置主机名">设置主机名</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/hostnamevim
 </span></span></code></pre></div><p>在这个文件中输入你想好的主机名即可，然后</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>vim /etc/hosts
-</span></span></code></pre></div><p>在这个文件下加入类似以下内容：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>127.0.0.1   localhost
-</span></span><span style="display:flex;"><span>::1         localhost
-</span></span><span style="display:flex;"><span>127.0.1.1   my_hostname
-</span></span></code></pre></div><h2 id="用户">用户</h2>
-<h3 id="给root用户添加密码">给root用户添加密码</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd root
-</span></span></code></pre></div><h3 id="添加一个普通用户">添加一个普通用户</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># -m同时创建家目录，wheel是可sudo的用户组</span>
-</span></span><span style="display:flex;"><span>useradd -m -G wheel -s /bin/bash user0
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 设置密码</span>
-</span></span><span style="display:flex;"><span>passwd user0
-</span></span></code></pre></div><h3 id="sudo用户的配置">sudo用户的配置</h3>
-<p>sudo在archlinux中属于基本组件，用来暂时暂时以其它用户的身份运行代码或执行文件。</p>
-<p>sudo用户的配置文件是<code>/etc/sudoers</code>, 这个文件原则上只能通过<code>visudo</code>命令编辑</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 用环境变量指明编辑器是vim, 以后安装了neovim也可指定为nvim.</span>
-</span></span><span style="display:flex;"><span>EDITOR<span style="color:#f92672">=</span>vim visudo
-</span></span></code></pre></div><p>这个文件中我们只需要关注以下部分</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">##</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## User privilege specification</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">##</span>
-</span></span><span style="display:flex;"><span>root ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Uncomment to allow members of group wheel to execute any command</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># %wheel ALL=(ALL:ALL) ALL</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Same thing without a password</span>
-</span></span><span style="display:flex;"><span>%wheel ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> NOPASSWD: ALL
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Uncomment to allow members of group sudo to execute any command</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># %sudo ALL=(ALL:ALL) ALL</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Uncomment to allow any user to run sudo if they know the password</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## of the user they are running the command as (root by default).</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Defaults targetpw  # Ask for the password of the target user</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># ALL ALL=(ALL:ALL) ALL  # WARNING: only use this together with &#39;Defaults targetpw&#39;</span>
-</span></span></code></pre></div><p>下面以<code>root ALL=(ALL:ALL) ALL</code>为例讲解一下这几行命令</p></p>
+</span></span></code></pre></div><p>在这个文件下加入类似以下内容： …</p></p>
     
       <a href="https://ponyofshadows.com/posts/old-arch/basic_config/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 			<article class="summary">
@@ -974,46 +602,21 @@ btrfs subvolume delete /path/to/subvolume</li>
 </div>
 
   <div class="content">
+    
+    
     <p><p>本笔记系列旨在梳理Arch Linux从基础安装到功能齐全的配置过程，实现对自己的桌面Linux系统点面俱全的掌握。</p>
 <p>现在处于笔记系列的第0层，目标仅仅是：<strong>让新安装的系统可以正常引导启动和自己联网下载新的包</strong></p>
 <p><strong>关键词</strong> : live系统，分区方案，网络连接，文件系统，系统引导</p>
 <h2 id="前期准备">前期准备</h2>
 <p>我们需要：</p>
 <ol>
-<li>一台电脑</li>
-<li>稳定的无线或有线网络</li>
-<li><a href="https://wiki.archlinux.org/title/USB_flash_installation_medium">USB闪存安装介质</a></li>
-</ol>
-<p>下面展开讲讲上面3.的安装介质如何准备：</p>
-<ol>
-<li>在<a href="https://archlinux.org/download/">Download</a>页面找到自己所在国家的镜像站下载最新的ISO(光盘镜像文件)，对于中国，可以是<a href="https://mirrors.ustc.edu.cn/archlinux/iso/latest/">中科大镜像源</a>。比如下面这两个文件，都要下载下来, 放在同一个目录待验证</li>
-</ol>
-<pre tabindex="0"><code>archlinux-2024.06.01-x86_64.iso                    01-Jun-2024 17:09          1168146432
-archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09                 141
-</code></pre><p>前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On Arch linux (-v = --verify)</span>
-</span></span><span style="display:flex;"><span>pacman-key -v archlinux-version-x86_64.iso.sig
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># On any system with GnuPG installed</span>
-</span></span><span style="display:flex;"><span>gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
-</span></span></code></pre></div><p>看到&quot;Good signature&quot;之类的字眼，说明验证成功。</p>
-<ol start="2">
-<li>插入自己的闪存，然后以root身份使用 <code>dd</code> 命令写入ISO，注意of参数需要的是磁盘设备名而不是分区名 <em>(甚至可以使用cat或cp)</em></li>
-</ol>
-<pre tabindex="0"><code>dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress
-</code></pre><p>下面解释一下这行命令</p>
-<ul>
-<li><code>bs=4M</code> 这个参数指定了块大小（block size）为4MB, 使用较大的块理论上能提高复制的效率，但复制效率的上限被诸多因素定死，设置为4M即可。</li>
-<li><code>conv=fsync</code> 这个选项确保在复制过程中数据写入到磁盘时，所有的内存缓冲区都被刷新（fsync），以保证数据的完整性</li>
-<li><code>oflag=direct</code> 这个选项告诉 <code>dd</code> 直接写入到输出文件，绕过系统缓存。这样可以提高大文件写入时的性能，并减少系统缓存对其他进程的影响。</li>
-<li><code>status=progress</code> 这个选项告诉 <code>dd</code> 输出进度信息，使用户可以看到复制过程中的进度。</li>
-</ul>
-<h2 id="live环境">live环境</h2>
-<p>现在可以在计算机启动时进入前面写入到闪存中的live系统（在该系统分区下的大部分修改，在关机后都会丢失）</p></p>
+<li>一 …</li></ol></p>
     
       <a href="https://ponyofshadows.com/posts/old-arch/basic/">Read more...</a>
     
   </div>
 </article>
+
 
 		
 		<div>
