@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 140 words</span>
+  <span> • 189 words</span>
   <span> • 1 minute read</span>
   
   
@@ -189,6 +189,53 @@ U(t,t_0)=\hat{I}+
 \int_{t_0}^{t}\mathrm{d}t_n
 \hat{T}[H(t_1)H(t_2)\cdots H(t_n)]
 $$</div>
+至此，我们完成了一堆不同上限积分的相乘到一堆同上限积分相乘的变形。通过交换$\hat{T}$与积分符号，可以进一步简化：
+<div class="mathjax">
+$$
+\begin{align}
+U(t,t_0)
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_n
+H(t_1)H(t_2)\cdots H(t_n)
+\\
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1H(t_1)
+\int_{t_0}^{t}\mathrm{d}t_2H(t_2)
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_nH(t_n)
+\\
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\left[
+    \int_{t_0}^{t}H(\tau)\mathrm{d}\tau
+\right]^n
+\\
+&=
+\hat{T}
+\exp[
+    -\frac i\hbar
+    \int_{t_0}^{t}H(\tau)\mathrm{d}\tau
+]
+\end{align}
+$$
+</div>
+<h3 id="参考">参考</h3>
+<ul>
+<li>《高等量子力学》喀兴林</li>
+<li><a href="https://wuli.wiki/online/Dyser.html">戴森级数-小时百科</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dyson_series">Dyson Series</a></li>
+</ul>
 </div>
     </article>
   </main>
