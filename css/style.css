@@ -1,0 +1,4 @@
+.mathjax {
+  white-space: nowrap; /* 允许换行 */
+  overflow-wrap: break-word; /* 断行 */
+}
