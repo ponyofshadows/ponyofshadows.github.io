@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 99 words</span>
+  <span> • 140 words</span>
   <span> • 1 minute read</span>
   
   
@@ -166,8 +166,28 @@ U(t,t_0)=\hat{I}+
 \int_{t_0}^{t}\mathrm{d}t_2
 \cdots
 \int_{t_0}^{t}\mathrm{d}t_n
-\theta(t-t_1)\theta(t_1-t_2)\cdots\theta(t_{n-1}-t_n)
+\theta(t_1-t_2)\theta(t_2-t_3)\cdots\theta(t_{n-1}-t_n)
 H(t_1)H(t_2)\cdots H(t_n)
+$$</div>
+这时候$t\ge t_1 \ge_2 \cdots \ge t_n \ge t_0 $ 的强制规定消失了，$t_1t_2\cdots t_n$现在被积分上下限和所有阶跃函数限制。现在交换其中任何两个$t_i, t_j \ (i,j=1,2,\cdots n)$都不会改变积分值。
+<p>定义重排算符$\hat{T}$:</p>
+<div class="mathjax">$$
+\hat{T}[H(t_1)H(t_2)\cdots H(t_n)]=
+\sum_{t_1t_2\cdots t_n}
+\theta(t_1-t_2)\theta(t_2-t_3)\cdots\theta(t_{n-1}-t_n)
+H(t_1)H(t_2)\cdots H(t_n)
+$$</div>
+上面这个求和对$t_1t_2\cdots t_n$的所有排列（共$n!$个）进行。对一组特定的$t_1t_2\cdots t_n$的特定取值，只有一个求和项不为0。
+<p>再看一下上面包含阶跃函数的积分式，由于积分变量交换不改变积分结果，它可以用$\hat{T}$改写成：</p>
+<div class="mathjax">$$
+U(t,t_0)=\hat{I}+
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_n
+\hat{T}[H(t_1)H(t_2)\cdots H(t_n)]
 $$</div>
 </div>
     </article>
