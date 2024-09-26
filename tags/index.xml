@@ -6,8 +6,15 @@
     <description>Recent content in Tags on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 25 Sep 2024 10:04:34 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Sep 2024 10:28:42 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Nvim</title>
+      <link>https://ponyofshadows.com/tags/nvim/</link>
+      <pubDate>Thu, 26 Sep 2024 10:28:42 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/nvim/</guid>
+      <description></description>
+    </item>
     <item>
       <title>QM</title>
       <link>https://ponyofshadows.com/tags/qm/</link>
