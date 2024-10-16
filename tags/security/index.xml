@@ -9,11 +9,11 @@
     <lastBuildDate>Wed, 16 Oct 2024 14:25:31 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>encfs的使用</title>
-      <link>https://ponyofshadows.com/posts/linux/encfs%E7%9A%84%E4%BD%BF%E7%94%A8/</link>
+      <title>GnuPG加密文件</title>
+      <link>https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 16 Oct 2024 14:25:31 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/linux/encfs%E7%9A%84%E4%BD%BF%E7%94%A8/</guid>
-      <description>&lt;ol&gt;&#xA;&lt;li&gt;初始化加密路径（必须用绝对路径）（解密是同样的命令）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;encfs /path/to/encrypted /path/to/decrypted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;解除挂载（完成加密）&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;fusermount -u /path/to/encrypted&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;永久取消加密&#xA;在解密后，删除&lt;code&gt;/path/to/decrypted/.encfs6.xml&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ol&gt;</description>
+      <guid>https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
+      <description>&lt;p&gt;除了使用公钥进行非对称加密，&lt;code&gt;gng&lt;/code&gt;还提供了用密码对称加密的功能&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;加密&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -c /path/to/file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这会提示你输入密码，产生一个&lt;code&gt;.gpg&lt;/code&gt;后缀的加密文件&lt;/p&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;解密&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg /path/to/file.gpg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这也会提示你输入密码&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

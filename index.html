@@ -80,8 +80,8 @@
 		
 		
 			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/linux/encfs%E7%9A%84%E4%BD%BF%E7%94%A8/">
-    <h1 class="title">encfs的使用</h1>
+  <a href="https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">
+    <h1 class="title">GnuPG加密文件</h1>
     
   </a>
   
@@ -118,19 +118,20 @@
   <div class="content">
     
     
-    <p><ol>
-<li>初始化加密路径（必须用绝对路径）（解密是同样的命令）</li>
+    <p><p>除了使用公钥进行非对称加密，<code>gng</code>还提供了用密码对称加密的功能</p>
+<ol>
+<li>加密</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>encfs /path/to/encrypted /path/to/decrypted
-</span></span></code></pre></div><ol start="2">
-<li>解除挂载（完成加密）</li>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -c /path/to/file
+</span></span></code></pre></div><p>这会提示你输入密码，产生一个<code>.gpg</code>后缀的加密文件</p>
+<ol start="2">
+<li>解密</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fusermount -u /path/to/encrypted
-</span></span></code></pre></div><ol start="3">
-<li>永久取消加密
-在解密后， …</li></ol></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg /path/to/file.gpg
+</span></span></code></pre></div><p>这也会提示你输入密码</p>
+</p>
     
-      <a href="https://ponyofshadows.com/posts/linux/encfs%E7%9A%84%E4%BD%BF%E7%94%A8/">Read more...</a>
+      <a href="https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">Read more...</a>
     
   </div>
 </article>

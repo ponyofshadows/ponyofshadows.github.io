@@ -9,7 +9,7 @@
   />
   
     
-      <title>Security | Pony of Shadows</title>
+      <title>GnuPG加密文件 | Pony of Shadows</title>
     
   
 
@@ -75,24 +75,42 @@
 
       <div id="content">
         
-  <main id="tags">
-    <h1>Tag: Security</h1>
+  <main>
+    <article>
+      <h1 class="title">GnuPG加密文件</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-10-16</time>
     
-  <h3>2024</h3>
-  <ul id="postsByDate">
     
-      <li>
-        <div class="date">
-          Oct 16
-        </div>
-        <div class="title">
-          <a href="/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">GnuPG加密文件</a>
-        </div>
-      </li>
-    
-  </ul>
+  </strong>
+  <span> • 10 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/security">security</a>
+    </div>
+  
+</div>
 
-
+      <div class="content"><p>除了使用公钥进行非对称加密，<code>gng</code>还提供了用密码对称加密的功能</p>
+<ol>
+<li>加密</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -c /path/to/file
+</span></span></code></pre></div><p>这会提示你输入密码，产生一个<code>.gpg</code>后缀的加密文件</p>
+<ol start="2">
+<li>解密</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg /path/to/file.gpg
+</span></span></code></pre></div><p>这也会提示你输入密码</p>
+</div>
+    </article>
   </main>
 
       </div>
