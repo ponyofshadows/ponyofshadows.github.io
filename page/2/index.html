@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	<meta name="generator" content="Hugo 0.134.3">
+	<meta name="generator" content="Hugo 0.135.0">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
@@ -78,6 +78,66 @@
         
 	<main class="home-page">
 		
+		
+			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/arch/re-install/">
+    <h1 class="title">如何优雅地重新安装你的Arch Linux</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-11</time>
+    
+    
+  </strong>
+ <span> • 1090 words</span>
+ <span> • 6 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/arch-install">Arch-Install</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="日常使用">日常使用</h2>
+<ol>
+<li>有序存放工作生活中使用的文件，并使用<code>rsync</code>等工具备份防止丢失</li>
+<li>妥善配置系统，并使用脚本管理所有配置文件</li>
+<li>对自己安装过的软件心中有数</li>
+</ol>
+<h2 id="在旧系统上备份">在旧系统上备份</h2>
+<h3 id="用脚本备份包和配置文件">用脚本备份包和配置文件</h3>
+<p>下面的脚本作为参考</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#/bin/bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># update : a script to backup and …</span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/re-install/">Read more...</a>
+    
+  </div>
+</article>
+
+
 		
 			<article class="summary">
   <a href="https://ponyofshadows.com/posts/old-arch/shell/">
@@ -569,59 +629,6 @@
 <li>每个星期写完2篇英语阅读后，可以于每天21:40之前在妈妈那里听写单词(10个新学的和随 …</li></ol></p>
     
       <a href="https://ponyofshadows.com/posts/diary/%E5%B0%8F%E5%AD%A6%E4%BA%94%E5%B9%B4%E7%BA%A7%E7%9A%84%E5%BC%9F%E5%BC%9F%E7%9A%84%E7%94%B5%E8%84%91%E6%B8%B8%E6%88%8F%E8%A7%84%E5%88%99/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/linux/grub/">
-    <h1 class="title">grub</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-29</time>
-    
-    
-  </strong>
- <span> • 39 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><h2 id="installation">Installation</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S grub efibootmgr
-</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/efi --bootloader-id<span style="color:#f92672">=</span>GRUB
-</span></span></code></pre></div><h2 id="user-configuration-file">user configuration file</h2>
-<ul>
-<li>path: …</li></ul></p>
-    
-      <a href="https://ponyofshadows.com/posts/linux/grub/">Read more...</a>
     
   </div>
 </article>
