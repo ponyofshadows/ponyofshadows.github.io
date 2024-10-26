@@ -6,20 +6,27 @@
     <description>Recent content in Tags on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 16 Oct 2024 14:25:31 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 26 Oct 2024 15:07:54 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Security</title>
-      <link>https://ponyofshadows.com/tags/security/</link>
-      <pubDate>Wed, 16 Oct 2024 14:25:31 +0800</pubDate>
-      <guid>https://ponyofshadows.com/tags/security/</guid>
+      <title>GPT</title>
+      <link>https://ponyofshadows.com/tags/gpt/</link>
+      <pubDate>Sat, 26 Oct 2024 15:07:54 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/gpt/</guid>
       <description></description>
     </item>
     <item>
       <title>Nvim</title>
       <link>https://ponyofshadows.com/tags/nvim/</link>
-      <pubDate>Thu, 26 Sep 2024 10:28:42 +0800</pubDate>
+      <pubDate>Sat, 26 Oct 2024 15:07:54 +0800</pubDate>
       <guid>https://ponyofshadows.com/tags/nvim/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Security</title>
+      <link>https://ponyofshadows.com/tags/security/</link>
+      <pubDate>Wed, 16 Oct 2024 14:25:31 +0800</pubDate>
+      <guid>https://ponyofshadows.com/tags/security/</guid>
       <description></description>
     </item>
     <item>
