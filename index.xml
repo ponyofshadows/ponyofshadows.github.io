@@ -6,8 +6,15 @@
     <description>Recent content on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 26 Oct 2024 15:07:54 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 28 Oct 2024 14:03:16 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Translation Solution on Wayland</title>
+      <link>https://ponyofshadows.com/posts/en/translate-solution/</link>
+      <pubDate>Mon, 28 Oct 2024 14:03:16 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/en/translate-solution/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Today I read &lt;a href=&#34;https://www.reddit.com/r/kde/comments/gxpsvo/comment/ft4o077/?utm_source=share&amp;amp;utm_medium=web3x&amp;amp;utm_name=web3xcss&amp;amp;utm_term=1&amp;amp;utm_content=share_button&#34;&gt;an inspiring solution on Reddit&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;@kupiqu&#xA;I will not address your question directly but I will give you a &amp;ldquo;solution&amp;rdquo; that at least for me works even better:&#xA;One possibility [Not Okular specific] is to use a klipper action on top of trans (&lt;a href=&#34;https://github.com/soimort/translate-shell/tree/develop&#34;&gt;https://github.com/soimort/translate-shell/tree/develop&lt;/a&gt;) and notify-send (to display the result as a system notification).&lt;/p&gt;&#xA;&lt;p&gt;This has the advantage that can be triggered anywhere (not only, but) also from Okular, and define a word or translate a sentence to any language (or even display multiple language translations at once). My two actions for this are the following (translation to English/Catalan/Spanish from whatever language your selection is):&lt;/p&gt;</description>
+    </item>
     <item>
       <title>vim的稍微进阶的操作小技巧</title>
       <link>https://ponyofshadows.com/posts/tools/vim%E7%9A%84%E7%A8%8D%E5%BE%AE%E8%BF%9B%E9%98%B6%E7%9A%84%E6%93%8D%E4%BD%9C%E5%B0%8F%E6%8A%80%E5%B7%A7/</link>
