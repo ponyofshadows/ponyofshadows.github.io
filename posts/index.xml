@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 28 Oct 2024 14:03:16 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 Oct 2024 09:17:36 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some thing you should do on class</title>
+      <link>https://ponyofshadows.com/posts/diary/some_thing_you_should_do_on_class/</link>
+      <pubDate>Thu, 31 Oct 2024 09:17:36 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/diary/some_thing_you_should_do_on_class/</guid>
+      <description>&lt;ul&gt;&#xA;&lt;li&gt;Treat the lesson as a relaxing lecture&lt;/li&gt;&#xA;&lt;li&gt;Just listen to the interesting parts&lt;/li&gt;&#xA;&lt;li&gt;Remorize vocabulary&lt;/li&gt;&#xA;&lt;li&gt;Make LaTex notes on knowldge I have understand (Practice vim)&lt;/li&gt;&#xA;&lt;li&gt;Sleep&lt;/li&gt;&#xA;&lt;li&gt;learn simple backgrounds of difficult knowledge&lt;/li&gt;&#xA;&lt;li&gt;Write short programs&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
     <item>
       <title>Translation Solution on Wayland</title>
       <link>https://ponyofshadows.com/posts/en/translate-solution/</link>
