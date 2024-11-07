@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 189 words</span>
-  <span> • 1 minute read</span>
+  <span> • 505 words</span>
+  <span> • 3 minute read</span>
   
   
     <div>
@@ -243,7 +243,120 @@
 </ol>
 <p>整个流程高度模块化，可以根据研究目标选择不同的步骤进行。</p>
 <h2 id="slove-previous-problem-about-mos2">Slove previous problem about MoS2</h2>
-<p>To be continued</p>
+<h3 id="a准备输入文件">A.准备输入文件</h3>
+<p>不同于VASP，Quantum ESPRESSO的所有类型的参数设定放在一个输入文件里，用标题隔开为不同的section。
+major sections比如:</p>
+<ul>
+<li>&amp;CONTROL</li>
+<li>&amp;SYSTEM</li>
+<li>&amp;ELECTRONS
+optional sections比如:</li>
+<li>&amp;IONS</li>
+<li>&amp;CELL
+上面列出的sections并不是所有的，完整列表见<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html">此页面</a>。这个官方doc页面包含了输入文件的每个section的配置参数，是重要的参考。</li>
+</ul>
+<p>每个section都要用<code>/</code>结束。另外，如果你的输入文件用到了上面5个sections，它们得按照上文列出的顺序依次排列。</p>
+<p>在输入文件写完了所有的sections后，还可以加上一些additional information about your molecule or the crystal
+system. 它们的标题不以<code>&amp;</code>开头，结尾也不用<code>/</code>。例如：</p>
+<ul>
+<li>ATOMIC_SPECIES</li>
+<li>ATOMIC_POSITIONS</li>
+<li>K_POINTS</li>
+<li>CELL_PARAMETERS</li>
+</ul>
+<p>下面给出一份作为参考的输入文件<code>imput-test.in</code> (不保证它是合理的)</p>
+<pre tabindex="0"><code>&amp;CONTROL
+    calculation = &#39;scf&#39; ! 执行 自洽场 (Self-Consistent Field, SCF) 计算
+    restart_mode = &#39;from_scratch&#39;,
+    prefix = &#39;MoS2&#39;,
+    outdir = &#39;./output&#39;,
+    pseudo_dir = &#39;./pseudo&#39;,
+    nstep = 100,
+/
+
+&amp;SYSTEM
+    ibrav = 4, 
+    celldm(1) = 3.18,  ! 初始晶格常数
+    celldm(3) = 6.0,   ! c轴真空层
+    a = 3.16000e+00,
+    c = 2.00000e+01,
+    nat = 3, 
+    ntyp = 2,
+    ecutwfc = 50,
+    ecutrho = 200,
+    occupations = &#39;smearing&#39;,
+    smearing = &#39;mp&#39;,
+    degauss = 0.01,
+    vdw_corr = &#39;DFT-D&#39;,
+/
+
+&amp;ELECTRONS
+    conv_thr = 1.0d-9
+/
+
+ATOMIC_SPECIES
+    Mo   95.94000  Mo_ONCV_PBE-1.0.upf
+    S  32.06600   S_ONCV_PBE-1.0.upf
+
+ATOMIC_POSITIONS (angstrom)
+    S   0.002804304   0.001613133   8.429890591
+    S   0.002804304   0.001613133   11.570109409
+    Mo  1.582007393   0.913365735   10.000000000
+
+K_POINTS automatic
+    6 6 1  0 0 0
+</code></pre><p>下面讲解这份输入文件中需要注意的点：</p>
+<blockquote>
+<p>参考：<a href="moz-extension://1628b149-19a5-4bd1-9714-d928796156b9/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fwww.paradim.org%2Fsites%2Fdefault%2Ffiles%2F2019-05%2FQE-Input_and_Convergence_Parameters.pdf">FQE-ICP</a></p>
+</blockquote>
+<ol>
+<li>&amp;CONTROL的<code>calculation</code>参数指定了这个输入文件用于进行何种计算，包括但不限于下面的可选择参数</li>
+</ol>
+<ul>
+<li><code>scf</code> - Single point energy calculation without changing atomic coordinates or the cell
+parameters, i.e., no structure relaxation.</li>
+<li><code>nscf</code> - Non-self-consistency calculation to extract the desired properties such as the DOS
+in case you need a denser electronic momentum mesh (k-mesh), based on the previous
+SCF calculation.</li>
+<li><code>bands</code> - Calculation of electronic bands along a path of high-symmetry k-points based
+on the previous SCF calculation.</li>
+<li><code>relax</code> - Optimization of the atomic coordinates to minimize the forces while keeping
+the cell fixed. This calculation requires section &amp;ions. All options for a single SCF
+calculation apply, plus a few others.</li>
+<li><code>vc-relax</code> - Optimization of both atomic coordinates and the cell parameters. Structure
+relaxation is important to minimize forces acting on the atoms as well as to reduce the
+stress in the cell. This calculation requires section &amp;cell.</li>
+</ul>
+<ol start="2">
+<li>一些重要的与收敛有关的参数</li>
+</ol>
+<p>在进行密度泛函理论（DFT）计算时，为了获得精确的结果，必须为特定材料和计算任务选择合适的参数，并确保这些参数的收敛性。以下是对这些参数的详细理解和如何通过能量最小化优化这些参数的解释：</p>
+<ul>
+<li>
+<p><strong>平面波动能量截断（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm271"><code>ecutwfc</code></a>）</strong>：</p>
+<ul>
+<li><code>ecutwfc</code> 表示平面波基组的截断能量，也就是表示系统中电子波函数的基组复杂程度。</li>
+<li>较高的截断能量可以增加基组的数量，使得电子密度分布和总能量的计算更加精确。但更高的 <code>ecutwfc</code> 会增加计算的成本。</li>
+<li>优化 <code>ecutwfc</code> 的过程通常通过观察总能量的变化：逐步增加 <code>ecutwfc</code> 值，直到计算的总能量变化小于指定阈值，这样可以确保选取的 <code>ecutwfc</code> 在保证计算精度的同时也不会导致计算时间过长。</li>
+</ul>
+</li>
+<li>
+<p><strong>布里渊区采样的 k 点网格（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm1089"><code>k-points</code></a>）</strong>：</p>
+<ul>
+<li>k 点网格用于布里渊区的采样，决定了电子态的离散化精度。</li>
+<li>增加 k 点密度可以提高计算的精度，但也会增加计算的复杂度。</li>
+<li>优化 k 点网格通常是通过测试不同的 k 点密度（如 5×5×5、7×7×7 等）观察总能量的变化，直到 k 点密度对总能量的影响不显著为止。</li>
+</ul>
+</li>
+<li>
+<p><strong>自洽能量收敛阈值（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm735"><code>conv_thr</code></a>）</strong>：</p>
+<ul>
+<li><code>conv_thr</code> 是自洽迭代过程中的能量收敛标准，用于控制 SCF 迭代的精度。</li>
+<li>较小的 <code>conv_thr</code> 可以提高计算精度，但可能导致更多的 SCF 迭代，增加计算时间。</li>
+<li>优化 <code>conv_thr</code> 的过程通常通过减少其数值并观察能量的收敛性，确保在适当的计算精度下也不会增加过多的计算成本。</li>
+</ul>
+</li>
+</ul>
 </div>
     </article>
   </main>
