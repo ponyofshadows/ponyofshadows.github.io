@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 505 words</span>
-  <span> • 3 minute read</span>
+  <span> • 701 words</span>
+  <span> • 4 minute read</span>
   
   
     <div>
@@ -266,35 +266,35 @@ system. 它们的标题不以<code>&amp;</code>开头，结尾也不用<code>/</
 </ul>
 <p>下面给出一份作为参考的输入文件<code>imput-test.in</code> (不保证它是合理的)</p>
 <pre tabindex="0"><code>&amp;CONTROL
-    calculation = &#39;scf&#39; ! 执行 自洽场 (Self-Consistent Field, SCF) 计算
-    restart_mode = &#39;from_scratch&#39;,
-    prefix = &#39;MoS2&#39;,
-    outdir = &#39;./output&#39;,
-    pseudo_dir = &#39;./pseudo&#39;,
-    nstep = 100,
+    calculation = &#39;scf&#39;             ! 执行 自洽场 (Self-Consistent Field, SCF) 计算
+    restart_mode = &#39;from_scratch&#39;,  ! 从头开始计算，不依赖以前的计算结果
+    prefix = &#39;MoS2&#39;,                ! 计算输出文件的前缀。
+    outdir = &#39;./output&#39;,            ! 输出文件的目录。
+    pseudo_dir = &#39;./pseudo&#39;,        ! 赝势文件的目录。
+    nstep = 100,                    ! 最大计算步数。
 /
 
 &amp;SYSTEM
-    ibrav = 4, 
-    celldm(1) = 3.18,  ! 初始晶格常数
-    celldm(3) = 6.0,   ! c轴真空层
-    a = 3.16000e+00,
-    c = 2.00000e+01,
-    nat = 3, 
-    ntyp = 2,
-    ecutwfc = 50,
-    ecutrho = 200,
-    occupations = &#39;smearing&#39;,
-    smearing = &#39;mp&#39;,
-    degauss = 0.01,
-    vdw_corr = &#39;DFT-D&#39;,
+    ibrav = 4,                ! 晶格类型为四方晶系，适合表示单层结构。
+    celldm(1) = 3.18,         ! 初始晶格常数
+    celldm(3) = 6.0,          ! c轴真空层
+    a = 3.16000e+00,          ! 晶格常数 aa 的值，单位是 Bohr (约等于 1.67 Å)
+    c = 2.00000e+01,          ! 晶格常数 cc 的值，选择较大的值来确保不同层间的隔离，避免层间相互作用。
+    nat = 3,                  ! 原子数，共 3 个原子（1 个 Mo 和 2 个 S）。
+    ntyp = 2,                 ! 元素种类数，Mo 和 S。
+    ecutwfc = 60,             ! 平面波基组的截断能量（单位 Ry），决定计算精度和速度。
+    ecutrho = 200,            ! ecutrho 是密度截断能量（单位为 Rydberg, Ry），用于平面波基组中电子密度的截断。它决定了描述电子密度的平面波展开的截断范围。ecutrho 通常是 ecutwfc 的 4 倍或 8 倍（取决于所用赝势的类型）
+    occupations = &#39;smearing&#39;, ! 固定占据数，适合半导体材料。
+    smearing = &#39;gauss&#39;,       ! 使用高斯展宽，用于金属计算，这里是冗余的。
+    degauss = 0.01,           ! degauss 是电子态展宽（smearing）参数，单位是电子伏特 (eV)。它定义了 smearing 的宽度，在计算费米面附近电子占据时，对电子态引入的模糊程度。
+    vdw_corr = &#39;DFT-D&#39;,       ! 包含范德瓦尔斯修正，以更好地描述层间相互作用。
 /
 
 &amp;ELECTRONS
-    conv_thr = 1.0d-9
+    conv_thr = 1.0d-9         ! 自洽场迭代的收敛阈值，设为较小值保证高精度。
 /
 
-ATOMIC_SPECIES
+ATOMIC_SPECIES                ! 定义原子种类和使用的赝势文件。
     Mo   95.94000  Mo_ONCV_PBE-1.0.upf
     S  32.06600   S_ONCV_PBE-1.0.upf
 
@@ -357,6 +357,71 @@ stress in the cell. This calculation requires section &amp;cell.</li>
 </ul>
 </li>
 </ul>
+<ol start="3">
+<li>关于赝势文件</li>
+</ol>
+<p>寻找适合的赝势文件（pseudopotential files）是成功进行 Quantum ESPRESSO 计算的重要步骤。以下是如何找到和选择赝势文件的详细步骤：</p>
+<ul>
+<li>
+<p>使用 Quantum ESPRESSO 官方赝势库
+Quantum ESPRESSO 提供了一个<strong>官方赝势库</strong>，可以通过以下步骤获取赝势文件：</p>
+<ul>
+<li>前往 Quantum ESPRESSO 官方赝势库网站： <a href="http://www.quantum-simulation.org">PSlibrary</a>.</li>
+<li>或者从 Quantum ESPRESSO 项目的 <a href="https://www.quantum-espresso.org/pseudopotentials/">QE Pseudopotentials Page</a> 下载。</li>
+<li>在库中，可以根据元素、交换-相关函数（如 PBE、LDA）、赝势类型（如 Norm-Conserving、Ultrasoft 等）筛选适合的赝势文件。</li>
+</ul>
+</li>
+<li>
+<p>选择赝势类型
+赝势的类型决定了计算的精度和效率，常见的赝势类型包括：</p>
+<ul>
+<li><strong>Norm-Conserving Pseudopotentials (NCPP)</strong>：严格遵守规范守恒，但需要更高的截断能量（<code>ecutwfc</code> 和 <code>ecutrho</code>）。</li>
+<li><strong>Ultrasoft Pseudopotentials (USPP)</strong>：允许更低的截断能量，适合大系统。</li>
+<li><strong>Projector Augmented-Wave (PAW) Pseudopotentials</strong>：近似完全电子结构计算，适合高精度计算。</li>
+</ul>
+</li>
+</ul>
+<p>选择赝势类型时，需结合计算任务和系统需求，通常优先选用已被广泛验证的赝势。</p>
+<ul>
+<li>
+<p>注意交换-相关泛函
+每个赝势文件都对应于特定的交换-相关泛函（XC Functional），例如 LDA、PBE、PBEsol 等。在 Quantum ESPRESSO 的 DFT 计算中，确保选择的赝势文件与输入文件中指定的 XC 泛函一致。例如，如果使用 <code>PBE</code> 泛函，赝势文件也需要使用 <code>PBE</code> 泛函生成。</p>
+</li>
+<li>
+<p>确认赝势文件的版本和适用范围
+下载赝势文件时，注意查看文件名中的版本信息和适用范围。例如，<code>Mo_ONCV_PBE-1.0.upf</code> 表示这个赝势是使用 PBE 泛函生成的 Mo 元素赝势，版本是 1.0。</p>
+</li>
+<li>
+<p>验证赝势文件的适用性
+在某些计算（如高精度能带结构、态密度、声子谱）中，需要验证所选赝势的适用性。可以通过以下方式验证：</p>
+<ul>
+<li><strong>测试收敛性</strong>：检查 <code>ecutwfc</code> 和 <code>ecutrho</code> 的值，观察计算结果（如总能量）随截断能量变化的收敛情况。</li>
+<li><strong>对比实验值或已发表的结果</strong>：可以与已知的实验数据或文献中的理论计算结果进行对比，以验证赝势的可靠性。</li>
+</ul>
+</li>
+<li>
+<p>赝势文件的格式
+Quantum ESPRESSO 支持多种赝势文件格式，常见的格式包括：</p>
+<ul>
+<li><strong>.UPF 格式</strong>：这是 Quantum ESPRESSO 推荐的赝势格式，包含了赝势的各类信息。</li>
+<li><strong>.PSF 格式</strong>：在早期的 Quantum ESPRESSO 版本中也被使用，但现在已不常用。</li>
+</ul>
+</li>
+<li>
+<p>存放赝势文件的位置
+下载的赝势文件需要放置在 <code>pseudo_dir</code> 指定的目录中。例如，如果输入文件中指定 <code>pseudo_dir = './pseudos'</code>，那么赝势文件应存放在 <code>pseudos</code> 目录下，以便 Quantum ESPRESSO 正确调用。</p>
+</li>
+<li>
+<p>常用赝势库和资源
+除了 Quantum ESPRESSO 官方库，还有一些第三方赝势库可以参考，包括：</p>
+<ul>
+<li><strong>SSSP (Standard Solid State Pseudopotentials)</strong>：为量子材料设计的高质量赝势库，适用于 PBE 和 PBEsol 泛函。</li>
+<li><strong>PseudoDojo</strong>：提供广泛的赝势文件，覆盖了多个函数和赝势类型。</li>
+<li><strong>Materials Project 和 Open Quantum Materials Database (OQMD)</strong>：这些数据库中包含使用特定赝势的计算数据和资源。</li>
+</ul>
+</li>
+</ul>
+<p>通过这些资源和步骤，可以找到并验证适合具体材料系统和计算任务的赝势文件。</p>
 </div>
     </article>
   </main>
