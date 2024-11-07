@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>DFT-QE折腾记录 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="https://ponyofshadows.com/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="https://ponyofshadows.com/"><h1>Pony of Shadows</h1></a>
+      <h3>Queen of Truth &amp; King of Practice</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">DFT-QE折腾记录</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-11-07</time>
+    
+    
+  </strong>
+  <span> • 44 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/phys">phys</a>, 
+        <a href="/tags/dft">DFT</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h3 id="问题">问题</h3>
+<blockquote>
+<p>作业说明：
+请同学们自己寻找计算资源、自学密度泛函理论计算软件，计算单层MoS2相关性质，包括：参数测试、晶格常数测试、几何结构优化、计算态密度、能带和声子谱。(声子谱选做)
+提示：对石墨烯晶格常数测试时，不需要考虑石墨烯厚度的变化；而单层MoS2是3原子层厚度，因此变xy平面内晶格常数时，MoS2厚度会变化。
+请详细说明步骤，图文结合，上传pdf报告。</p>
+</blockquote>
+<h3 id="install-qe-on-archlinux">Install QE on Archlinux</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># blas-openblas-0.3.28-1 and blas-3.12.0-5 are in conflict</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S blas-openblas
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install QE from AUR</span>
+</span></span><span style="display:flex;"><span>paru -S quantum-espresso
+</span></span></code></pre></div><h3 id="how-to-use-qe">How to use QE</h3>
+<p>Find tutorials in <a href="https://www.quantum-espresso.org/tutorials/">quantum-espresso:tutorisals</a></p>
+<h3 id="slove-previous-problem-about-mos2">Slove previous problem about MoS2</h3>
+<p>To be continued</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2024
+    <a href="https://ponyofshadows.com/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

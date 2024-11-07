@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DFT on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/dft/</link>
+    <description>Recent content in DFT on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 07 Nov 2024 14:17:09 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/dft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DFT-QE折腾记录</title>
+      <link>https://ponyofshadows.com/posts/phys/dft-qe%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 07 Nov 2024 14:17:09 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/phys/dft-qe%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;h3 id=&#34;问题&#34;&gt;问题&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;作业说明：&#xA;请同学们自己寻找计算资源、自学密度泛函理论计算软件，计算单层MoS2相关性质，包括：参数测试、晶格常数测试、几何结构优化、计算态密度、能带和声子谱。(声子谱选做)&#xA;提示：对石墨烯晶格常数测试时，不需要考虑石墨烯厚度的变化；而单层MoS2是3原子层厚度，因此变xy平面内晶格常数时，MoS2厚度会变化。&#xA;请详细说明步骤，图文结合，上传pdf报告。&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;h3 id=&#34;install-qe-on-archlinux&#34;&gt;Install QE on Archlinux&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# blas-openblas-0.3.28-1 and blas-3.12.0-5 are in conflict&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo pacman -S blas-openblas&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Install QE from AUR&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;paru -S quantum-espresso&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;how-to-use-qe&#34;&gt;How to use QE&lt;/h3&gt;&#xA;&lt;p&gt;Find tutorials in &lt;a href=&#34;https://www.quantum-espresso.org/tutorials/&#34;&gt;quantum-espresso:tutorisals&lt;/a&gt;&lt;/p&gt;&#xA;&lt;h3 id=&#34;slove-previous-problem-about-mos2&#34;&gt;Slove previous problem about MoS2&lt;/h3&gt;&#xA;&lt;p&gt;To be continued&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
