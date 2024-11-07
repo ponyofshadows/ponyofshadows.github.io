@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 44 words</span>
+  <span> • 189 words</span>
   <span> • 1 minute read</span>
   
   
@@ -94,26 +94,155 @@
       <span>Tags:</span>
       
         <a href="/tags/phys">phys</a>, 
-        <a href="/tags/dft">DFT</a>
+        <a href="/tags/dft">DFT</a>, 
+        <a href="/tags/gpt">GPT</a>
     </div>
   
 </div>
 
-      <div class="content"><h3 id="问题">问题</h3>
+      <div class="content"><h2 id="问题">问题</h2>
 <blockquote>
 <p>作业说明：
 请同学们自己寻找计算资源、自学密度泛函理论计算软件，计算单层MoS2相关性质，包括：参数测试、晶格常数测试、几何结构优化、计算态密度、能带和声子谱。(声子谱选做)
 提示：对石墨烯晶格常数测试时，不需要考虑石墨烯厚度的变化；而单层MoS2是3原子层厚度，因此变xy平面内晶格常数时，MoS2厚度会变化。
 请详细说明步骤，图文结合，上传pdf报告。</p>
 </blockquote>
-<h3 id="install-qe-on-archlinux">Install QE on Archlinux</h3>
+<h2 id="install-qe-on-archlinux">Install QE on Archlinux</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># blas-openblas-0.3.28-1 and blas-3.12.0-5 are in conflict</span>
 </span></span><span style="display:flex;"><span>sudo pacman -S blas-openblas
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Install QE from AUR</span>
 </span></span><span style="display:flex;"><span>paru -S quantum-espresso
-</span></span></code></pre></div><h3 id="how-to-use-qe">How to use QE</h3>
+</span></span></code></pre></div><p>现在系统里多了一堆可执行程序：</p>
+<ol>
+<li>
+<p><strong>pw.x</strong>（Plane-Wave Self-Consistent Field）</p>
+<ul>
+<li>用于执行密度泛函理论 (DFT) 的自洽计算。它使用平面波基组和赝势方法来求解电子结构，计算材料的基态性质（如能带结构、总能量等）。</li>
+</ul>
+</li>
+<li>
+<p><strong>ph.x</strong>（Phonon Calculations）</p>
+<ul>
+<li>用于计算声子（即晶体的振动模式）和相关的晶格动力学性质。适用于研究材料的热力学、声子频率、红外和拉曼散射以及超导电性等。</li>
+</ul>
+</li>
+<li>
+<p><strong>dos.x</strong>（Density of States）</p>
+<ul>
+<li>用于计算态密度 (DOS)。通过态密度的计算，可以分析电子结构的分布，从而了解材料的电子性质。</li>
+</ul>
+</li>
+<li>
+<p><strong>bands.x</strong>（Band Structure）</p>
+<ul>
+<li>用于计算能带结构。可以绘制材料的能带图，从而分析其导电性和带隙特性。</li>
+</ul>
+</li>
+<li>
+<p><strong>pp.x</strong>（Post-Processing）</p>
+<ul>
+<li>提供了一些后处理工具，可以对密度、波函数等物理量进行处理和可视化。支持各种物理量的可视化，包括电荷密度、电子密度差分、库仑势等。</li>
+</ul>
+</li>
+<li>
+<p><strong>neb.x</strong>（Nudged Elastic Band）</p>
+<ul>
+<li>用于过渡态搜索和最小能量路径 (MEP) 计算，适用于计算反应路径或扩散路径中的激活能。多用于研究分子和固体材料中的反应和迁移机制。</li>
+</ul>
+</li>
+<li>
+<p><strong>cp.x</strong>（Car-Parrinello Molecular Dynamics）</p>
+<ul>
+<li>用于分子动力学模拟，基于Car-Parrinello方法。适用于在时间尺度上研究系统的动力学演变，广泛应用于液体、固体材料和表面化学等领域。</li>
+</ul>
+</li>
+<li>
+<p><strong>td.x</strong>（Time-Dependent DFT）</p>
+<ul>
+<li>用于时间依赖性密度泛函理论 (TDDFT) 计算，可以计算材料的光学响应和激发态性质，适合研究光学材料和半导体的激发态动力学。</li>
+</ul>
+</li>
+<li>
+<p><strong>q2r.x</strong>（Convert Q-Point to Real Space）</p>
+<ul>
+<li>将在 q 空间计算的声子频率和动力学矩阵转换为实空间，用于计算晶格的振动模式，特别适用于长波声子计算。</li>
+</ul>
+</li>
+<li>
+<p><strong>matdyn.x</strong>（Phonon Dispersion and Thermal Properties）</p>
+<ul>
+<li>计算声子频散关系和材料的热力学性质（如比热、自由能等），主要依赖于从ph.x和q2r.x获得的数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>projwfc.x</strong>（Projected Wave Functions）</p>
+<ul>
+<li>用于投影态密度的计算，可以计算投影在特定原子或轨道上的态密度 (PDOS)，对分析电子结构的本征特性很有帮助。</li>
+</ul>
+</li>
+</ol>
+<h2 id="how-to-use-qe">How to use QE</h2>
 <p>Find tutorials in <a href="https://www.quantum-espresso.org/tutorials/">quantum-espresso:tutorisals</a></p>
-<h3 id="slove-previous-problem-about-mos2">Slove previous problem about MoS2</h3>
+<p>使用Quantum ESPRESSO (QE) 进行计算时，一般会遵循以下工作流程，特别是针对电子结构计算的常见任务。具体流程可能会根据实际的研究需求有所不同，但通常包括以下主要步骤：</p>
+<h3 id="1-准备输入文件">1. <strong>准备输入文件</strong></h3>
+<ul>
+<li>主要的输入文件通常是<code>.in</code>文件，用于设置计算参数和结构信息。不同的计算类型（如自洽场计算、能带计算等）有特定的输入格式。</li>
+<li>典型参数包括晶胞结构、赝势类型、平面波截断能量、k点网格、电子自洽收敛条件等。</li>
+</ul>
+<h3 id="2-赝势选择">2. <strong>赝势选择</strong></h3>
+<ul>
+<li>Quantum ESPRESSO依赖于赝势来简化核和电子之间的相互作用。选择合适的赝势（例如PBE、USPP、PAW等）至关重要，通常赝势文件以<code>.UPF</code>格式存在。</li>
+<li>可以从Quantum ESPRESSO官方数据库或者其他赝势库中下载所需元素的赝势。</li>
+</ul>
+<h3 id="3-结构优化可选">3. <strong>结构优化（可选）</strong></h3>
+<ul>
+<li>使用<code>pw.x</code>进行结构优化，以确保几何结构处于最低能量态。结构优化可以包括原子位置、晶胞参数和体积优化。</li>
+<li>优化计算可分为两步：
+<ol>
+<li><strong>离子弛豫</strong>：固定晶胞参数，优化内部原子位置。</li>
+<li><strong>晶格优化</strong>：优化晶胞参数以及内部原子结构。</li>
+</ol>
+</li>
+</ul>
+<h3 id="4-自洽场-scf-计算">4. <strong>自洽场 (SCF) 计算</strong></h3>
+<ul>
+<li>使用<code>pw.x</code>进行自洽场计算（SCF）。在SCF计算中，求解体系的电子密度，获得材料的基态能量。</li>
+<li>SCF计算结果为后续步骤提供电子密度和波函数数据。</li>
+</ul>
+<h3 id="5-非自洽场-nscf-计算可选">5. <strong>非自洽场 (NSCF) 计算（可选）</strong></h3>
+<ul>
+<li>为了更精确地计算能带结构和态密度，通常在SCF之后进行非自洽场 (NSCF) 计算。NSCF计算使用更密集的k点网格，能够在电子密度不变的情况下精确计算特定路径上的电子能级。</li>
+</ul>
+<h3 id="6-态密度-dos-计算">6. <strong>态密度 (DOS) 计算</strong></h3>
+<ul>
+<li>使用<code>dos.x</code>工具对SCF或NSCF计算的结果进行态密度 (DOS) 分析。</li>
+<li>态密度可以帮助理解电子结构分布和材料的导电性。</li>
+</ul>
+<h3 id="7-能带结构-band-structure-计算">7. <strong>能带结构 (Band Structure) 计算</strong></h3>
+<ul>
+<li>使用<code>bands.x</code>计算能带结构。通常在对称点路径上计算能带，绘制材料的能带图，从而直观展示电子结构。</li>
+<li>计算完成后，可以用后处理工具（如gnuplot、Matplotlib等）绘制能带图。</li>
+</ul>
+<h3 id="8-声子计算和动力学性质可选">8. <strong>声子计算和动力学性质（可选）</strong></h3>
+<ul>
+<li>若研究材料的振动特性或热力学性质，可以使用<code>ph.x</code>计算声子频率和晶格动力学矩阵。</li>
+<li>然后通过<code>q2r.x</code>和<code>matdyn.x</code>等后处理工具计算声子色散关系和热力学性质（如比热）。</li>
+</ul>
+<h3 id="9-后处理与数据分析">9. <strong>后处理与数据分析</strong></h3>
+<ul>
+<li>Quantum ESPRESSO提供了<code>pp.x</code>、<code>projwfc.x</code>等工具，可以用于数据分析和可视化，例如电荷密度、库仑势、投影态密度 (PDOS) 等。</li>
+<li>将数据导入外部软件（如VESTA、VASPkit、Matplotlib等）进行可视化分析。</li>
+</ul>
+<h3 id="10-分子动力学模拟可选">10. <strong>分子动力学模拟（可选）</strong></h3>
+<ul>
+<li>如果要研究系统的动态行为，可以使用<code>cp.x</code>工具进行分子动力学 (MD) 模拟。分子动力学模拟适合模拟高温条件下的材料行为，如熔化、扩散、界面稳定性等。</li>
+</ul>
+<h3 id="典型工作流程总结">典型工作流程总结</h3>
+<ol>
+<li><strong>准备输入文件</strong> -&gt; 2. <strong>赝势选择</strong> -&gt; 3. <strong>结构优化</strong>（如需） -&gt; 4. <strong>SCF计算</strong> -&gt; 5. <strong>NSCF计算（如需）</strong> -&gt; 6. <strong>DOS和能带结构计算</strong> -&gt; 7. <strong>声子和动力学计算（如需）</strong> -&gt; 8. <strong>后处理和数据分析</strong> -&gt; 9. <strong>分子动力学模拟（如需）</strong></li>
+</ol>
+<p>整个流程高度模块化，可以根据研究目标选择不同的步骤进行。</p>
+<h2 id="slove-previous-problem-about-mos2">Slove previous problem about MoS2</h2>
 <p>To be continued</p>
 </div>
     </article>
