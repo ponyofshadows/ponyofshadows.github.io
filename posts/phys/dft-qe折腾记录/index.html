@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 1139 words</span>
+  <span> • 1194 words</span>
   <span> • 6 minute read</span>
   
   
@@ -653,7 +653,30 @@ Quantum ESPRESSO 支持多种赝势文件格式，常见的格式包括：</p>
 <li>能量的不同组成项为电子、离子相互作用的具体贡献提供了信息。</li>
 <li>性能统计显示了计算的时间消耗情况。</li>
 </ul>
-</div>
+<h3 id="d-选定参数后进行结构优化">D. 选定参数后进行结构优化</h3>
+<p>略</p>
+<h3 id="e-计算态密度能带声子谱的命令">E. 计算态密度，能带，声子谱的命令</h3>
+<ol>
+<li>首先要先进行自洽场计算（SCF）得到电子密度，然后进行非自洽场（NSCF）计算得到波函数信息。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pw.x &lt; scf.in &gt; scf.out
+</span></span><span style="display:flex;"><span>pw.x &lt; nscf.in &gt; nscf.out
+</span></span></code></pre></div><ol start="2">
+<li>在 NSCF 计算完成后, 可进行DOS计算得到态密度：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dos.x &lt; dos.in &gt; dos.out
+</span></span></code></pre></div><ol start="3">
+<li>在 NSCF 计算完成后，可计算能带：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bands.x &lt; bands_post.in &gt; bands_post.out
+</span></span></code></pre></div><ol start="4">
+<li>在在完成 SCF 计算后，使用 <code>ph.x</code> 程序进行声子计算</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ph.x &lt; ph.in &gt; ph.out
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 声子计算的后处理</span>
+</span></span><span style="display:flex;"><span>q2r.x &lt; q2r.in &gt; q2r.out
+</span></span><span style="display:flex;"><span>matdyn.x &lt; matdyn.in &gt; matdyn.out
+</span></span></code></pre></div></div>
     </article>
   </main>
 
