@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>在Mathematica中进行算符运算 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="https://ponyofshadows.com/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="https://ponyofshadows.com/"><h1>Pony of Shadows</h1></a>
+      <h3>Queen of Truth &amp; King of Practice</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">在Mathematica中进行算符运算</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-11-12</time>
+    
+    
+  </strong>
+  <span> • 90 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/phys">phys</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h3 id="basics">Basics</h3>
+<ul>
+<li>(没啥用的)无交换律的乘法符号</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">**</span> b
+</span></span></code></pre></div><ul>
+<li>矩阵乘法</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a<span style="color:#960050;background-color:#1e0010">.</span>b
+</span></span></code></pre></div><ul>
+<li>替换（substitution）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">/.</span>{a<span style="color:#f92672">-&gt;</span>b}
+</span></span></code></pre></div><ul>
+<li>模式识别的替换</li>
+</ul>
+<pre tabindex="0"><code>Sin[z] + Sin[3 z^2] + Cos[z] /. {Sin[X_] :&gt; Sin[2X]}
+</code></pre><p>还可识别多个符号、不定数量的符号</p>
+<p>References:</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1DZ421i7cX?spm_id_from=333.788.videopod.sections&amp;vd_source=9550b4b6e4a760b30fa8063d03d72c1c">Mathematica实用指南——教会电脑什么叫生成湮灭：算符运算自动化</a></li>
+<li><a href="https://www.bilibili.com/video/BV17A14YdEtm?spm_id_from=333.788.videopod.sections&amp;vd_source=9550b4b6e4a760b30fa8063d03d72c1c">Mathematica实用指南——非交换代数，自旋链模型小练习</a></li>
+</ul>
+<h2 id="a-package-of-quantumn-notationhttpslibrarywolframcominfocenterid7622"><a href="https://library.wolfram.com/infocenter/ID/7622/">A package of quantumn notation</a></h2>
+<p>要在Mathematica中使用“Quantum Mathematica”这个扩展包，您可以按照以下步骤进行安装和使用：</p>
+<ol>
+<li>
+<p><strong>下载扩展包</strong>：</p>
+<ul>
+<li>访问提供的链接 <a href="http://homepage.cem.itesm.mx/lgomez/quantum/">Quantum Mathematica 下载页面</a>。</li>
+<li>下载扩展包文件和相关文档，通常包括<code>.zip</code>文件以及安装说明文档或Mathematica notebook。</li>
+</ul>
+</li>
+<li>
+<p><strong>安装包文件</strong>：</p>
+<ul>
+<li>将下载的<code>.zip</code>文件解压到本地硬盘上。</li>
+<li>找到扩展包中的<code>.m</code>文件或文件夹，并将它们复制到Mathematica的应用程序目录中。通常，这个目录位于以下路径：
+<ul>
+<li><strong>Windows</strong>: <code>C:\Users\&lt;YourUserName&gt;\AppData\Roaming\Mathematica\Applications</code></li>
+<li><strong>Mac</strong>: <code>/Users/&lt;YourUserName&gt;/Library/Mathematica/Applications</code></li>
+<li><strong>Linux</strong>: <code>~/.Mathematica/Applications</code></li>
+</ul>
+</li>
+<li>如果安装目录不同，可以在Mathematica中使用以下命令来检查路径：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span>UserBaseDirectory <span style="color:#f92672">&lt;&gt;</span> <span style="color:#e6db74">&#34;/Applications&#34;</span>
+</span></span></code></pre></div></li>
+</ul>
+</li>
+<li>
+<p><strong>加载扩展包</strong>：</p>
+<ul>
+<li>启动Mathematica并输入以下命令来加载Quantum Mathematica包（假设包的名字为<code>QuantumMathematica</code>，具体包名称可以在下载的文档中找到）：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span><span style="color:#f92672">&lt;&lt;</span> QuantumMathematica`
+</span></span></code></pre></div></li>
+<li>如果包被正确加载，没有任何错误信息返回。</li>
+</ul>
+</li>
+<li>
+<p><strong>使用包中的函数</strong>：</p>
+<ul>
+<li>参考下载的文档中提供的函数列表和示例，了解包提供的功能，如Dirac记号（Bra-Ket Notation）、量子算符和对易代数等。</li>
+<li>例如，您可以尝试使用<code>BraKet</code>函数来实现Dirac记号，或使用<code>QuantumOperator</code>来定义量子算符等（函数名称可以参考文档中的说明）。</li>
+</ul>
+</li>
+<li>
+<p><strong>检查包的帮助文档</strong>：</p>
+<ul>
+<li>一些包提供了帮助文档，可以通过Mathematica的<code>Documentation Center</code>访问。</li>
+<li>在Mathematica的命令行中输入：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>Documentation`HelpLookup[<span style="color:#e6db74">&#34;QuantumMathematica&#34;</span>]
+</span></span></code></pre></div></li>
+<li>如果文档没有集成，可以直接打开下载的PDF或notebook文档，了解所有功能的具体用法。</li>
+</ul>
+</li>
+<li>
+<p><strong>示例操作</strong>：</p>
+<ul>
+<li>您可以在Mathematica中尝试以下简单的量子算符操作，以确保包安装正确并能够使用：
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>BraKet[<span style="color:#960050;background-color:#1e0010">ψ</span>, <span style="color:#960050;background-color:#1e0010">φ</span>] <span style="color:#75715e">(* Dirac 记号表示 *)</span>
+</span></span><span style="display:flex;"><span>QuantumOperator[<span style="color:#960050;background-color:#1e0010">σ</span>, PauliX] <span style="color:#75715e">(* 量子算符 Pauli 矩阵示例 *)</span>
+</span></span></code></pre></div></li>
+<li>请参考文档中的更多应用示例，如量子随机行走（Quantum Random Walks）或量子傅里叶变换（Quantum Fourier Transform）。</li>
+</ul>
+</li>
+</ol>
+<p>通过这些步骤，您就可以在Mathematica中开始使用“Quantum Mathematica”扩展包的各种量子计算和量子力学相关功能了。</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2024
+    <a href="https://ponyofshadows.com/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>
