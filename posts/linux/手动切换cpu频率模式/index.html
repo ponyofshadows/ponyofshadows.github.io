@@ -9,7 +9,7 @@
   />
   
     
-      <title>手动切换CPU频率模式 | Pony of Shadows</title>
+      <title>手动切换CPU频率模式，让系统睡眠/休眠 | Pony of Shadows</title>
     
   
 
@@ -77,7 +77,7 @@
         
   <main>
     <article>
-      <h1 class="title">手动切换CPU频率模式</h1>
+      <h1 class="title">手动切换CPU频率模式，让系统睡眠/休眠</h1>
       
       <div class="post-meta">
   <strong>
@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 17 words</span>
+  <span> • 31 words</span>
   <span> • 1 minute read</span>
   
   
@@ -99,13 +99,25 @@
   
 </div>
 
-      <div class="content"><p>需要用到的包：<code>cpupower</code></p>
+      <div class="content"><h2 id="切换cpu频率模式">切换CPU频率模式</h2>
+<p>这个一般没什么用，系统会自动切换的
+需要用到的包：<code>cpupower</code></p>
 <p>切换到性能模式：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g performance
 </span></span></code></pre></div><p>切换到省电模式：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g powersave
 </span></span></code></pre></div><p>查看当前频率信息：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-info
+</span></span></code></pre></div><h2 id="手动切换睡眠休眠">手动切换睡眠/休眠</h2>
+<p>这个有用，值得设个快捷键</p>
+<ul>
+<li>让系统睡眠（Suspend to RAM）(笔记本合盖默认睡眠)</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl suspend
+</span></span></code></pre></div><ul>
+<li>让系统休眠（Hibernate）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl hibernate
 </span></span></code></pre></div></div>
     </article>
   </main>
