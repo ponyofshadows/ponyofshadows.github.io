@@ -104,7 +104,7 @@
     
     
   </strong>
- <span> • 32 words</span>
+ <span> • 25 words</span>
  <span> • 1 minute read</span>
   
     <div>
@@ -124,18 +124,18 @@
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">**</span> b
 </span></span></code></pre></div><ul>
-<li>(也没啥用的)定义符号矩阵</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>A <span style="color:#f92672">=</span> MatrixSymbol[<span style="color:#e6db74">&#34;A&#34;</span>, n, n]
-</span></span></code></pre></div><p>下面的很有用：</p>
-<ul>
 <li>矩阵乘法</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a<span style="color:#960050;background-color:#1e0010">.</span>b
 </span></span></code></pre></div><ul>
 <li>替换（substitution）</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">/.</span>{a<span style="color:#f92672">-&gt;</span>b} …</span></span></code></pre></div></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">/.</span>{a<span style="color:#f92672">-&gt;</span>b}
+</span></span></code></pre></div><ul>
+<li>模式识别的替换</li>
+</ul>
+<pre tabindex="0"><code>Sin[z] + Sin[3 z^2] + Cos[z] /. {Sin[X_] :&gt; Sin[2X]}
+</code></pre><p>还可识别多个符 …</p></p>
     
       <a href="https://ponyofshadows.com/posts/phy/%E5%9C%A8mathematica%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%AE%97%E7%AC%A6%E8%BF%90%E7%AE%97/">Read more...</a>
     
