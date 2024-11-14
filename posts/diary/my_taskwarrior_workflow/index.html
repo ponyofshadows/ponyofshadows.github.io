@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 92 words</span>
+  <span> • 167 words</span>
   <span> • 1 minute read</span>
   
   
@@ -112,7 +112,35 @@
 <p>Throughout the early stages of human development, the emergence of government and commerce greatly improved the efficiency of human society.
 Although merchants and public officials don&rsquo;t directly create value, they are indispensable to human society. Similarly, task management is essential for individuals dealing with complex tasks.</p>
 <p>In this post I try to design a  workflow to manage tasks, which is strong universal and focused on efficiency. I When writing this article, I assume readers are familiar with <code>taskwarrior</code>.</p>
-<h3 id="heading"></h3>
+<h3 id="methods">Methods</h3>
+<h4 id="1-collect">1. <strong>Collect</strong></h4>
+<p>Collect as many essential tasks as possible. Tasks can be classified in several ways:</p>
+<ul>
+<li>Deadline-driven</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add DFT homework due:2024-11-20T23:35
+</span></span></code></pre></div><ul>
+<li>High-priority</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add preview quantum mechanics chapter <span style="color:#ae81ff">4</span> priority:M
+</span></span><span style="display:flex;"><span>task add review statistical physics chapter <span style="color:#ae81ff">11</span> priority:H
+</span></span></code></pre></div><ul>
+<li>Event</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add have launch with my classmate <span style="color:#66d9ef">until</span>:sun+12h
+</span></span></code></pre></div><ul>
+<li>Recurring</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add learn vocabulary due:eot+1h recurr:daily
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">``</span>
+</span></span><span style="display:flex;"><span>- Optional
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
+</span></span><span style="display:flex;"><span>task add learn manim priority:L
+</span></span></code></pre></div><h4 id="2-review">2. <strong>Review</strong></h4>
+<h4 id="3-initiate">3. <strong>Initiate</strong></h4>
+<h4 id="4-progressing">4. <strong>Progressing</strong></h4>
+<h4 id="5-achieved">5. <strong>Achieved</strong></h4>
+<h4 id="6-completed">6. <strong>Completed</strong></h4>
 </div>
     </article>
   </main>
