@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 167 words</span>
-  <span> • 1 minute read</span>
+  <span> • 319 words</span>
+  <span> • 2 minute read</span>
   
   
     <div>
@@ -108,40 +108,54 @@
 <li><a href="https://taskwarrior.org/docs/examples/">Docs</a></li>
 </ul>
 <h2 id="my-workflow">My Workflow</h2>
-<h3 id="introduction">Introduction</h3>
 <p>Throughout the early stages of human development, the emergence of government and commerce greatly improved the efficiency of human society.
 Although merchants and public officials don&rsquo;t directly create value, they are indispensable to human society. Similarly, task management is essential for individuals dealing with complex tasks.</p>
 <p>In this post I try to design a  workflow to manage tasks, which is strong universal and focused on efficiency. I When writing this article, I assume readers are familiar with <code>taskwarrior</code>.</p>
-<h3 id="methods">Methods</h3>
-<h4 id="1-collect">1. <strong>Collect</strong></h4>
+<h4 id="i-collect">I. <strong>Collect</strong></h4>
 <p>Collect as many essential tasks as possible. Tasks can be classified in several ways:</p>
 <ul>
 <li>Deadline-driven</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add DFT homework due:2024-11-20T23:35
 </span></span></code></pre></div><ul>
-<li>High-priority</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add preview quantum mechanics chapter <span style="color:#ae81ff">4</span> priority:M
-</span></span><span style="display:flex;"><span>task add review statistical physics chapter <span style="color:#ae81ff">11</span> priority:H
-</span></span></code></pre></div><ul>
-<li>Event</li>
-</ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add have launch with my classmate <span style="color:#66d9ef">until</span>:sun+12h
-</span></span></code></pre></div><ul>
 <li>Recurring</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add learn vocabulary due:eot+1h recurr:daily
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">``</span>
-</span></span><span style="display:flex;"><span>- Optional
+</span></span><span style="display:flex;"><span>- High-priority
+</span></span><span style="display:flex;"><span>High-priority tasks are important tasks without specific deadlines. You can add high-priority tasks as shown below.
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
-</span></span><span style="display:flex;"><span>task add learn manim priority:L
-</span></span></code></pre></div><h4 id="2-review">2. <strong>Review</strong></h4>
-<h4 id="3-initiate">3. <strong>Initiate</strong></h4>
-<h4 id="4-progressing">4. <strong>Progressing</strong></h4>
-<h4 id="5-achieved">5. <strong>Achieved</strong></h4>
-<h4 id="6-completed">6. <strong>Completed</strong></h4>
-</div>
+</span></span><span style="display:flex;"><span>task add preview quantum mechanics chapter <span style="color:#ae81ff">4</span> priority:M
+</span></span><span style="display:flex;"><span>task add review statistical physics chapter <span style="color:#ae81ff">11</span> priority:H
+</span></span></code></pre></div><p>However, it’s generally recommended to add a due date (and recur parameter) to these tasks, turning them into either deadline-driven or recurring tasks.</p>
+<ul>
+<li>Event</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add have launch with my classmate <span style="color:#66d9ef">until</span>:sun+12h
+</span></span></code></pre></div><ul>
+<li>Optional</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add learn manim priority:L
+</span></span></code></pre></div><h4 id="ii-scheduling">II. <strong>Scheduling</strong></h4>
+<p>Everyone knows to prioritize tasks with higher urgency, but working on a single task until completion isn’t always the most efficient approach. On the contrary, it can be very inefficient due to the complexity of daily tasks. So in addition to the &ldquo;<strong>higher urgency first</strong>&rdquo; principle, we should add another: “<strong>timely task interruption.</strong>”</p>
+<p>I roughly divide task progress into 4 stages, as shown below:</p>
+<ol>
+<li><strong>Active</strong>: : You&rsquo;ve taken initial steps to get this task started.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task <span style="color:#ae81ff">11</span> start
+</span></span></code></pre></div><ol start="2">
+<li><strong>Progressing</strong> (Optional): You&rsquo;ve completed many steps, but there&rsquo;s still much left to do.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task <span style="color:#ae81ff">11</span> +p
+</span></span></code></pre></div><ol start="3">
+<li><strong>Achieved</strong> (Optional): If this were an exam, you&rsquo;d have scored a 70.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task <span style="color:#ae81ff">11</span> -p +a
+</span></span></code></pre></div><ol start="4">
+<li><strong>Done</strong>: There&rsquo;s nothing more you can do on this task.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task <span style="color:#ae81ff">11</span> <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div></div>
     </article>
   </main>
 
