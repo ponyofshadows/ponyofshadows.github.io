@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 319 words</span>
+  <span> • 415 words</span>
   <span> • 2 minute read</span>
   
   
@@ -98,7 +98,7 @@
   
 </div>
 
-      <div class="content"><h3 id="how-to-use-taskwarrior">How to Use <code>Taskwarrior</code></h3>
+      <div class="content"><h2 id="how-to-use-taskwarrior">How to Use <code>Taskwarrior</code></h2>
 <ul>
 <li>Local  Help</li>
 </ul>
@@ -111,7 +111,7 @@
 <p>Throughout the early stages of human development, the emergence of government and commerce greatly improved the efficiency of human society.
 Although merchants and public officials don&rsquo;t directly create value, they are indispensable to human society. Similarly, task management is essential for individuals dealing with complex tasks.</p>
 <p>In this post I try to design a  workflow to manage tasks, which is strong universal and focused on efficiency. I When writing this article, I assume readers are familiar with <code>taskwarrior</code>.</p>
-<h4 id="i-collect">I. <strong>Collect</strong></h4>
+<h3 id="i-collect">I. <strong>Collect</strong></h3>
 <p>Collect as many essential tasks as possible. Tasks can be classified in several ways:</p>
 <ul>
 <li>Deadline-driven</li>
@@ -136,7 +136,14 @@ Although merchants and public officials don&rsquo;t directly create value, they 
 <li>Optional</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task add learn manim priority:L
-</span></span></code></pre></div><h4 id="ii-scheduling">II. <strong>Scheduling</strong></h4>
+</span></span></code></pre></div><p>List tasks:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task
+</span></span><span style="display:flex;"><span>task list
+</span></span><span style="display:flex;"><span>task long
+</span></span><span style="display:flex;"><span>task next
+</span></span></code></pre></div><p>List upcoming tasks (detailed):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task long <span style="color:#66d9ef">until</span>.before:now+7d or scheduled.before:now+7d or due.before:now+7d
+</span></span></code></pre></div><h3 id="ii-scheduling">II. <strong>Scheduling</strong></h3>
 <p>Everyone knows to prioritize tasks with higher urgency, but working on a single task until completion isn’t always the most efficient approach. On the contrary, it can be very inefficient due to the complexity of daily tasks. So in addition to the &ldquo;<strong>higher urgency first</strong>&rdquo; principle, we should add another: “<strong>timely task interruption.</strong>”</p>
 <p>I roughly divide task progress into 4 stages, as shown below:</p>
 <ol>
@@ -155,6 +162,14 @@ Although merchants and public officials don&rsquo;t directly create value, they 
 <li><strong>Done</strong>: There&rsquo;s nothing more you can do on this task.</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>task <span style="color:#ae81ff">11</span> <span style="color:#66d9ef">done</span>
+</span></span></code></pre></div><p>ChatGPT</p>
+<p>Different transitions between stages require varying levels of focus and timing. For example, you can activate a task (Stage 1) almost anytime and anywhere, but reaching Stage 4 (Done) requires a longer period of focused attention for complex tasks. So, arrange appropriate tasks for the appropriate times.</p>
+<h3 id="iii-just-do-it">III. Just-Do-It</h3>
+<p>Some small tips:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Add annotation (with time-stamp)</span>
+</span></span><span style="display:flex;"><span>task <span style="color:#ae81ff">15</span> annotate <span style="color:#e6db74">&#34;Room 201&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># modified tasks tody (active and done are treated as modification)</span>
+</span></span><span style="display:flex;"><span>task modified:today
 </span></span></code></pre></div></div>
     </article>
   </main>
