@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 21 words</span>
+  <span> • 23 words</span>
   <span> • 1 minute read</span>
   
   
@@ -101,7 +101,7 @@
       <div class="content"><ol>
 <li>把PDF转为图片(需要<code>imagemagick</code>包)</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>convert -density <span style="color:#ae81ff">300</span> name.pdf page-%03d.png
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>magick convert -density <span style="color:#ae81ff">300</span> name.pdf page-%03d.png
 </span></span></code></pre></div><ol start="2">
 <li>选择性调整灰度</li>
 </ol>
@@ -109,7 +109,7 @@
 </span></span></code></pre></div><ol start="3">
 <li>转回图片PDF</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>convert page-*.png output.pdf
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>magick convert page-*.png output.pdf
 </span></span></code></pre></div></div>
     </article>
   </main>
