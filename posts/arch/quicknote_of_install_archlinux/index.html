@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 385 words</span>
-  <span> • 2 minute read</span>
+  <span> • 460 words</span>
+  <span> • 3 minute read</span>
   
   
     <div>
@@ -132,6 +132,8 @@ Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://
 </span></span><span style="display:flex;"><span>wpa_supplicant -B -i interface -c &lt;<span style="color:#f92672">(</span>wpa_passphrase MYSSID passphrase<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># or iwd -- https://wiki.archlinux.org/title/Iwd</span>
 </span></span><span style="display:flex;"><span>iwctl
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># test</span>
+</span></span><span style="display:flex;"><span>ping -c <span style="color:#ae81ff">3</span> www.ponyofshadows.com
 </span></span></code></pre></div><h3 id="update-the-system-clock">Update the system clock</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true
 </span></span><span style="display:flex;"><span>timedatectl
@@ -173,13 +175,15 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 </span></span><span style="display:flex;"><span>pascstrap /mnt/@current wpa_suppliant dhcpcd rsync git neovim
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># filesystem utils</span>
 </span></span><span style="display:flex;"><span>pascstrap /mnt btrfs-progs xfsprogs
-</span></span></code></pre></div><h2 id="configure-the-system">Configure the system</h2>
+</span></span></code></pre></div><h2 id="prepare-for-reboot">Prepare for reboot</h2>
 <h3 id="chroot">Chroot</h3>
 <pre tabindex="0"><code>arch-chroot /mnt
 </code></pre><h3 id="boot-loader">boot loader</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/boot --bootloader-id<span style="color:#f92672">=</span>GRUB
 </span></span></code></pre></div><p>edit <code>/etc/default/grub</code>:</p>
-<pre tabindex="0"><code>GRUB_CMDLINE_LINUX=&#34;rootflags=subvol=/@current&#34;
+<pre tabindex="0"><code>GRUB_TIMEOUT=0
+GRUB_CMDLINE_LINUX_DEFAULT=&#34;loglevel=4 nowatchdog&#34;
+GRUB_CMDLINE_LINUX=&#34;rootflags=subvol=/@current&#34;
 </code></pre><p>mkconfig</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
 </span></span></code></pre></div><h3 id="hostname--users">hostname &amp; users</h3>
@@ -207,7 +211,41 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 </span></span><span style="display:flex;"><span>umount -R  /mnt
 </span></span><span style="display:flex;"><span>reboot
 </span></span></code></pre></div><p>Unplug your flash drive and reboot</p>
-</div>
+<h2 id="configure-the-system">Configure the system</h2>
+<h2 id="connect-network-with-wpa_cli">Connect network with wpa_cli</h2>
+<p><a href="https://wiki.archlinux.org/title/Wpa_supplicant">wiki-wpa_supplicant</a></p>
+<h3 id="wpa_suppliant-connects-with-wpa_cli">wpa_suppliant connects with wpa_cli</h3>
+<ol>
+<li>open <code>/etc/wpa_supplicant/wpa_supplicant.conf</code> and append</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ctrl_interface<span style="color:#f92672">=</span>DIR<span style="color:#f92672">=</span>/var/run/wpa_supplicant GROUP<span style="color:#f92672">=</span>wheel
+</span></span><span style="display:flex;"><span>update_config<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span></code></pre></div><p>(connect wpa_cli with wpa_supplicant, allow wheel uesrs to use wpa_cli)
+2. create <code>/etc/systemd/system/wpa_supplicant@interface_name.service</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-systemd" data-lang="systemd"><span style="display:flex;"><span><span style="color:#66d9ef">[Unit]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Description</span><span style="color:#f92672">=</span><span style="color:#e6db74">Wpa supplicant for %I</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Wants</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Before</span><span style="color:#f92672">=</span><span style="color:#e6db74">network.target</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Service]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">simple</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStartPre</span><span style="color:#f92672">=</span><span style="color:#e6db74">/bin/sleep 1</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecStart</span><span style="color:#f92672">=</span><span style="color:#e6db74">/usr/bin/wpa_supplicant -i %I -c /etc/wpa_supplicant/wpa_supplicant.conf</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">ExecReload</span><span style="color:#f92672">=</span><span style="color:#e6db74">/bin/kill -HUP $MAINPID</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">Restart</span><span style="color:#f92672">=</span><span style="color:#e6db74">on-failure</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">RestartSec</span><span style="color:#f92672">=</span><span style="color:#e6db74">1s</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">[Install]</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">WantedBy</span><span style="color:#f92672">=</span><span style="color:#e6db74">multi-user.target</span>
+</span></span></code></pre></div><ol start="3">
+<li>enable wpa service</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now wpa_supplicant@interface_name.service 
+</span></span></code></pre></div><ol start="4">
+<li>run cli</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wpa_cli
+</span></span></code></pre></div></div>
     </article>
   </main>
 
