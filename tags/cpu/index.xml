@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CPU on Pony of Shadows</title>
+    <link>http://localhost:1313/tags/cpu/</link>
+    <description>Recent content in CPU on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Nov 2024 09:07:24 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/cpu/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>手动切换CPU频率模式，让系统睡眠/休眠</title>
+      <link>http://localhost:1313/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Sun, 10 Nov 2024 09:07:24 +0800</pubDate>
+      <guid>http://localhost:1313/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/</guid>
+      <description>&lt;h2 id=&#34;切换cpu频率模式&#34;&gt;切换CPU频率模式&lt;/h2&gt;&#xA;&lt;p&gt;这个一般没什么用，系统会自动切换的&#xA;需要用到的包：&lt;code&gt;cpupower&lt;/code&gt;&lt;/p&gt;&#xA;&lt;p&gt;切换到性能模式：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cpupower frequency-set -g performance&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;切换到省电模式：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cpupower frequency-set -g powersave&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;查看当前频率信息：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo cpupower frequency-info&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;手动切换睡眠休眠&#34;&gt;手动切换睡眠/休眠&lt;/h2&gt;&#xA;&lt;p&gt;这个有用，值得设个快捷键&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;让系统睡眠（Suspend to RAM）(笔记本合盖默认睡眠)&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl suspend&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;&#xA;&lt;li&gt;让系统休眠（Hibernate）&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;sudo systemctl hibernate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;但我的电脑休眠后按电源键是重新开机，即始修改了&lt;code&gt;/etc/systemd/sleep.conf&lt;/code&gt;也没用&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>nvim中tex文件后缀名与补全的问题 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">nvim中tex文件后缀名与补全的问题</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-26</time>
+    
+    
+  </strong>
+  <span> • 18 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/nvim">nvim</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>在nvim的命令模式，可以这样知道nvim给当前文件分配的类型：</p>
+<pre tabindex="0"><code>:set filetype?
+</code></pre><p>luasnip就是根据这个文件类型应用snip配置的。</p>
+<p>可能因为是lsp的texlab的设定，刚创建的.tex文件的类型会被分配为<code>plaintex</code>。
+当文件包含特定的 LaTeX 结构（比如包含documentclass和document环境），才会被分配为<code>tex</code>。</p>
+<p>可以改变nvim的配置强制把.tex文件强制都分配为<code>tex</code>类型：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span>vim.cmd(<span style="color:#e6db74">[[
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  autocmd BufNewFile,BufRead *.tex set filetype=tex
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">]]</span>)
+</span></span></code></pre></div><p>但不建议这么做，疑似会与默认的texlab配置冲突，导致texlab出bug，一直在后台吃CPU。</p>
+<p>如果想要luasnip的针对latex的补全一直生效，可以创建<code>tex</code>补全路径的软链接<code>plaintex</code>。</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

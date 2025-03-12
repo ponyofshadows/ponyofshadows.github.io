@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>vim的稍微进阶的操作小技巧 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">vim的稍微进阶的操作小技巧</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-10-26</time>
+    
+    
+  </strong>
+  <span> • 112 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/nvim">nvim</a>, 
+        <a href="/tags/gpt">GPT</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>是的，Neovim 提供了许多跳转的快捷键，可以让你快速在文件中移动。以下是一些常用的跳转快捷键：</p>
+<h3 id="行内跳转">行内跳转</h3>
+<ol>
+<li><strong><code>0</code></strong>: 跳转到当前行的行首。</li>
+<li><strong><code>^</code></strong>: 跳转到当前行的第一个非空白字符。</li>
+<li><strong><code>$</code></strong>: 跳转到当前行的行尾。</li>
+<li><strong><code>g_</code></strong>: 跳转到当前行的最后一个非空白字符。</li>
+</ol>
+<h3 id="行间跳转">行间跳转</h3>
+<ol>
+<li><strong><code>gg</code></strong>: 跳转到文件的第一行。</li>
+<li><strong><code>G</code></strong>: 跳转到文件的最后一行。</li>
+<li><strong><code>nG</code></strong>: 跳转到文件的第 n 行，例如 <code>10G</code> 会跳转到第 10 行。</li>
+<li><strong><code>H</code></strong>: 跳转到屏幕上的第一行（窗口顶部）。</li>
+<li><strong><code>M</code></strong>: 跳转到屏幕上的中间一行。</li>
+<li><strong><code>L</code></strong>: 跳转到屏幕上的最后一行（窗口底部）。</li>
+<li><strong><code>ctrl-d</code></strong>: 向下滚动半个屏幕。</li>
+<li><strong><code>ctrl-u</code></strong>: 向上滚动半个屏幕。</li>
+<li><strong><code>ctrl-f</code></strong>: 向下滚动一个屏幕。</li>
+<li><strong><code>ctrl-b</code></strong>: 向上滚动一个屏幕.</li>
+<li><strong><code>zz</code></strong>: 当前行居中显示（保持光标在当前行，将其滚动到窗口中间）。</li>
+<li><strong><code>zt</code></strong>: 当前行在窗口顶部显示（保持光标在当前行，将其滚动到窗口顶部）。</li>
+<li><strong><code>zb</code></strong>: 当前行在窗口底部显示（保持光标在当前行，将其滚动到窗口底部）。</li>
+</ol>
+<h3 id="单词和字符跳转">单词和字符跳转</h3>
+<ol>
+<li><strong><code>w</code></strong>: 跳转到下一个单词的开头。</li>
+<li><strong><code>e</code></strong>: 跳转到当前/下一个单词的结尾。</li>
+<li><strong><code>b</code></strong>: 跳转到当前/上一个单词的开头。</li>
+<li><strong><code>ge</code></strong>: 跳转到当前/上一个单词的结尾。</li>
+</ol>
+<h3 id="搜索跳转">搜索跳转</h3>
+<ol>
+<li><strong><code>/pattern</code></strong>: 向下搜索指定的 <code>pattern</code>，然后按 <code>n</code> 跳转到下一个匹配项，<code>N</code> 跳转到上一个匹配项。</li>
+<li><strong><code>?pattern</code></strong>: 向上搜索指定的 <code>pattern</code>，同样可以用 <code>n</code> 和 <code>N</code> 跳转到下/上一个匹配项。</li>
+<li><strong><code>*</code></strong>: 向下搜索光标所在的单词。</li>
+<li><strong><code>#</code></strong>: 向上搜索光标所在的单词。</li>
+</ol>
+<h3 id="符号跳转">符号跳转</h3>
+<ol>
+<li><strong><code>%</code></strong>: 在配对的符号（如括号 <code>()</code>、大括号 <code>{}</code>、方括号 <code>[]</code> 等）之间跳转。</li>
+</ol>
+<h3 id="标记跳转">标记跳转</h3>
+<ol>
+<li><strong><code>m{letter}</code></strong>: 设置一个标记。例如，<code>ma</code> 将标记当前光标位置为 <code>a</code>。</li>
+<li><strong><code>'{letter}</code></strong>: 跳转到标记的位置。例如，<code>'a</code> 会跳转到标记 <code>a</code> 处。</li>
+<li><strong><code>''</code></strong>: 跳转到最后一次离开的位置。</li>
+</ol>
+<h3 id="光标历史跳转">光标历史跳转</h3>
+<ol>
+<li><strong><code>ctrl-o</code></strong>: 回到上一个光标位置。</li>
+<li><strong><code>ctrl-i</code></strong>: 前进到下一个光标位置（配合 <code>ctrl-o</code> 使用）。</li>
+</ol>
+<h3 id="句子和段落跳转">句子和段落跳转</h3>
+<ol>
+<li><strong><code>(</code></strong>: 跳转到上一个句子的开头。</li>
+<li><strong><code>)</code></strong>: 跳转到下一个句子的开头。</li>
+<li><strong><code>{</code></strong>: 跳转到上一个段落的开头。</li>
+<li><strong><code>}</code></strong>: 跳转到下一个段落的开头。</li>
+</ol>
+<h3 id="标签跳转">标签跳转</h3>
+<ol>
+<li><strong><code>gt</code></strong>: 在标签页之间切换（向前切换）。</li>
+<li><strong><code>gT</code></strong>: 在标签页之间切换（向后切换）。</li>
+</ol>
+<p>这些快捷键可以帮助你在文件中快速导航，特别是当你在编写长文档或代码时，提高工作效率。你可以根据自己的需求组合和使用它们。</p>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

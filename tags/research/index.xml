@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Research on Pony of Shadows</title>
+    <link>http://localhost:1313/tags/research/</link>
+    <description>Recent content in Research on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 26 Jul 2024 08:06:17 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/research/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>对文献管理方法的探讨</title>
+      <link>http://localhost:1313/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</link>
+      <pubDate>Fri, 26 Jul 2024 08:06:17 +0800</pubDate>
+      <guid>http://localhost:1313/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/</guid>
+      <description>&lt;p&gt;我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。&lt;/p&gt;&#xA;&lt;h2 id=&#34;用到的工具&#34;&gt;用到的工具&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;papis&lt;/code&gt; 命令行文献管理器&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;neovim&lt;/code&gt; 文本编辑器&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;okular&lt;/code&gt; PDF阅读器&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;paper的数据结构&#34;&gt;Paper的&amp;quot;数据结构&amp;quot;&lt;/h2&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Paper&#xA;|_ 各种出版信息(Title, Authors, Year, ...)&#xA;|_ Abstract&#xA;|_ 关联的okular笔记文件（xml格式）&#xA;|_ 关联的项目（如果有的话）&#xA;|_ Tags&#xA;|_ 补充材料（其它Paper）&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;体验论文阅读流程&#34;&gt;体验论文阅读流程&lt;/h2&gt;&#xA;&lt;h3 id=&#34;下载一篇论文&#34;&gt;下载一篇论文&lt;/h3&gt;&#xA;&lt;p&gt;找到一个可在firefox使用的&lt;a href=&#34;https://github.com/papis/papis-firefox&#34;&gt;papis插件&lt;/a&gt;，但我目前不想试用。就直接手动下载了。然后，把本地文件添加到papis的库（路径由&lt;code&gt;~/.config/papis/config&lt;/code&gt;设置）&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;papis add Downloads/xxxxx.pdf --from doi xxxxxx&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这里自己提供doi, papis就会自动补充好论文的各种信息。也可以直接提供网址。&lt;/p&gt;&#xA;&lt;h3 id=&#34;读完abstract&#34;&gt;读完Abstract&lt;/h3&gt;&#xA;&lt;p&gt;打开一篇论文&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;papis open&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;打标签&#34;&gt;打标签&lt;/h3&gt;&#xA;&lt;p&gt;新版本支持的功能，等AUR有了后再尝试&lt;/p&gt;&#xA;&lt;h3 id=&#34;尝试关联一个笔记项目&#34;&gt;尝试关联一个笔记项目&lt;/h3&gt;&#xA;&lt;h3 id=&#34;尝试添加补充材料&#34;&gt;尝试添加补充材料&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>

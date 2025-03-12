@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Setup: 0.Basic | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">Setup: 0.Basic</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-05</time>
+    
+    
+  </strong>
+  <span> • 561 words</span>
+  <span> • 3 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>本笔记系列旨在梳理Arch Linux从基础安装到功能齐全的配置过程，实现对自己的桌面Linux系统点面俱全的掌握。</p>
+<p>现在处于笔记系列的第0层，目标仅仅是：<strong>让新安装的系统可以正常引导启动和自己联网下载新的包</strong></p>
+<p><strong>关键词</strong> : live系统，分区方案，网络连接，文件系统，系统引导</p>
+<h2 id="前期准备">前期准备</h2>
+<p>我们需要：</p>
+<ol>
+<li>一台电脑</li>
+<li>稳定的无线或有线网络</li>
+<li><a href="https://wiki.archlinux.org/title/USB_flash_installation_medium">USB闪存安装介质</a></li>
+</ol>
+<p>下面展开讲讲上面3.的安装介质如何准备：</p>
+<ol>
+<li>在<a href="https://archlinux.org/download/">Download</a>页面找到自己所在国家的镜像站下载最新的ISO(光盘镜像文件)，对于中国，可以是<a href="https://mirrors.ustc.edu.cn/archlinux/iso/latest/">中科大镜像源</a>。比如下面这两个文件，都要下载下来, 放在同一个目录待验证</li>
+</ol>
+<pre tabindex="0"><code>archlinux-2024.06.01-x86_64.iso                    01-Jun-2024 17:09          1168146432
+archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09                 141
+</code></pre><p>前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On Arch linux (-v = --verify)</span>
+</span></span><span style="display:flex;"><span>pacman-key -v archlinux-version-x86_64.iso.sig
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># On any system with GnuPG installed</span>
+</span></span><span style="display:flex;"><span>gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
+</span></span></code></pre></div><p>看到&quot;Good signature&quot;之类的字眼，说明验证成功。</p>
+<ol start="2">
+<li>插入自己的闪存，然后以root身份使用 <code>dd</code> 命令写入ISO，注意of参数需要的是磁盘设备名而不是分区名 <em>(甚至可以使用cat或cp)</em></li>
+</ol>
+<pre tabindex="0"><code>dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress
+</code></pre><p>下面解释一下这行命令</p>
+<ul>
+<li><code>bs=4M</code> 这个参数指定了块大小（block size）为4MB, 使用较大的块理论上能提高复制的效率，但复制效率的上限被诸多因素定死，设置为4M即可。</li>
+<li><code>conv=fsync</code> 这个选项确保在复制过程中数据写入到磁盘时，所有的内存缓冲区都被刷新（fsync），以保证数据的完整性</li>
+<li><code>oflag=direct</code> 这个选项告诉 <code>dd</code> 直接写入到输出文件，绕过系统缓存。这样可以提高大文件写入时的性能，并减少系统缓存对其他进程的影响。</li>
+<li><code>status=progress</code> 这个选项告诉 <code>dd</code> 输出进度信息，使用户可以看到复制过程中的进度。</li>
+</ul>
+<h2 id="live环境">live环境</h2>
+<p>现在可以在计算机启动时进入前面写入到闪存中的live系统（在该系统分区下的大部分修改，在关机后都会丢失）</p>
+<p>我们首先要做的是针对电脑的硬盘，设计一个合理的分区方案进行分区。</p>
+<h3 id="分区方案">分区方案</h3>
+<p>如果已经使用了较长一段时间linux, 可以使用 <code>du</code> 命令查看各个路径的储存空间占用情况，作为规划分区的依据。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## -s = --summarize; -h = --human-readable</span>
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /boot
+</span></span><span style="display:flex;"><span>398M    /boot
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /home
+</span></span><span style="display:flex;"><span>45G     /home
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh /usr
+</span></span><span style="display:flex;"><span>88G     /usr
+</span></span><span style="display:flex;"><span>~&gt; sudo du -sh --exclude<span style="color:#f92672">=</span>/proc --exclude<span style="color:#f92672">=</span>/run /
+</span></span><span style="display:flex;"><span>146G    /
+</span></span></code></pre></div><p>使用 <code>lsblk</code> 可以查看电脑现在的分区情况</p>
+<pre tabindex="0"><code>~&gt; lsblk
+NAME        MAJ:MIN RM   SIZE RO TYPE MOUNTPOINTS
+nvme0n1     259:0    0 953.9G  0 disk 
+├─nvme0n1p1 259:1    0     1G  0 part /boot
+├─nvme0n1p2 259:2    0    16G  0 part [SWAP]
+├─nvme0n1p3 259:3    0   128G  0 part /
+├─nvme0n1p4 259:4    0 776.9G  0 part /home
+└─nvme0n1p5 259:5    0    32G  0 part /root/transfer
+nvme1n1     259:6    0 476.9G  0 disk 
+├─nvme1n1p1 259:7    0   100M  0 part 
+├─nvme1n1p2 259:8    0    16M  0 part 
+├─nvme1n1p3 259:9    0   100G  0 part 
+├─nvme1n1p4 259:10   0 375.9G  0 part 
+└─nvme1n1p5 259:11   0   900M  0 part 
+</code></pre><p>看来我的硬盘怎么分都是绰绰有余呢, 那就一个盘分配BOOT分区、SWAP分区、根分区，另一个盘整个作为家分区</p>
+<p>注意，下面的操作都在live系统中进行</p>
+<p>下面示范如何把 <em>/dev/nvme1n1</em> 分配为BOOT分区, SWAP分区和根分区。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk /dev/nvme1n1
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 接下来按照帮助的指示操作</span>
+</span></span></code></pre></div><ol>
+<li>操作方式：</li>
+</ol>
+<ul>
+<li>首先用g创建一个新的GPT分区表，GPT（GUID Partition Table） 是一种相对较新的分区表类型，相比传统的MBR分区表，它支持更多的分区和更大的磁盘容量。适用于现代操作系统，特别是那些需要处理大容量磁盘的场景，如UEFI系统。</li>
+<li>用n创建一个新分区</li>
+<li>用t修改一个分区的类型。不选择正确的分区类型可能会影响系统识别分区。</li>
+<li>用p打印当前分区情况，w保存并退出</li>
+</ul>
+<p>看我的分区结果（还有home分区在另一个盘）：</p>
+<pre tabindex="0"><code>Device            Start        End   Sectors   Size Type
+/dev/nvme1n1p1     2048    2099199   2097152     1G EFI System
+/dev/nvme1n1p2  2099200   44042239  41943040    20G Linux swap
+/dev/nvme1n1p3 44042240 1000214527 956172288 455.9G Linux root (x86-64)
+</code></pre><ol start="2">
+<li>分区作用</li>
+</ol>
+<ul>
+<li>根分区和家分区的作用显然易见。</li>
+<li>EFI系统分区(ESP)用于存放CPU的微码、内核的引导文件和GRUB等，都是Linux启动过程必须的。安装的内核越多，就需要这个分区越大(每个大概多占用100M)。直接给1G，免得以后折腾。</li>
+<li>SWAP分区，或者说交换分区，是一种<a href="(https://www.linux.com/news/all-about-linux-swap-space/)">交换空间</a>（另一种是交换文件，但我不想用，这里不提），链接中提到了交换空间的作用，这里翻译一下：</li>
+</ul>
+<blockquote>
+<p>由于两个重要原因，交换是必要的。
+首先，当系统需要的内存多于物理可用内存时，内核会交换出较少使用的页面，并立即将内存提供给当前需要内存的应用程序（进程）。
+其次，应用程序在启动阶段使用的大量页面可能仅用于初始化，然后再也不会使用。系统可以换出这些页面并释放内存以供其他应用程序甚至磁盘缓存使用。
+当然，即使没有交换空间，linux也能正常工作。</p></blockquote>
+<ol start="3">
+<li><a href="https://segmentfault.com/a/1190000008125116">交换空间的配置</a></li>
+</ol>
+<ul>
+<li>我以后可能会用系统休眠功能，所以分配比物理内存稍大一点的交换空间（20G），管够了</li>
+<li>至于内核参数swappiness, 保持默认就好，我试了一下感觉没有很大影响</li>
+</ul>
+<blockquote>
+<p>Linux 2.6 内核添加了一个名为 swappiness 的新内核参数，让管理员可以调整 Linux 交换的方式。它是一个从 0 到 100 的数字。本质上，较高的值会导致更多的页面被交换，较低的值会导致更多的应用程序保留在内存中，即使它们处于空闲状态。内核维护者 Andrew Morton 表示，他以 100 的 swappiness 运行他的台式机，并表示“我的观点是，降低内核交换内容的倾向是错误的。你真的不希望数百兆字节的 BloatyApp 未触及的内存在机器中漂浮。将其取出到磁盘上，将内存用于有用的事情。”
+Morton 的想法的一个缺点是，如果内存换出得太快，那么应用程序响应时间就会下降，因为当单击应用程序的窗口时，系统必须将应用程序换回内存，这会让人感觉很慢。</p></blockquote>
+<p>对一个系统来说，需要输入类似以下命令来准备交换分区</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 创建交换空间</span>
+</span></span><span style="display:flex;"><span>mkswap /dev/hdb1
+</span></span></code></pre></div><p>如果后面fstab文件配置正确，下面这个激活命令会在 <a href="https://linux.die.net/man/8/swapon">待安装的系统引导脚本中被调用</a> 。现在没有必要做。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># -d 启用丢弃策略，能轻微提升在一些固态硬盘中的性能</span>
+</span></span><span style="display:flex;"><span>swapon -d /dev/hdb1
+</span></span></code></pre></div><h3 id="网络连接">网络连接</h3>
+<p>在分区后我们不得不连接网络，因为紧接着要在分区上创建文件系统，而我想使用live系统上并不自带的文件系统类型，它门的支持需要通过pacman安装。</p>
+<ol start="0">
+<li>要禁用<a href="https://wiki.archlinux.org/title/Reflector">reflector</a>吗？
+在一个ArchLinux安装使用教程中，认为是要的:</li>
+</ol>
+<blockquote>
+<p>reflector 会为你选择速度合适的镜像源，但其结果并不准确，同时会清空配置文件中的内容，对于新人来讲并不适用，我们首先对其进行禁用。</p></blockquote>
+<p>在几年前<a href="https://wiki.archlinux.org/title/Talk:Reflector">讨论页面</a>也有对用这个工具自动覆盖mirrorlist的安全性的隐忧。所以我们选择将其服务在联网前禁用</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop reflector.service
+</span></span></code></pre></div><p>在等会联网后，理论上可以用这个<a href="https://xyne.dev/projects/reflector/">工具</a>在终端打印它检测的最快的镜像源列表。但等会我们就知道它一点用也没有。</p>
+<ol>
+<li>连接网络
+有线网络直接插上网线即可，无线网络可以用 <code>iwctl</code> 或 <code>wpa_suppliant + wpa_cli</code>。我推荐后者，它功能更丰富(支持802.1X类型的校园网和公司网)，也可以在安装好系统后继续日常使用。</li>
+</ol>
+<ul>
+<li>对于只需要输入SSID和密码的家用网络，可以这样配置：
+<ul>
+<li>运行 <code>wpa_cli</code></li>
+<li>用<code>scan</code>和<code>scan_results</code>查看附近可见的无线网络</li>
+<li>用<code>add_network</code>添加一个网络连接</li>
+<li>用<code>list_networks</code>查看刚刚添加的网络序号</li>
+<li>用类似<code>set_network 0 ssid &quot;wifi_name&quot;</code>的语句设置SSID</li>
+<li>用类似<code>set_network 0 psk &quot;12345678&quot;</code>的语句设置密码</li>
+<li>用<code>enable_network 0</code>激活你添加的网络连接，你可以同时激活多个网络连接供系统选择，也可以用<code>selectt_network</code>选定一个连接，而其它连接都会被禁用。</li>
+<li>用<code>save_config</code>保存你这次的更改到<code>/etc/wpa_supplicant/wpa_supplicant.conf</code>，如果不是在live系统而是在你待安装的系统中，下次启动系统时你的更改仍然适用</li>
+</ul>
+</li>
+<li>对于校园网等需要ssid，psk, identity等的网络，请直接在<a href="https://man.archlinux.org/man/wpa_supplicant.conf.5.en">/etc/wpa_supplicant/wpa_supplicant.conf</a>中修改配置, 这个暂请自己摸索。</li>
+</ul>
+<ol start="2">
+<li>更新时钟
+在网络传输的各种较验中，时钟错误可能导致失败。</li>
+</ol>
+<p>使用以下命令更新live系统的时钟</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true    <span style="color:#75715e">#将系统时间与网络时间进行同步</span>
+</span></span><span style="display:flex;"><span>timedatectl status          <span style="color:#75715e">#检查服务状态</span>
+</span></span></code></pre></div><ol start="4">
+<li>镜像源的选择
+可以用reflector依据传输速度列出20个最近更新的镜像源</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>reflector --latest <span style="color:#ae81ff">20</span> --country China --protocol http,https --sort rate
+</span></span></code></pre></div><p>但实测它会提示一大堆&quot;WARNING: failed to rate&quot;，所以它的结果不准确。</p>
+<p>所以就直接打开<code>/etc/pacman.d/mirrorlist</code>, 把下面四行放在最前面吧：</p>
+<pre tabindex="0"><code>Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+</code></pre><h3 id="文件系统">文件系统</h3>
+<p>想要在分区上储存和操作文件，就要创建文件系统。有许多文件系统可供选择：EXT4, XFS, Btrfs, ZFS, &hellip;</p>
+<p>我的选择如下：</p>
+<ul>
+<li>不使用zfs, 因为License不兼容的问题，它不会随着新的linux内核一起发布，可能会影响滚动更新。zfs还是和freeBSD一起用吧。</li>
+<li>根分区使用Btrfs, 因为它直接支持快照功能，万一系统在更新后出问题，也能马上恢复原状，不影响工作生活。</li>
+<li>家分区使用XFS, 因为它的性能据说比btrfs略胜一畴。</li>
+<li>EFI系统分区使用FAT32。因为：UEFI规范明确要求EFI系统分区（ESP）使用FAT文件系统。具体来说，推荐使用FAT32文件系统。UEFI 固件需要能够读取和执行存储在ESP中的EFI应用程序（如引导加载程序、驱动程序等），FAT32提供了广泛的兼容性。</li>
+<li>一般的备份盘使用XFS, 和家分区保持一致。</li>
+<li>有加密需求的备份盘使用EXT4，它可以使用<code>fscrypt</code>进行加密操作。fscrypt是直接集成在文件系统的加密框架中的, 性能比较高且更不怕文件系统损坏。</li>
+</ul>
+<ol>
+<li>对根分区使用Btrfs, 首先安装btrfs-progs包（开始需要网络）, 然后运行mkfs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.btrfs -L mylabel /dev/partition
+</span></span></code></pre></div><ol start="2">
+<li>对于EFI系统分区</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/efi_system_partition
+</span></span></code></pre></div><ol start="3">
+<li>对家分区使用xfs, 首先安装xfsprogs包（开始需要网络），然后运行mkfs</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkfs.xfs device
+</span></span></code></pre></div><h3 id="安装基本组件">安装基本组件</h3>
+<p>文件系统创建好了，现在可以说是&quot;the stage is set&quot;了，把文件系统挂载好后就可以安装基本组件了。</p>
+<ol>
+<li>挂载</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/partition_root /mnt
+</span></span><span style="display:flex;"><span>mkdir /mnt/boot
+</span></span><span style="display:flex;"><span>mount /dev/partition_efi /mnt/boot
+</span></span><span style="display:flex;"><span>mkdir /mnt/home
+</span></span><span style="display:flex;"><span>mount /dev/partition_home /mnt/home
+</span></span></code></pre></div><ul>
+<li>为了在启动我们安装的系统时能够自动挂载，需要生成fstab文件</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /mnt/etc
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 一定要用-U，即根据UUID挂载，否则默认根据盘名挂载，这在有多个硬盘时会因为顺序不定而出现问题。</span>
+</span></span><span style="display:flex;"><span>genfstab -U /mnt &gt;&gt; /mnt/etc/fstab
+</span></span></code></pre></div><ul>
+<li>向fstab文件中追加一行swap分区
+首先使用lsblk查看UUID</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk -o NAME,FSTYPE,UUID
+</span></span></code></pre></div><p>然后用cat等工具在fstab文件末尾追加以下文本, 其中discard选项是启用丢弃策略。</p>
+<pre tabindex="0"><code># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;
+UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
+</code></pre><ul>
+<li>检查没有错误</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /mnt/etc/fstab
+</span></span></code></pre></div><ol start="2">
+<li>安装系统基本组件</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt base base-devel linux linux-headers linux-firmware
+</span></span></code></pre></div><ul>
+<li><code>base</code>: Arch Linux的基础包集合，包含了一个最小化的可用系统所需的核心软件包。它包括基本的文件系统工具、基本的 Shell（如bash）、核心库和其他基本工具。</li>
+<li><code>base-devel</code>: 包含了一组用于开发的软件包, 包括编译器、调试工具等。安装它是为了方便安装和编译其他软件包</li>
+<li><code>linux</code>: 默认内核</li>
+<li><code>linux-headers</code>: 与<code>linux</code>包对应的内核头文件包, 它包含了用于编译内核模块和驱动程序的头文件。</li>
+<li><code>linux-firmware</code>: 各种硬件设备所需的固件文件</li>
+</ul>
+<ol start="3">
+<li>安装其它系统引导和正常运行必须组件</li>
+</ol>
+<ul>
+<li>安装微码</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt intel-ucode   <span style="color:#75715e">#Intel</span>
+</span></span><span style="display:flex;"><span>pacstrap /mnt amd-ucode     <span style="color:#75715e">#AMD</span>
+</span></span></code></pre></div><ul>
+<li>安装引导程序</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacstrap /mnt grub efibootmgr
+</span></span></code></pre></div><ul>
+<li>安装文件系统工具</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pascstrap /mnt btrfs-progs xfsprogs
+</span></span></code></pre></div><ul>
+<li>安装联网工具和同步工具</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 其中要安装rsync是因为我个人有备份还原工作文件的需求</span>
+</span></span><span style="display:flex;"><span>pascstrap /mnt wpa_suppliant rsync
+</span></span></code></pre></div><p>可以复制live系统的wpa_suppliant的配置文件到新系统，这样免去了启动新系统为了联网重复操作</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp /etc/wpa_supplicant/wpa_supplicant.conf /mnt/etc/wpa_supplicant/ 
+</span></span></code></pre></div><h2 id="新系统的环境">新系统的环境</h2>
+<h3 id="chroot">chroot</h3>
+<p>现在新系统还缺少引导，我们必须进入到新系统的环境来生成grub</p>
+<pre tabindex="0"><code>arch-chroot /mnt
+</code></pre><h3 id="grub">grub</h3>
+<p>安装GRUB引导加载程序到/boot</p>
+<pre tabindex="0"><code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
+</code></pre><p>接下来编辑<code>/etc/default/grub</code>文件，去掉<code>GRUB_CMDLINE_LINUX_DEFAULT</code>一行中最后的<code>quiet</code>参数，同时把 log level 的数值从3改成4。这样是为了后续如果出现系统错误，方便排错。同时在同一行加入<code>nowatchdog</code>参数，这可以显著提高开关机速度。</p>
+<p>最后生成GRUB所需的配置文件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><h3 id="网络服务和时间">网络服务和时间</h3>
+<p>顺便，在退出前激活网络服务的自动运行</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl enable wpa_suppliant
+</span></span></code></pre></div><p>将当前的正确UTC时间写入硬件时间</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>hwclock --systohc
+</span></span></code></pre></div><h3 id="卸载和重启">卸载和重启</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exit                <span style="color:#75715e"># 退回安装环境#</span>
+</span></span><span style="display:flex;"><span>umount -R  /mnt     <span style="color:#75715e"># 卸载新分区</span>
+</span></span><span style="display:flex;"><span>reboot              <span style="color:#75715e"># 重启</span>
+</span></span></code></pre></div></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

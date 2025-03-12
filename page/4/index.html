@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+	<main class="home-page">
+		
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/linux/grub/">
+    <h1 class="title">grub</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-29</time>
+    
+    
+  </strong>
+ <span> • 39 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="installation">Installation</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman -S grub efibootmgr
+</span></span><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/efi --bootloader-id<span style="color:#f92672">=</span>GRUB
+</span></span></code></pre></div><h2 id="user-configuration-file">user configuration file</h2>
+<ul>
+<li>path: …</li></ul></p>
+    
+      <a href="http://localhost:1313/posts/linux/grub/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/luasnip_on_latex/">
+    <h1 class="title">LuaSnip on LaTex</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-26</time>
+    
+    
+  </strong>
+ <span> • 30 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>, 
+        <a href="/tags/latex">latex</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="settings-of-luasnip">Settings of Luasnip</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lua" data-lang="lua"><span style="display:flex;"><span><span style="color:#66d9ef">local</span> ls <span style="color:#f92672">=</span> require(<span style="color:#e6db74">&#34;luasnip&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ls.setup({
+</span></span><span style="display:flex;"><span>    snip_env <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">-- load snippets</span>
+</span></span><span style="display:flex;"><span>require( …</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/tools/luasnip_on_latex/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/test/markdown_style_test/">
+    <h1 class="title">markdown style test</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-22</time>
+    
+    
+  </strong>
+ <span> • 54 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/test">test</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h1 id="h1">H1</h1>
+<h2 id="h2">H2</h2>
+<h3 id="h3">H3</h3>
+<h4 id="h4">H4</h4>
+<h5 id="h5">H5</h5>
+<h6 id="h6">H6</h6>
+<p>inline <code>code</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#75715e"># code test</span>
+</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Hello, World!&#34;</span>)
+</span></span></code></pre></div><blockquote>
+<p>block quotes</p>
+<p>test</p></blockquote>
+<ul>
+<li>list0</li>
+<li>list0</li>
+</ul>
+<ol>
+<li>list1</li>
+<li>list1</li>
+</ol>
+<hr>
+<p>font: <strong>Bold</strong> <em>Italic</em> <em><strong>Bold and …</strong></em></p></p>
+    
+      <a href="http://localhost:1313/posts/test/markdown_style_test/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/oh-my-tmux/">
+    <h1 class="title">oh-my-tmux</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-19</time>
+    
+    
+  </strong>
+ <span> • 472 words</span>
+ <span> • 3 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="offical-pages">Offical Pages</h3>
+<ul>
+<li><a href="https://github.com/tmux/tmux/wiki/Getting-Started">tmux</a></li>
+<li><a href="https://github.com/gpakosz/.tmux">oh-my-tmux</a></li>
+</ul>
+<h3 id="shorcuts">Shorcuts</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ponyofshadows@equestria ~&gt; grep <span style="color:#e6db74">&#34;^bind&#34;</span> .config/tmux/tmux.conf
+</span></span><span style="display:flex;"><span>bind C-a send-prefix -2
+</span></span><span style="display:flex;"><span>bind e …</span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/tools/oh-my-tmux/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/rime_custom/">
+    <h1 class="title">rime custom</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-13</time>
+    
+    
+  </strong>
+ <span> • 167 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>I use <code>fcitx5</code> + <code>rime</code> + <code>flypy.schema.yaml</code> as my Chinese character input system.</p>
+<h3 id="how-to-install-flypyschema">How to install flypy.schema</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>yay -S rime-flypy
+</span></span></code></pre></div><h3 id="relevant-config-files">relevant config files</h3>
+<p>In …</p></p>
+    
+      <a href="http://localhost:1313/posts/tools/rime_custom/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/using_git_for_version_control/">
+    <h1 class="title">Using git for version control</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-12</time>
+    
+    
+  </strong>
+ <span> • 251 words</span>
+ <span> • 2 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you …</p></p>
+    
+      <a href="http://localhost:1313/posts/tools/using_git_for_version_control/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/git-lfs/">
+    <h1 class="title">git-lfs</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-12</time>
+    
+    
+  </strong>
+ <span> • 39 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="install-and-initialize">Install and Initialize</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S git-lfs
+</span></span><span style="display:flex;"><span>git lfs install
+</span></span></code></pre></div><h3 id="basic-usage">Basic Usage</h3>
+<p>see <a href="https://git-lfs.com/">git-lfs.com</a></p>
+<h3 id="how-to-track-large-files-that-have-been-added-to-the-repository">How to track large files that have been added to the …</h3></p>
+    
+      <a href="http://localhost:1313/posts/tools/git-lfs/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/papis/">
+    <h1 class="title">papis</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-11</time>
+    
+    
+  </strong>
+ <span> • 49 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="example-add-a-paper-to-the-default-library">Example: add a paper to the default library</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 …</span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/tools/papis/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/bugs/avoid_firefox_crashing_on_sway/">
+    <h1 class="title">Avoid firefox crashing on sway</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-10</time>
+    
+    
+  </strong>
+ <span> • 79 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/fix">fix</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><ol>
+<li>Enter <code>about:config</code> in the address bar</li>
+<li>To avoid the crash caused by Incompatibility related to nvidia proprietary graphics driver when opening PDF …</li></ol></p>
+    
+      <a href="http://localhost:1313/posts/bugs/avoid_firefox_crashing_on_sway/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/install_mathematica/">
+    <h1 class="title">Install Mathematica</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-01-09</time>
+    
+    
+  </strong>
+ <span> • 55 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="install">Install</h3>
+<ol>
+<li><code>avahi-daemon</code> service is needed.</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now avahi-daemon
+</span></span></code></pre></div><ol start="2">
+<li>two commnads <code>hostname</code> and <code>egrep</code> can&rsquo;t work in Arch Linux. …</li></ol></p>
+    
+      <a href="http://localhost:1313/posts/tools/install_mathematica/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+		<div>
+  
+    <a href="/page/3/">Previous Page</a>
+  
+  4 of 5
+  
+    <a href="/page/5/">Next Page</a>
+  
+</div>
+
+	</main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

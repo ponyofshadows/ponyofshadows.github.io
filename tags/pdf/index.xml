@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pdf on Pony of Shadows</title>
+    <link>http://localhost:1313/tags/pdf/</link>
+    <description>Recent content in Pdf on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 27 Dec 2024 10:03:51 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/pdf/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>调整笔迹太淡的图片PDF的灰度</title>
+      <link>http://localhost:1313/posts/tools/%E8%B0%83%E6%95%B4%E7%AC%94%E8%BF%B9%E5%A4%AA%E6%B7%A1%E7%9A%84%E5%9B%BE%E7%89%87pdf%E7%9A%84%E7%81%B0%E5%BA%A6/</link>
+      <pubDate>Fri, 27 Dec 2024 10:03:51 +0800</pubDate>
+      <guid>http://localhost:1313/posts/tools/%E8%B0%83%E6%95%B4%E7%AC%94%E8%BF%B9%E5%A4%AA%E6%B7%A1%E7%9A%84%E5%9B%BE%E7%89%87pdf%E7%9A%84%E7%81%B0%E5%BA%A6/</guid>
+      <description>&lt;ol&gt;&#xA;&lt;li&gt;把PDF转为图片(需要&lt;code&gt;imagemagick&lt;/code&gt;包)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;magick convert -density &lt;span style=&#34;color:#ae81ff&#34;&gt;300&lt;/span&gt; name.pdf page-%03d.png&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;选择性调整灰度&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;mogrify -fill black -colorize 10% -channel RGB -level 70%,90% page-*.png&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;转回图片PDF&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;magick convert page-*.png output.pdf&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

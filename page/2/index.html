@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="generator" content="Hugo 0.145.0"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+	<main class="home-page">
+		
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">
+    <h1 class="title">GnuPG加密文件</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-10-16</time>
+    
+    
+  </strong>
+ <span> • 17 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/security">security</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>除了使用公钥进行非对称加密，<code>gng</code>还提供了用密码对称加密的功能</p>
+<ol>
+<li>加密</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -c /path/to/file
+</span></span></code></pre></div><p>这会提示你输入密码，产生一个<code>.gpg</code>后缀的加密文件</p>
+<ol start="2">
+<li>解密</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>gpg -d /path/to/file.gpg
+</span></span></code></pre></div><p>如果与上次输密码间隔时间足够久， …</p></p>
+    
+      <a href="http://localhost:1313/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/nvim%E4%B8%ADtex%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%90%8D%E4%B8%8E%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/">
+    <h1 class="title">nvim中tex文件后缀名与补全的问题</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-26</time>
+    
+    
+  </strong>
+ <span> • 18 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/nvim">nvim</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>在nvim的命令模式，可以这样知道nvim给当前文件分配的类型：</p>
+<pre tabindex="0"><code>:set filetype?
+</code></pre><p>luasnip就是根据这个文件类型应用snip配置的。</p>
+<p>可能因为是lsp的texlab的设定，刚创建的.tex文件的类型会被分配为<code>plaintex</code>。
+当文件包含特定的 LaTeX 结构（比如包 …</p></p>
+    
+      <a href="http://localhost:1313/posts/tools/nvim%E4%B8%ADtex%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%90%8D%E4%B8%8E%E8%A1%A5%E5%85%A8%E7%9A%84%E9%97%AE%E9%A2%98/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/">
+    <h1 class="title">时间演化算符的形式解</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-25</time>
+    
+    
+  </strong>
+ <span> • 189 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/qm">QM</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>定义演化算符$U(t)$满足：
+$$
+|\psi(t)\rangle=U(t,t_0)|\psi(t_0)\rangle
+$$
+容易得到下面的结论：</p>
+<ul>
+<li>$U(t)$是幺正算符。</li>
+<li>当$H$不显含时间时，$U(t,t_0)=\mathrm{e}^{-\frac i\hbar (t-t_0)}$</li>
+</ul>
+<p>下面我 …</p></p>
+    
+      <a href="http://localhost:1313/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/">
+    <h1 class="title">从源项目构建papis</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-24</time>
+    
+    
+  </strong>
+ <span> • 26 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/papis">papis</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="安装过程">安装过程</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>git clone https://github.com/papis/papis.git
+</span></span><span style="display:flex;"><span>cd papis
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>python -m venv venv
+</span></span><span style="display:flex;"><span>source venv/bin/activate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>pip install hatch
+</span></span><span style="display:flex;"><span>hatch build
+</span></span><span style="display:flex;"><span>pip install …</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/test/%E6%95%B0%E5%AD%A6%E8%BE%93%E5%85%A5%E6%B5%8B%E8%AF%95/">
+    <h1 class="title">数学输入测试</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-17</time>
+    
+    
+  </strong>
+ <span> • 47 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/test">test</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="如何启用hugo的数学支持">如何启用hugo的数学支持</h2>
+<ol>
+<li>在<code>layouts/partials/head.html</code>中添加</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  <span style="color:#75715e">&lt;!-- 引入 MathJax --&gt;</span>
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text/javascript&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">MathJax</span> <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>      <span style="color:#a6e22e">tex</span><span style="color:#f92672">: …</span></span></span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/test/%E6%95%B0%E5%AD%A6%E8%BE%93%E5%85%A5%E6%B5%8B%E8%AF%95/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/">
+    <h1 class="title">对文献管理方法的探讨</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-07-26</time>
+    
+    
+  </strong>
+ <span> • 44 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/research">research</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>我们读书一般是为了构建知识基础，读论文是为了摸清研究的细分方向和汲取灵感。在管理文献的时候，书籍只要手动分类整理就可以了，而论文要考虑的就多了，怎么呈现元数据、怎么写笔记、怎么构建文献之间的联系，都是重要的议题。</p>
+<h2 id="用到的工具">用到的工具</h2>
+<ul>
+<li><code>papis</code> 命令行文献管理器</li>
+<li><code>neovim</code> 文本编辑器</li>
+<li><code>okular …</code></li></ul></p>
+    
+      <a href="http://localhost:1313/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/arch/steam/">
+    <h1 class="title">steam的一些小问题的解决办法</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-07-02</time>
+    
+    
+  </strong>
+ <span> • 17 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><ol>
+<li>强制关机导致proton缓存损坏
+steam的输出提示类似下面的话</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine: <span style="color:#e6db74">&#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&#39;</span> is a 32-bit installation, it …</span></span></code></pre></div></p>
+    
+      <a href="http://localhost:1313/posts/arch/steam/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/arch/waydroid/">
+    <h1 class="title">waydroid使用技巧汇总</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-27</time>
+    
+    
+  </strong>
+ <span> • 28 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/wayland">wayland</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="改变手机窗口大小">改变手机窗口大小</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 如果是空字符串就是默认大小，可以以数字为参数改变大小</span>
+</span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.width <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.height <span style="color:#e6db74">&#34;&#34;</span>
+</span></span></code></pre></div><h2 id="app">app</h2>
+<p>安装 …</p></p>
+    
+      <a href="http://localhost:1313/posts/arch/waydroid/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">
+    <h1 class="title">记录安装TeXLive和MATHEMATICA</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-16</time>
+    
+    
+  </strong>
+ <span> • 123 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/arch-install">Arch-Install</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>在ArchLinux上，<a href="https://wiki.archlinux.org/title/TeX_Live">TeXLive</a>不适合用包管理器安装，因为:</p>
+<blockquote>
+<p>TeX Live itself is a rolling release distribution, based on the model of the user having to upgrade once a year, …</p></blockquote></p>
+    
+      <a href="http://localhost:1313/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
+  <a href="http://localhost:1313/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">
+    <h1 class="title">用Btrfs为根分区创建快照</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-16</time>
+    
+    
+  </strong>
+ <span> • 234 words</span>
+ <span> • 2 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/arch-install">Arch-Install</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>得益于Btrfs的CoW特性，它创建快照的开销可以非常小，所以我觉得它非常适合作为根分区的文件系统。</p>
+<h2 id="子卷subwolume">子卷(<a href="https://wiki.archlinux.org/title/Btrfs#Subvolumes">subwolume</a>)</h2>
+<blockquote>
+<p>&ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) …</p></blockquote></p>
+    
+      <a href="http://localhost:1313/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+		<div>
+  
+    <a href="/">Previous Page</a>
+  
+  2 of 5
+  
+    <a href="/page/3/">Next Page</a>
+  
+</div>
+
+	</main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

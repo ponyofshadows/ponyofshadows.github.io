@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>DFT-QE折腾记录 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">DFT-QE折腾记录</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-11-07</time>
+    
+    
+  </strong>
+  <span> • 1194 words</span>
+  <span> • 6 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/phys">phys</a>, 
+        <a href="/tags/dft">DFT</a>, 
+        <a href="/tags/gpt">GPT</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h2 id="问题">问题</h2>
+<blockquote>
+<p>作业说明：
+请同学们自己寻找计算资源、自学密度泛函理论计算软件，计算单层MoS2相关性质，包括：参数测试、晶格常数测试、几何结构优化、计算态密度、能带和声子谱。(声子谱选做)
+提示：对石墨烯晶格常数测试时，不需要考虑石墨烯厚度的变化；而单层MoS2是3原子层厚度，因此变xy平面内晶格常数时，MoS2厚度会变化。
+请详细说明步骤，图文结合，上传pdf报告。</p></blockquote>
+<h2 id="install-qe-on-archlinux">Install QE on Archlinux</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># blas-openblas-0.3.28-1 and blas-3.12.0-5 are in conflict</span>
+</span></span><span style="display:flex;"><span>sudo pacman -S blas-openblas
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install QE from AUR</span>
+</span></span><span style="display:flex;"><span>paru -S quantum-espresso
+</span></span></code></pre></div><p>现在系统里多了一堆可执行程序：</p>
+<ol>
+<li>
+<p><strong>pw.x</strong>（Plane-Wave Self-Consistent Field）</p>
+<ul>
+<li>用于执行密度泛函理论 (DFT) 的自洽计算。它使用平面波基组和赝势方法来求解电子结构，计算材料的基态性质（如能带结构、总能量等）。</li>
+</ul>
+</li>
+<li>
+<p><strong>ph.x</strong>（Phonon Calculations）</p>
+<ul>
+<li>用于计算声子（即晶体的振动模式）和相关的晶格动力学性质。适用于研究材料的热力学、声子频率、红外和拉曼散射以及超导电性等。</li>
+</ul>
+</li>
+<li>
+<p><strong>dos.x</strong>（Density of States）</p>
+<ul>
+<li>用于计算态密度 (DOS)。通过态密度的计算，可以分析电子结构的分布，从而了解材料的电子性质。</li>
+</ul>
+</li>
+<li>
+<p><strong>bands.x</strong>（Band Structure）</p>
+<ul>
+<li>用于计算能带结构。可以绘制材料的能带图，从而分析其导电性和带隙特性。</li>
+</ul>
+</li>
+<li>
+<p><strong>pp.x</strong>（Post-Processing）</p>
+<ul>
+<li>提供了一些后处理工具，可以对密度、波函数等物理量进行处理和可视化。支持各种物理量的可视化，包括电荷密度、电子密度差分、库仑势等。</li>
+</ul>
+</li>
+<li>
+<p><strong>neb.x</strong>（Nudged Elastic Band）</p>
+<ul>
+<li>用于过渡态搜索和最小能量路径 (MEP) 计算，适用于计算反应路径或扩散路径中的激活能。多用于研究分子和固体材料中的反应和迁移机制。</li>
+</ul>
+</li>
+<li>
+<p><strong>cp.x</strong>（Car-Parrinello Molecular Dynamics）</p>
+<ul>
+<li>用于分子动力学模拟，基于Car-Parrinello方法。适用于在时间尺度上研究系统的动力学演变，广泛应用于液体、固体材料和表面化学等领域。</li>
+</ul>
+</li>
+<li>
+<p><strong>td.x</strong>（Time-Dependent DFT）</p>
+<ul>
+<li>用于时间依赖性密度泛函理论 (TDDFT) 计算，可以计算材料的光学响应和激发态性质，适合研究光学材料和半导体的激发态动力学。</li>
+</ul>
+</li>
+<li>
+<p><strong>q2r.x</strong>（Convert Q-Point to Real Space）</p>
+<ul>
+<li>将在 q 空间计算的声子频率和动力学矩阵转换为实空间，用于计算晶格的振动模式，特别适用于长波声子计算。</li>
+</ul>
+</li>
+<li>
+<p><strong>matdyn.x</strong>（Phonon Dispersion and Thermal Properties）</p>
+<ul>
+<li>计算声子频散关系和材料的热力学性质（如比热、自由能等），主要依赖于从ph.x和q2r.x获得的数据。</li>
+</ul>
+</li>
+<li>
+<p><strong>projwfc.x</strong>（Projected Wave Functions）</p>
+<ul>
+<li>用于投影态密度的计算，可以计算投影在特定原子或轨道上的态密度 (PDOS)，对分析电子结构的本征特性很有帮助。</li>
+</ul>
+</li>
+</ol>
+<h2 id="how-to-use-qe">How to use QE</h2>
+<p>Find tutorials in <a href="https://www.quantum-espresso.org/tutorials/">quantum-espresso:tutorisals</a></p>
+<p>使用Quantum ESPRESSO (QE) 进行计算时，一般会遵循以下工作流程，特别是针对电子结构计算的常见任务。具体流程可能会根据实际的研究需求有所不同，但通常包括以下主要步骤：</p>
+<h3 id="1-准备输入文件">1. <strong>准备输入文件</strong></h3>
+<ul>
+<li>主要的输入文件通常是<code>.in</code>文件，用于设置计算参数和结构信息。不同的计算类型（如自洽场计算、能带计算等）有特定的输入格式。</li>
+<li>典型参数包括晶胞结构、赝势类型、平面波截断能量、k点网格、电子自洽收敛条件等。</li>
+</ul>
+<h3 id="2-赝势选择">2. <strong>赝势选择</strong></h3>
+<ul>
+<li>Quantum ESPRESSO依赖于赝势来简化核和电子之间的相互作用。选择合适的赝势（例如PBE、USPP、PAW等）至关重要，通常赝势文件以<code>.UPF</code>格式存在。</li>
+<li>可以从Quantum ESPRESSO官方数据库或者其他赝势库中下载所需元素的赝势。</li>
+</ul>
+<h3 id="3-结构优化可选">3. <strong>结构优化（可选）</strong></h3>
+<ul>
+<li>使用<code>pw.x</code>进行结构优化，以确保几何结构处于最低能量态。结构优化可以包括原子位置、晶胞参数和体积优化。</li>
+<li>优化计算可分为两步：
+<ol>
+<li><strong>离子弛豫</strong>：固定晶胞参数，优化内部原子位置。</li>
+<li><strong>晶格优化</strong>：优化晶胞参数以及内部原子结构。</li>
+</ol>
+</li>
+</ul>
+<h3 id="4-自洽场-scf-计算">4. <strong>自洽场 (SCF) 计算</strong></h3>
+<ul>
+<li>使用<code>pw.x</code>进行自洽场计算（SCF）。在SCF计算中，求解体系的电子密度，获得材料的基态能量。</li>
+<li>SCF计算结果为后续步骤提供电子密度和波函数数据。</li>
+</ul>
+<h3 id="5-非自洽场-nscf-计算可选">5. <strong>非自洽场 (NSCF) 计算（可选）</strong></h3>
+<ul>
+<li>为了更精确地计算能带结构和态密度，通常在SCF之后进行非自洽场 (NSCF) 计算。NSCF计算使用更密集的k点网格，能够在电子密度不变的情况下精确计算特定路径上的电子能级。</li>
+</ul>
+<h3 id="6-态密度-dos-计算">6. <strong>态密度 (DOS) 计算</strong></h3>
+<ul>
+<li>使用<code>dos.x</code>工具对SCF或NSCF计算的结果进行态密度 (DOS) 分析。</li>
+<li>态密度可以帮助理解电子结构分布和材料的导电性。</li>
+</ul>
+<h3 id="7-能带结构-band-structure-计算">7. <strong>能带结构 (Band Structure) 计算</strong></h3>
+<ul>
+<li>使用<code>bands.x</code>计算能带结构。通常在对称点路径上计算能带，绘制材料的能带图，从而直观展示电子结构。</li>
+<li>计算完成后，可以用后处理工具（如gnuplot、Matplotlib等）绘制能带图。</li>
+</ul>
+<h3 id="8-声子计算和动力学性质可选">8. <strong>声子计算和动力学性质（可选）</strong></h3>
+<ul>
+<li>若研究材料的振动特性或热力学性质，可以使用<code>ph.x</code>计算声子频率和晶格动力学矩阵。</li>
+<li>然后通过<code>q2r.x</code>和<code>matdyn.x</code>等后处理工具计算声子色散关系和热力学性质（如比热）。</li>
+</ul>
+<h3 id="9-后处理与数据分析">9. <strong>后处理与数据分析</strong></h3>
+<ul>
+<li>Quantum ESPRESSO提供了<code>pp.x</code>、<code>projwfc.x</code>等工具，可以用于数据分析和可视化，例如电荷密度、库仑势、投影态密度 (PDOS) 等。</li>
+<li>将数据导入外部软件（如VESTA、VASPkit、Matplotlib等）进行可视化分析。</li>
+</ul>
+<h3 id="10-分子动力学模拟可选">10. <strong>分子动力学模拟（可选）</strong></h3>
+<ul>
+<li>如果要研究系统的动态行为，可以使用<code>cp.x</code>工具进行分子动力学 (MD) 模拟。分子动力学模拟适合模拟高温条件下的材料行为，如熔化、扩散、界面稳定性等。</li>
+</ul>
+<h3 id="典型工作流程总结">典型工作流程总结</h3>
+<ol>
+<li><strong>准备输入文件</strong> -&gt; 2. <strong>赝势选择</strong> -&gt; 3. <strong>结构优化</strong>（如需） -&gt; 4. <strong>SCF计算</strong> -&gt; 5. <strong>NSCF计算（如需）</strong> -&gt; 6. <strong>DOS和能带结构计算</strong> -&gt; 7. <strong>声子和动力学计算（如需）</strong> -&gt; 8. <strong>后处理和数据分析</strong> -&gt; 9. <strong>分子动力学模拟（如需）</strong></li>
+</ol>
+<p>整个流程高度模块化，可以根据研究目标选择不同的步骤进行。</p>
+<h2 id="slove-previous-problem-about-mos2">Slove previous problem about MoS2</h2>
+<h3 id="a准备输入文件和下载赝势文件">A.准备输入文件和下载赝势文件</h3>
+<p>不同于VASP，Quantum ESPRESSO的所有类型的参数设定放在一个输入文件里，用标题隔开为不同的section。
+major sections比如:</p>
+<ul>
+<li>&amp;CONTROL</li>
+<li>&amp;SYSTEM</li>
+<li>&amp;ELECTRONS</li>
+</ul>
+<p>optional sections比如:</p>
+<ul>
+<li>&amp;IONS</li>
+<li>&amp;CELL
+上面列出的sections并不是所有的，完整列表见<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html">此页面</a>。这个官方doc页面包含了输入文件的每个section的配置参数，是重要的参考。</li>
+</ul>
+<p>每个section都要用<code>/</code>结束。另外，如果你的输入文件用到了上面5个sections，它们得按照上文列出的顺序依次排列。</p>
+<p>在输入文件写完了所有的sections后，还可以加上一些additional information about your molecule or the crystal
+system. 它们的标题不以<code>&amp;</code>开头，结尾也不用<code>/</code>。例如：</p>
+<ul>
+<li>ATOMIC_SPECIES</li>
+<li>ATOMIC_POSITIONS</li>
+<li>K_POINTS</li>
+<li>CELL_PARAMETERS</li>
+</ul>
+<p>下面给出一份作为参考的输入文件<code>imput-test.in</code> (不保证它是合理的)</p>
+<pre tabindex="0"><code>&amp;CONTROL
+    calculation = &#39;scf&#39;             ! 执行 自洽场 (Self-Consistent Field, SCF) 计算
+    restart_mode = &#39;from_scratch&#39;,  ! 从头开始计算，不依赖以前的计算结果, 在初次计算或更改了基础设置（如结构、k 点、截断能量等）后，推荐使用 from_scratch，以避免先前结果的影响; 如果设置为 &#39;restart&#39;，Quantum ESPRESSO 会尝试从之前的中间结果（如电子密度、波函数）中恢复计算。
+    prefix = &#39;MoS2-para_test&#39;,      ! 计算输出文件的前缀。
+    outdir = &#39;./output&#39;,            ! 输出文件的目录。
+    pseudo_dir = &#39;./pseudo&#39;,        ! 赝势文件的目录。
+    nstep = 100,                    ! 最大计算步数。
+/
+
+&amp;SYSTEM
+    ibrav = 4,                ! 晶格类型为6角晶格
+    a = 3.16000e+00,          ! 晶格常数 a 的值，单位是 Bohr (约等于 1.67 Å)
+    c = 2.00000e+01,          ! 晶格常数 c 的值，选择较大的值来确保不同层间的隔离，避免层间相互作用。
+    nat = 3,                  ! 原子数，共 3 个原子（1 个 Mo 和 2 个 S）。
+    ntyp = 2,                 ! 元素种类数，Mo 和 S。
+    ecutwfc = 60,             ! 平面波基组的截断能量（单位 Ry），决定计算精度和速度。
+    ecutrho = 200,            ! ecutrho 是密度截断能量（单位为 Rydberg, Ry），用于平面波基组中电子密度的截断。它决定了描述电子密度的平面波展开的截断范围。ecutrho 通常是 ecutwfc 的 4 倍或 8 倍（取决于所用赝势的类型）
+    occupations = &#39;smearing&#39;, ! 固定占据数，适合半导体材料。
+    smearing = &#39;gauss&#39;,       ! 使用高斯展宽，用于金属计算，这里是冗余的。
+    degauss = 0.01,           ! degauss 是电子态展宽（smearing）参数，单位是电子伏特 (eV)。它定义了 smearing 的宽度，在计算费米面附近电子占据时，对电子态引入的模糊程度。
+    vdw_corr = &#39;DFT-D&#39;,       ! 包含范德瓦尔斯修正，以更好地描述层间相互作用。
+    lspinorb = .true.,        ! 启用自旋轨道耦合
+    nspin = 4,                ! 启用非共线自旋
+    noncolin = .true.         ! 启用非共线自旋
+/
+
+&amp;ELECTRONS
+    conv_thr = 1.0d-9         ! 自洽场迭代的收敛阈值，设为较小值保证高精度。
+/
+
+ATOMIC_SPECIES                ! 定义原子种类和使用的赝势文件。
+    Mo   95.94000   Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF
+    S    32.06600   S.rel-pbe-n-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (angstrom)
+    S   0.002804304   0.001613133   8.429890591
+    S   0.002804304   0.001613133   11.570109409
+    Mo  1.582007393   0.913365735   10.000000000
+
+K_POINTS automatic
+    6 6 1  0 0 0
+</code></pre><p>下面讲解这份输入文件中需要注意的点：</p>
+<blockquote>
+<p>参考：<a href="moz-extension://1628b149-19a5-4bd1-9714-d928796156b9/pdf-viewer/web/viewer.html?file=https%3A%2F%2Fwww.paradim.org%2Fsites%2Fdefault%2Ffiles%2F2019-05%2FQE-Input_and_Convergence_Parameters.pdf">FQE-ICP</a></p></blockquote>
+<ol>
+<li>&amp;CONTROL的<code>calculation</code>参数指定了这个输入文件用于进行何种计算，包括但不限于下面的可选择参数</li>
+</ol>
+<ul>
+<li><code>scf</code> - Single point energy calculation without changing atomic coordinates or the cell
+parameters, i.e., no structure relaxation.</li>
+<li><code>nscf</code> - Non-self-consistency calculation to extract the desired properties such as the DOS
+in case you need a denser electronic momentum mesh (k-mesh), based on the previous
+SCF calculation.</li>
+<li><code>bands</code> - Calculation of electronic bands along a path of high-symmetry k-points based
+on the previous SCF calculation.</li>
+<li><code>relax</code> - Optimization of the atomic coordinates to minimize the forces while keeping
+the cell fixed. This calculation requires section &amp;ions. All options for a single SCF
+calculation apply, plus a few others.</li>
+<li><code>vc-relax</code> - Optimization of both atomic coordinates and the cell parameters. Structure
+relaxation is important to minimize forces acting on the atoms as well as to reduce the
+stress in the cell. This calculation requires section &amp;cell.</li>
+</ul>
+<ol start="2">
+<li>一些重要的与收敛有关的参数</li>
+</ol>
+<p>在进行密度泛函理论（DFT）计算时，为了获得精确的结果，必须为特定材料和计算任务选择合适的参数，并确保这些参数的收敛性。以下是对这些参数的详细理解和如何通过能量最小化优化这些参数的解释：</p>
+<ul>
+<li>
+<p><strong>平面波动能量截断（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm271"><code>ecutwfc</code></a>）</strong>：</p>
+<ul>
+<li><code>ecutwfc</code> 表示平面波基组的截断能量，也就是表示系统中电子波函数的基组复杂程度。</li>
+<li>较高的截断能量可以增加基组的数量，使得电子密度分布和总能量的计算更加精确。但更高的 <code>ecutwfc</code> 会增加计算的成本。</li>
+<li>优化 <code>ecutwfc</code> 的过程通常通过观察总能量的变化：逐步增加 <code>ecutwfc</code> 值，直到计算的总能量变化小于指定阈值，这样可以确保选取的 <code>ecutwfc</code> 在保证计算精度的同时也不会导致计算时间过长。</li>
+</ul>
+</li>
+<li>
+<p><strong>布里渊区采样的 k 点网格（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm1089"><code>k-points</code></a>）</strong>：</p>
+<ul>
+<li>k 点网格用于布里渊区的采样，决定了电子态的离散化精度。</li>
+<li>增加 k 点密度可以提高计算的精度，但也会增加计算的复杂度。</li>
+<li>优化 k 点网格通常是通过测试不同的 k 点密度（如 5×5×5、7×7×7 等）观察总能量的变化，直到 k 点密度对总能量的影响不显著为止。</li>
+</ul>
+</li>
+<li>
+<p><strong>自洽能量收敛阈值（<a href="https://www.quantum-espresso.org/Doc/INPUT_PW.html#idm735"><code>conv_thr</code></a>）</strong>：</p>
+<ul>
+<li><code>conv_thr</code> 是自洽迭代过程中的能量收敛标准，用于控制 SCF 迭代的精度。</li>
+<li>较小的 <code>conv_thr</code> 可以提高计算精度，但可能导致更多的 SCF 迭代，增加计算时间。</li>
+<li>优化 <code>conv_thr</code> 的过程通常通过减少其数值并观察能量的收敛性，确保在适当的计算精度下也不会增加过多的计算成本。</li>
+</ul>
+</li>
+</ul>
+<ol start="3">
+<li>关于赝势文件</li>
+</ol>
+<blockquote>
+<p>这次我是在<a href="http://pseudopotentials.quantum-espresso.org/legacy_tables">QE官网</a>下载了一些Ready-to-use PP tables。</p></blockquote>
+<p>寻找适合的赝势文件（pseudopotential files）是成功进行 Quantum ESPRESSO 计算的重要步骤。以下是如何找到和选择赝势文件的详细步骤：</p>
+<ul>
+<li>
+<p>使用 Quantum ESPRESSO 官方赝势库
+可以通过以下步骤获取赝势文件：</p>
+<ul>
+<li>从 Quantum ESPRESSO 项目的 <a href="https://www.quantum-espresso.org/pseudopotentials/">QE Pseudopotentials Page</a> 下载。</li>
+<li>或前往quantum-simulation站： <a href="http://www.quantum-simulation.org">PSlibrary</a>.</li>
+<li>在库中，可以根据元素、交换-相关函数（如 PBE、LDA）、赝势类型（如 Norm-Conserving、Ultrasoft 等）筛选适合的赝势文件。</li>
+</ul>
+</li>
+<li>
+<p>选择赝势类型
+赝势的类型决定了计算的精度和效率，常见的赝势类型包括：</p>
+<ul>
+<li><strong>Norm-Conserving Pseudopotentials (NCPP)</strong>：严格遵守规范守恒，但需要更高的截断能量（<code>ecutwfc</code> 和 <code>ecutrho</code>）。</li>
+<li><strong>Ultrasoft Pseudopotentials (USPP)</strong>：允许更低的截断能量，适合大系统。</li>
+<li><strong>Projector Augmented-Wave (PAW) Pseudopotentials</strong>：近似完全电子结构计算，适合高精度计算。</li>
+</ul>
+</li>
+</ul>
+<p>选择赝势类型时，需结合计算任务和系统需求，通常优先选用已被广泛验证的赝势。</p>
+<ul>
+<li>
+<p>注意交换-相关泛函
+每个赝势文件都对应于特定的交换-相关泛函（XC Functional），例如 LDA、PBE、PBEsol 等。在 Quantum ESPRESSO 的 DFT 计算中，确保选择的赝势文件与输入文件中指定的 XC 泛函一致。例如，如果使用 <code>PBE</code> 泛函，赝势文件也需要使用 <code>PBE</code> 泛函生成。</p>
+</li>
+<li>
+<p>确认赝势文件的版本和适用范围
+下载赝势文件时，注意查看文件名中的版本信息和适用范围。例如，<code>Mo_ONCV_PBE-1.0.upf</code> 表示这个赝势是使用 PBE 泛函生成的 Mo 元素赝势，版本是 1.0。</p>
+</li>
+<li>
+<p>验证赝势文件的适用性
+在某些计算（如高精度能带结构、态密度、声子谱）中，需要验证所选赝势的适用性。可以通过以下方式验证：</p>
+<ul>
+<li><strong>测试收敛性</strong>：检查 <code>ecutwfc</code> 和 <code>ecutrho</code> 的值，观察计算结果（如总能量）随截断能量变化的收敛情况。</li>
+<li><strong>对比实验值或已发表的结果</strong>：可以与已知的实验数据或文献中的理论计算结果进行对比，以验证赝势的可靠性。</li>
+</ul>
+</li>
+<li>
+<p>赝势文件的格式
+Quantum ESPRESSO 支持多种赝势文件格式，常见的格式包括：</p>
+<ul>
+<li><strong>.UPF 格式</strong>：这是 Quantum ESPRESSO 推荐的赝势格式，包含了赝势的各类信息。</li>
+<li><strong>.PSF 格式</strong>：在早期的 Quantum ESPRESSO 版本中也被使用，但现在已不常用。</li>
+</ul>
+</li>
+<li>
+<p>存放赝势文件的位置
+下载的赝势文件需要放置在 <code>pseudo_dir</code> 指定的目录中。例如，如果输入文件中指定 <code>pseudo_dir = './pseudos'</code>，那么赝势文件应存放在 <code>pseudos</code> 目录下，以便 Quantum ESPRESSO 正确调用。</p>
+</li>
+<li>
+<p>常用赝势库和资源
+除了 Quantum ESPRESSO 官方库，还有一些第三方赝势库可以参考，包括：</p>
+<ul>
+<li><strong>SSSP (Standard Solid State Pseudopotentials)</strong>：为量子材料设计的高质量赝势库，适用于 PBE 和 PBEsol 泛函。</li>
+<li><strong>PseudoDojo</strong>：提供广泛的赝势文件，覆盖了多个函数和赝势类型。</li>
+<li><strong>Materials Project 和 Open Quantum Materials Database (OQMD)</strong>：这些数据库中包含使用特定赝势的计算数据和资源。</li>
+</ul>
+</li>
+</ul>
+<p>通过这些资源和步骤，可以找到并验证适合具体材料系统和计算任务的赝势文件。</p>
+<h3 id="b-赝势文件的选择">B. 赝势文件的选择</h3>
+<p>网站上中每个元素（比如<a href="http://pseudopotentials.quantum-espresso.org/legacy_tables/ps-library/mo">Mo</a>和<a href="http://pseudopotentials.quantum-espresso.org/legacy_tables/ps-library/s">S</a>）都列出了一堆赝势文件，该怎么选择？</p>
+<p>在选择单层 MoS₂ 的钼 (Mo) 元素赝势时，以下几个因素可以帮助你在这些选项中做出合适的选择：</p>
+<h4 id="1-赝势类型">1. 赝势类型</h4>
+<ul>
+<li><strong>PAW (Projector Augmented-Wave)</strong> 和 <strong>USPP (Ultrasoft Pseudopotentials)</strong> 是两种常见的赝势类型：
+<ul>
+<li><strong>PAW</strong> 赝势更接近全电子计算，适合高精度计算，但可能需要较高的计算资源。</li>
+<li><strong>USPP</strong> 赝势允许更低的截断能量，适合更大规模的计算，通常效率更高，但在精度上可能略低于 PAW。</li>
+<li>如果你的计算需要高精度（例如对电子结构和态密度有高要求），推荐使用 <strong>PAW</strong>。否则，如果计算效率是主要考虑，可以选择 <strong>USPP</strong>。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-交换-相关泛函类型">2. 交换-相关泛函类型</h4>
+<ul>
+<li><strong>PBE</strong> 和 <strong>PBESOL</strong> 是两种不同的广义梯度近似 (GGA) 泛函：
+<ul>
+<li><strong>PBE (Perdew-Burke-Ernzerhof)</strong> 是通用 GGA 泛函，适合大多数固态材料。</li>
+<li><strong>PBESOL</strong> 是针对固态系统优化的 GGA 泛函，通常在晶格常数和结构优化方面精度更高。</li>
+<li>如果计算的目的是研究结构或晶格常数，<strong>PBESOL</strong> 会是更好的选择；如果研究电子结构或能带，<strong>PBE</strong> 更常用。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-相对论处理">3. 相对论处理</h4>
+<ul>
+<li>有些赝势是 <strong>Scalar Relativistic (SR)</strong>，而有些是 <strong>Full Relativistic (FR)</strong>：
+<ul>
+<li><strong>Full Relativistic</strong> 赝势考虑了自旋-轨道耦合（SOC），对于重元素（如 Mo）有时会显著影响计算结果。</li>
+<li>如果你的计算涉及自旋相关的性质（如磁性或自旋极化态）或你需要高精度的能带结构，可以选择 <strong>Full Relativistic</strong> 赝势。</li>
+<li>对于一般的结构优化和基于非磁性的电子结构计算，<strong>Scalar Relativistic</strong> 已经足够。</li>
+</ul>
+</li>
+</ul>
+<h4 id="4-赝势版本">4. 赝势版本</h4>
+<ul>
+<li>版本 1.0.0 和 0.2 的区别在于生成的代码版本不同（v6.3 和 v5.0.2）。通常较新版本的赝势经过改进和更严格的测试，推荐使用较新的版本（1.0.0）以确保兼容性和精度。</li>
+</ul>
+<h4 id="总结">总结</h4>
+<ul>
+<li><strong>PAW</strong> 赝势适合高精度需求； <strong>USPP</strong> 赝势允许更低截断能量，通常效率更高。</li>
+<li><strong>PBE</strong>比较通用； <strong>PBESOL</strong> 泛函适合结构优化。</li>
+<li><strong>Full Relativistic</strong> 适合需要考虑自旋-轨道耦合的情况；相反的则是 <strong>Scalar Relativistic</strong> 。</li>
+</ul>
+<h4 id="选择建议以mo为例">选择建议(以Mo为例)</h4>
+<p>综合这些因素，针对单层 MoS₂ 计算的常见选择方案如下：</p>
+<ul>
+<li>高效率，通用，完全考虑相对论效应，（USPP+PBE+Full Relativistic） <a href="http://pseudopotentials.quantum-espresso.org/upf_files/Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF">Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF</a></li>
+<li>高效率，结构优化，完全考虑相对论效应 （USPP+PBEOL+Full Relativistic） <a href="http://pseudopotentials.quantum-espresso.org/upf_files/Mo.rel-pbesol-spn-rrkjus_psl.1.0.0.UPF"> Mo.rel-pbesol-spn-rrkjus_psl.1.0.0.UPF</a></li>
+<li>高精度，通用，完全考虑相对论效应，（PAW+PBE+Full Relativistic）<a href="http://pseudopotentials.quantum-espresso.org/upf_files/Mo.rel-pbe-spn-kjpaw_psl.1.0.0.UPF"> Mo.rel-pbe-spn-kjpaw_psl.1.0.0.UPF</a></li>
+<li>高精度，结构优化，完全考虑相对论效应 （PAW+PBEOL+Full Relativistic）<a href="http://pseudopotentials.quantum-espresso.org/upf_files/Mo.rel-pbesol-spn-kjpaw_psl.1.0.0.UPF">Mo.rel-pbesol-spn-kjpaw_psl.1.0.0.UPF</a></li>
+</ul>
+<h3 id="b-尝试计算一次">B. 尝试计算一次</h3>
+<p>这样用前面的输入文件计算一次</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pw.x &lt; input_1para-test.in &gt; ./output/MoS2-test.out
+</span></span></code></pre></div><p>运行结束后，可在文件<code>./output/MoS2-test.out</code>看到计算过程中所有的总览信息</p>
+<p>运行结束后，可在<code>./output</code>目录下看到运行结果相关文件：</p>
+<pre tabindex="0"><code>./output/
+├── MoS2-test.out
+├── MoS2-test.save
+│   ├── charge-density.dat
+│   ├── data-file-schema.xml
+│   ├── Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF
+│   ├── S.rel-pbe-n-rrkjus_psl.1.0.0.UPF
+│   ├── wfc10.dat
+│   ├── wfc11.dat
+│   ├── wfc12.dat
+│   ├── wfc13.dat
+│   ├── wfc1.dat
+│   ├── wfc2.dat
+│   ├── wfc3.dat
+│   ├── wfc4.dat
+│   ├── wfc5.dat
+│   ├── wfc6.dat
+│   ├── wfc7.dat
+│   ├── wfc8.dat
+│   └── wfc9.dat
+└── MoS2-test.xml
+</code></pre><p>以上的输出文件和目录结构显示了 Quantum ESPRESSO 执行计算时生成的文件。下面是每个文件和目录的含义及需要关注的部分：</p>
+<h4 id="1-mos2-testout-输出文件">1. <strong><code>MoS2-test.out</code></strong> (输出文件)</h4>
+<p>这是 Quantum ESPRESSO 的标准输出文件，包含了计算过程中所有的日志信息。您需要关注以下几部分：</p>
+<ul>
+<li><strong>计算状态</strong>：是否计算成功，是否达到收敛。</li>
+<li><strong>自洽场收敛</strong>：检查 SCF（自洽场）计算的收敛情况，确保电子密度和能量收敛到设定的阈值（通常是 <code>conv_thr</code> 设置的阈值）。</li>
+<li><strong>总能量</strong>：检查计算的总能量，特别是在优化结构时是否有稳定的总能量变化。</li>
+<li><strong>可能的错误和警告</strong>：注意是否有错误信息，尤其是与赝势、原子位置或计算参数相关的问题。</li>
+</ul>
+<h4 id="2-mos2save-保存计算的目录">2. <strong><code>MoS2.save/</code></strong> (保存计算的目录)</h4>
+<p>这是 Quantum ESPRESSO 为了存储计算结果和中间数据而生成的文件夹。里面存储了用于后续计算的文件，包括波函数、密度数据等。</p>
+<h4 id="重要文件和数据">重要文件和数据：</h4>
+<ul>
+<li>
+<p><strong><code>charge-density.dat</code></strong>：</p>
+<ul>
+<li>存储了电荷密度分布的数据。您可以用它来分析材料的电子密度分布。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>Mo.rel-pbe-spn-rrkjus_psl.1.0.0.UPF</code> 和 <code>S.rel-pbe-n-rrkjus_psl.1.0.0.UPF</code></strong>：</p>
+<ul>
+<li>这两个文件是您使用的赝势文件（Pseudopotentials）。它们描述了 Mo 和 S 元素的相对论性效应和电子结构。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>wfcX.dat</code>（例如 <code>wfc1.dat</code>, <code>wfc2.dat</code>, 等）</strong>：</p>
+<ul>
+<li>这些是计算过程中生成的波函数数据文件。每个文件对应不同的波函数数据，可以用于后续的分析（例如态密度计算）。如果您需要使用这些波函数进行进一步分析（如电子态密度、能带结构等），这些文件会非常重要。</li>
+</ul>
+</li>
+<li>
+<p><strong><code>MoS2.xml</code></strong>：</p>
+<ul>
+<li>这个文件包含了与计算相关的结构和参数信息，它是一个 XML 文件，适合用于后处理分析和可视化工具导入。可以通过一些可视化工具（例如 <code>XCrysDen</code> 或 <code>VESTA</code>）加载这个文件来可视化计算结果。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-需要特别关注的内容">3. <strong>需要特别关注的内容</strong></h4>
+<ul>
+<li>
+<p><strong><code>test.out</code> 中的错误信息</strong>：如果计算没有成功完成，您需要在 <code>test.out</code> 中查找错误或警告消息，解决这些问题后重新进行计算。</p>
+</li>
+<li>
+<p><strong><code>charge-density.dat</code></strong>：如果您需要分析电荷分布或进行更详细的电荷密度分析，可以关注该文件。</p>
+</li>
+<li>
+<p><strong><code>wfcX.dat</code></strong> 文件：这些文件包含了波函数数据，是后续分析中可能需要的内容。如果您的计算结果需要进一步分析，例如生成能带结构或态密度图，这些文件是必要的。</p>
+</li>
+<li>
+<p><strong><code>MoS2.xml</code></strong>：如果您使用可视化工具来查看结果，这个 XML 文件非常重要，它包含了您计算的基本信息和结构。</p>
+</li>
+</ul>
+<h4 id="总结-1">总结：</h4>
+<ul>
+<li><strong><code>test.out</code></strong>：检查计算是否成功、是否收敛，关注错误和警告信息。</li>
+<li><strong><code>MoS2.save/</code></strong>：保存计算结果，包括电荷密度、赝势文件和波函数数据。</li>
+<li><strong><code>charge-density.dat</code> 和 <code>wfcX.dat</code></strong>：关注这些文件，用于电荷密度分析和波函数数据分析。</li>
+<li><strong><code>MoS2.xml</code></strong>：用于后处理和可视化。</li>
+</ul>
+<p>确保这些文件没有问题，尤其是 <code>test.out</code> 中是否有错误信息，它是您计算是否成功的重要指标。如果有错误或警告，需要及时检查并修复。</p>
+<h3 id="c-如何阅读计算日志mos2out">C. 如何阅读计算日志<code>MoS2.out</code></h3>
+<p>我们刚才的计算得到了一个几百行的日志文件<code>MoS2.out</code></p>
+<p>我试图解读它的内容</p>
+<ul>
+<li>首先输出程序版本信息</li>
+<li>然后开始读取输入文件</li>
+<li>读取赝势文件</li>
+<li>计算抽样的k点及权重</li>
+<li>下面是自洽场 (SCF) 计算的过程
+<ul>
+<li>展示自洽场计算的参数信息（G-向量数量，FFT 维度,）和动态内存估计</li>
+<li>负核电荷检查，以及显示初始电荷的值</li>
+<li>循环的自洽场 (SCF) 迭代过程
+<ul>
+<li>每次迭代中，Quantum ESPRESSO 会更新电子密度并逐步调整系统能量，直到收敛条件达到设定的阈值。</li>
+<li>每次迭代会展示一些参数，包括total energy, estimated scf accuracy(逐步下降到设置的精度)，total cpu time spent up等。其中negative rho表示负电子密度：尽管存在负值（理想情况下为 0），但值非常小，通常不会引发问题。</li>
+<li>迭代中能量逐步下降，显示出 SCF 计算逐渐稳定，这表明计算无明显数值不稳定性。从最后一次迭代来看，能量已经收敛至高精度要求。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>End of self-consistent calculation</code> 提示自洽场（SCF）计算结束</li>
+<li>显示k点信息：平面波数量 (PWs)， 每个k点下列出了多个能带的能量值（单位为电子伏特 eV），按从低到高的顺序排列。每个数值表示特定能带在该 k 点上的能量。这次计算中每个能量值出现两次，表示该能级具有自旋简并；可以关注能量值靠近零的能带，因为费米能级（通常设为 0 eV）附近的能带决定了材料的导电性和半导体特性。</li>
+<li>k点信息的最后给出了Fermi energy</li>
+<li>最后<code>!</code>开头的文段总结了 Quantum ESPRESSO 计算的最终结果和运行性能统计。以下是各项内容的具体含义
+这一部分内容总结了 Quantum ESPRESSO 计算的最终结果和运行性能统计。以下是各项内容的具体含义：</li>
+</ul>
+<h4 id="1-费米能级">1. <strong>费米能级</strong></h4>
+<ul>
+<li><strong>费米能级 (<code>the Fermi energy is 0.1290 eV</code>)</strong>：这是电子的最高占据能级，标志着能带结构中电子填充的上限。费米能级的位置对于确定材料的导电性至关重要。</li>
+</ul>
+<h4 id="2-总能量和收敛精度">2. <strong>总能量和收敛精度</strong></h4>
+<ul>
+<li><strong>总能量 (<code>total energy = -181.67467619 Ry</code>)</strong>：这是自洽场计算的最终收敛总能量，是系统的稳态能量。</li>
+<li><strong>估计的 SCF 精度 (<code>estimated scf accuracy &lt; 3.7E-10 Ry</code>)</strong>：收敛精度非常高，满足了设定的收敛要求，说明计算的结果具有较高的精度。</li>
+<li><strong>展宽贡献 (<code>smearing contrib. (-TS)</code>)</strong>：由于采用了展宽技术（如高斯展宽），<code>-TS</code> 表示展宽的负熵贡献，通常在金属系统中用于处理费米能级附近的电子态分布。在此为 <code>-0.00000000 Ry</code>，几乎没有影响。</li>
+<li><strong>内能 (<code>internal energy E=F+TS</code>)</strong>：E 是自由能 F 加上展宽项 TS 后的内能，与总能量一致。</li>
+</ul>
+<h4 id="3-能量分项">3. <strong>能量分项</strong></h4>
+<ul>
+<li>Quantum ESPRESSO 将总能量分解成不同物理贡献，以帮助理解系统的能量组成：
+<ul>
+<li><strong>单电子贡献 (<code>one-electron contribution</code>)</strong>：描述电子的单粒子贡献。</li>
+<li><strong>Hartree 贡献 (<code>hartree contribution</code>)</strong>：描述电子间的库伦相互作用。</li>
+<li><strong>交换-相关贡献 (<code>xc contribution</code>)</strong>：由交换-相关泛函（例如 PBE）描述电子的量子力学关联效应。</li>
+<li><strong>Ewald 贡献 (<code>ewald contribution</code>)</strong>：描述了离子之间的静电相互作用。</li>
+<li><strong>色散校正 (<code>Dispersion Correction</code>)</strong>：用于校正长程范德瓦尔斯力，对层状材料和分子相互作用的描述非常重要。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-计算收敛信息">4. <strong>计算收敛信息</strong></h3>
+<ul>
+<li><strong>收敛 (<code>convergence has been achieved in 9 iterations</code>)</strong>：表明计算在 9 次迭代后达到自洽，符合预期的收敛标准。</li>
+</ul>
+<h4 id="5-输出文件写入">5. <strong>输出文件写入</strong></h4>
+<ul>
+<li><code>Writing all to output data dir ./output/MoS2-test.save/</code>：将计算结果（包括 XML 数据文件、电子密度、赝势和波函数）写入指定的输出目录中，为后续的分析提供了基础数据。</li>
+</ul>
+<h4 id="6-性能统计">6. <strong>性能统计</strong></h4>
+<p>计算的 CPU 和墙上时间（实际运行时间）统计，为了解不同部分的计算效率提供了信息。</p>
+<ul>
+<li>
+<p><strong>主模块统计</strong>：</p>
+<ul>
+<li><code>init_run</code>、<code>electrons</code> 等模块描述了初始化和电子结构计算的总体耗时。</li>
+</ul>
+</li>
+<li>
+<p><strong>子例程统计</strong>：</p>
+<ul>
+<li><code>c_bands</code>、<code>sum_band</code> 等例程详细分解了电子结构计算中的时间消耗情况，例如波函数初始化、能带求和、密度混合、FFT 变换等。</li>
+<li><code>fft</code>、<code>fftw</code> 是快速傅里叶变换（FFT）的相关模块，显示了在波函数和密度计算中 FFT 的调用次数和时间消耗。</li>
+</ul>
+</li>
+<li>
+<p><strong>并行计算统计 (<code>PWSCF</code>)</strong>：总 CPU 时间为 4 分 42 秒，总墙上时间为 1 分 22.9 秒，表明使用了并行计算来加速。</p>
+</li>
+</ul>
+<h4 id="7-终止时间">7. <strong>终止时间</strong></h4>
+<ul>
+<li>最后记录了计算终止时间为 <code>20: 8:22  9Nov2024</code>。</li>
+</ul>
+<h4 id="总结-2">总结</h4>
+<p>这部分内容包括计算的最终收敛信息、能量分解、性能统计和文件写入信息：</p>
+<ul>
+<li>费米能级、总能量、收敛精度是关键的物理结果。</li>
+<li>能量的不同组成项为电子、离子相互作用的具体贡献提供了信息。</li>
+<li>性能统计显示了计算的时间消耗情况。</li>
+</ul>
+<h3 id="d-选定参数后进行结构优化">D. 选定参数后进行结构优化</h3>
+<p>略</p>
+<h3 id="e-计算态密度能带声子谱的命令">E. 计算态密度，能带，声子谱的命令</h3>
+<ol>
+<li>首先要先进行自洽场计算（SCF）得到电子密度，然后进行非自洽场（NSCF）计算得到波函数信息。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pw.x &lt; scf.in &gt; scf.out
+</span></span><span style="display:flex;"><span>pw.x &lt; nscf.in &gt; nscf.out
+</span></span></code></pre></div><ol start="2">
+<li>在 NSCF 计算完成后, 可进行DOS计算得到态密度：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dos.x &lt; dos.in &gt; dos.out
+</span></span></code></pre></div><ol start="3">
+<li>在 NSCF 计算完成后，可计算能带：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>bands.x &lt; bands_post.in &gt; bands_post.out
+</span></span></code></pre></div><ol start="4">
+<li>在在完成 SCF 计算后，使用 <code>ph.x</code> 程序进行声子计算</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ph.x &lt; ph.in &gt; ph.out
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 声子计算的后处理</span>
+</span></span><span style="display:flex;"><span>q2r.x &lt; q2r.in &gt; q2r.out
+</span></span><span style="display:flex;"><span>matdyn.x &lt; matdyn.in &gt; matdyn.out
+</span></span></code></pre></div></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

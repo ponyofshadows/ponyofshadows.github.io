@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>English on Pony of Shadows</title>
+    <link>http://localhost:1313/tags/english/</link>
+    <description>Recent content in English on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 22 Nov 2024 19:08:10 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/english/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>English test: writing</title>
+      <link>http://localhost:1313/posts/english/english_test_writing/</link>
+      <pubDate>Fri, 22 Nov 2024 19:08:10 +0800</pubDate>
+      <guid>http://localhost:1313/posts/english/english_test_writing/</guid>
+      <description>&lt;h3 id=&#34;perspective-of-thinking&#34;&gt;Perspective of thinking&lt;/h3&gt;&#xA;&lt;p&gt;positive or passive&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;individual&#xA;&lt;ul&gt;&#xA;&lt;li&gt;money&lt;/li&gt;&#xA;&lt;li&gt;health&lt;/li&gt;&#xA;&lt;li&gt;happiness&lt;/li&gt;&#xA;&lt;li&gt;family&lt;/li&gt;&#xA;&lt;li&gt;career&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;institution&lt;/li&gt;&#xA;&lt;li&gt;society&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Translation Solution on Wayland</title>
+      <link>http://localhost:1313/posts/en/translate-solution/</link>
+      <pubDate>Mon, 28 Oct 2024 14:03:16 +0800</pubDate>
+      <guid>http://localhost:1313/posts/en/translate-solution/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Today I read &lt;a href=&#34;https://www.reddit.com/r/kde/comments/gxpsvo/comment/ft4o077/?utm_source=share&amp;amp;utm_medium=web3x&amp;amp;utm_name=web3xcss&amp;amp;utm_term=1&amp;amp;utm_content=share_button&#34;&gt;an inspiring solution on Reddit&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;@kupiqu&#xA;I will not address your question directly but I will give you a &amp;ldquo;solution&amp;rdquo; that at least for me works even better:&#xA;One possibility [Not Okular specific] is to use a klipper action on top of trans (&lt;a href=&#34;https://github.com/soimort/translate-shell/tree/develop&#34;&gt;https://github.com/soimort/translate-shell/tree/develop&lt;/a&gt;) and notify-send (to display the result as a system notification).&lt;/p&gt;&#xA;&lt;p&gt;This has the advantage that can be triggered anywhere (not only, but) also from Okular, and define a word or translate a sentence to any language (or even display multiple language translations at once). My two actions for this are the following (translation to English/Catalan/Spanish from whatever language your selection is):&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

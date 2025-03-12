@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>时间演化算符的形式解 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">时间演化算符的形式解</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-09-25</time>
+    
+    
+  </strong>
+  <span> • 189 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/qm">QM</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>定义演化算符$U(t)$满足：
+$$
+|\psi(t)\rangle=U(t,t_0)|\psi(t_0)\rangle
+$$
+容易得到下面的结论：</p>
+<ul>
+<li>$U(t)$是幺正算符。</li>
+<li>当$H$不显含时间时，$U(t,t_0)=\mathrm{e}^{-\frac i\hbar (t-t_0)}$</li>
+</ul>
+<p>下面我们看$H(t)$显含时间的情况。</p>
+<p>将$U(t)$的定义式代入薛定谔方程，可得：
+$$
+i\hbar\frac\partial{\partial t}U(t,t_0)
+= HU(t,t_0)
+$$
+上式两边对$t$积分，得：</p>
+<div class="mathjax">
+$$
+U(t,t_0)\big|_{t_0}^t 
+=
+-\frac i\hbar \int_{t_o}^{t}H(t_1)U(t_1,t_0)\mathrm{d}t_1
+$$ $$
+U(t,t_0) 
+= \hat{I}
+-\frac i\hbar \int_{t_o}^{t}H(t_1)U(t_1,t_0)\mathrm{d}t_1
+$$
+</div>
+<p>$t$可以取一系列值$t\ge t_1\ge t_2 \ge \cdots \ge t_n\ge t_0$, 于是可以按上式从$U(t,t_0)\Leftarrow U(t_1,t_0)$开始不停地迭代到$U(t,t_0)\Leftarrow U(t_0,t_0)=\hat{I}$，得到形式上的解。</p>
+<p>下面我们不用纸笔，思考一下这个公式的迭代过程：</p>
+<ul>
+<li>积分中的U会在每次迭代被单位I+含U的积分式替换</li>
+<li>每次迭代，替换出的I会让全式多出一个含H不含U的项</li>
+<li>每次迭代，含U的积分式会被多套一个积分号。</li>
+<li>随着n趋向无穷大，$U(t_n,t_0)\rightarrow U(t_0,t_0)=\hat{I}$</li>
+</ul>
+<p>那么，我们就能写出迭代的最终结果：</p>
+<div class="mathjax">$$
+U(t,t_0)=\hat{I}+
+\sum_{n=1}^{\infty}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t_1}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t_{n-1}}\mathrm{d}t_n
+H(t_1)H(t_2)\cdots H(t_n)
+$$</div>
+<p>为了把上面的式子写得更整齐，首先想把积分上限都变成t，引入阶跃函数</p>
+<div class="mathjax">$$
+\theta(t-t')=
+\begin{cases}
+    1, \quad t \ge t' \\
+    0, \quad t < t'
+\end{cases}
+$$</div>
+<p>从而有</p>
+<div class="mathjax">$$
+\int_{t_0}^{t''}f(t')\mathrm{d}t'
+=
+\int_{t_0}^{t}\theta(t''-t')f(t')\mathrm{d}t'
+$$
+$$
+U(t,t_0)=\hat{I}+
+\sum_{n=1}^{\infty}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_n
+\theta(t_1-t_2)\theta(t_2-t_3)\cdots\theta(t_{n-1}-t_n)
+H(t_1)H(t_2)\cdots H(t_n)
+$$</div>
+这时候$t\ge t_1 \ge_2 \cdots \ge t_n \ge t_0 $ 的强制规定消失了，$t_1t_2\cdots t_n$现在被积分上下限和所有阶跃函数限制。现在交换其中任何两个$t_i, t_j \ (i,j=1,2,\cdots n)$都不会改变积分值。
+<p>定义重排算符$\hat{T}$:</p>
+<div class="mathjax">$$
+\hat{T}[H(t_1)H(t_2)\cdots H(t_n)]=
+\sum_{t_1t_2\cdots t_n}
+\theta(t_1-t_2)\theta(t_2-t_3)\cdots\theta(t_{n-1}-t_n)
+H(t_1)H(t_2)\cdots H(t_n)
+$$</div>
+上面这个求和对$t_1t_2\cdots t_n$的所有排列（共$n!$个）进行。对一组特定的$t_1t_2\cdots t_n$的特定取值，只有一个求和项不为0。
+<p>再看一下上面包含阶跃函数的积分式，由于积分变量交换不改变积分结果，它可以用$\hat{T}$改写成：</p>
+<div class="mathjax">$$
+U(t,t_0)=\hat{I}+
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_n
+\hat{T}[H(t_1)H(t_2)\cdots H(t_n)]
+$$</div>
+至此，我们完成了一堆不同上限积分的相乘到一堆同上限积分相乘的变形。通过交换$\hat{T}$与积分符号，可以进一步简化：
+<div class="mathjax">
+\begin{align}
+U(t,t_0)
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1
+\int_{t_0}^{t}\mathrm{d}t_2
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_n
+H(t_1)H(t_2)\cdots H(t_n)
+\\
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\int_{t_0}^{t}\mathrm{d}t_1H(t_1)
+\int_{t_0}^{t}\mathrm{d}t_2H(t_2)
+\cdots
+\int_{t_0}^{t}\mathrm{d}t_nH(t_n)
+\\
+&=
+\hat{I}+\hat{T}
+\sum_{n=1}^{\infty}\frac1{n!}
+\left(-\frac i\hbar\right)^n
+\left[
+    \int_{t_0}^{t}H(\tau)\mathrm{d}\tau
+\right]^n
+\\
+&=
+\hat{T}
+\exp\left[
+    -\frac i\hbar
+    \int_{t_0}^{t}H(\tau)\mathrm{d}\tau
+\right]
+\end{align}
+</div>
+<h3 id="参考">参考</h3>
+<ul>
+<li>《高等量子力学》喀兴林</li>
+<li><a href="https://wuli.wiki/online/Dyser.html">戴森级数-小时百科</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Dyson_series">Dyson Series - wikipedia</a></li>
+</ul>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

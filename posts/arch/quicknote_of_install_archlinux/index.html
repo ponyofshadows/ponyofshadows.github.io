@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>quicknote of install archlinux | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">quicknote of install archlinux</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2025-03-12</time>
+    
+    
+  </strong>
+  <span> • 195 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/arch-install">arch-install</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p><a href="https://wiki.archlinux.org/title/Installation_guide">Official Installation guide</a></p>
+<h1 id="pre-installation">Pre-installation</h1>
+<h2 id="acquire-an-installation-image">Acquire an installation image</h2>
+<ul>
+<li><a href="https://archlinux.org/download/">Download</a></li>
+<li><a href="https://mirrors.ustc.edu.cn/archlinux/iso/latest/">中科大镜像源Archlinux ISO</a></li>
+</ul>
+<h2 id="verify-signature">Verify signature</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman-key -v archlinux-version-x86_64.iso.sig
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span>gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
+</span></span></code></pre></div><p>If the output is <code>Good signature</code>, it is unchanged</p>
+<h2 id="prepare-an-installation-medium">Prepare an installation medium</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd bs<span style="color:#f92672">=</span>4M <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>path/to/archlinux-version-x86_64.iso of<span style="color:#f92672">=</span>/dev/disk/by-id/usb-My_flash_drive conv<span style="color:#f92672">=</span>fsync oflag<span style="color:#f92672">=</span>direct status<span style="color:#f92672">=</span>progress
+</span></span></code></pre></div><h2 id="boot-the-live-environment">Boot the live environment</h2>
+<p>You need to <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Disabling_Secure_Boot">disable Secure Boot</a> to boot the installation medium.</p>
+<h2 id="modify-the-mirrorlist">modify the mirrorlist</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Stop the automatic update of the mirror list</span>
+</span></span><span style="display:flex;"><span>systemctl stop reflector.service
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># edit it yourself</span>
+</span></span><span style="display:flex;"><span>vim /etc/pacman.d/mirrorlist
+</span></span></code></pre></div><p>These should be placed at the beginning of the list:</p>
+<blockquote>
+<p>Server = <a href="http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch">http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</a>
+Server = <a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch">https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</a>
+Server = <a href="http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a>
+Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></p></blockquote>
+<h2 id="connect-to-the-internetwifi">Connect to the internet(WiFi)</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># list interfaces</span>
+</span></span><span style="display:flex;"><span>ip link
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># wpa_supplicant -- https://wiki.archlinux.org/title/Wpa_supplicant</span>
+</span></span><span style="display:flex;"><span>wpa_supplicant -B -i interface -c &lt;<span style="color:#f92672">(</span>wpa_passphrase MYSSID passphrase<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># or iwd -- https://wiki.archlinux.org/title/Iwd</span>
+</span></span><span style="display:flex;"><span>iwctl
+</span></span></code></pre></div><h2 id="update-the-system-clock">Update the system clock</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true
+</span></span><span style="display:flex;"><span>timedatectl
+</span></span></code></pre></div><h2 id="partition-the-disks--format-the-partitions">Partition the disks &amp; Format the partitions</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk -l <span style="color:#75715e"># or lsblk</span>
+</span></span><span style="display:flex;"><span>fdisk /dev/partition <span style="color:#75715e"># `m` for help</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/efi_system_partition <span style="color:#75715e"># ESP</span>
+</span></span><span style="display:flex;"><span>mkswap /dev/hdb1 <span style="color:#75715e"># SWAP</span>
+</span></span><span style="display:flex;"><span>mkfs.btrfs -L mylabel /dev/partition_btrfs_root
+</span></span><span style="display:flex;"><span>sudo btrfs subvolume create /dev/partition_btrfs_root /@current <span style="color:#75715e"># /</span>
+</span></span><span style="display:flex;"><span>mkfs.xfs partition_home <span style="color:#75715e"># /home</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">``</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">[</span>all about swap<span style="color:#f92672">](</span>https://www.linux.com/news/all-about-linux-swap-space/<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">[</span>note about btrfs<span style="color:#f92672">](</span>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Mount the file systems</span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
+</span></span></code></pre></div></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Translation Solution on Wayland | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">Translation Solution on Wayland</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-10-28</time>
+    
+    
+  </strong>
+  <span> • 247 words</span>
+  <span> • 2 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/english">English</a>, 
+        <a href="/tags/linux">Linux</a>, 
+        <a href="/tags/wayland">wayland</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h2 id="introduction">Introduction</h2>
+<p>Today I read <a href="https://www.reddit.com/r/kde/comments/gxpsvo/comment/ft4o077/?utm_source=share&amp;utm_medium=web3x&amp;utm_name=web3xcss&amp;utm_term=1&amp;utm_content=share_button">an inspiring solution on Reddit</a></p>
+<blockquote>
+<p>@kupiqu
+I will not address your question directly but I will give you a &ldquo;solution&rdquo; that at least for me works even better:
+One possibility [Not Okular specific] is to use a klipper action on top of trans (<a href="https://github.com/soimort/translate-shell/tree/develop">https://github.com/soimort/translate-shell/tree/develop</a>) and notify-send (to display the result as a system notification).</p>
+<p>This has the advantage that can be triggered anywhere (not only, but) also from Okular, and define a word or translate a sentence to any language (or even display multiple language translations at once). My two actions for this are the following (translation to English/Catalan/Spanish from whatever language your selection is):</p>
+<p>notify-send &ldquo;definition: %s&rdquo; &ldquo;$(trans -e google -no-ansi -d %s)&rdquo;</p>
+<p>notify-send &ldquo;translation: %s&rdquo; &ldquo;$(trans -e google -no-ansi -t en+ca+es -b %s)&rdquo;</p>
+<p>These are by far the klipper actions I use the most, I have no statistics but I think it would be hard to find a past day on which I didn&rsquo;t use them at least once.</p></blockquote>
+<p>According to this below tools is needed:</p>
+<ul>
+<li><code>trans</code> a translator</li>
+<li><code>sway</code> a window manager to bind hotkey with translation action.</li>
+<li><code>wl-clipboard</code> clipboard manager for sway</li>
+<li><code>mako</code> notification manager for sway</li>
+</ul>
+<h2 id="config-of-sway">config of sway</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># startup</span>
+</span></span><span style="display:flex;"><span>exec_always --no-startup-id mako --max-history <span style="color:#ae81ff">5</span>
+</span></span></code></pre></div><p>(why <code>--max-history</code> doesn&rsquo;t work?)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># translator</span>
+</span></span><span style="display:flex;"><span>bindsym $mod+x exec bash -c <span style="color:#e6db74">&#39;translated=$(wl-paste | trans -b :zh); notify-send &#34;[Trans]&#34; &#34;$translated&#34;; echo -n &#34;$translated&#34; | wl-copy&#39;</span>
+</span></span><span style="display:flex;"><span>bindsym $mod+Shift+x exec bash -c <span style="color:#e6db74">&#39;translated=$(wl-paste | trans -b :en); notify-send &#34;[Trans]&#34; &#34;$translated&#34;; echo -n &#34;$translated&#34; | wl-copy&#39;</span>
+</span></span></code></pre></div></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>Setup: 1.shell | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">Setup: 1.shell</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-09</time>
+    
+    
+  </strong>
+  <span> • 326 words</span>
+  <span> • 2 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>现在在笔记系列的第1层，目的是渐渐完善命令行下使用linux的体验。</p>
+<p>本文我们聚焦以下两点：</p>
+<ul>
+<li>日常的Shell使用体验</li>
+<li>在登录和打开交互式Shell时应该通过Shell脚本做哪些事情</li>
+</ul>
+<h2 id="shell的选择">Shell的选择</h2>
+<p>我使用过很长一段时间fish，因为它开箱即用，足够用户友好。但现在我更注重泛用性问题，打算回归使用<a href="https://wiki.archlinux.org/title/Bash">bash</a>，因为：</p>
+<ul>
+<li>bash是大部分发行版的默认shell</li>
+<li>大部分linux的脚本是sh或bash脚本，而bash又是sh的增强版本，能正常运行大部分sh脚本。</li>
+<li>通过一些工具能让bash在日常使用时达到接近fish的用户友好程度。
+<blockquote>
+<p>ChatGPT列举了以下工具(我们接下来会参考GPT的提示增强bash的功能)</p>
+<ol>
+<li>Bash Completion 是一个常用的插件，为 Bash 提供更智能的命令补全。</li>
+<li>bash-git-prompt 可以在 Bash 提示符中显示 Git 仓库的信息，使提示符更具信息性和美观。</li>
+<li>fzf 是一个命令行模糊查找器，能极大地增强 Bash 的文件和命令补全功能。</li>
+<li>powerline-shell 能美化 Bash 提示符，提供类似 Fish 的视觉效果。</li>
+<li>z - jump around 是一个目录跳转工具，可以根据使用频率快速跳转到常用目录。</li>
+</ol></blockquote>
+</li>
+</ul>
+<h2 id="shell启动脚本"><a href="https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html">Shell启动脚本</a></h2>
+<p>标题链接的博客文章充分说明了bash在不同情况下运行启动脚本的复杂性。我们参考作者的建议进行配置：</p>
+<ol>
+<li>不使用<code>/etc/</code>下的配置。例如<code>/etc/profile</code>，该文件在任何用户启动时都会运行，但我想让所有用户的共同启动行为保持默认。</li>
+<li><code>~/.bashrc</code>除了个别情况，只会在interactive shell模式下运行。所以我们用一行命令排除non-interactive的情况，然后加载环境变量和交互环境的必须环境</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bashrc</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># If not running interactively, don&#39;t do anything</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> $- !<span style="color:#f92672">=</span> *i* <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># env &amp; interactive</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/env.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    . ~/.bash/env.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/interactive.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    . ~/.bash/interactive.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><ol start="3">
+<li><code>~/.bash_profile</code>只在该用户登录后运行。它和<code>~/.bash_profile</code>共用加载环境变量的脚本，但有单独的开机启动项脚本。注意，桌面应用的启动项会通过sway的配置启动，而不是在这里。</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bash_profile</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># env &amp; login</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/env.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . ~/.bash/env.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/login.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . ~/.bash/login.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><ol start="4">
+<li><code>~/.bash_logout</code>以gpt的说法和我的实际经验来看，只会在login shell退出时执行</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># logout</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -f ~/.bash/logout.sh <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . ~/.bash/logout.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="环境变量">环境变量</h3>
+<p>类似这样即可</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bash/env.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># editor</span>
+</span></span><span style="display:flex;"><span>export EDITOR<span style="color:#f92672">=</span>nvim
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># fcitx5</span>
+</span></span><span style="display:flex;"><span>export GTK_IM_MODULE<span style="color:#f92672">=</span>fcitx
+</span></span><span style="display:flex;"><span>export QT_IM_MODULE<span style="color:#f92672">=</span>fcitx
+</span></span><span style="display:flex;"><span>export XMODIFIERS<span style="color:#f92672">=</span>@im<span style="color:#f92672">=</span>fcitx
+</span></span><span style="display:flex;"><span>export SDL_IM_MODULE<span style="color:#f92672">=</span>fcitx
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># path: texlive</span>
+</span></span><span style="display:flex;"><span>export PATH<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/usr/local/texlive/2023/bin/x86_64-linux:</span>$PATH<span style="color:#e6db74">&#34;</span>
+</span></span></code></pre></div><h3 id="改善交互体验">改善交互体验</h3>
+<ul>
+<li>通过pacman安装<code>bash-completion</code></li>
+<li>通过yay从AUR中安装<code>bash-git-prompt</code>。记得在<code>~/.gitconfig</code>里加上：</li>
+</ul>
+<pre tabindex="0"><code>[color &#34;status&#34;]
+  branch = magenta
+  untracked = cyan
+  unmerged = yellow
+</code></pre><ul>
+<li>通过pacman安装<a href="https://wiki.archlinux.org/title/Fzf">fzf</a>, 使用方法见链接</li>
+<li>通过pacman安装<a href="https://wiki.archlinux.org/title/Powerline">powerline</a>和<code>powerline-fonts</code></li>
+<li>通过git安装<a href="https://github.com/rupa/z.git">z</a></li>
+<li>通过git安装<a href="https://github.com/ponyofshadows/poshd">poshd</a></li>
+</ul>
+<p>最后，配置<code>~/.bash/interactive.sh</code>以启用前面所有插件</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># interactive environment</span>
+</span></span><span style="display:flex;"><span>alias ls<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ls --color=auto&#39;</span>
+</span></span><span style="display:flex;"><span>alias grep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;grep --color=auto&#39;</span>
+</span></span><span style="display:flex;"><span>PS1<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;[\u@\h \W]\$ &#39;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use bash-completion, if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[[</span> $PS1 <span style="color:#f92672">&amp;&amp;</span> -f /usr/share/bash-completion/bash_completion <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    . /usr/share/bash-completion/bash_completion
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use bash-git-prompt(AUR), if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f /usr/lib/bash-git-prompt/gitprompt.sh <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># To only show the git prompt in or under a repository directory</span>
+</span></span><span style="display:flex;"><span>  GIT_PROMPT_ONLY_IN_REPO<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># To use upstream&#39;s default theme</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">#GIT_PROMPT_THEME=Default</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e"># To use upstream&#39;s default theme, modified by arch maintainer</span>
+</span></span><span style="display:flex;"><span>  GIT_PROMPT_THEME<span style="color:#f92672">=</span>Default_Arch
+</span></span><span style="display:flex;"><span>  source /usr/lib/bash-git-prompt/gitprompt.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use fzf, if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f /usr/share/fzf/completion.bash <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . /usr/share/fzf/completion.bash
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f /usr/share/fzf/key-bindings.bash <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . /usr/share/fzf/key-bindings.bash
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use powerline, if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f /usr/share/powerline/bindings/bash/powerline.sh <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  powerline-daemon -q
+</span></span><span style="display:flex;"><span>  POWERLINE_BASH_CONTINUATION<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  POWERLINE_BASH_SELECT<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>  . /usr/share/powerline/bindings/bash/powerline.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use z (https://github.com/rupa/z), if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f ~/all/proj/sw/bash_tools/z/z.sh <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . ~/all/proj/sw/bash_tools/z/z.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Use poshd (https://github.com/ponyofshadows/poshd), if available</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> -f ~/all/proj/sw/bash_tools/poshd/po.sh <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  . ~/all/proj/sw/bash_tools/poshd/po.sh
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><h3 id="登录后要做的事情">登录后要做的事情</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># ~/.bash/login.sh</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[</span> -z <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>WAYLAND_DISPLAY<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> <span style="color:#f92672">]</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[</span> <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>XDG_VTNR<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span> -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  export XDG_CURRENT_DESKTOP<span style="color:#f92672">=</span>sway
+</span></span><span style="display:flex;"><span>  exec sway --unsupported-gpu
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div></div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

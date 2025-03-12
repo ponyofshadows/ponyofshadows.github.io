@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>在Mathematica中进行算符运算 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">在Mathematica中进行算符运算</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-11-12</time>
+    
+    
+  </strong>
+  <span> • 32 words</span>
+  <span> • 1 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/phys">phys</a>
+    </div>
+  
+</div>
+
+      <div class="content"><h3 id="basics">Basics</h3>
+<ul>
+<li>(没啥用的)无交换律的乘法符号</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">**</span> b
+</span></span></code></pre></div><ul>
+<li>矩阵乘法</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a<span style="color:#960050;background-color:#1e0010">.</span>b
+</span></span></code></pre></div><ul>
+<li>替换（substitution）</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-mathematica" data-lang="mathematica"><span style="display:flex;"><span>a <span style="color:#f92672">/.</span>{a<span style="color:#f92672">-&gt;</span>b}
+</span></span></code></pre></div><ul>
+<li>模式识别的替换</li>
+</ul>
+<pre tabindex="0"><code>Sin[z] + Sin[3 z^2] + Cos[z] /. {Sin[X_] :&gt; Sin[2X]}
+</code></pre><p>还可识别多个符号、不定数量的符号</p>
+<p>References:</p>
+<ul>
+<li><a href="https://www.bilibili.com/video/BV1DZ421i7cX?spm_id_from=333.788.videopod.sections&amp;vd_source=9550b4b6e4a760b30fa8063d03d72c1c">Mathematica实用指南——教会电脑什么叫生成湮灭：算符运算自动化</a></li>
+<li><a href="https://www.bilibili.com/video/BV17A14YdEtm?spm_id_from=333.788.videopod.sections&amp;vd_source=9550b4b6e4a760b30fa8063d03d72c1c">Mathematica实用指南——非交换代数，自旋链模型小练习</a></li>
+</ul>
+<h2 id="ncalgebra"><a href="https://github.com/ncAlgebra/NC?tab=readme-ov-file">NCAlgebra</a></h2>
+<p>The most recommended way.</p>
+<ul>
+<li><a href="https://github.com/NCAlgebra/NC/blob/master/DOCUMENTATION/MANUAL/Basic.md">Basic Manual</a></li>
+</ul>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>

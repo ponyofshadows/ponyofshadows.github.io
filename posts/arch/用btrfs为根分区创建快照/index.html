@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content=""
+  />
+  
+    
+      <title>用Btrfs为根分区创建快照 | Pony of Shadows</title>
+    
+  
+
+  
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$']]
+      }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+  <link rel="stylesheet" href="/css/reset.css"/>
+  <link rel="stylesheet" href="/css/font.css"/>
+  <link rel="stylesheet" href="/css/smigle.css"/>
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+  <body>
+    <div id="root">
+      <header>
+  <div id="brand">
+    <a class="icon-link" href="http://localhost:1313/">
+      <img
+        class="icon"
+        src="/images/icon.png"
+      />
+    </a>
+    <div class="text">
+      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <h3>Uncertainty is Fascinating.</h3>
+    </div>
+  </div>
+  <nav>
+    
+      
+        
+        <a href="/"><b>Home</b></a>
+      
+         | 
+        <a href="/posts/"><b>Posts</b></a>
+      
+         | 
+        <a href="/tags/"><b>Tags</b></a>
+      
+         | 
+        <a href="/about/"><b>About</b></a>
+      
+    
+  </nav>
+  <hr />
+</header>
+
+      <div id="content">
+        
+  <main>
+    <article>
+      <h1 class="title">用Btrfs为根分区创建快照</h1>
+      
+      <div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-16</time>
+    
+    
+  </strong>
+  <span> • 234 words</span>
+  <span> • 2 minute read</span>
+  
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/arch-install">Arch-Install</a>
+    </div>
+  
+</div>
+
+      <div class="content"><p>得益于Btrfs的CoW特性，它创建快照的开销可以非常小，所以我觉得它非常适合作为根分区的文件系统。</p>
+<h2 id="子卷subwolume">子卷(<a href="https://wiki.archlinux.org/title/Btrfs#Subvolumes">subwolume</a>)</h2>
+<blockquote>
+<p>&ldquo;A Btrfs subvolume is not a block device (and cannot be treated as one) instead, a Btrfs subvolume can be thought of as a POSIX file namespace.&rdquo;</p></blockquote>
+<ol>
+<li>最顶层的子卷</li>
+</ol>
+<ul>
+<li>ID: 5</li>
+<li>无法被删除，无法被替换</li>
+<li>路径: &ldquo;/&rdquo;</li>
+</ul>
+<ol start="2">
+<li>其它子卷</li>
+</ol>
+<ul>
+<li>挂载在顶层子卷的下方</li>
+<li>可以在文件系统中移动路径，但ID不变</li>
+</ul>
+<h2 id="使用子卷">使用子卷</h2>
+<ol>
+<li>创建一个子卷</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>btrfs subvolume create /path/to/subvolume
+</span></span></code></pre></div><p>可以像<code>mkdir</code>一样使用<code>--parents</code>参数
+2. 列出一个路径下的所有子卷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>btrfs subvolume list -p path
+</span></span></code></pre></div><ol start="3">
+<li>删除一个子卷
+btrfs subvolume delete /path/to/subvolume</li>
+</ol>
+<h2 id="分区的储存空间还够吗">分区的储存空间还够吗？</h2>
+<p>一般的系统工具不会给出Btrfs分区的准确用量信息。需要用下面的命令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># as superuser</span>
+</span></span><span style="display:flex;"><span>btrfs filesystem usage /
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># as normaluser</span>
+</span></span><span style="display:flex;"><span>btrfs filesystem df /
+</span></span></code></pre></div><h2 id="使用快照备份和恢复根分区">使用快照备份和恢复根分区</h2>
+<p>参考</p>
+<ul>
+<li><a href="https://css.celestialy.top/p/25dbc0cc9/btrfs-simple-intro/">Btrfs实践式快速入门</a></li>
+<li><a href="https://btrfs.wiki.kernel.org">BTRFS Old Wiki</a></li>
+<li><a href="https://btrfs.readthedocs.io">BTRFS Documentation</a></li>
+</ul>
+<h3 id="如果已经用了顶层子卷作为根分区怎么办">如果已经用了顶层子卷作为根分区怎么办</h3>
+<p>如果你已经把顶层子卷当成了系统根路径，要知道顶层子卷是唯一特殊的，无法通过重命名的方式替换，请通过一下步骤改用次级子卷作为根分区：</p>
+<ol>
+<li>修改配置重新生成GRUB，以及修改@current子卷下的fstab</li>
+</ol>
+<ul>
+<li>在<code>/etc/default/grub</code>中找到<code>GRUB_CMDLINE_LINUX</code>这一行，改为</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rootflags=subvol=/@current&#34;</span>
+</span></span></code></pre></div><ul>
+<li>重新生成GRUB:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><ul>
+<li>修改fstab</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 比如这是原来的根目录挂载</span>
+</span></span><span style="display:flex;"><span>UUID<span style="color:#f92672">=</span>*******	/         	btrfs     	rw,relatime,ssd,discard<span style="color:#f92672">=</span>async,space_cache<span style="color:#f92672">=</span>v2,subvolid<span style="color:#f92672">=</span>5,subvol<span style="color:#f92672">=</span>/	<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 现在改成</span>
+</span></span><span style="display:flex;"><span>UUID<span style="color:#f92672">=</span>*******	/         	btrfs     	rw,relatime,ssd,discard<span style="color:#f92672">=</span>async,space_cache<span style="color:#f92672">=</span>v2,subvolid<span style="color:#f92672">=</span>5,subvol<span style="color:#f92672">=</span>/@current	<span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><ol start="2">
+<li>生成顶层子卷的快照（命名为<code>@current</code>）, 然后重新启动系统</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo btrfs subvolume snapshot / /@current
+</span></span></code></pre></div><p>可以这样列出所有子卷</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo btrfs subvolume list /
+</span></span></code></pre></div><ol start="3">
+<li>最后挂载顶层子卷并删除其中除了<code>@current</code>以外所有内容</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo mount /dev/nvme0n1p3 /mnt
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## 如果挂载的不是顶层子卷，用-o选项，指定subvol的值为快照子卷的路径，或指定subvolid的值为快照子卷的ID</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo chatter -i /mnt/etc/resolv.conf
+</span></span><span style="display:flex;"><span>rm -rf /mnt/<span style="color:#f92672">[</span>a-z<span style="color:#f92672">]</span>* 
+</span></span><span style="display:flex;"><span>ls /mnt
+</span></span></code></pre></div><h3 id="创建快照的脚本">创建快照的脚本</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>system_root_device<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>findmnt -n -o SOURCE /<span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>system_root_device<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>system_root_device%%[*<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>snapshot_date<span style="color:#f92672">=</span><span style="color:#66d9ef">$(</span>date +<span style="color:#e6db74">&#39;%Y-%m-%d_%H:%M:%S&#39;</span><span style="color:#66d9ef">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mount -m <span style="color:#e6db74">&#34;</span>$system_root_device<span style="color:#e6db74">&#34;</span> /mnt/@top_subvol
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>btrfs subvolume snapshot / <span style="color:#e6db74">&#34;/mnt/@top_subvol/@snapshot</span>$snapshot_date<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>snapshots<span style="color:#f92672">=(</span> <span style="color:#66d9ef">$(</span>ls -dr /mnt/@top_subvol/@snapshot*<span style="color:#66d9ef">)</span> <span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>snapshots[@]<span style="color:#e6db74">}</span><span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#f92672">[[</span> <span style="color:#e6db74">${#</span>snapshots[@]<span style="color:#e6db74">}</span> &gt; <span style="color:#ae81ff">2</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">for</span> snapshot in <span style="color:#e6db74">${</span>snapshots[@]:1<span style="color:#e6db74">}</span>; <span style="color:#66d9ef">do</span>
+</span></span><span style="display:flex;"><span>        btrfs subvolume delete <span style="color:#e6db74">&#34;</span>$snapshot<span style="color:#e6db74">&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">done</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>umount /mnt/@top_subvol
+</span></span><span style="display:flex;"><span>rmdir /mnt/@top_subvol
+</span></span></code></pre></div><p>在对根分区执行有风险的操作之前记得执行这个脚本哦</p>
+<h3 id="使用钩子让pacman在更新前调用创建快照的脚本">使用<a href="https://man.archlinux.org/man/alpm-hooks.5">钩子</a>让pacman在更新前调用创建快照的脚本</h3>
+<p>创建文件<code>/etc/pacman.d/hooks/update_snapshot.hook</code>
+内容如下：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#f92672">[</span>Trigger<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Operation <span style="color:#f92672">=</span> Upgrade
+</span></span><span style="display:flex;"><span>Type <span style="color:#f92672">=</span> Package
+</span></span><span style="display:flex;"><span>Target <span style="color:#f92672">=</span> *
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>Action<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>Description <span style="color:#f92672">=</span> Creating Btrfs snapshot of / before upgrade...
+</span></span><span style="display:flex;"><span>When <span style="color:#f92672">=</span> PreTransaction
+</span></span><span style="display:flex;"><span>Exec <span style="color:#f92672">=</span> /home/poshd/all/local/bin/update_snapshot
+</span></span></code></pre></div><h3 id="如果current子卷损坏无法正常启动系统怎么办">如果@current子卷损坏，无法正常启动系统，怎么办？</h3>
+<ul>
+<li>开机一般会自动进入救援模式
+如果不放心，可以像这样确定自己的系统确实支持btrfs文件系统</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>~ <span style="color:#75715e"># lsinitcpio /boot/initramfs-linux.img | grep btrfs</span>
+</span></span><span style="display:flex;"><span>usr/lib/modules/6.9.5-arch1-1/kernel/fs/btrfs/
+</span></span><span style="display:flex;"><span>usr/lib/modules/6.9.5-arch1-1/kernel/fs/btrfs/btrfs.ko.zst
+</span></span><span style="display:flex;"><span>usr/bin/fsck.btrfs
+</span></span><span style="display:flex;"><span>usr/lib/udev/rules.d/64-btrfs.rules
+</span></span></code></pre></div><ul>
+<li>挂载根分区硬盘的顶级子卷</li>
+<li>重命名@current为@abandoned</li>
+<li>重命名最新的快照为@current</li>
+<li>重启进入linux系统，确认恢复到快照，则挂载顶级子卷后用btrfs命令删除@abandoned。</li>
+</ul>
+</div>
+    </article>
+  </main>
+
+      </div>
+      <footer>
+  <hr />
+  
+    <p id="social">
+      Find me around the web:
+      <br />
+      
+        
+        <a href="https://github.com/Ponyofshadows">GitHub</a>
+      
+    </p>
+  
+  <p class="copyright">
+    Copyright © 2025
+    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    This work is licensed under the
+    <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
+  </p>
+  <p class="builtWith">
+    Built with
+    <a href="http://www.gohugo.io/">Hugo</a>,
+    using the theme
+    <a href="https://gitlab.com/ian-s-mcb/smigle-hugo-theme">smigle</a>,
+    which was influenced by the theme
+    <a href="https://github.com/sumnerevans/smol">smol</a>.
+  </p>
+</footer>
+
+    </div>
+  </body>
+</html>
