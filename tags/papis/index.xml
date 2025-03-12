@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Papis on Pony of Shadows</title>
-    <link>http://localhost:1313/tags/papis/</link>
+    <link>https://ponyofshadows.com/tags/papis/</link>
     <description>Recent content in Papis on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 Sep 2024 19:42:46 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/papis/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ponyofshadows.com/tags/papis/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从源项目构建papis</title>
-      <link>http://localhost:1313/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/</link>
+      <link>https://ponyofshadows.com/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/</link>
       <pubDate>Tue, 24 Sep 2024 19:42:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/</guid>
+      <guid>https://ponyofshadows.com/posts/tools/%E4%BB%8E%E6%BA%90%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BApapis/</guid>
       <description>&lt;h3 id=&#34;安装过程&#34;&gt;安装过程&lt;/h3&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;git clone https://github.com/papis/papis.git&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;cd papis&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m venv venv&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source venv/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install hatch&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hatch build&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install dist/*.whl&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pip install --upgrade setuptools&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;如何启动&#34;&gt;如何启动&lt;/h3&gt;&#xA;&lt;p&gt;在没source虚拟环境的情况下，能通过&lt;code&gt;venv/bin/papis&lt;/code&gt;启动papis&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wayland on Pony of Shadows</title>
-    <link>http://localhost:1313/tags/wayland/</link>
+    <link>https://ponyofshadows.com/tags/wayland/</link>
     <description>Recent content in Wayland on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 28 Oct 2024 14:03:16 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ponyofshadows.com/tags/wayland/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Translation Solution on Wayland</title>
-      <link>http://localhost:1313/posts/en/translate-solution/</link>
+      <link>https://ponyofshadows.com/posts/en/translate-solution/</link>
       <pubDate>Mon, 28 Oct 2024 14:03:16 +0800</pubDate>
-      <guid>http://localhost:1313/posts/en/translate-solution/</guid>
+      <guid>https://ponyofshadows.com/posts/en/translate-solution/</guid>
       <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;&#xA;&lt;p&gt;Today I read &lt;a href=&#34;https://www.reddit.com/r/kde/comments/gxpsvo/comment/ft4o077/?utm_source=share&amp;amp;utm_medium=web3x&amp;amp;utm_name=web3xcss&amp;amp;utm_term=1&amp;amp;utm_content=share_button&#34;&gt;an inspiring solution on Reddit&lt;/a&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;@kupiqu&#xA;I will not address your question directly but I will give you a &amp;ldquo;solution&amp;rdquo; that at least for me works even better:&#xA;One possibility [Not Okular specific] is to use a klipper action on top of trans (&lt;a href=&#34;https://github.com/soimort/translate-shell/tree/develop&#34;&gt;https://github.com/soimort/translate-shell/tree/develop&lt;/a&gt;) and notify-send (to display the result as a system notification).&lt;/p&gt;&#xA;&lt;p&gt;This has the advantage that can be triggered anywhere (not only, but) also from Okular, and define a word or translate a sentence to any language (or even display multiple language translations at once). My two actions for this are the following (translation to English/Catalan/Spanish from whatever language your selection is):&lt;/p&gt;</description>
     </item>
     <item>
       <title>waydroid使用技巧汇总</title>
-      <link>http://localhost:1313/posts/arch/waydroid/</link>
+      <link>https://ponyofshadows.com/posts/arch/waydroid/</link>
       <pubDate>Thu, 27 Jun 2024 18:09:46 +0800</pubDate>
-      <guid>http://localhost:1313/posts/arch/waydroid/</guid>
+      <guid>https://ponyofshadows.com/posts/arch/waydroid/</guid>
       <description>&lt;h2 id=&#34;改变手机窗口大小&#34;&gt;改变手机窗口大小&lt;/h2&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 如果是空字符串就是默认大小，可以以数字为参数改变大小&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;waydroid prop set persist.waydroid.width &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;waydroid prop set persist.waydroid.height &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;&amp;#34;&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;app&#34;&gt;app&lt;/h2&gt;&#xA;&lt;p&gt;安装新app&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;waydroid app install /path/to/your-app.apk&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;列出已经安装的app&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;waydroid app list&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;启动app&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;waydroid app launch &amp;lt;package-name&amp;gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>

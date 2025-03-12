@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>QM on Pony of Shadows</title>
-    <link>http://localhost:1313/tags/qm/</link>
+    <link>https://ponyofshadows.com/tags/qm/</link>
     <description>Recent content in QM on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 19 Feb 2025 15:09:17 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/qm/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ponyofshadows.com/tags/qm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>试试运气:QRNG</title>
-      <link>http://localhost:1313/posts/qm/%E8%AF%95%E8%AF%95%E8%BF%90%E6%B0%94/</link>
+      <link>https://ponyofshadows.com/posts/qm/%E8%AF%95%E8%AF%95%E8%BF%90%E6%B0%94/</link>
       <pubDate>Wed, 19 Feb 2025 15:09:17 +0800</pubDate>
-      <guid>http://localhost:1313/posts/qm/%E8%AF%95%E8%AF%95%E8%BF%90%E6%B0%94/</guid>
+      <guid>https://ponyofshadows.com/posts/qm/%E8%AF%95%E8%AF%95%E8%BF%90%E6%B0%94/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://qrandom.io/&#34;&gt;QRNG&lt;/a&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>时间演化算符的形式解</title>
-      <link>http://localhost:1313/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/</link>
+      <link>https://ponyofshadows.com/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/</link>
       <pubDate>Wed, 25 Sep 2024 10:04:34 +0800</pubDate>
-      <guid>http://localhost:1313/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/</guid>
+      <guid>https://ponyofshadows.com/posts/qm/%E6%97%B6%E9%97%B4%E6%BC%94%E5%8C%96%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BD%A2%E5%BC%8F%E8%A7%A3/</guid>
       <description>&lt;p&gt;定义演化算符$U(t)$满足：&#xA;$$&#xA;|\psi(t)\rangle=U(t,t_0)|\psi(t_0)\rangle&#xA;$$&#xA;容易得到下面的结论：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;$U(t)$是幺正算符。&lt;/li&gt;&#xA;&lt;li&gt;当$H$不显含时间时，$U(t,t_0)=\mathrm{e}^{-\frac i\hbar (t-t_0)}$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;下面我们看$H(t)$显含时间的情况。&lt;/p&gt;&#xA;&lt;p&gt;将$U(t)$的定义式代入薛定谔方程，可得：&#xA;$$&#xA;i\hbar\frac\partial{\partial t}U(t,t_0)&#xA;= HU(t,t_0)&#xA;$$&#xA;上式两边对$t$积分，得：&lt;/p&gt;&#xA;&lt;div class=&#34;mathjax&#34;&gt;&#xA;$$&#xA;U(t,t_0)\big|_{t_0}^t &#xA;=&#xA;-\frac i\hbar \int_{t_o}^{t}H(t_1)U(t_1,t_0)\mathrm{d}t_1&#xA;$$ $$&#xA;U(t,t_0) &#xA;= \hat{I}&#xA;-\frac i\hbar \int_{t_o}^{t}H(t_1)U(t_1,t_0)\mathrm{d}t_1&#xA;$$&#xA;&lt;/div&gt;&#xA;&lt;p&gt;$t$可以取一系列值$t\ge t_1\ge t_2 \ge \cdots \ge t_n\ge t_0$, 于是可以按上式从$U(t,t_0)\Leftarrow U(t_1,t_0)$开始不停地迭代到$U(t,t_0)\Leftarrow U(t_0,t_0)=\hat{I}$，得到形式上的解。&lt;/p&gt;&#xA;&lt;p&gt;下面我们不用纸笔，思考一下这个公式的迭代过程：&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;积分中的U会在每次迭代被单位I+含U的积分式替换&lt;/li&gt;&#xA;&lt;li&gt;每次迭代，替换出的I会让全式多出一个含H不含U的项&lt;/li&gt;&#xA;&lt;li&gt;每次迭代，含U的积分式会被多套一个积分号。&lt;/li&gt;&#xA;&lt;li&gt;随着n趋向无穷大，$U(t_n,t_0)\rightarrow U(t_0,t_0)=\hat{I}$&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;那么，我们就能写出迭代的最终结果：&lt;/p&gt;&#xA;&lt;div class=&#34;mathjax&#34;&gt;$$&#xA;U(t,t_0)=\hat{I}+&#xA;\sum_{n=1}^{\infty}&#xA;\left(-\frac i\hbar\right)^n&#xA;\int_{t_0}^{t}\mathrm{d}t_1&#xA;\int_{t_0}^{t_1}\mathrm{d}t_2&#xA;\cdots&#xA;\int_{t_0}^{t_{n-1}}\mathrm{d}t_n&#xA;H(t_1)H(t_2)\cdots H(t_n)&#xA;$$&lt;/div&gt;&#xA;&lt;p&gt;为了把上面的式子写得更整齐，首先想把积分上限都变成t，引入阶跃函数&lt;/p&gt;&#xA;&lt;div class=&#34;mathjax&#34;&gt;$$&#xA;\theta(t-t&#39;)=&#xA;\begin{cases}&#xA;    1, \quad t \ge t&#39; \\&#xA;    0, \quad t &lt; t&#39;&#xA;\end{cases}&#xA;$$&lt;/div&gt;&#xA;&lt;p&gt;从而有&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Website on Pony of Shadows</title>
-    <link>http://localhost:1313/tags/website/</link>
+    <link>https://ponyofshadows.com/tags/website/</link>
     <description>Recent content in Website on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 28 Dec 2023 19:41:04 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/website/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ponyofshadows.com/tags/website/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugo</title>
-      <link>http://localhost:1313/posts/tools/hugo/</link>
+      <link>https://ponyofshadows.com/posts/tools/hugo/</link>
       <pubDate>Thu, 28 Dec 2023 19:41:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/tools/hugo/</guid>
+      <guid>https://ponyofshadows.com/posts/tools/hugo/</guid>
       <description>&lt;h3 id=&#34;main-paths&#34;&gt;main paths&lt;/h3&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;&lt;code&gt;mywebsite/archetype&lt;/code&gt;&#xA;documents under this path act as templates to write articles and &lt;strong&gt;columns of the website&lt;/strong&gt;. By default, hugo only displays articles under &amp;ldquo;mywebsite/content/posts&amp;rdquo;&#xA;To costum the display of columns, config like this:&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-TOML&#34; data-lang=&#34;TOML&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;params&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;mainSections&lt;/span&gt; = [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;posts&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;blog&amp;#34;&lt;/span&gt;, &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;news&amp;#34;&lt;/span&gt;]&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;mywebsite/content&lt;/code&gt;&#xA;This path is where all original articles and resources are organized.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;li&gt;&#xA;&lt;p&gt;&lt;code&gt;mywebsite/public&lt;/code&gt;&#xA;Hugo builds website in this path. Push it to my github repository &lt;code&gt;mywebsite.github/io&lt;/code&gt;.&lt;/p&gt;&#xA;&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;h3 id=&#34;main-commands&#34;&gt;main commands&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;hugo new archetype/new_content.md&lt;/code&gt; to create new article&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;hugo&lt;/code&gt; to build&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;hugo server&lt;/code&gt; to preview&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt;git add -all&lt;/code&gt;, &lt;code&gt;git commit -a -m &amp;quot;...&amp;quot;&lt;/code&gt;&amp;amp; &lt;code&gt;git push&lt;/code&gt; to backup and publish contents&lt;/li&gt;&#xA;&lt;li&gt;&lt;code&gt; hugo --cleanDestinationDir&lt;/code&gt; to clear Cache files&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;themes&#34;&gt;themes&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;visit &lt;a href=&#34;https://themes.gohugo.io/&#34;&gt;this website&lt;/a&gt; to select a theme. I prefer themes characterized by &lt;a href=&#34;https://themes.gohugo.io/tags/light/&#34;&gt;light&lt;/a&gt;,&lt;a href=&#34;https://themes.gohugo.io/tags/light/&#34;&gt;minimal&lt;/a&gt; and &lt;a href=&#34;https://themes.gohugo.io/tags/responsive/&#34;&gt;responsive&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;Usually use &lt;code&gt;git clone --depth 1&lt;/code&gt; to make a clone of frontmost layer. But for themes, we regard these as submodules of hugo project. See the &lt;a href=&#34;https://themes.gohugo.io/themes/smigle-hugo-theme/&#34;&gt;tutor&lt;/a&gt; to learn more.&lt;/li&gt;&#xA;&lt;li&gt;After change your theme, the main config file must be modeified.&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

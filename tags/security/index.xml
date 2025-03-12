@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Pony of Shadows</title>
-    <link>http://localhost:1313/tags/security/</link>
+    <link>https://ponyofshadows.com/tags/security/</link>
     <description>Recent content in Security on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 16 Oct 2024 14:25:31 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ponyofshadows.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GnuPG加密文件</title>
-      <link>http://localhost:1313/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</link>
+      <link>https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</link>
       <pubDate>Wed, 16 Oct 2024 14:25:31 +0800</pubDate>
-      <guid>http://localhost:1313/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
+      <guid>https://ponyofshadows.com/posts/linux/gnupg%E5%8A%A0%E5%AF%86%E6%96%87%E4%BB%B6/</guid>
       <description>&lt;p&gt;除了使用公钥进行非对称加密，&lt;code&gt;gng&lt;/code&gt;还提供了用密码对称加密的功能&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;加密&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -c /path/to/file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;这会提示你输入密码，产生一个&lt;code&gt;.gpg&lt;/code&gt;后缀的加密文件&lt;/p&gt;&#xA;&lt;ol start=&#34;2&#34;&gt;&#xA;&lt;li&gt;解密&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -d /path/to/file.gpg&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;如果与上次输密码间隔时间足够久，这也会提示你输入密码&lt;/p&gt;&#xA;&lt;ol start=&#34;3&#34;&gt;&#xA;&lt;li&gt;解密到文件&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;gpg -d /path/to/file.gpg &amp;gt; /path/to/file&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
   </channel>

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
@@ -42,14 +42,14 @@
     <div id="root">
       <header>
   <div id="brand">
-    <a class="icon-link" href="http://localhost:1313/">
+    <a class="icon-link" href="https://ponyofshadows.com/">
       <img
         class="icon"
         src="/images/icon.png"
       />
     </a>
     <div class="text">
-      <a href="http://localhost:1313/"><h1>Pony of Shadows</h1></a>
+      <a href="https://ponyofshadows.com/"><h1>Pony of Shadows</h1></a>
       <h3>Uncertainty is Fascinating.</h3>
     </div>
   </div>
@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 195 words</span>
-  <span> • 1 minute read</span>
+  <span> • 385 words</span>
+  <span> • 2 minute read</span>
   
   
     <div>
@@ -99,25 +99,25 @@
 </div>
 
       <div class="content"><p><a href="https://wiki.archlinux.org/title/Installation_guide">Official Installation guide</a></p>
-<h1 id="pre-installation">Pre-installation</h1>
-<h2 id="acquire-an-installation-image">Acquire an installation image</h2>
+<h2 id="pre-installation">Pre-installation</h2>
+<h3 id="acquire-an-installation-image">Acquire an installation image</h3>
 <ul>
 <li><a href="https://archlinux.org/download/">Download</a></li>
 <li><a href="https://mirrors.ustc.edu.cn/archlinux/iso/latest/">中科大镜像源Archlinux ISO</a></li>
 </ul>
-<h2 id="verify-signature">Verify signature</h2>
+<h3 id="verify-signature">Verify signature</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>pacman-key -v archlinux-version-x86_64.iso.sig
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># or</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## or</span>
 </span></span><span style="display:flex;"><span>gpg --keyserver-options auto-key-retrieve --verify archlinux-version-x86_64.iso.sig
 </span></span></code></pre></div><p>If the output is <code>Good signature</code>, it is unchanged</p>
-<h2 id="prepare-an-installation-medium">Prepare an installation medium</h2>
+<h3 id="prepare-an-installation-medium">Prepare an installation medium</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>dd bs<span style="color:#f92672">=</span>4M <span style="color:#66d9ef">if</span><span style="color:#f92672">=</span>path/to/archlinux-version-x86_64.iso of<span style="color:#f92672">=</span>/dev/disk/by-id/usb-My_flash_drive conv<span style="color:#f92672">=</span>fsync oflag<span style="color:#f92672">=</span>direct status<span style="color:#f92672">=</span>progress
-</span></span></code></pre></div><h2 id="boot-the-live-environment">Boot the live environment</h2>
+</span></span></code></pre></div><h3 id="boot-the-live-environment">Boot the live environment</h3>
 <p>You need to <a href="https://wiki.archlinux.org/title/Unified_Extensible_Firmware_Interface/Secure_Boot#Disabling_Secure_Boot">disable Secure Boot</a> to boot the installation medium.</p>
-<h2 id="modify-the-mirrorlist">modify the mirrorlist</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Stop the automatic update of the mirror list</span>
+<h3 id="modify-the-mirrorlist">modify the mirrorlist</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Stop the automatic update of the mirror list</span>
 </span></span><span style="display:flex;"><span>systemctl stop reflector.service
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># edit it yourself</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## edit it yourself</span>
 </span></span><span style="display:flex;"><span>vim /etc/pacman.d/mirrorlist
 </span></span></code></pre></div><p>These should be placed at the beginning of the list:</p>
 <blockquote>
@@ -125,17 +125,17 @@
 Server = <a href="https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch">https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch</a>
 Server = <a href="http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a>
 Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch</a></p></blockquote>
-<h2 id="connect-to-the-internetwifi">Connect to the internet(WiFi)</h2>
+<h3 id="connect-to-the-internetwifi">Connect to the internet(WiFi)</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># list interfaces</span>
 </span></span><span style="display:flex;"><span>ip link
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># wpa_supplicant -- https://wiki.archlinux.org/title/Wpa_supplicant</span>
 </span></span><span style="display:flex;"><span>wpa_supplicant -B -i interface -c &lt;<span style="color:#f92672">(</span>wpa_passphrase MYSSID passphrase<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># or iwd -- https://wiki.archlinux.org/title/Iwd</span>
 </span></span><span style="display:flex;"><span>iwctl
-</span></span></code></pre></div><h2 id="update-the-system-clock">Update the system clock</h2>
+</span></span></code></pre></div><h3 id="update-the-system-clock">Update the system clock</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true
 </span></span><span style="display:flex;"><span>timedatectl
-</span></span></code></pre></div><h2 id="partition-the-disks--format-the-partitions">Partition the disks &amp; Format the partitions</h2>
+</span></span></code></pre></div><h3 id="partition-the-disks--format-the-partitions">Partition the disks &amp; Format the partitions</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk -l <span style="color:#75715e"># or lsblk</span>
 </span></span><span style="display:flex;"><span>fdisk /dev/partition <span style="color:#75715e"># `m` for help</span>
 </span></span><span style="display:flex;"><span>
@@ -148,9 +148,66 @@ Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://
 </span></span><span style="display:flex;"><span>- <span style="color:#f92672">[</span>all about swap<span style="color:#f92672">](</span>https://www.linux.com/news/all-about-linux-swap-space/<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>- <span style="color:#f92672">[</span>note about btrfs<span style="color:#f92672">](</span>https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/<span style="color:#f92672">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">## Mount the file systems</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### Mount the file systems</span>
 </span></span><span style="display:flex;"><span><span style="color:#e6db74">```</span>bash
-</span></span></code></pre></div></div>
+</span></span><span style="display:flex;"><span>mount -o subvol<span style="color:#f92672">=</span>@current /dev/partition_root /mnt
+</span></span><span style="display:flex;"><span>mount -m /dev/partition_efi /mnt/@current/boot
+</span></span><span style="display:flex;"><span>mount -m /dev/partition_home /mnt/@current/home
+</span></span></code></pre></div><h3 id="genfstab">genfstab</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mkdir /mnt/etc
+</span></span><span style="display:flex;"><span>genfstab -U /mnt &gt; /mnt/etc/fstab
+</span></span><span style="display:flex;"><span>lsblk -o NAME,FSTYPE,UUID | grep swap &gt;&gt; /mnt/etc/fstab
+</span></span><span style="display:flex;"><span>vim /mnt/etc/fstab <span style="color:#75715e">#edit swap info</span>
+</span></span></code></pre></div><p>swap info:</p>
+<pre tabindex="0"><code># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;
+UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
+</code></pre><h2 id="install-essential-packages">Install essential packages</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># basic packages</span>
+</span></span><span style="display:flex;"><span>pacstrap /mnt base base-devel linux linux-headers linux-firmware
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># microcode</span>
+</span></span><span style="display:flex;"><span>pacstrap /mnt amd-ucode     <span style="color:#75715e">#AMD</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#pacstrap /mnt intel-ucode   #Intel</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># boot</span>
+</span></span><span style="display:flex;"><span>pacstrap /mnt grub efibootmgr
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># netwotk,sync,editor</span>
+</span></span><span style="display:flex;"><span>pascstrap /mnt/@current wpa_suppliant dhcpcd rsync git neovim
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># filesystem utils</span>
+</span></span><span style="display:flex;"><span>pascstrap /mnt btrfs-progs xfsprogs
+</span></span></code></pre></div><h2 id="configure-the-system">Configure the system</h2>
+<h3 id="chroot">Chroot</h3>
+<pre tabindex="0"><code>arch-chroot /mnt
+</code></pre><h3 id="boot-loader">boot loader</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-install --target<span style="color:#f92672">=</span>x86_64-efi --efi-directory<span style="color:#f92672">=</span>/boot --bootloader-id<span style="color:#f92672">=</span>GRUB
+</span></span></code></pre></div><p>edit <code>/etc/default/grub</code>:</p>
+<pre tabindex="0"><code>GRUB_CMDLINE_LINUX=&#34;rootflags=subvol=/@current&#34;
+</code></pre><p>mkconfig</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg
+</span></span></code></pre></div><h3 id="hostname--users">hostname &amp; users</h3>
+<p>hostname</p>
+<ul>
+<li>open the empty file <code>/etc/hostname</code>, input your hostname</li>
+<li>open <code>/etc/hosts</code> and add below:</li>
+</ul>
+<pre tabindex="0"><code>127.0.0.1   localhost
+::1         localhost
+127.0.1.1   my_hostname
+</code></pre><p>users</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>passwd root
+</span></span><span style="display:flex;"><span>useradd -m -G wheel -s /bin/bash wheel_user_name
+</span></span><span style="display:flex;"><span>passwd wheel_user_name
+</span></span></code></pre></div><p>sudo</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>EDITOR<span style="color:#f92672">=</span>vim visudo
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">## Uncomment to allow members of group wheel to execute any command</span>
+</span></span><span style="display:flex;"><span>%wheel ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> ALL
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## Same thing without a password</span>
+</span></span><span style="display:flex;"><span>%wheel ALL<span style="color:#f92672">=(</span>ALL:ALL<span style="color:#f92672">)</span> NOPASSWD: ALL
+</span></span></code></pre></div><h2 id="reboot">reboot</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>exit
+</span></span><span style="display:flex;"><span>umount -R  /mnt
+</span></span><span style="display:flex;"><span>reboot
+</span></span></code></pre></div><p>Unplug your flash drive and reboot</p>
+</div>
     </article>
   </main>
 
@@ -169,7 +226,7 @@ Server = <a href="https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch">https://
   
   <p class="copyright">
     Copyright © 2025
-    <a href="http://localhost:1313/"><strong>ponyofshadows</strong></a>.
+    <a href="https://ponyofshadows.com/"><strong>ponyofshadows</strong></a>.
     This work is licensed under the
     <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.
   </p>
