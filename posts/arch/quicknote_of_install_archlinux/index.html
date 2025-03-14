@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 692 words</span>
+  <span> • 744 words</span>
   <span> • 4 minute read</span>
   
   
@@ -332,8 +332,22 @@ pip npm jupyter-notebook rust gdb git-lfs
 texlab texlive texlive-langcjk texlive-langgreek
 # message
 linuxqq-nt-bwrap wechat-universal-bwrap
-</code></pre><h2 id="dotfile-list">dotfile list</h2>
-</div>
+</code></pre><h2 id="other-configuration">other configuration</h2>
+<ul>
+<li><a href="https://github.com/ponyofshadows/_backup">configurconfigurationn_file list</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># battery-warning on hyprland</span>
+</span></span><span style="display:flex;"><span>sudo systemctl --user enable --now battery-warning.timer 
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># git config</span>
+</span></span><span style="display:flex;"><span>git config --global user.name <span style="color:#e6db74">&#34;your name&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global user.email <span style="color:#e6db74">&#34;your email&#34;</span>
+</span></span><span style="display:flex;"><span>git lfs install
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## github ~/.ssh/id_rsa.pub</span>
+</span></span><span style="display:flex;"><span>ssh-keygen -t rsa -C <span style="color:#e6db74">&#34;youremail@example.com&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># npm mirrror</span>
+</span></span><span style="display:flex;"><span>npm config set registry https://registry.npmmirror.com
+</span></span><span style="display:flex;"><span>sudo npm config set registry https://registry.npmmirror.com
+</span></span></code></pre></div></div>
     </article>
   </main>
 
