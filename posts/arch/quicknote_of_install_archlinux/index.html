@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 754 words</span>
+  <span> • 763 words</span>
   <span> • 4 minute read</span>
   
   
@@ -137,6 +137,12 @@ Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>timedatectl set-ntp true
 </span></span><span style="display:flex;"><span>timedatectl
 </span></span></code></pre></div><h3 id="partition-the-disks--format-the-partitions">Partition the disks &amp; Format the partitions</h3>
+<ul>
+<li><code>/boot</code> 1G</li>
+<li><code>swap</code> &gt;= computer memory</li>
+<li><code>/</code> 100G-200G</li>
+<li><code>/home</code></li>
+</ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fdisk -l <span style="color:#75715e"># or lsblk</span>
 </span></span><span style="display:flex;"><span>fdisk /dev/partition <span style="color:#75715e"># `m` for help</span>
 </span></span><span style="display:flex;"><span>
