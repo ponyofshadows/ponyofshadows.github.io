@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 746 words</span>
+  <span> • 745 words</span>
   <span> • 4 minute read</span>
   
   
@@ -149,7 +149,7 @@ Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 </span></span><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/efi_system_partition <span style="color:#75715e"># ESP</span>
 </span></span><span style="display:flex;"><span>mkswap /dev/hdb1 <span style="color:#75715e"># SWAP</span>
 </span></span><span style="display:flex;"><span>mkfs.btrfs -L mylabel /dev/partition_btrfs_root
-</span></span><span style="display:flex;"><span>sudo btrfs subvolume create /dev/partition_btrfs_root /@current <span style="color:#75715e"># /</span>
+</span></span><span style="display:flex;"><span>btrfs subvolume create /dev/partition_btrfs_root /@current <span style="color:#75715e"># /</span>
 </span></span><span style="display:flex;"><span>mkfs.xfs partition_home <span style="color:#75715e"># /home</span>
 </span></span></code></pre></div><ul>
 <li><a href="https://www.linux.com/news/all-about-linux-swap-space/">all about swap</a></li>
