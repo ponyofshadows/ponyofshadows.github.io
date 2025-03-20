@@ -80,6 +80,60 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/arch/waydroid/">
+    <h1 class="title">waydroid使用技巧汇总</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-06-27</time>
+    
+    
+  </strong>
+ <span> • 28 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/wayland">wayland</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="改变手机窗口大小">改变手机窗口大小</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 如果是空字符串就是默认大小，可以以数字为参数改变大小</span>
+</span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.width <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>waydroid prop set persist.waydroid.height <span style="color:#e6db74">&#34;&#34;</span>
+</span></span></code></pre></div><h2 id="app">app</h2>
+<p>安装 …</p></p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/waydroid/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/arch/%E8%AE%B0%E5%BD%95%E5%AE%89%E8%A3%85texlive%E5%92%8Cmathematica/">
     <h1 class="title">记录安装TeXLive和MATHEMATICA</h1>
     
@@ -556,61 +610,6 @@
 </code></pre><p>即：（如果是将要发生的事件前面加.）+2位年份+4位日期+2位模糊时间代号+事件标题（根据事件的语言环境选用中英文）+(如果包含一些事件属性，比如有 …</p></p>
     
       <a href="https://ponyofshadows.com/posts/linux/%E6%95%B0%E6%8D%AE%E5%AD%98%E6%A1%A301%E6%89%8B%E5%8A%A8%E5%AD%98%E6%A1%A3%E8%A7%84%E8%8C%83/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/">
-    <h1 class="title">fix pdf-export-error in wps</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-03-16</time>
-    
-    
-  </strong>
- <span> • 12 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/bugs">bugs</a>, 
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><p>WPS依赖libtiff.s.5, 而系统里的是libtiff.so.6。这样就行了。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /usr/lib
-</span></span><span style="display:flex;"><span>ln -s libtiff.so libtiff.so.5
-</span></span></code></pre></div><h3 id="reference">Reference</h3>
-<p><a href="https://bbs.wps.cn/topic/7777">WPS官方社区-Linux环境下不能输出PDF </a>
-<a href="https://wiki.archlinuxcn.org/wiki/WPS_Office">ArchWiki WPS-Office</a></p>
-</p>
-    
-      <a href="https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/">Read more...</a>
     
   </div>
 </article>

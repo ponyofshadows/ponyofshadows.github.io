@@ -80,6 +80,61 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/">
+    <h1 class="title">fix pdf-export-error in wps</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-03-16</time>
+    
+    
+  </strong>
+ <span> • 12 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/bugs">bugs</a>, 
+        <a href="/tags/tools">tools</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><p>WPS依赖libtiff.s.5, 而系统里的是libtiff.so.6。这样就行了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd /usr/lib
+</span></span><span style="display:flex;"><span>ln -s libtiff.so libtiff.so.5
+</span></span></code></pre></div><h3 id="reference">Reference</h3>
+<p><a href="https://bbs.wps.cn/topic/7777">WPS官方社区-Linux环境下不能输出PDF </a>
+<a href="https://wiki.archlinuxcn.org/wiki/WPS_Office">ArchWiki WPS-Office</a></p>
+</p>
+    
+      <a href="https://ponyofshadows.com/posts/bugs/fix_pdf-export-error_in_wps/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/linux/avoid_running_out_of_system_space/">
     <h1 class="title">Avoid Running out of System Space</h1>
     
@@ -585,55 +640,6 @@
 <h3 id="how-to-track-large-files-that-have-been-added-to-the-repository">How to track large files that have been added to the …</h3></p>
     
       <a href="https://ponyofshadows.com/posts/tools/git-lfs/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/papis/">
-    <h1 class="title">papis</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-11</time>
-    
-    
-  </strong>
- <span> • 49 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><h3 id="example-add-a-paper-to-the-default-library">Example: add a paper to the default library</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>papis add ~/tmp/Downloads/2103.08123.pdf --from doi https://doi.org/10.1103/PhysRevLett.128.040403 …</span></span></code></pre></div></p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/papis/">Read more...</a>
     
   </div>
 </article>
