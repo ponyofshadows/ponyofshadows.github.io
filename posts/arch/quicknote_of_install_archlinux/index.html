@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 763 words</span>
+  <span> • 746 words</span>
   <span> • 4 minute read</span>
   
   
@@ -263,29 +263,23 @@ GRUB_CMDLINE_LINUX=&#34;rootflags=subvol=/@current&#34;
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>locale-gen
 </span></span></code></pre></div><h3 id="chinese-fonts">Chinese fonts</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S wqy-microhei noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono ttf-noto-sans-mono-cjk-vf
 </span></span></code></pre></div><p>prevent fallback:
-create <code>/etc/fonts/conf.d/64-language-selector-prefer.conf</code>:</p>
+create <code>/etc/fonts/local.conf</code>:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34;?&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">&lt;!DOCTYPE fontconfig SYSTEM &#34;fonts.dtd&#34;&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;fontconfig&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;alias&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;family&gt;</span>sans-serif<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;prefer&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>WenQuanYi Micro Hei<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>Noto Sans CJK TC<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>Noto Sans CJK JP<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/prefer&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/alias&gt;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;alias&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;family&gt;</span>monospace<span style="color:#f92672">&lt;/family&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;prefer&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>WenQuanYi Micro Hei Mono<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>Noto Sans Mono CJK TC<span style="color:#f92672">&lt;/family&gt;</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>Noto Sans Mono CJK JP<span style="color:#f92672">&lt;/family&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>JetBrains Mono<span style="color:#f92672">&lt;/family&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;family&gt;</span>Noto Sans Mono CJK SC<span style="color:#f92672">&lt;/family&gt;</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/prefer&gt;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/alias&gt;</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/fontconfig&gt;</span>
+</span></span></code></pre></div><p>run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fc-cache -fv
+</span></span><span style="display:flex;"><span>fc-match monospace
 </span></span></code></pre></div><h3 id="package-managing">package managing</h3>
 <ol>
 <li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/">introduce to archlinuxcn</a></li>
