@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 745 words</span>
+  <span> • 749 words</span>
   <span> • 4 minute read</span>
   
   
@@ -149,14 +149,16 @@ Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 </span></span><span style="display:flex;"><span>mkfs.fat -F <span style="color:#ae81ff">32</span> /dev/efi_system_partition <span style="color:#75715e"># ESP</span>
 </span></span><span style="display:flex;"><span>mkswap /dev/hdb1 <span style="color:#75715e"># SWAP</span>
 </span></span><span style="display:flex;"><span>mkfs.btrfs -L mylabel /dev/partition_btrfs_root
-</span></span><span style="display:flex;"><span>btrfs subvolume create /dev/partition_btrfs_root /@current <span style="color:#75715e"># /</span>
 </span></span><span style="display:flex;"><span>mkfs.xfs partition_home <span style="color:#75715e"># /home</span>
 </span></span></code></pre></div><ul>
 <li><a href="https://www.linux.com/news/all-about-linux-swap-space/">all about swap</a></li>
 <li><a href="https://ponyofshadows.com/posts/arch/%E7%94%A8btrfs%E4%B8%BA%E6%A0%B9%E5%88%86%E5%8C%BA%E5%88%9B%E5%BB%BA%E5%BF%AB%E7%85%A7/">note about btrfs</a></li>
 </ul>
 <h3 id="mount-the-file-systems">Mount the file systems</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount -o subvol<span style="color:#f92672">=</span>@current /dev/partition_root /mnt
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>mount /dev/partition_btrfs_root /mnt
+</span></span><span style="display:flex;"><span>btrfs subvolume create /mnt/@current <span style="color:#75715e"># /</span>
+</span></span><span style="display:flex;"><span>umount /mnt
+</span></span><span style="display:flex;"><span>mount -o subvol<span style="color:#f92672">=</span>@current /dev/partition_root /mnt
 </span></span><span style="display:flex;"><span>mount -m /dev/partition_efi /mnt/@current/boot
 </span></span><span style="display:flex;"><span>mount -m /dev/partition_home /mnt/@current/home
 </span></span></code></pre></div><h3 id="genfstab">genfstab</h3>
