@@ -264,6 +264,20 @@ GRUB_CMDLINE_LINUX=&#34;rootflags=subvol=/@current&#34;
 <li>then, run</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>locale-gen
+</span></span></code></pre></div><h3 id="package-managing">package managing</h3>
+<ol>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/">introduce to archlinuxcn</a></li>
+</ol>
+<p>open <code>/etc/pacman.conf</code> and append:</p>
+<pre tabindex="0"><code>[archlinuxcn]
+Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
+</code></pre><p>trust GPG key of farseerfc and install the keyring:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman-key --lsign-key <span style="color:#e6db74">&#34;farseerfc@archlinux.org&#34;</span>
+</span></span><span style="display:flex;"><span>sudo pacman -Sy archlinuxcn-keyring
+</span></span></code></pre></div><ol start="2">
+<li>aur</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S paru
 </span></span></code></pre></div><h3 id="chinese-fonts">Chinese fonts</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S noto-fonts-cjk noto-fonts-emoji noto-fonts-extra ttf-jetbrains-mono ttf-noto-sans-mono-cjk-vf
 </span></span></code></pre></div><p>prevent fallback:
@@ -282,20 +296,6 @@ create <code>/etc/fonts/local.conf</code>:</p>
 </span></span></code></pre></div><p>run:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>fc-cache -fv
 </span></span><span style="display:flex;"><span>fc-match monospace
-</span></span></code></pre></div><h3 id="package-managing">package managing</h3>
-<ol>
-<li><a href="https://mirrors.tuna.tsinghua.edu.cn/help/archlinuxcn/">introduce to archlinuxcn</a></li>
-</ol>
-<p>open <code>/etc/pacman.conf</code> and append:</p>
-<pre tabindex="0"><code>[archlinuxcn]
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch
-</code></pre><p>trust GPG key of farseerfc and install the keyring:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman-key --lsign-key <span style="color:#e6db74">&#34;farseerfc@archlinux.org&#34;</span>
-</span></span><span style="display:flex;"><span>sudo pacman -Sy archlinuxcn-keyring
-</span></span></code></pre></div><ol start="2">
-<li>aur</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S paru
 </span></span></code></pre></div><h2 id="package-list">package list</h2>
 <pre tabindex="0"><code># shell
 bash-completion fzf powerline powerline-fonts
