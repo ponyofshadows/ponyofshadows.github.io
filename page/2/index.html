@@ -80,6 +80,62 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/">
+    <h1 class="title">手动切换CPU频率模式，让系统睡眠/休眠</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-11-10</time>
+    
+    
+  </strong>
+ <span> • 32 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>, 
+        <a href="/tags/cpu">CPU</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h2 id="切换cpu频率模式">切换CPU频率模式</h2>
+<p>这个一般没什么用，系统会自动切换的
+需要用到的包：<code>cpupower</code></p>
+<p>切换到性能模式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g performance
+</span></span></code></pre></div><p>切换到省电模式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g powersave
+</span></span></code></pre></div><p>查看当前 …</p></p>
+    
+      <a href="https://ponyofshadows.com/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/phys/dft-qe%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/">
     <h1 class="title">DFT-QE折腾记录</h1>
     
@@ -574,58 +630,6 @@ $$
 <li><code>okular …</code></li></ul></p>
     
       <a href="https://ponyofshadows.com/posts/research/%E5%AF%B9%E6%96%87%E7%8C%AE%E7%AE%A1%E7%90%86%E6%96%B9%E6%B3%95%E7%9A%84%E6%8E%A2%E8%AE%A8/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/arch/steam/">
-    <h1 class="title">steam的一些小问题的解决办法</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-07-02</time>
-    
-    
-  </strong>
- <span> • 17 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><ol>
-<li>强制关机导致proton缓存损坏
-steam的输出提示类似下面的话</li>
-</ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>wine: <span style="color:#e6db74">&#39;/home/poshd/.local/share/Steam/steamapps/compatdata/1245620/pfx&#39;</span> is a 32-bit installation, it …</span></span></code></pre></div></p>
-    
-      <a href="https://ponyofshadows.com/posts/arch/steam/">Read more...</a>
     
   </div>
 </article>

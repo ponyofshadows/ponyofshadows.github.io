@@ -80,6 +80,64 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/arch/thinkbook%E5%AE%89%E8%A3%85%E4%BA%86tlp%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2cpu%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B9%E6%A1%88%E6%8E%A2%E7%A9%B6/">
+    <h1 class="title">Thinkbook（AMD,安装了tlp）临时切换CPU模式的方案探究</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2025-03-31</time>
+    
+    
+  </strong>
+ <span> • 45 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="输出当前电脑cpu调控信息">输出当前电脑CPU调控信息</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>tlp-stat -p
+</span></span></code></pre></div><h3 id="一种可用的临时手动修改方式">一种可用的临时手动修改方式</h3>
+<ol start="0">
+<li>查看当前CPU调控器（这个的配置应该最主要）</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
+</span></span></code></pre></div><ol>
+<li>变到性能模式</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>echo performance | …</span></span></code></pre></div></p>
+    
+      <a href="https://ponyofshadows.com/posts/arch/thinkbook%E5%AE%89%E8%A3%85%E4%BA%86tlp%E4%B8%B4%E6%97%B6%E5%88%87%E6%8D%A2cpu%E6%A8%A1%E5%BC%8F%E7%9A%84%E6%96%B9%E6%A1%88%E6%8E%A2%E7%A9%B6/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/latex/vimtex/">
     <h1 class="title">note on vimtex</h1>
     
@@ -575,62 +633,6 @@ files by default will be recognized as the filetype <code>plaintex …</code></p
 </code></pre><p>还可识别多个符 …</p></p>
     
       <a href="https://ponyofshadows.com/posts/phys/%E5%9C%A8mathematica%E4%B8%AD%E8%BF%9B%E8%A1%8C%E7%AE%97%E7%AC%A6%E8%BF%90%E7%AE%97/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/">
-    <h1 class="title">手动切换CPU频率模式，让系统睡眠/休眠</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-11-10</time>
-    
-    
-  </strong>
- <span> • 32 words</span>
- <span> • 1 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/linux">linux</a>, 
-        <a href="/tags/cpu">CPU</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><h2 id="切换cpu频率模式">切换CPU频率模式</h2>
-<p>这个一般没什么用，系统会自动切换的
-需要用到的包：<code>cpupower</code></p>
-<p>切换到性能模式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g performance
-</span></span></code></pre></div><p>切换到省电模式：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo cpupower frequency-set -g powersave
-</span></span></code></pre></div><p>查看当前 …</p></p>
-    
-      <a href="https://ponyofshadows.com/posts/linux/%E6%89%8B%E5%8A%A8%E5%88%87%E6%8D%A2cpu%E9%A2%91%E7%8E%87%E6%A8%A1%E5%BC%8F/">Read more...</a>
     
   </div>
 </article>
