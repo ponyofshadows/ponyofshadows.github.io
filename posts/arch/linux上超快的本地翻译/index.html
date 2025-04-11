@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 4 words</span>
-  <span> • 1 minute read</span>
+  <span> • 255 words</span>
+  <span> • 2 minute read</span>
   
   
     <div>
@@ -102,9 +102,88 @@
 </div>
 
       <div class="content"><h3 id="安装docker">安装docker</h3>
-<h3 id="生成libretranslate的容器">生成libretranslate的容器</h3>
+<ol>
+<li>在Archlinux上安装</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S docker
+</span></span></code></pre></div><ol start="2">
+<li>如果您所在的机构需要配置代理，创建并编辑文件<code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>：</li>
+</ol>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">[Service]
+Environment=&#34;HTTP_PROXY=socks5h://127.0.0.1:20170&#34;
+Environment=&#34;HTTPS_PROXY=socks5h://127.0.0.1:20170&#34;
+Environment=&#34;NO_PROXY=localhost,127.0.0.1&#34;
+</code></pre><p>注意，对于v2raya,使用socks5而非HTTPS代理是必要的。
+3. 让当前用户有权限使用docker</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo usermod -aG docker $USER
+</span></span></code></pre></div><ol start="4">
+<li>启动docker服务</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl enable --now docker
+</span></span></code></pre></div><h3 id="生成并启动libretranslate的容器">生成并启动libretranslate的容器</h3>
+<p>创建并编辑<code>~/.local/bin/start_libretranslate.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>CONTAINER_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;libretranslate&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查是否已经有容器在跑</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> docker ps -a --format <span style="color:#e6db74">&#39;{{.Names}}&#39;</span> | grep -q <span style="color:#e6db74">&#34;^</span><span style="color:#e6db74">${</span>CONTAINER_NAME<span style="color:#e6db74">}</span><span style="color:#e6db74">\$&#34;</span>; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Container </span><span style="color:#e6db74">${</span>CONTAINER_NAME<span style="color:#e6db74">}</span><span style="color:#e6db74"> already exists.&#34;</span>
+</span></span><span style="display:flex;"><span>  docker start <span style="color:#e6db74">${</span>CONTAINER_NAME<span style="color:#e6db74">}</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;now started&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>  echo <span style="color:#e6db74">&#34;Creating and starting new LibreTranslate container...&#34;</span>
+</span></span><span style="display:flex;"><span>  docker run -d --name libretranslate <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -p 5000:5000 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e LT_LOAD_ONLY<span style="color:#f92672">=</span>en,zh <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    -e LT_HOST<span style="color:#f92672">=</span>0.0.0.0 <span style="color:#ae81ff">\
+</span></span></span><span style="display:flex;"><span><span style="color:#ae81ff"></span>    libretranslate/libretranslate
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>运行这个脚本会自动启动libretranslate的容器，如果本地该容器不存在，会自动下载它的image。因为docker下载站连接不稳定，可能需要多尝试几次。我设置的参数：</p>
+<ul>
+<li>只加载英语和中文的模型</li>
+<li>占用5000端口</li>
+</ul>
 <h3 id="在hyprland上用wl-paste监听clipboard更新并翻译用jq提取返回的json数据得到翻译结果">在hyprland上用wl-paste监听clipboard更新并翻译，用jq提取返回的json数据得到翻译结果</h3>
+<p>创建并编辑<code>~/.local/bin/clipboard-listener.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>wl-paste --watch bash -c <span style="color:#e6db74">&#39;c=$(wl-paste | tr -d &#34;\n&#34;); 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">if [[ $c =~ ^[a-zA-Z] ]]; then 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  t=$(curl -s -X POST http://localhost:5000/translate -H &#34;Content-Type: application/json&#34; -d &#34;{\&#34;q\&#34;: \&#34;$c\&#34;, \&#34;source\&#34;: \&#34;en\&#34;, \&#34;target\&#34;: \&#34;zh\&#34;}&#34; | jq -r &#34;.translatedText&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  hyprctl notify 6 15000 &#34;rgb(55FF55)&#34; $&#34;📖 $(echo $t | fold -w 40)&#34;; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">elif [ -z &#34;$c&#34; ]; then
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  :
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">else
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  t=$(curl -s -X POST http://localhost:5000/translate -H &#34;Content-Type: application/json&#34; -d &#34;{\&#34;q\&#34;: \&#34;$c\&#34;, \&#34;source\&#34;: \&#34;zh\&#34;, \&#34;target\&#34;: \&#34;en\&#34;}&#34; | jq -r &#34;.translatedText&#34;);
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">  hyprctl notify 6 15000 &#34;rgb(55FF55)&#34; $&#34;📖 $(echo $t | fold -w 40)&#34;; 
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">fi&#39;</span>
+</span></span></code></pre></div><p>wl-paste监听clipboard的每一次更新，判断是否为英文，并通过5000端口访问libretranslate容器，将clipboard内容上传5000drkz并收到到网页json文件。然后jq从json文件中读取翻译结果，通过hyprctl notify形成桌面通知。</p>
 <h3 id="hyprland快捷开关复制翻译">hyprland快捷开关复制翻译</h3>
+<p>创建并编辑<code>~/.local/bin/toggle-translate.sh</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e"># toggle-clipboard-listener.sh</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 检查监听进程是否正在运行</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> pgrep -x wl-paste; <span style="color:#66d9ef">then</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 如果监听进程正在运行，结束翻译引擎并杀死进程</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">#docker stop libretranslate</span>
+</span></span><span style="display:flex;"><span>    pkill -x wl-paste
+</span></span><span style="display:flex;"><span>    hyprctl notify <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">3000</span> <span style="color:#e6db74">&#39;rgb(FF5555)&#39;</span> <span style="color:#e6db74">$&#39;⏸️ 复制后翻译已关闭，但libretranslate仍在运行。&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 如果没有运行，启动监听进程</span>
+</span></span><span style="display:flex;"><span>    nohup bash /home/shadows/.local/bin/clipboard-listener.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+</span></span><span style="display:flex;"><span>    wl-copy --clear
+</span></span><span style="display:flex;"><span>    bash ~/.local/bin/start_libretranslate.sh
+</span></span><span style="display:flex;"><span>    hyprctl notify <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">3000</span> <span style="color:#e6db74">&#39;rgb(55FF55)&#39;</span> <span style="color:#e6db74">$&#39;🔤 复制后翻译已开启&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fi</span>
+</span></span></code></pre></div><p>然后在hyprland配置文件<code>~/.config/hypr/hyprland.conf</code>中加入按键绑定：</p>
+<pre tabindex="0"><code class="language-conf" data-lang="conf">bind = $mainMod, Z, exec, bash ~/.local/bin/toggle-translate.sh
+bind = $mainMod SHIFT, Z, exec, bash -c &#34;docker stop libretranslate &amp;&amp; hyprctl notify 6 3000 &#39;rgb(55FF55)&#39; $&#39;❌ libretranslate已关闭&#39;; pkill -x wl-paste&#34;
+</code></pre><p>至此全部配置完成。</p>
+<ul>
+<li>按Super+Z切换复制翻译（开启复制翻译时会启动libretranslate容器）</li>
+<li>按Super+Shift+Z关闭libretranslate容器，这样关机的时候就不用再额外等待了。</li>
+</ul>
 </div>
     </article>
   </main>
