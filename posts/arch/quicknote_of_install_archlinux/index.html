@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 834 words</span>
-  <span> • 4 minute read</span>
+  <span> • 878 words</span>
+  <span> • 5 minute read</span>
   
   
     <div>
@@ -323,7 +323,7 @@ firefox okular libreoffice-stable zathura zathura-pdf-mupdf tesseract-data-eng t
 # better DNS
 dnsmasq
 # socket
-v2ray
+v2ray openbsd-netcat
 v2raya-bin
 # battery manager
 tlp
@@ -363,7 +363,16 @@ virtualbox
 </span></span><span style="display:flex;"><span>npm config set registry https://registry.npmmirror.com
 </span></span><span style="display:flex;"><span>sudo npm config set registry https://registry.npmmirror.com
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># ray</span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">### sudo systemctl enable</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">### sudo systemctl enable --now v2ray</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## edit `~/.ssh/config` for git ssh (openbsd-netcat is needed):</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###Host proxyhost</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###  HostName 127.0.0.1</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###  Port 20170</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">###  ProxyCommand nc -x 127.0.0.1:20170 %h %p</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">## run these for http &amp; https:</span>
+</span></span><span style="display:flex;"><span>git config --global http.proxy <span style="color:#e6db74">&#34;socks5h://127.0.0.1:20170&#34;</span>
+</span></span><span style="display:flex;"><span>git config --global https.proxy <span style="color:#e6db74">&#34;socks5h://127.0.0.1:20170&#34;</span>
+</span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># dns</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">### sudo systemctl enable --now dnsmasq</span>
 </span></span><span style="display:flex;"><span>
