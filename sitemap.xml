@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://ponyofshadows.com/tags/linux/</loc>
-    <lastmod>2025-03-31T21:22:02+08:00</lastmod>
+    <loc>https://ponyofshadows.com/posts/arch/linux%E4%B8%8A%E8%B6%85%E5%BF%AB%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BF%BB%E8%AF%91/</loc>
+    <lastmod>2025-04-12T00:00:19+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/</loc>
-    <lastmod>2025-03-31T21:22:02+08:00</lastmod>
+    <lastmod>2025-04-12T00:00:19+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/posts/</loc>
+    <lastmod>2025-04-12T00:00:19+08:00</lastmod>
+  </url><url>
+    <loc>https://ponyofshadows.com/tags/linux/</loc>
     <lastmod>2025-03-31T21:22:02+08:00</lastmod>
   </url><url>
     <loc>https://ponyofshadows.com/tags/</loc>
