@@ -86,8 +86,8 @@
     
     
   </strong>
-  <span> • 1098 words</span>
-  <span> • 6 minute read</span>
+  <span> • 1690 words</span>
+  <span> • 8 minute read</span>
   
   
     <div>
@@ -305,9 +305,135 @@
 <ol>
 <li>在<a href="https://archlinux.org/download/">Download</a>页面找到自己所在国家的镜像站下载最新的ISO(光盘镜像文件)，对于中国，可以是<a href="https://mirrors.ustc.edu.cn/archlinux/iso/latest/">中科大镜像源</a>。比如下面这两个文件，都要下载下来, 放在同一个目录待验证</li>
 </ol>
-<pre tabindex="0"><code>archlinux-2024.06.01-x86_64.iso                    01-Jun-2024 17:09          1168146432
-archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09                 141
-</code></pre><p>前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 712 41"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='192' y='20' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='200' y='20' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='208' y='20' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='216' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='224' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='232' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='240' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='248' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='256' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='264' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='272' y='20' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='408' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='416' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='424' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>J</text>
+<text text-anchor='middle' x='432' y='20' fill='currentColor' style='font-size:1em'>J</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='440' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='448' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='456' y='20' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='464' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='472' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='480' y='20' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='488' y='20' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='504' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>7</text>
+<text text-anchor='middle' x='512' y='20' fill='currentColor' style='font-size:1em'>7</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='520' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='528' y='4' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='528' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='536' y='4' fill='currentColor' style='font-size:1em'>9</text>
+<text text-anchor='middle' x='536' y='20' fill='currentColor' style='font-size:1em'>9</text>
+<text text-anchor='middle' x='624' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='632' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='640' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='648' y='4' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='656' y='4' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='664' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='672' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='680' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='680' y='20' fill='currentColor' style='font-size:1em'>1</text>
+<text text-anchor='middle' x='688' y='4' fill='currentColor' style='font-size:1em'>3</text>
+<text text-anchor='middle' x='688' y='20' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='696' y='4' fill='currentColor' style='font-size:1em'>2</text>
+<text text-anchor='middle' x='696' y='20' fill='currentColor' style='font-size:1em'>1</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>前者是我们需要的ISO，后者是ISO的发布者使用私钥生成的签名文件，可以用来验证原文件是否完整且完全没有被修改。像这样进行验证：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># On Arch linux (-v = --verify)</span>
 </span></span><span style="display:flex;"><span>pacman-key -v archlinux-version-x86_64.iso.sig
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># On any system with GnuPG installed</span>
@@ -316,8 +442,144 @@ archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09            
 <ol start="2">
 <li>插入自己的闪存，然后以root身份使用 <code>dd</code> 命令写入ISO，注意of参数需要的是磁盘设备名而不是分区名 <em>(甚至可以使用cat或cp)</em></li>
 </ol>
-<pre tabindex="0"><code>dd bs=4M if=path/to/archlinux-version-x86_64.iso of=/dev/disk/by-id/usb-My_flash_drive conv=fsync oflag=direct status=progress
-</code></pre><p>下面解释一下这行命令</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 1016 25"
+      >
+      <g transform='translate(8,16)'>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>M</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='496' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='528' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='536' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='544' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='552' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='560' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='568' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='576' y='4' fill='currentColor' style='font-size:1em'>M</text>
+<text text-anchor='middle' x='584' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='592' y='4' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='600' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='608' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='616' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='624' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='632' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='640' y='4' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='648' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='656' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='664' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='672' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='680' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='696' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='704' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='712' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='720' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='728' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='736' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='744' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='752' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='760' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='768' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='784' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='792' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='800' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='808' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='816' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='824' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='832' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='840' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='848' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='856' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='864' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='872' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='888' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='896' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='904' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='912' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='920' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='928' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='936' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='944' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='952' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='960' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='968' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='976' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='984' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='992' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='1000' y='4' fill='currentColor' style='font-size:1em'>s</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>下面解释一下这行命令</p>
 <ul>
 <li><code>bs=4M</code> 这个参数指定了块大小（block size）为4MB, 使用较大的块理论上能提高复制的效率，但复制效率的上限被诸多因素定死，设置为4M即可。</li>
 <li><code>conv=fsync</code> 这个选项确保在复制过程中数据写入到磁盘时，所有的内存缓冲区都被刷新（fsync），以保证数据的完整性</li>
@@ -329,11 +591,273 @@ archlinux-2024.06.01-x86_64.iso.sig                01-Jun-2024 17:09            
 <p>把live系统上预装的这个没点用的工具停用了</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>systemctl stop reflector.service
 </span></span></code></pre></div><p>打开<code>/etc/pacman.d/mirrorlist</code>, 把下面四行放在最前面：</p>
-<pre tabindex="0"><code>Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
-Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-</code></pre><h3 id="连接网络同步时间">连接网络，同步时间</h3>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 568 73"
+      >
+      <g transform='translate(8,16)'>
+<path d='M 112,32 L 120,16' fill='none' stroke='currentColor'></path>
+<path d='M 120,32 L 128,16' fill='none' stroke='currentColor'></path>
+<path d='M 424,16 L 432,0' fill='none' stroke='currentColor'></path>
+<path d='M 432,32 L 440,16' fill='none' stroke='currentColor'></path>
+<path d='M 496,48 L 504,32' fill='none' stroke='currentColor'></path>
+<circle cx='424' cy='16' r='6' stroke='currentColor' fill='#fff'></circle>
+<circle cx='496' cy='48' r='6' stroke='currentColor' fill='#fff'></circle>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='0' y='36' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='0' y='52' fill='currentColor' style='font-size:1em'>S</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='8' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='24' y='52' fill='currentColor' style='font-size:1em'>v</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='32' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='40' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='56' y='52' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='72' y='52' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='88' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='88' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='96' y='36' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='96' y='52' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='104' y='36' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='104' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='112' y='52' fill='currentColor' style='font-size:1em'>:</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='120' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='128' y='36' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='128' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='136' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='136' y='52' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='144' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='144' y='52' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='152' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='152' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='160' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='160' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='168' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='168' y='52' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='176' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='176' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='184' y='36' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='184' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='192' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='192' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='192' y='52' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='200' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='200' y='36' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='200' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='208' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='208' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='208' y='52' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='216' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='216' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='216' y='52' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='224' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='224' y='36' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='224' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='232' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='232' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='232' y='52' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='240' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='240' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='240' y='52' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='248' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='248' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='248' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='256' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='256' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='256' y='52' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='264' y='20' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='264' y='36' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='264' y='52' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='272' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='272' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='272' y='52' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='280' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='280' y='36' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='280' y='52' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='288' y='20' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='288' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='288' y='52' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='296' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='296' y='36' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='296' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='304' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='304' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='304' y='52' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='312' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='312' y='36' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='312' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='320' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='320' y='36' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='320' y='52' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='328' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='328' y='36' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='328' y='52' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='336' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='336' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='336' y='52' fill='currentColor' style='font-size:1em'>.</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='344' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='344' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='344' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='352' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='352' y='36' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='352' y='52' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='360' y='20' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='360' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='360' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='368' y='20' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='368' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='368' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='376' y='20' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='376' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='376' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='384' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='384' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='384' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='392' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='392' y='36' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='392' y='52' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='400' y='20' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='400' y='36' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='400' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='408' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='408' y='36' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='408' y='52' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='416' y='20' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='416' y='36' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='416' y='52' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='424' y='36' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='424' y='52' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='432' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='432' y='52' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='440' y='36' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='440' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='448' y='20' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='448' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='448' y='52' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='456' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='456' y='36' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='456' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='464' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='464' y='36' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='464' y='52' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='472' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='472' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='472' y='52' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='480' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='480' y='36' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='480' y='52' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='488' y='36' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='488' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='496' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='504' y='52' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='512' y='36' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='512' y='52' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='520' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='520' y='52' fill='currentColor' style='font-size:1em'>$</text>
+<text text-anchor='middle' x='528' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='528' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='536' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='536' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='544' y='36' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='544' y='52' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='552' y='52' fill='currentColor' style='font-size:1em'>h</text>
+</g>
+
+    </svg>
+  
+</div>
+<h3 id="连接网络同步时间">连接网络，同步时间</h3>
 <ol>
 <li>连接网络。有线网络直接插上网线即可，无线网络可以用 <code>iwctl</code> 或 <code>wpa_suppliant + wpa_cli</code>。</li>
 <li>更新时钟
@@ -389,9 +913,124 @@ Server = https://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
 <p>(也可用lsblk)</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>lsblk -o NAME,FSTYPE,UUID
 </span></span></code></pre></div><p>然后用cat等工具在fstab文件末尾追加以下文本, 其中discard选项是启用丢弃策略，即<code>swapon -d</code>。</p>
-<pre tabindex="0"><code># &lt;file system&gt; &lt;mount point&gt;   &lt;type&gt;  &lt;options&gt;   &lt;dump&gt;  &lt;pass&gt;
-UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
-</code></pre><ul>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 536 41"
+      >
+      <g transform='translate(8,16)'>
+<polygon points='328.000000,0.000000 316.000000,-5.600000 316.000000,5.600000' fill='currentColor' transform='rotate(180.000000, 320.000000, 0.000000)'></polygon>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>#</text>
+<text text-anchor='middle' x='0' y='20' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='8' y='20' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='16' y='20' fill='currentColor' style='font-size:1em'>I</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>D</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='128' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>	</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+<text text-anchor='middle' x='224' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='232' y='20' fill='currentColor' style='font-size:1em'>w</text>
+<text text-anchor='middle' x='240' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='248' y='20' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='256' y='4' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='264' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='264' y='20' fill='currentColor' style='font-size:1em'>	</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='272' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='280' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='288' y='20' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+<text text-anchor='middle' x='296' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='304' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='312' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='320' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='328' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='336' y='20' fill='currentColor' style='font-size:1em'>,</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='344' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='352' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='360' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='368' y='20' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='376' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+<text text-anchor='middle' x='384' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='392' y='20' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='416' y='20' fill='currentColor' style='font-size:1em'>	</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='424' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='432' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='440' y='4' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='440' y='20' fill='currentColor' style='font-size:1em'>0</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+<text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>&lt;</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='496' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>&gt;</text>
+</g>
+
+    </svg>
+  
+</div>
+<ul>
 <li>检查没有错误</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cat /mnt/@current/etc/fstab
@@ -431,8 +1070,96 @@ UUID=your_swap_uuid	none    swap 	defaults,discard  	0 0
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>arch-chroot /mnt/@current
 </span></span></code></pre></div><h3 id="新系统的引导">新系统的引导</h3>
 <p>安装GRUB引导加载程序到/boot</p>
-<pre tabindex="0"><code>grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=GRUB
-</code></pre><p>确认<code>/etc/default/grub</code>中这一行为：</p>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 608 25"
+      >
+      <g transform='translate(8,16)'>
+<path d='M 104,0 L 112,0' fill='none' stroke='currentColor'></path>
+<path d='M 264,0 L 272,0' fill='none' stroke='currentColor'></path>
+<path d='M 440,0 L 448,0' fill='none' stroke='currentColor'></path>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>n</text>
+<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='112' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='120' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='128' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='136' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='144' y='4' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='152' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='160' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='168' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='176' y='4' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='184' y='4' fill='currentColor' style='font-size:1em'>8</text>
+<text text-anchor='middle' x='192' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='200' y='4' fill='currentColor' style='font-size:1em'>_</text>
+<text text-anchor='middle' x='208' y='4' fill='currentColor' style='font-size:1em'>6</text>
+<text text-anchor='middle' x='216' y='4' fill='currentColor' style='font-size:1em'>4</text>
+<text text-anchor='middle' x='224' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='232' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='240' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='248' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='272' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='280' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='288' y='4' fill='currentColor' style='font-size:1em'>f</text>
+<text text-anchor='middle' x='296' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='304' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='312' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='320' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='328' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='336' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='344' y='4' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='352' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='360' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='368' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='376' y='4' fill='currentColor' style='font-size:1em'>y</text>
+<text text-anchor='middle' x='384' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='392' y='4' fill='currentColor' style='font-size:1em'>/</text>
+<text text-anchor='middle' x='400' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='408' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='416' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='424' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='448' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='456' y='4' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='464' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='472' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='480' y='4' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='488' y='4' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='496' y='4' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='504' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='512' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='520' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='528' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='536' y='4' fill='currentColor' style='font-size:1em'>-</text>
+<text text-anchor='middle' x='544' y='4' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='552' y='4' fill='currentColor' style='font-size:1em'>d</text>
+<text text-anchor='middle' x='560' y='4' fill='currentColor' style='font-size:1em'>=</text>
+<text text-anchor='middle' x='568' y='4' fill='currentColor' style='font-size:1em'>G</text>
+<text text-anchor='middle' x='576' y='4' fill='currentColor' style='font-size:1em'>R</text>
+<text text-anchor='middle' x='584' y='4' fill='currentColor' style='font-size:1em'>U</text>
+<text text-anchor='middle' x='592' y='4' fill='currentColor' style='font-size:1em'>B</text>
+</g>
+
+    </svg>
+  
+</div>
+<p>确认<code>/etc/default/grub</code>中这一行为：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>GRUB_CMDLINE_LINUX<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;rootflags=subvol=/@current&#34;</span>
 </span></span></code></pre></div><p>最后生成GRUB所需的配置文件</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>grub-mkconfig -o /boot/grub/grub.cfg

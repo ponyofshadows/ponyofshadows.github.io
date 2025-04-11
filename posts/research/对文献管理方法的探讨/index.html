@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 44 words</span>
+  <span> • 116 words</span>
   <span> • 1 minute read</span>
   
   
@@ -106,14 +106,120 @@
 <li><code>okular</code> PDF阅读器</li>
 </ul>
 <h2 id="paper的数据结构">Paper的&quot;数据结构&quot;</h2>
-<pre tabindex="0"><code>Paper
-|_ 各种出版信息(Title, Authors, Year, ...)
-|_ Abstract
-|_ 关联的okular笔记文件（xml格式）
-|_ 关联的项目（如果有的话）
-|_ Tags
-|_ 补充材料（其它Paper）
-</code></pre><h2 id="体验论文阅读流程">体验论文阅读流程</h2>
+
+
+
+<div class="goat svg-container ">
+  
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      font-family="Menlo,Lucida Console,monospace"
+      
+        viewBox="0 0 296 121"
+      >
+      <g transform='translate(8,16)'>
+<path d='M 0,24 L 8,24' fill='none' stroke='currentColor'></path>
+<path d='M 0,40 L 8,40' fill='none' stroke='currentColor'></path>
+<path d='M 0,56 L 8,56' fill='none' stroke='currentColor'></path>
+<path d='M 0,72 L 8,72' fill='none' stroke='currentColor'></path>
+<path d='M 0,88 L 8,88' fill='none' stroke='currentColor'></path>
+<path d='M 0,104 L 8,104' fill='none' stroke='currentColor'></path>
+<path d='M 0,16 L 0,96' fill='none' stroke='currentColor'></path>
+<path d='M 0,96 L 0,104' fill='none' stroke='currentColor'></path>
+<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>P</text>
+<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='24' y='20' fill='currentColor' style='font-size:1em'>各</text>
+<text text-anchor='middle' x='24' y='36' fill='currentColor' style='font-size:1em'>A</text>
+<text text-anchor='middle' x='24' y='52' fill='currentColor' style='font-size:1em'>关</text>
+<text text-anchor='middle' x='24' y='68' fill='currentColor' style='font-size:1em'>关</text>
+<text text-anchor='middle' x='24' y='84' fill='currentColor' style='font-size:1em'>T</text>
+<text text-anchor='middle' x='24' y='100' fill='currentColor' style='font-size:1em'>补</text>
+<text text-anchor='middle' x='32' y='4' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='32' y='20' fill='currentColor' style='font-size:1em'>种</text>
+<text text-anchor='middle' x='32' y='36' fill='currentColor' style='font-size:1em'>b</text>
+<text text-anchor='middle' x='32' y='52' fill='currentColor' style='font-size:1em'>联</text>
+<text text-anchor='middle' x='32' y='68' fill='currentColor' style='font-size:1em'>联</text>
+<text text-anchor='middle' x='32' y='84' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='32' y='100' fill='currentColor' style='font-size:1em'>充</text>
+<text text-anchor='middle' x='40' y='20' fill='currentColor' style='font-size:1em'>出</text>
+<text text-anchor='middle' x='40' y='36' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='40' y='52' fill='currentColor' style='font-size:1em'>的</text>
+<text text-anchor='middle' x='40' y='68' fill='currentColor' style='font-size:1em'>的</text>
+<text text-anchor='middle' x='40' y='84' fill='currentColor' style='font-size:1em'>g</text>
+<text text-anchor='middle' x='40' y='100' fill='currentColor' style='font-size:1em'>材</text>
+<text text-anchor='middle' x='48' y='20' fill='currentColor' style='font-size:1em'>版</text>
+<text text-anchor='middle' x='48' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='48' y='52' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='48' y='68' fill='currentColor' style='font-size:1em'>项</text>
+<text text-anchor='middle' x='48' y='84' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='48' y='100' fill='currentColor' style='font-size:1em'>料</text>
+<text text-anchor='middle' x='56' y='20' fill='currentColor' style='font-size:1em'>信</text>
+<text text-anchor='middle' x='56' y='36' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='56' y='52' fill='currentColor' style='font-size:1em'>k</text>
+<text text-anchor='middle' x='56' y='68' fill='currentColor' style='font-size:1em'>目</text>
+<text text-anchor='middle' x='56' y='100' fill='currentColor' style='font-size:1em'>（</text>
+<text text-anchor='middle' x='64' y='20' fill='currentColor' style='font-size:1em'>息</text>
+<text text-anchor='middle' x='64' y='36' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='64' y='52' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='64' y='68' fill='currentColor' style='font-size:1em'>（</text>
+<text text-anchor='middle' x='64' y='100' fill='currentColor' style='font-size:1em'>其</text>
+<text text-anchor='middle' x='72' y='20' fill='currentColor' style='font-size:1em'>(</text>
+<text text-anchor='middle' x='72' y='36' fill='currentColor' style='font-size:1em'>c</text>
+<text text-anchor='middle' x='72' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='72' y='68' fill='currentColor' style='font-size:1em'>如</text>
+<text text-anchor='middle' x='72' y='100' fill='currentColor' style='font-size:1em'>它</text>
+<text text-anchor='middle' x='80' y='20' fill='currentColor' style='font-size:1em'>T</text>
+<text text-anchor='middle' x='80' y='36' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='80' y='52' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='80' y='68' fill='currentColor' style='font-size:1em'>果</text>
+<text text-anchor='middle' x='80' y='100' fill='currentColor' style='font-size:1em'>P</text>
+<text text-anchor='middle' x='88' y='20' fill='currentColor' style='font-size:1em'>i</text>
+<text text-anchor='middle' x='88' y='52' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='88' y='68' fill='currentColor' style='font-size:1em'>有</text>
+<text text-anchor='middle' x='88' y='100' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='96' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='96' y='52' fill='currentColor' style='font-size:1em'>笔</text>
+<text text-anchor='middle' x='96' y='68' fill='currentColor' style='font-size:1em'>的</text>
+<text text-anchor='middle' x='96' y='100' fill='currentColor' style='font-size:1em'>p</text>
+<text text-anchor='middle' x='104' y='20' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='104' y='52' fill='currentColor' style='font-size:1em'>记</text>
+<text text-anchor='middle' x='104' y='68' fill='currentColor' style='font-size:1em'>话</text>
+<text text-anchor='middle' x='104' y='100' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='112' y='52' fill='currentColor' style='font-size:1em'>文</text>
+<text text-anchor='middle' x='112' y='68' fill='currentColor' style='font-size:1em'>）</text>
+<text text-anchor='middle' x='112' y='100' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='120' y='20' fill='currentColor' style='font-size:1em'>,</text>
+<text text-anchor='middle' x='120' y='52' fill='currentColor' style='font-size:1em'>件</text>
+<text text-anchor='middle' x='120' y='100' fill='currentColor' style='font-size:1em'>）</text>
+<text text-anchor='middle' x='128' y='52' fill='currentColor' style='font-size:1em'>（</text>
+<text text-anchor='middle' x='136' y='20' fill='currentColor' style='font-size:1em'>A</text>
+<text text-anchor='middle' x='136' y='52' fill='currentColor' style='font-size:1em'>x</text>
+<text text-anchor='middle' x='144' y='20' fill='currentColor' style='font-size:1em'>u</text>
+<text text-anchor='middle' x='144' y='52' fill='currentColor' style='font-size:1em'>m</text>
+<text text-anchor='middle' x='152' y='20' fill='currentColor' style='font-size:1em'>t</text>
+<text text-anchor='middle' x='152' y='52' fill='currentColor' style='font-size:1em'>l</text>
+<text text-anchor='middle' x='160' y='20' fill='currentColor' style='font-size:1em'>h</text>
+<text text-anchor='middle' x='160' y='52' fill='currentColor' style='font-size:1em'>格</text>
+<text text-anchor='middle' x='168' y='20' fill='currentColor' style='font-size:1em'>o</text>
+<text text-anchor='middle' x='168' y='52' fill='currentColor' style='font-size:1em'>式</text>
+<text text-anchor='middle' x='176' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='176' y='52' fill='currentColor' style='font-size:1em'>）</text>
+<text text-anchor='middle' x='184' y='20' fill='currentColor' style='font-size:1em'>s</text>
+<text text-anchor='middle' x='192' y='20' fill='currentColor' style='font-size:1em'>,</text>
+<text text-anchor='middle' x='208' y='20' fill='currentColor' style='font-size:1em'>Y</text>
+<text text-anchor='middle' x='216' y='20' fill='currentColor' style='font-size:1em'>e</text>
+<text text-anchor='middle' x='224' y='20' fill='currentColor' style='font-size:1em'>a</text>
+<text text-anchor='middle' x='232' y='20' fill='currentColor' style='font-size:1em'>r</text>
+<text text-anchor='middle' x='240' y='20' fill='currentColor' style='font-size:1em'>,</text>
+</g>
+
+    </svg>
+  
+</div>
+<h2 id="体验论文阅读流程">体验论文阅读流程</h2>
 <h3 id="下载一篇论文">下载一篇论文</h3>
 <p>找到一个可在firefox使用的<a href="https://github.com/papis/papis-firefox">papis插件</a>，但我目前不想试用。就直接手动下载了。然后，把本地文件添加到papis的库（路径由<code>~/.config/papis/config</code>设置）</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>papis add Downloads/xxxxx.pdf --from doi xxxxxx
