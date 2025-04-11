@@ -6,14 +6,14 @@
     <description>Recent content in English on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 18 Mar 2025 10:49:41 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 12 Apr 2025 00:00:19 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/tags/english/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linux本地复制翻译与截图翻译的尝试</title>
-      <link>https://ponyofshadows.com/posts/arch/linux%E6%9C%AC%E5%9C%B0%E5%A4%8D%E5%88%B6%E7%BF%BB%E8%AF%91%E4%B8%8E%E6%88%AA%E5%9B%BE%E7%BF%BB%E8%AF%91%E7%9A%84%E5%B0%9D%E8%AF%95/</link>
-      <pubDate>Tue, 18 Mar 2025 10:49:41 +0800</pubDate>
-      <guid>https://ponyofshadows.com/posts/arch/linux%E6%9C%AC%E5%9C%B0%E5%A4%8D%E5%88%B6%E7%BF%BB%E8%AF%91%E4%B8%8E%E6%88%AA%E5%9B%BE%E7%BF%BB%E8%AF%91%E7%9A%84%E5%B0%9D%E8%AF%95/</guid>
-      <description>&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;code&gt;normcap&lt;/code&gt;，一个本地截图和OCR集成工具。&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+      <title>Linux上超快的本地翻译</title>
+      <link>https://ponyofshadows.com/posts/arch/linux%E4%B8%8A%E8%B6%85%E5%BF%AB%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BF%BB%E8%AF%91/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:19 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/linux%E4%B8%8A%E8%B6%85%E5%BF%AB%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BF%BB%E8%AF%91/</guid>
+      <description>&lt;h3 id=&#34;安装docker&#34;&gt;安装docker&lt;/h3&gt;&#xA;&lt;h3 id=&#34;生成libretranslate的容器&#34;&gt;生成libretranslate的容器&lt;/h3&gt;&#xA;&lt;h3 id=&#34;在hyprland上用wl-paste监听clipboard更新并翻译用jq提取返回的json数据得到翻译结果&#34;&gt;在hyprland上用wl-paste监听clipboard更新并翻译，用jq提取返回的json数据得到翻译结果&lt;/h3&gt;&#xA;&lt;h3 id=&#34;hyprland快捷开关复制翻译&#34;&gt;hyprland快捷开关复制翻译&lt;/h3&gt;</description>
     </item>
     <item>
       <title>English test: writing</title>

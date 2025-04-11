@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on Pony of Shadows</title>
+    <link>https://ponyofshadows.com/tags/tool/</link>
+    <description>Recent content in Tool on Pony of Shadows</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Apr 2025 00:00:19 +0800</lastBuildDate>
+    <atom:link href="https://ponyofshadows.com/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linux上超快的本地翻译</title>
+      <link>https://ponyofshadows.com/posts/arch/linux%E4%B8%8A%E8%B6%85%E5%BF%AB%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BF%BB%E8%AF%91/</link>
+      <pubDate>Sat, 12 Apr 2025 00:00:19 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/linux%E4%B8%8A%E8%B6%85%E5%BF%AB%E7%9A%84%E6%9C%AC%E5%9C%B0%E7%BF%BB%E8%AF%91/</guid>
+      <description>&lt;h3 id=&#34;安装docker&#34;&gt;安装docker&lt;/h3&gt;&#xA;&lt;h3 id=&#34;生成libretranslate的容器&#34;&gt;生成libretranslate的容器&lt;/h3&gt;&#xA;&lt;h3 id=&#34;在hyprland上用wl-paste监听clipboard更新并翻译用jq提取返回的json数据得到翻译结果&#34;&gt;在hyprland上用wl-paste监听clipboard更新并翻译，用jq提取返回的json数据得到翻译结果&lt;/h3&gt;&#xA;&lt;h3 id=&#34;hyprland快捷开关复制翻译&#34;&gt;hyprland快捷开关复制翻译&lt;/h3&gt;</description>
+    </item>
+  </channel>
+</rss>
