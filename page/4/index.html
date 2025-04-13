@@ -80,6 +80,62 @@
 		
 		
 			<article class="summary">
+  <a href="https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/">
+    <h1 class="title">bash脚本中如何展开字符串包含的通配符</h1>
+    
+  </a>
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+<div class="post-meta">
+  <strong>
+    <span>Posted on</span>
+    <time>2024-05-31</time>
+    
+    
+  </strong>
+ <span> • 127 words</span>
+ <span> • 1 minute read</span>
+  
+    <div>
+      <span>Tags:</span>
+      
+        <a href="/tags/linux">linux</a>
+    </div>
+  
+</div>
+
+  <div class="content">
+    
+    
+    <p><h3 id="一般的语句中通配符在使用它的那一行展开但被双引号包括时不会展开">一般的语句中，通配符在使用它的那一行展开，但被双引号包括时不会展开。</h3>
+<ul>
+<li>示例脚本1：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>ls ~/tmp/*a
+</span></span><span style="display:flex;"><span>ls <span style="color:#e6db74">&#34;~/tmp/*a&#34;</span>
+</span></span><span style="display:flex;"><span>tmp_path<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;~/tmp&#34;</span>
+</span></span><span style="display:flex;"><span>string<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#e6db74">${</span>tmp_path<span style="color:#e6db74">}</span><span style="color:#e6db74">/*a&#34; …</span></span></span></span></span></span></span></span></span></span></span></code></pre></div></p>
+    
+      <a href="https://ponyofshadows.com/posts/linux/bash%E8%84%9A%E6%9C%AC%E4%B8%AD%E5%A6%82%E4%BD%95%E5%B1%95%E5%BC%80%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%8C%85%E5%90%AB%E7%9A%84%E9%80%9A%E9%85%8D%E7%AC%A6/">Read more...</a>
+    
+  </div>
+</article>
+
+
+		
+			<article class="summary">
   <a href="https://ponyofshadows.com/posts/linux/%E6%95%B0%E6%8D%AE%E5%AD%98%E6%A1%A301%E6%89%8B%E5%8A%A8%E5%AD%98%E6%A1%A3%E8%A7%84%E8%8C%83/">
     <h1 class="title">数据存档01手动存档规范</h1>
     
@@ -591,54 +647,6 @@
 <p>In …</p></p>
     
       <a href="https://ponyofshadows.com/posts/tools/rime_custom/">Read more...</a>
-    
-  </div>
-</article>
-
-
-		
-			<article class="summary">
-  <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">
-    <h1 class="title">Using git for version control</h1>
-    
-  </a>
-  
-
-
-
-
-
-
-
-
-
-  
-
-
-<div class="post-meta">
-  <strong>
-    <span>Posted on</span>
-    <time>2024-01-12</time>
-    
-    
-  </strong>
- <span> • 251 words</span>
- <span> • 2 minute read</span>
-  
-    <div>
-      <span>Tags:</span>
-      
-        <a href="/tags/tools">tools</a>
-    </div>
-  
-</div>
-
-  <div class="content">
-    
-    
-    <p><p>In Git, if you want to switch to a specific commit in a particular branch and require the tracked files to revert to their state at that moment, you …</p></p>
-    
-      <a href="https://ponyofshadows.com/posts/tools/using_git_for_version_control/">Read more...</a>
     
   </div>
 </article>
