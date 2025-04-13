@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 29 words</span>
+  <span> • 18 words</span>
   <span> • 1 minute read</span>
   
   
@@ -99,37 +99,8 @@
 </div>
 
       <div class="content"><p>在nvim的命令模式，可以这样知道nvim给当前文件分配的类型：</p>
-
-
-
-<div class="goat svg-container ">
-  
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      font-family="Menlo,Lucida Console,monospace"
-      
-        viewBox="0 0 120 25"
-      >
-      <g transform='translate(8,16)'>
-<text text-anchor='middle' x='0' y='4' fill='currentColor' style='font-size:1em'>:</text>
-<text text-anchor='middle' x='8' y='4' fill='currentColor' style='font-size:1em'>s</text>
-<text text-anchor='middle' x='16' y='4' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='24' y='4' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='40' y='4' fill='currentColor' style='font-size:1em'>f</text>
-<text text-anchor='middle' x='48' y='4' fill='currentColor' style='font-size:1em'>i</text>
-<text text-anchor='middle' x='56' y='4' fill='currentColor' style='font-size:1em'>l</text>
-<text text-anchor='middle' x='64' y='4' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='72' y='4' fill='currentColor' style='font-size:1em'>t</text>
-<text text-anchor='middle' x='80' y='4' fill='currentColor' style='font-size:1em'>y</text>
-<text text-anchor='middle' x='88' y='4' fill='currentColor' style='font-size:1em'>p</text>
-<text text-anchor='middle' x='96' y='4' fill='currentColor' style='font-size:1em'>e</text>
-<text text-anchor='middle' x='104' y='4' fill='currentColor' style='font-size:1em'>?</text>
-</g>
-
-    </svg>
-  
-</div>
-<p>luasnip就是根据这个文件类型应用snip配置的。</p>
+<pre tabindex="0"><code>:set filetype?
+</code></pre><p>luasnip就是根据这个文件类型应用snip配置的。</p>
 <p>可能因为是lsp的texlab的设定，刚创建的.tex文件的类型会被分配为<code>plaintex</code>。
 当文件包含特定的 LaTeX 结构（比如包含documentclass和document环境），才会被分配为<code>tex</code>。</p>
 <p>可以改变nvim的配置强制把.tex文件强制都分配为<code>tex</code>类型：</p>
