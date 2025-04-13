@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 65 words</span>
+  <span> • 83 words</span>
   <span> • 1 minute read</span>
   
   
@@ -136,7 +136,21 @@ Tips:</p>
 </span></span><span style="display:flex;"><span>sudo userdel mcserver
 </span></span></code></pre></div><h3 id="登录普通用户">登录普通用户</h3>
 <p>启动桌面，接下来在ATLauncher上操作即可。</p>
-</div>
+<h3 id="问题集">问题集</h3>
+<ol>
+<li>无法识别到 &ldquo;TerminalEmulator&rdquo; 的首选应用程序
+建一个文件<code>~/.local/share/applications/alacritty-terminal-emulator.desktop</code>:</li>
+</ol>
+<pre tabindex="0"><code>[Desktop Entry]
+Name=Alacritty Terminal Emulator
+Exec=alacritty
+Type=Application
+Terminal=false
+NoDisplay=true
+MimeType=x-scheme-handler/TerminalEmulator;
+</code></pre><p>更新MIME数据库：</p>
+<pre tabindex="0"><code>update-desktop-database ~/.local/share/applications/
+</code></pre></div>
     </article>
   </main>
 
