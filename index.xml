@@ -6,8 +6,15 @@
     <description>Recent content on Pony of Shadows</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 13 Apr 2025 15:53:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 01 May 2025 11:03:21 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何临时用xwayland启动一个程序</title>
+      <link>https://ponyofshadows.com/posts/arch/xwayland/</link>
+      <pubDate>Thu, 01 May 2025 11:03:21 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/arch/xwayland/</guid>
+      <description>&lt;p&gt;在命令前面加上：&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;DISPLAY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;:0 XWAYLAND_DISPLAY&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;:1&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
     <item>
       <title>整合包开服，以勿忘我为例</title>
       <link>https://ponyofshadows.com/posts/mc/%E6%95%B4%E5%90%88%E5%8C%85%E5%BC%80%E6%9C%8D%E4%BB%A5%E5%8B%BF%E6%9C%9B%E6%88%91%E4%B8%BA%E4%BE%8B/</link>
