@@ -86,7 +86,7 @@
     
     
   </strong>
-  <span> • 324 words</span>
+  <span> • 325 words</span>
   <span> • 2 minute read</span>
   
   
@@ -101,11 +101,11 @@
   
 </div>
 
-      <div class="content"><h3 id="安装docker">安装docker</h3>
+      <div class="content"><h3 id="安装必要软件">安装必要软件</h3>
 <ol>
 <li>在Archlinux上安装</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S docker
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo pacman -S docker jq
 </span></span></code></pre></div><ol start="2">
 <li>如果您所在的机构需要配置代理，创建并编辑文件<code>/etc/systemd/system/docker.service.d/http-proxy.conf</code>：</li>
 </ol>
@@ -188,7 +188,7 @@ Environment=&#34;NO_PROXY=localhost,127.0.0.1&#34;
 </span></span><span style="display:flex;"><span>    hyprctl notify <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">3000</span> <span style="color:#e6db74">&#39;rgb(FF5555)&#39;</span> <span style="color:#e6db74">$&#39;⏸️ 复制后翻译已关闭，但libretranslate仍在运行。&#39;</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">else</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#75715e"># 如果没有运行，启动监听进程</span>
-</span></span><span style="display:flex;"><span>    nohup bash /home/shadows/.local/bin/clipboard-listener.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
+</span></span><span style="display:flex;"><span>    nohup bash ~/.local/bin/clipboard-listener.sh &gt; /dev/null 2&gt;&amp;<span style="color:#ae81ff">1</span> &amp;
 </span></span><span style="display:flex;"><span>    wl-copy --clear
 </span></span><span style="display:flex;"><span>    bash ~/.local/bin/start_libretranslate.sh
 </span></span><span style="display:flex;"><span>    hyprctl notify <span style="color:#ae81ff">6</span> <span style="color:#ae81ff">3000</span> <span style="color:#e6db74">&#39;rgb(55FF55)&#39;</span> <span style="color:#e6db74">$&#39;🔤 复制后翻译已开启&#39;</span>
