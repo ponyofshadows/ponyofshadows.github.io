@@ -11,8 +11,56 @@
     </image>
     <generator>Hugo -- 0.148.2</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 31 Jul 2025 10:21:06 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Aug 2025 06:45:08 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人积累python代码的策略</title>
+      <link>https://ponyofshadows.com/posts/c/%E4%B8%AA%E4%BA%BA%E7%A7%AF%E7%B4%AFpython%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Wed, 06 Aug 2025 06:45:08 +0800</pubDate>
+      <guid>https://ponyofshadows.com/posts/c/%E4%B8%AA%E4%BA%BA%E7%A7%AF%E7%B4%AFpython%E4%BB%A3%E7%A0%81%E7%9A%84%E7%AD%96%E7%95%A5/</guid>
+      <description>&lt;h2 id=&#34;python包管理&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV13WGHz8EEz&#34;&gt;python包管理&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;在archlinux上，安装python包有两种方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;通过系统包管理器安装，比如&lt;code&gt;sudo pacman -S python-pandas&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;创建虚拟环境，在某个项目路径下使用pip安装到虚拟环境。也可通过uv等现代工具管理。
+我推荐在积累自己的代码时只用第2种方式。第1种方式只用于系统在安装软件时安装某些python依赖项，而不用于手动安装项目依赖的python包. 不过，项目的依赖管理和构建工具例外，它们被所有python项目需要（即uv和hatchling，后面会讲），建议直接用pacman安装。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;创建和使用虚拟环境的传统方法（推荐使用uv或poetry而不是这么做）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;python -m venv .venv            &lt;span class=&#34;c1&#34;&gt;# 创建虚拟环境.venv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;source&lt;/span&gt; .venv/bin/activate       &lt;span class=&#34;c1&#34;&gt;# 启用虚拟环境.venv&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install pandas              &lt;span class=&#34;c1&#34;&gt;# 安装包到虚拟环境目录下(.venv/lib/pythonx.xx/site-packages)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip freeze &amp;gt; requirements.txt   &lt;span class=&#34;c1&#34;&gt;# 导出当前虚拟环境下安装的包（主动安装的包和它们的依赖混在一起）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install -r requirements.txt &lt;span class=&#34;c1&#34;&gt;# 通过包列表安装py包&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;代替requirements.txt &amp;ndash; 现代python包管理的统一标准：pyproject.toml&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-toml&#34; data-lang=&#34;toml&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;project&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;name&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;proj:
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;version = &amp;#34;&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;0.1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;dependencies = [
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;s2&#34;&gt;    &amp;#34;&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pandas&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;==&lt;/span&gt;&lt;span class=&#34;mf&#34;&gt;2.3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;err&#34;&gt;&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;有了这个文件后下面的命令，会对当前项目进行打包，然后和依赖项一起安装到虚拟环境下&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pip install -e . &lt;span class=&#34;c1&#34;&gt;#使用-e是为了不将自己的源代码复制到虚拟环境，而只是创建链接，保证所有修改立即生效。&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;以上流程又需要手动查包的版本号，所以产生了更加方便的工具，比如uv，它能把以上创建虚拟环境和编辑&lt;code&gt;pyproject.toml&lt;/code&gt;的流程自动化（只需要有个最初的包含项目版本号的&lt;code&gt;pyproject.toml&lt;/code&gt;文件）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uv add pandas  &lt;span class=&#34;c1&#34;&gt;# 把某个包添加到虚拟环境（不需要手动启动虚拟环境）&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uv sync        &lt;span class=&#34;c1&#34;&gt;# 根据当前pyproject.toml文件搭建项目的虚拟环境&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;uv run main.py &lt;span class=&#34;c1&#34;&gt;# 在当前路径虚拟环境的上下文中执行命令&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;python项目结构与打包&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV12NgLzhEKx&#34;&gt;python项目结构与打包&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;一般在用与包名相同的目录存放所有代码（flat layout）后，再把它放进&lt;code&gt;src/&lt;/code&gt;下（src layout）。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.
+|_ docs/
+|_ scripts/
+|_ src/
+    |_ myproject/
+        |_ __init__.py  # 项目的代码目录中，这个文件作为可导入包的标记
+|_ tests/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目构建用工具&lt;/p&gt;</description>
+    </item>
     <item>
       <title>我太抽象了，我想具体一点</title>
       <link>https://ponyofshadows.com/posts/f/%E6%88%91%E5%A4%AA%E6%8A%BD%E8%B1%A1%E4%BA%86%E6%88%91%E6%83%B3%E5%85%B7%E4%BD%93%E4%B8%80%E7%82%B9/</link>
