@@ -54,12 +54,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;python项目结构与打包&#34;&gt;&lt;a href=&#34;https://www.bilibili.com/video/BV12NgLzhEKx&#34;&gt;python项目结构与打包&lt;/a&gt;&lt;/h2&gt;
 &lt;p&gt;一般在用与包名相同的目录存放所有代码（flat layout）后，再把它放进&lt;code&gt;src/&lt;/code&gt;下（src layout）。&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;.
-|_ docs/
-|_ scripts/
+|_ doc/
+|_ scratch/
 |_ src/
     |_ myproject/
         |_ __init__.py  # 项目的代码目录中，这个文件作为可导入包的标记
-|_ tests/
+|_ test/
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;项目构建用工具&lt;/p&gt;</description>
     </item>
   </channel>
