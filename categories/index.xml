@@ -11,8 +11,15 @@
     </image>
     <generator>Hugo -- 0.152.2</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 30 Jul 2025 15:53:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 25 Nov 2025 10:50:47 +0800</lastBuildDate>
     <atom:link href="https://ponyofshadows.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coding</title>
+      <link>https://ponyofshadows.com/categories/coding/</link>
+      <pubDate>Tue, 25 Nov 2025 10:50:47 +0800</pubDate>
+      <guid>https://ponyofshadows.com/categories/coding/</guid>
+      <description></description>
+    </item>
     <item>
       <title>System&amp;Software</title>
       <link>https://ponyofshadows.com/categories/systemsoftware/</link>
